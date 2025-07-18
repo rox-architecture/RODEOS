@@ -1,0 +1,48 @@
+---
+alwaysApply: true
+---
+# Python Cursor Rules
+
+Rules for managing environments, code style, frameworks, and documentation.
+
+---
+
+## 🛠️ Environment Management
+- **Always use `uv`** to manage environments and dependencies — automatic venv creation, fast installs, version locking
+- Never install packages into global Python — isolate per‑project via `uv venv`  
+
+---
+
+## 🧩 Project Structure & Modules
+- Group code by purpose (models, services, controllers, utils) 
+
+---
+
+## 🧠 Frameworks (langchain, llama_index, openrouter, ollama, dotenv, numpy, pandas, streamlit, fastapi)
+- Load configuration (.env) with `python-dotenv` inside strict modular boundaries.
+- Keep framework usage encapsulated in functions or lightweight classes when needed.
+
+---
+
+## 💡 Simplicity & Readability
+- Write **concise**, easy-to-follow code. Avoid unnecessary complexity or over‑abstraction  
+- Prefer descriptive names in **snake_case**, classes in `UpperCamelCase`, constants in `UPPER_SNAKE`.
+
+---
+
+## 🧩 Classes & Functions
+- Use functions for logical blocks; use classes when grouping shared state or behavior is justified.
+- Don’t overuse classes; prefer functional or declarative styles when possible
+
+---
+
+## 🛡 Error Handling & Logging
+- Add guard clauses at start of functions.
+- Use `try`/`except` with context-rich logging.
+- Keep happy path at the end, avoid deep nesting
+
+---
+
+## 📄 Documentation
+- Document each functional block (function or class) with docstrings following PEP 257.
+- Maintain a clear README in `docs/`, ensure code snippets are accurate 
