@@ -132,7 +132,7 @@ Dimensionen und max. Belastungen
 | Max. Geschwindigkeit | [mm/s] | 150 | 150 | 150 |
 | Max. Beschleunigung | [mm/s $\left.{ }^{2}\right]$ | 2500 | 2500 | 2500 |
 | Eigenmasse | [kg] | 1.8 | 2.13 | 2.63 |
-| Min./max. Umgebungstemperatur | $\left[{ }^{\circ} \mathrm{C}\right]$ | 5/55 | 5/55 | 5/55 |
+| Min./max. Umgebungstemperatur | [ $\left.{ }^{\circ} \mathrm{C}\right]$ | 5/55 | 5/55 | 5/55 |
 | Schutzart IP |  | 46 | 46 | 46 |
 | Reinraumklasse ISO 14644-1:2015 |  | 4 | 4 | 4 |
 | Abmaße X x Y x Z | [mm] | $112 \times 90 \times 108$ | $112 \times 100.4 \times 121$ | $112 \times 100.4 \times 121$ |
@@ -343,7 +343,7 @@ Universalgreifer
 
 ![img-24.jpeg](img-24.jpeg)
 (6) Anschluss modulseitig
-(15) Buchse
+(19) Buchse
 
 Die Abschlusswiderstände dienen zur Terminierung des Bus-Strangs direkt am SCHUNK-Modul.
 
@@ -375,4 +375,4 @@ info@de.schunk.com
 schunk.com
 
 Folgen Sie uns | Follow us
-(1) 2 (2) 4 (1)
+(1) 2 (2) $x$ (1)

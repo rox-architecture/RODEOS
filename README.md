@@ -11,6 +11,8 @@ RODEOS is a vendor-neutral semantic blueprint co-defined by a consortium of 24 i
 - **Models**: Kinematic graphs, CAD files, simulation meshes  
 - **Services**: Motion skills, perception pipelines, safety checks
 
+**Checkout the detailed overview [RODEOS](assets/rodeos_architecture/RODEOS.md)**
+
 This repository implements an LLM-assisted authoring workflow that converts technical documentation into structured, contextual chunks ready for semantic model transformation.
 
 ## 🚀 Quick Setup
@@ -47,6 +49,35 @@ MISTRAL_API_KEY=your_mistral_api_key_here
 # For remote contextualization (optional)
 OPENROUTER_API_KEY=your_openrouter_api_key_here
 ```
+
+## ⚡ Complete Pipeline with Make
+
+Run the entire RODEOS pipeline (extraction → contextualization → semantic model creation) with simple commands:
+
+```bash
+# Process single PDF (remote extraction, recommended)
+make process FILE=document.pdf
+
+# Process with local extraction (privacy-first)
+make process FILE=document.pdf EXTRACTION_MODE=local
+
+# Batch process all PDFs in assets/pdf/
+make process-batch
+
+# Batch with custom model
+make process-batch MODEL=anthropic/claude-3-haiku
+
+# Local extraction with custom model
+make process-batch EXTRACTION_MODE=local MODEL=openai/gpt-4o-mini
+
+# Check pipeline status
+make status
+
+# Clean all generated files
+make clean
+```
+
+**Pipeline Flow:** PDF → Markdown → Chunked → Semantic Model (JSON)
 
 ## 📋 Processing Pipeline
 
@@ -148,6 +179,39 @@ ollama pull llama3.2:3b       # Alternative option
 3. **Structure Preparation**: Formats content for RODEOS semantic model transformation
 4. **Prompt Transparency**: Saves all prompts used for full auditability
 
+### Phase 3: Semantic Model Extraction
+
+Transform contextualized chunks into structured RODEOS semantic models with automated asset type detection and metadata extraction.
+
+```bash
+# Process single chunked file
+python src/extractInformation/extraction.py assets/markdown/document_CHUNKED.md
+
+# Batch process all chunked files
+python src/extractInformation/extraction.py --batch
+
+# Use different model
+python src/extractInformation/extraction.py --batch --model anthropic/claude-3-haiku
+
+# Custom output directory
+python src/extractInformation/extraction.py document_CHUNKED.md --output-dir custom_output
+```
+
+**What Semantic Extraction Does:**
+1. **Asset Type Detection**: Automatically classifies content as Dataset, Model, or Service
+2. **Metadata Extraction**: Populates RODEOS JSON structure with document-derived information
+3. **Submodel Integration**: Selects and integrates appropriate AAS submodels
+4. **JSON Validation**: Ensures well-formed semantic model output with retry logic
+5. **Structured Output**: Creates camelCase JSON files ready for RODEOS ecosystem
+
+**Features:**
+- ✅ Multi-step LLM analysis via OpenRouter
+- ✅ Intelligent asset type classification (Dataset/Model/Service)
+- ✅ JSON validation with automatic retry on parsing errors
+- ✅ AAS submodel selection and integration
+- ✅ RODEOS structure compliance
+- ✅ Batch processing support
+
 ## 📁 Output Structure
 
 ```
@@ -158,7 +222,14 @@ assets/
 │   ├── document_DOCLING_basic.md  # From basic local processing
 │   ├── document_DOCLING_enhanced.md  # From enhanced local processing
 │   └── document_CHUNKED.md    # Contextualized chunks ready for semantic transformation
-└── 
+├── models/                 # Generated semantic models
+│   └── documentSemanticModel.json  # RODEOS-compliant JSON structure
+└── submodels/              # AAS submodel templates
+    ├── aas_ai_dataset.json
+    ├── aas_ai_deployment.json
+    ├── aas_generic_frame_technical_data.json
+    └── submodel_descriptions.md
+    
 src/contextualEnrichment/prompts/  # All LLM prompts for transparency
 ├── document_PROMPT_chunking.md
 └── document_PROMPT_contextualization.md

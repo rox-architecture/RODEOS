@@ -9,7 +9,7 @@ This document has been processed to create semantic chunks with contextual infor
 
 ---
 
-<chunk_context>The document introduces the Universalgreifer EGL, a servo-electric 2-finger parallel gripper designed for versatile applications in various environments, from clean to harsh conditions. It highlights key features such as adjustable gripping force, a programmable stroke for flexible handling, and seamless integration with existing control systems via PROFINET or PROFIBUS. This information aligns with the document's overall purpose of showcasing the product's capabilities and benefits for industrial automation, emphasizing its adaptability and ease of use in diverse operational settings.</chunk_context>
+<chunk_context>The document introduces the Universalgreifer EGL, a servo-electric 2-finger parallel gripper designed for versatile applications in various environments, from clean to harsh conditions. It highlights key features such as adjustable gripping force, a programmable stroke for flexible handling, and seamless integration with existing control systems via PROFINET or PROFIBUS. This section sets the stage for understanding the product's benefits and operational capabilities, which are further elaborated in subsequent pages detailing its technical specifications and applications.</chunk_context>
 <chunk>#### Page 1
 ![img-0.jpeg](img-0.jpeg)
 
@@ -44,7 +44,7 @@ Drehcodier- und DIP-Schalter für manuelle Feldbusadressierung, Baudrateneinstel
 
 ---
 
-<chunk_context>The section elaborates on the functional description of the Universalgreifer EGL, detailing the mechanics of its operation, including the DC servomotor, gearbox, and encoder system that facilitate precise positioning and movement. It highlights the integrated control and power electronics that enable decentralized operation, as well as the kinematic principles employed for effective gripping. This information is crucial for understanding the overall capabilities and applications of the EGL series, which is designed for versatile handling of various workpieces in diverse environments, as outlined in the broader document. Key features include the servo-electric actuation and the use of a rack-and-pinion mechanism, emphasizing the product's flexibility and robustness.</chunk_context>
+<chunk_context>The section outlines the functional description of the Universalgreifer EGL, detailing the operation of its DC servomotor, which drives the gripping mechanism through a gear system. It highlights the integration of control and power electronics for decentralized motor control, the use of an encoder for position feedback, and the implementation of an electric brake for position retention during power loss. This information is crucial for understanding the technical specifications and operational capabilities of the EGL series, which is designed for flexible handling of various workpieces in diverse environments, as emphasized throughout the document. Key features include the rack-and-pinion principle for linear movement and the robust construction materials, such as aluminum and steel, ensuring durability and reliability in industrial applications.</chunk_context>
 <chunk>### Page 3
  Funktionsbeschreibung 
 
@@ -104,7 +104,7 @@ Hochflexible Handlingeinheit zum Greifen und Transportieren von unterschiedliche
 
 ---
 
-<chunk_context>The section highlights additional components that enhance the productivity and functionality of the Universalgreifer EGL, emphasizing its integration with various communication interfaces like PROFINET and PROFIBUS-DP. This integration allows for seamless incorporation into existing industrial control systems, which is crucial for maintaining flexibility and reliability in automation processes. The document also details technical specifications, such as the maximum gripping force of 600 N and a repeat accuracy of 0.05 mm, underscoring the greifer's capabilities in diverse operational environments.</chunk_context>
+<chunk_context>The section emphasizes the additional components that enhance the productivity and functionality of the Universalgreifer EGL, highlighting its integration with various communication interfaces like PROFINET and PROFIBUS-DP. This integration allows for seamless incorporation into existing industrial control systems, ensuring flexibility and reliability in operation. The document also details the specifications and compatibility of the greifer, including its electrical control system, which eliminates the need for external control units, thereby streamlining setup and maintenance processes. Key figures include a maximum gripping force of 600 N and a repeat accuracy of 0.05 mm, underscoring the device's precision and capability in diverse applications.</chunk_context>
 <chunk>### Page 5
  SCHUNK bietet mehr ... 
 
@@ -150,7 +150,7 @@ Dimensionen und max. Belastungen
 | Max. Geschwindigkeit | [mm/s] | 150 | 150 | 150 |
 | Max. Beschleunigung | [mm/s $\left.{ }^{2}\right]$ | 2500 | 2500 | 2500 |
 | Eigenmasse | [kg] | 1.8 | 2.13 | 2.63 |
-| Min./max. Umgebungstemperatur | $\left[{ }^{\circ} \mathrm{C}\right]$ | 5/55 | 5/55 | 5/55 |
+| Min./max. Umgebungstemperatur | [ $\left.{ }^{\circ} \mathrm{C}\right]$ | 5/55 | 5/55 | 5/55 |
 | Schutzart IP |  | 46 | 46 | 46 |
 | Reinraumklasse ISO 14644-1:2015 |  | 4 | 4 | 4 |
 | Abmaße X x Y x Z | [mm] | $112 \times 90 \times 108$ | $112 \times 100.4 \times 121$ | $112 \times 100.4 \times 121$ |
@@ -206,7 +206,7 @@ bohrung im Gegenstück
 
 ---
 
-<chunk_context>The content on Page 9 and Page 10 of the document provides detailed illustrations and specifications for the EOA-UR3510-EGL 90-AUB universal gripper, including its maximum allowable overhang and motor current limitations based on ambient temperature. This section emphasizes the importance of understanding the operational parameters and electrical connections, particularly for the PROFIBUS variant, which is crucial for integrating the gripper into existing automation systems. Additionally, it includes information on finger blanks for custom modifications, highlighting the versatility and adaptability of the gripper for various applications.</chunk_context>
+<chunk_context>The content on Page 9 and Page 10 of the document provides detailed illustrations and specifications for the EOA-UR3510-EGL 90-AUB universal gripper, including its maximum allowable overhang and motor current limitations based on ambient temperature. This section is part of a broader discussion on the technical features and operational parameters of the EGL series, emphasizing the integration of various components such as the finger attachments and power supply connections. The document highlights the importance of understanding these specifications for effective application and customization in industrial automation settings, particularly in relation to the PROFIBUS variant.</chunk_context>
 <chunk>### Page 9
  Hauptansicht EOA-UR3510-EGL 90-AUB mit Aufsatzbacken 
 
@@ -278,7 +278,7 @@ Die Anschlusskabel dienen dem Anschluss des SCHUNK-Produktes an die Spannungsver
 
 ---
 
-<chunk_context>The section on Page 12 details the specifications and options for PROFIBUS communication cables designed for SCHUNK's mechatronic products, emphasizing their compatibility with M12 connectors. It also includes information on power supply connectors, highlighting the recommended wire gauge and installation considerations. This aligns with the document's overall focus on providing comprehensive technical details and integration options for SCHUNK's automation solutions, ensuring users can effectively implement these components in their systems.</chunk_context>
+<chunk_context>The section on Page 12 details the specifications and options for PROFIBUS communication cables designed for SCHUNK's mechatronic products, emphasizing their compatibility with M12 connectors. It highlights various cable lengths and types, including those suitable for drag chains and torsion applications, which are essential for integrating the Universalgreifer EGL into existing automation systems. This information supports the document's overall theme of providing comprehensive technical details for the effective use and integration of SCHUNK's automation solutions, ensuring users can select appropriate components for their specific needs.</chunk_context>
 <chunk>### Page 12
  KOL 90 
 
@@ -360,7 +360,7 @@ Die Kommunikationskabel sind für die mechatronischen Produkte von SCHUNK passen
 
 ---
 
-<chunk_context>The section on "Abschlusswiderstand" discusses the importance of termination resistors for the PROFIBUS communication bus, which are essential for ensuring signal integrity in the network. This information is crucial for users integrating the EGL 90 Universalgripper into their automation systems, as proper termination is necessary to prevent signal reflections and communication errors. The document emphasizes the technical specifications and identification numbers for the termination resistors, aligning with the overall theme of providing detailed technical guidance for the effective use of SCHUNK products in industrial applications.</chunk_context>
+<chunk_context>The section on "Abschlusswiderstand" discusses the importance of termination resistors for the PROFIBUS communication bus, specifically for the EGL 90 Universalgripper. This information is crucial for ensuring proper signal integrity and communication reliability in industrial automation systems, as highlighted throughout the document's focus on the integration and functionality of the Universalgripper within existing control systems. The mention of the specific part number (ST5G1204-PB-A-A) and its dimensions underscores the technical details necessary for installation and compatibility with SCHUNK's products.</chunk_context>
 <chunk>### Page 14
  EGL 90 
 
@@ -370,7 +370,7 @@ Universalgreifer
 
 ![img-24.jpeg](img-24.jpeg)
 (6) Anschluss modulseitig
-(15) Buchse
+(19) Buchse
 
 Die Abschlusswiderstände dienen zur Terminierung des Bus-Strangs direkt am SCHUNK-Modul.
 
@@ -402,4 +402,4 @@ info@de.schunk.com
 schunk.com
 
 Folgen Sie uns | Follow us
-(1) 2 (2) 4 (1)</chunk>
+(1) 2 (2) $x$ (1)</chunk>

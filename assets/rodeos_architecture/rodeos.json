@@ -1,0 +1,49 @@
+{
+    "dcat:Resource": {
+      "dcterms:title": "",
+      "dcterms:type": "",
+      "dcterms:publisher": "",
+      "dcterms:license": "",
+      "dcterms:identifier": "",
+      "dcterms:description": "",
+      "dcat:version": "",
+      "dcat:keyword": "",
+      "dcat:contactPoint": "",
+      "assets": {
+        "rodeos:Dataset": {
+          "dprod:informationSensitivityClassification": "",
+          "dprod:type": "",
+          "rodeos:dataFormat": "",
+          "rodeos:isDataProduct": "",
+          "rodeos:dataTypeSize": "",
+          "rodeos:dataTypeSchema": "",
+          "dcat:checksum": "",
+          "dcat:endpointDescription": "",
+          "dcat:endpointURL": "",
+          "dcat:protocol": "",
+          "dprod:dataProductOwner": ""
+        },
+        "rodeos:Model": {
+          "rodeos:modelType": "",
+          "rodeos:inputShape": "",
+          "rodeos:outputShape": "",
+          "rodeos:inputDataType": "",
+          "rodeos:outputDataType": "",
+          "rodeos:modelParameters": "",
+          "rodeos:framework": ""
+        },
+        "rodeos:Service": {
+          "rodeos:usedModels": "",
+          "rodeos:serviceTypeMain": "",
+          "rodeos:serviceType": "",
+          "dcat:endpointURL": "",
+          "rodeos:inputShape": "",
+          "rodeos:inputDataType": "",
+          "rodeos:outputDataType": "",
+          "dcat:endpointDescription": "",
+          "dcat:landingPage": ""
+        }
+      },
+    "submodels": []
+  }
+}
