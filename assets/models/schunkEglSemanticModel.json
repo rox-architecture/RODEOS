@@ -1,13 +1,13 @@
 {
   "dcat:Resource": {
-    "dcterms:title": "Universalgreifer EGL",
-    "dcterms:type": "Servo-electric 2-finger parallel gripper",
+    "dcterms:title": "Produktdatenblatt Universalgreifer EGL",
+    "dcterms:type": "Product data sheet",
     "dcterms:publisher": "SCHUNK SE & Co. KG",
     "dcterms:license": "",
-    "dcterms:identifier": "EGL 90-PN",
-    "dcterms:description": "A versatile gripper designed for various applications, featuring adjustable gripping force and programmable stroke.",
+    "dcterms:identifier": "EGL 90",
+    "dcterms:description": "A detailed product data sheet for the Universalgreifer EGL, outlining its specifications, features, and applications in automation technology.",
     "dcat:version": "",
-    "dcat:keyword": "gripper, servo-electric, automation, PROFINET, PROFIBUS, industrial",
+    "dcat:keyword": "Universalgreifer, EGL, automation, gripping solutions, servo-electric gripper",
     "dcat:contactPoint": "Tel. +49-7133-103-0, Fax +49-7133-103-2399, info@de.schunk.com",
     "assets": {
       "rodeos:Model": {

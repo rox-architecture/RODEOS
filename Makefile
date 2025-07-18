@@ -36,15 +36,22 @@ process:
 	fi
 	@echo "🚀 Starting pipeline for $(FILE)"
 	@echo "📄 Step 1/3: PDF Extraction ($(EXTRACTION_MODE) mode)"
-	@if [ "$(EXTRACTION_MODE)" = "local" ]; then \
-		python src/informationExtraction/localDoclingExtraction.py "$(PDF_DIR)/$(FILE)" --enhanced; \
+	@basename_file=$$(basename "$(FILE)" .pdf); \
+	if [ "$(EXTRACTION_MODE)" = "local" ]; then \
+		uv run src/informationExtraction/localDoclingExtraction.py "$(PDF_DIR)/$(FILE)" --enhanced; \
+		echo "💭 Step 2/3: Contextualization"; \
+		uv run src/contextualEnrichment/context.py "$(MARKDOWN_DIR)/$${basename_file}_DOCLING_enhanced.md" --remote $(MODEL); \
 	else \
-		python src/informationExtraction/mistralApiExtraction.py "$(PDF_DIR)/$(FILE)"; \
+		uv run src/informationExtraction/mistralApiExtraction.py "$(PDF_DIR)/$(FILE)"; \
+		echo "💭 Step 2/3: Contextualization"; \
+		uv run src/contextualEnrichment/context.py "$(MARKDOWN_DIR)/$${basename_file}_MISTRAL.md" --remote $(MODEL); \
+	fi; \
+	echo "🎯 Step 3/3: Semantic Model Extraction"; \
+	if [ "$(EXTRACTION_MODE)" = "local" ]; then \
+		uv run src/extractInformation/extraction.py "$(MARKDOWN_DIR)/$${basename_file}_DOCLING_enhanced_CHUNKED.md" --model $(MODEL); \
+	else \
+		uv run src/extractInformation/extraction.py "$(MARKDOWN_DIR)/$${basename_file}_MISTRAL_CHUNKED.md" --model $(MODEL); \
 	fi
-	@echo "💭 Step 2/3: Contextualization"
-	@python src/contextualEnrichment/context.py --batch --remote $(MODEL)
-	@echo "🎯 Step 3/3: Semantic Model Extraction"
-	@python src/extractInformation/extraction.py --batch --model $(MODEL)
 	@echo "✅ Pipeline completed for $(FILE)"
 
 # Process all PDF files in batch

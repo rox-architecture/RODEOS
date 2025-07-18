@@ -9,7 +9,7 @@ This document has been processed to create semantic chunks with contextual infor
 
 ---
 
-<chunk_context>The section outlines the return codes associated with service responses in the rc_cube Edge Computer's API, specifically for the ItemPick and ItemPickAI modules. Each service returns a return_code consisting of an integer value and an optional message, indicating the success or failure of the request. Successful requests are marked with a value of 0, while negative values indicate various error conditions, such as invalid arguments or timeouts, which are critical for troubleshooting and ensuring proper operation of the system. This information is essential for developers and users to understand the outcomes of their API calls and to handle errors effectively.</chunk_context>
+<chunk_context>The section outlines the return codes associated with service responses in the rc_cube Edge Computer's API, specifically for the ItemPick and ItemPickAI modules. Each service returns a return_code consisting of an integer value and an optional message, indicating the success or failure of the request. Successful requests are marked with a value of 0, while negative values indicate various error conditions, such as invalid arguments or timeouts, which are critical for troubleshooting and ensuring proper operation of the system. This information is essential for developers and users interacting with the API to understand the outcomes of their service requests.</chunk_context>
 <chunk>#### Page 1
  roboception 
 
@@ -60,7 +60,7 @@ Tab. 6.35: Rückgabecodes der Services des ItemPick und ItemPickAI Moduls
 
 ---
 
-<chunk_context>The BoxPick module is introduced as a ready-to-use perception solution for robotic pick-and-place applications, focusing on the detection of rectangular surfaces and their positioning for grasping. It includes features such as a user-friendly interface for setup and testing, the ability to define Regions of Interest (ROIs), integrated Load Carrier detection for bin-picking applications, and support for both stationary and robot-mounted cameras. Additionally, it offers a quality assessment for proposed grasp points and a 3D visualization of detection results, emphasizing its specific application within the rc_cube system and its dependency on licensing for certain features like the +Match extension.</chunk_context>
+<chunk_context>The BoxPick module is introduced as a ready-to-use perception solution for robotic pick-and-place applications, specifically designed to detect rectangular surfaces and determine their position, orientation, and size for grasping. It includes features such as a user-friendly interface for setup and testing, the ability to define Regions of Interest (ROIs), integrated Load Carrier detection for bin-picking applications, and support for both stationary and robot-mounted cameras. The module also offers a quality assessment for proposed grasp points and allows for sorting strategies and 3D visualization of detection results, emphasizing its application in automated environments. The ItemPick module is mentioned as an optional add-on that requires a separate license.</chunk_context>
 <chunk>### 6.3.5 BoxPick
 
 ### 6.3.5.1 Einführung
@@ -88,7 +88,7 @@ Das ItemPick Modul ist ein optional erhältliches Module, welches intern auf dem
 
 ---
 
-<chunk_context>The section on rectangle detection within the BoxPick module outlines the two types of object models supported: RECTANGLE and TEXTURED_BOX, with the latter requiring the +Match extension for detection. It details the optional parameters that can be provided, such as Load Carrier ID and Region of Interest, which enhance the detection process. The detection method involves segmenting point clouds and recognizing line segments in 2D images, ultimately extracting rectangles that match the identified clusters, which is crucial for applications in robotic pick-and-place tasks. This aligns with the document's focus on enhancing robotic perception and manipulation capabilities through advanced detection algorithms.</chunk_context>
+<chunk_context>The section on rectangle detection within the BoxPick module outlines the two types of object models supported: RECTANGLE and TEXTURED_BOX, with the latter requiring the +Match extension for detection. It details the optional parameters that can be provided, such as Load Carrier ID and Region of Interest, which enhance the detection process. The detection methodology involves segmenting point clouds, recognizing line segments in 2D images, and extracting rectangles based on these segments, emphasizing the importance of precise dimension specifications to minimize misdetections. This aligns with the overall purpose of the document, which is to provide comprehensive operational guidelines for the rc_cube's robotic perception capabilities, particularly in pick-and-place applications.</chunk_context>
 <chunk>6.3.5.2 Erkennung von Rechtecken 
 
 Es gibt zwei verschiedene Typen von Objektmodellen für die Erkennung von Rechtecken im BoxPick Modul.
@@ -138,7 +138,7 @@ Ein vom BoxPick-Modul ermittelter Greifpunkt repräsentiert die empfohlene Pose 
 
 ---
 
-<chunk_context>The section elaborates on the calculation and characteristics of grasp points within the BoxPick module, detailing how these points are determined based on the detected rectangles and their dimensions. It emphasizes the importance of the grasp point's orientation, which aligns with the preferred TCP orientation, and discusses the filtering of grasp points based on their surface area and quality. Additionally, it outlines the sorting strategies available for organizing the grasp points, such as prioritizing by gravity or surface area, which are crucial for optimizing robotic pick-and-place operations. This information is part of a broader discussion on the functionality and integration of the BoxPick module within the rc_cube system, which includes various modules for image processing and object detection.</chunk_context>
+<chunk_context>The section elaborates on the calculation and characteristics of grasp points within the BoxPick module, detailing how these points are determined based on the detected rectangles and their dimensions. It explains the significance of the grasp point's orientation, which aligns with the preferred TCP orientation, and how users can filter grasp points based on their size. Additionally, it outlines the sorting strategies available for organizing the grasp points, emphasizing the importance of these parameters in optimizing robotic pick-and-place operations. This information is crucial for users implementing the BoxPick module in automated systems, particularly in ensuring effective grasping and manipulation of objects.</chunk_context>
 <chunk>### Page 6
 aufweisen. In diesem Fall hat der zurückgegebene Greifpunkt die Ausrichtung, die am besten zur bevorzugten TCP-Ausrichtung passt und kollisionsfrei ist, wenn die Kollisionsprüfung aktiviert ist.
 ![img-0.jpeg](img-0.jpeg)
@@ -191,7 +191,7 @@ In beiden Fällen sollte die Belichtungszeitregelung (exp_auto_mode) auf Adaptiv
 
 ---
 
-<chunk_context>The section on "Hand-Auge-Kalibrierung" outlines the calibration process for the camera in relation to a robot, enabling the BoxPick module to output poses in the robot's coordinate system. It specifies two coordinate system options: the camera coordinate system, which requires no additional information about the camera's location, and a user-defined external coordinate system, which necessitates the current robot pose for accurate operation. This calibration is crucial for ensuring the effective functioning of the BoxPick module, particularly in scenarios involving Load Carrier detection and collision checks, as detailed in subsequent sections.</chunk_context>
+<chunk_context>The section on "Hand-Auge-Kalibrierung" outlines the calibration process for the BoxPick module, which allows it to output poses in the robot's coordinate system when the camera is calibrated to a robot. It details the two coordinate systems available for pose specification: the camera coordinate system, which requires no additional information about the camera's location, and a user-defined external coordinate system, which necessitates the current robot pose. This calibration is crucial for ensuring accurate object detection and grasping, as it integrates with the LoadCarrier functionality and collision checking processes described in subsequent sections.</chunk_context>
 <chunk>### Page 8
  Hand-Auge-Kalibrierung 
 
@@ -235,7 +235,7 @@ Das BoxPick-Modul wird in der REST-API als rc_boxpick bezeichnet und in der Web 
 
 ---
 
-<chunk_context>The section outlines the runtime parameters for the BoxPick module, detailing their types, ranges, default values, and descriptions. These parameters, such as `allow_any_grasp_z_rotation` and `max_grasps`, are crucial for configuring the module's behavior in robotic pick-and-place applications. This information is part of a broader discussion on the BoxPick module's functionality, which includes the detection of rectangular surfaces and the calculation of grasp points, emphasizing the importance of parameter customization for optimizing performance in various operational scenarios.</chunk_context>
+<chunk_context>The section outlines the runtime parameters for the BoxPick module, detailing their types, ranges, default values, and descriptions. These parameters, such as `allow_any_grasp_z_rotation` and `max_grasps`, are crucial for configuring the module's behavior in robotic pick-and-place applications. This information is part of a broader discussion on the BoxPick module's functionality, which includes the detection of rectangular objects and the calculation of grasp points, emphasizing the importance of parameter customization for optimizing performance in various operational scenarios.</chunk_context>
 <chunk>## Übersicht über die Parameter
 
 Bemerkung: Die Defaultwerte in der Tabelle unten zeigen die Werte des rc_visard. Diese Werte können sich bei anderen Sensoren unterscheiden.
@@ -281,7 +281,7 @@ ist die maximal erlaubte Krümmung für Greifflächen. Je kleiner dieser Wert is
 
 ---
 
-<chunk_context>The provided text outlines the API endpoints for configuring parameters related to the BoxPick module, specifically focusing on the clustering parameters such as `cluster_max_curvature` and `clustering_discontinuity_factor`, as well as the `clustering_max_surface_rmse`. These parameters are crucial for optimizing the detection of rectangular objects in robotic applications, allowing for adjustments in how the system interprets surface irregularities and the maximum allowable deviation from expected measurements. The document also details the REST API calls for setting these parameters, indicating the importance of precise configuration in enhancing the performance of the BoxPick module within the rc_cube system.</chunk_context>
+<chunk_context>The provided text is part of the API documentation for the BoxPick module of the rc_cube system, detailing the parameters and services available for configuring the rectangle detection and grasp computation functionalities. It outlines how to set various parameters, such as `cluster_max_curvature`, `clustering_discontinuity_factor`, and `line_sensitivity`, through REST API calls, specifying both the current and deprecated API versions. This section is crucial for developers looking to optimize the performance of the BoxPick module in robotic applications, particularly in scenarios involving object detection and manipulation. Key functionalities include adjusting detection sensitivity and managing the recognition modes for different operational contexts.</chunk_context>
 <chunk>## API Version 2
 
 PUT http://<host>/api/v2/pipelines/ $<0,1,2,3>$ /nodes/rc_boxpick/parameters?cluster_max_ $\ldots$ curvature $=$ <value>
@@ -1518,7 +1518,7 @@ Accept: application/json application/ubjson
 
 ---
 
-<chunk_context>The SilhouetteMatch module is introduced as an optional component that operates internally on the rc_cube, requiring a separate license for use, as detailed in section 9.5. It is important to note that this module is not compatible with camera pipelines of the zivid or blaze types, indicating specific limitations in its application. This information aligns with the document's broader focus on the functionalities and licensing requirements of various modules within the rc_cube system.</chunk_context>
+<chunk_context>The SilhouetteMatch module is introduced as an optional component that operates internally on the rc_cube system, requiring a separate license for use, as detailed in section 9.5. It is important to note that this module is not compatible with camera pipelines of the zivid or blaze types, indicating specific limitations in its application. This information aligns with the document's broader focus on the functionalities and licensing requirements of various modules within the rc_cube ecosystem.</chunk_context>
 <chunk>### 6.3.6.1 Einführung
 
 Das SilhouetteMatch-Modul ist ein optionales Modul, welches intern auf dem rc_cube läuft, und benötigt eine eigene Lizenz (Abschnitt 9.5), welche erworben werden muss.
