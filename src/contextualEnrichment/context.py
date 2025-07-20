@@ -154,7 +154,7 @@ def call_model_local(prompt: str, model: str, temperature: float = 0.0) -> str:
         response = chat(
             model=model,
             messages=[{"role": "user", "content": prompt}],
-            keep_alive="-1h",
+            # keep_alive="-1h",
             options={
                 "num_ctx": 16384,
                 "temperature": temperature,
@@ -549,28 +549,34 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  # Process single file with local model
+  # Process single file (remote by default)
   python context.py file.md
+  
+  # Process with local Ollama model
+  python context.py file.md --local
   
   # Process all markdown files in assets/markdown
   python context.py --batch
   
-  # Use remote model via OpenRouter
-  python context.py file.md --remote openai/gpt-4o-mini
+  # Batch process with local model
+  python context.py --batch --local
   
-  # Batch process with remote model
-  python context.py --batch --remote anthropic/claude-3-haiku
+  # Use specific remote model
+  python context.py file.md --model anthropic/claude-3-haiku
+  
+  # Use specific local model
+  python context.py file.md --local --model llama3.2:3b
   
   # Custom output directory
   python context.py file.md --output-dir custom_output
 
-Local Requirements:
-  - Ollama running locally
-  - A suitable LLM model installed (e.g., deepseek-r1:8b, llama3.2:3b)
-
-Remote Requirements:
+Remote Requirements (default):
   - OPENROUTER_API_KEY environment variable set
   - Valid OpenRouter API key with credits
+
+Local Requirements:
+  - Ollama running locally
+  - A suitable LLM model installed (e.g., qwen2.5:3b, llama3.2:3b)
         """
     )
     
@@ -588,14 +594,14 @@ Remote Requirements:
     
     parser.add_argument(
         '--model',
-        default='deepseek-r1:8b',
-        help='LLM model to use (default: deepseek-r1:8b)'
+        default='openai/gpt-4o-mini',
+        help='Model to use (default: openai/gpt-4o-mini for remote, qwen2.5:3b for local)'
     )
     
     parser.add_argument(
-        '--remote',
-        metavar='MODEL',
-        help='Use remote model via OpenRouter (e.g., openai/gpt-4o-mini)'
+        '--local',
+        action='store_true',
+        help='Use local Ollama model instead of OpenRouter API'
     )
     
     parser.add_argument(
@@ -610,9 +616,13 @@ Remote Requirements:
     if not args.batch and not args.markdown_file:
         parser.error("Must specify either a markdown file or use --batch flag")
     
-    # Determine model and remote usage
-    use_remote = args.remote is not None
-    model = args.remote if use_remote else args.model
+    # Determine processing mode and model
+    use_remote = not args.local
+    if args.local and args.model == 'openai/gpt-4o-mini':
+        # User specified --local but didn't change model, use local default
+        model = 'qwen2.5:3b'
+    else:
+        model = args.model
     
     try:
         # Check requirements based on usage mode

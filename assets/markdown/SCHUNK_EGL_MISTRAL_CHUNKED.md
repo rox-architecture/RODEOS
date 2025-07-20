@@ -23,7 +23,7 @@ Universalgreifer EGL
 
 ---
 
-<chunk_context>The Universalgreifer EGL is introduced as a highly flexible and robust servo-electric 2-finger parallel gripper designed for a wide range of applications in both clean and harsh environments. It features a finely adjustable gripping force and a large programmable stroke, allowing for versatile handling of various workpieces. The document emphasizes its integration capabilities with existing control systems via PROFINET or PROFIBUS, highlighting its user-friendly design with standard industrial connectors and USB interfaces for easy configuration and updates.</chunk_context>
+<chunk_context>The Universalgreifer EGL is introduced as a versatile and robust servo-electric 2-finger parallel gripper designed for a wide range of applications in both clean and harsh environments. It features a finely adjustable gripping force and a large programmable stroke, allowing for flexible handling of various workpieces. The document emphasizes its integration capabilities with existing control systems via PROFINET or PROFIBUS, highlighting its user-friendly service interface for easy parameterization and firmware updates, which aligns with the overall theme of enhancing automation efficiency and adaptability in industrial settings.</chunk_context>
 <chunk>Flexibel. Robust. Busfähig. 
 
 ## Universalgreifer EGL
@@ -47,7 +47,7 @@ Drehcodier- und DIP-Schalter für manuelle Feldbusadressierung, Baudrateneinstel
 
 ---
 
-<chunk_context>The section elaborates on the functional description of the Universalgreifer EGL, detailing the mechanics of its operation, including the DC servomotor's role in driving the gear system and the encoder's function in position tracking. This information is crucial for understanding the device's design, which integrates control and power electronics for decentralized motor control, and highlights the use of a rack-and-pinion mechanism for linear movement. The broader document emphasizes the greifer's versatility and application in various environments, showcasing its robust features such as an electric brake for position retention and a service interface for easy configuration and updates.</chunk_context>
+<chunk_context>The section elaborates on the functional description of the Universalgreifer EGL, detailing the mechanics of its operation, including the use of a DC servomotor and gear system to drive the gripping mechanism. It highlights the integrated control and power electronics that facilitate decentralized motor control, as well as the encoder for position feedback, which are essential for precise handling of various workpieces. This information is crucial for understanding the overall capabilities and applications of the EGL series, which is designed for flexible and robust automation in diverse environments. Key features include the electric brake for position retention during power loss and the kinematic design based on a rack-and-pinion principle, emphasizing the product's reliability and efficiency in industrial settings.</chunk_context>
 <chunk>### Page 3
  Funktionsbeschreibung 
 
@@ -106,7 +106,7 @@ Hochflexible Handlingeinheit zum Greifen und Transportieren von unterschiedliche
 
 ---
 
-<chunk_context>This section highlights the additional components and options available for the Universalgreifer EGL, emphasizing its enhanced productivity, functionality, and integration capabilities. It details the integrated control and power electronics that eliminate the need for external control units, and outlines the compatibility with communication standards like PROFINET and PROFIBUS-DP, facilitating seamless integration into existing industrial networks. The mention of the backen interface compatibility with the PGN-plus-P series underscores the versatility and adaptability of the EGL in various applications, aligning with the document's overall focus on advanced automation solutions.</chunk_context>
+<chunk_context>This section highlights the additional components and options available for the Universalgreifer EGL, emphasizing its enhanced productivity, functionality, and integration capabilities. It details the integrated control and power electronics that eliminate the need for external control units, and outlines the compatibility with communication standards like PROFINET and PROFIBUS-DP, facilitating seamless integration into existing industrial networks. The mention of the basic jaw interface compatibility with the PGN-plus-P further underscores the flexibility and adaptability of the EGL in various applications, aligning with the document's overall focus on advanced automation solutions.</chunk_context>
 <chunk>### Page 5
  SCHUNK bietet mehr ... 
 
@@ -211,7 +211,7 @@ bohrung im Gegenstück
 
 ---
 
-<chunk_context>This section provides detailed visual representations and technical specifications for the EGL 90 Universalgripper, specifically focusing on the model EOA-UR3510-EGL 90-AUB with attachment jaws. It includes critical information about the maximum allowable overhang and a diagram illustrating the throttling characteristics, which indicates the maximum permissible motor current relative to ambient temperature. Additionally, it highlights the PROFIBUS variant's connection details, emphasizing the integration of communication standards essential for industrial automation. This information is crucial for users seeking to understand the operational limits and connectivity options of the gripper within automated systems.</chunk_context>
+<chunk_context>This section presents the main view of the EOA-UR3510-EGL 90-AUB with attachment jaws, highlighting its design and functionality. It also includes critical information about the maximum allowable overhang and a diagram illustrating the throttling characteristics, which detail the maximum permissible motor current relative to ambient temperature. Additionally, it addresses the PROFIBUS variant, indicating specific connection points for integration into industrial systems, which aligns with the document's focus on the Universalgreifer EGL's technical specifications and operational capabilities.</chunk_context>
 <chunk>### Page 9
  Hauptansicht EOA-UR3510-EGL 90-AUB mit Aufsatzbacken 
 
@@ -242,7 +242,7 @@ Abweichendes Anschlussbild bei Variante PROFIBUS</chunk>
 
 ---
 
-<chunk_context>The section focuses on the Zwischenbacke ZBA-EGL 90 and the finger blanks ABR-/SBR-PGZN-plus 80, which are essential components for customizing the gripping functionality of the Universalgreifer EGL. It highlights the materials used—aluminum and steel—and provides identification numbers for these components, emphasizing their role in enhancing the versatility of the gripper. This information is part of a broader discussion on the modularity and customization options available for the EGL series, which is designed for flexible handling in various industrial applications.</chunk_context>
+<chunk_context>The section focuses on the Zwischenbacke ZBA-EGL 90 and the finger blanks ABR-/SBR-PGZN-plus 80, detailing their specifications and materials, including aluminum and steel options. This information is part of a broader discussion on the customization and adaptability of the Universalgreifer EGL, emphasizing the importance of tailored components for specific applications. Additionally, it highlights the necessary connection cables for power supply, reinforcing the document's theme of providing comprehensive technical details for effective integration and operation of the product in various environments.</chunk_context>
 <chunk>### Page 11
 ## Zwischenbacke ZBA-EGL 90
 
@@ -265,15 +265,7 @@ Die Zeichnung zeigt den Fingerrohling zur kundenspezifischen Nachbearbeitung.
 (3) Passung für Zentrierhülse
 (4) ABR-PGZN-plus
 
-Die Zeichnung zuigt den Fingerrohling zur kundenspezifischen Nachbearbeitung.
-
-| Bezeichnung | Ident.-Nr. | Material | Lieferumfang |
-| :-- | :-- | :-- | :-- |
-| Fingerrohling |  |  |  |
-| ABR-PGZN-plus 80 | 0300011 | Aluminium (3.4365) | 1 |
-| SBR-PGZN-plus 80 | 0300021 | Stahl (1.7131) | 1 |
-
-(1) Bei der Verwendung von Fingerrohlingen kann es bei einzelnen Greiferbaureihen zu einer Begrenzung des Schließhubs kommen. Bitte prüfen Sie dies im Vorfeld detailliert mithilfe der CAD-Daten und passen Sie die Nachbearbeitung der Finger entsprechend an.
+Die Zeichnung zu einer Begrenzung des Schließhubs kommen. Bitte prüfen Sie dies im Vorfeld detailliert mithilfe der CAD-Daten und passen Sie die Nachbearbeitung der Finger entsprechend an.
 
  Anschlusskabel Spannungsversorgung 
 
@@ -282,7 +274,7 @@ Die Zeichnung zuigt den Fingerrohling zur kundenspezifischen Nachbearbeitung.
 Die Anschlusskabel dienen dem Anschluss des SCHUNK-Produktes an die Spannungsversorgung.
 
 | Bezeichnung | Ident.-Nr. | L1 | D1 | L2 | D2 | L3 | D3 |
-| :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
 |  |  | [m] | [mm] | [mm] | [mm] | [mm] |  |
 | Anschlusskabel Spannungsversorgung - schleppkettentauglich |  |  |  |  |  |  |  |
 | KA GLN12T0150-LK-00500-A | 0310262 | 5 | 9.6 | 51 | 15 |  | M12 T-kodiert |
@@ -290,11 +282,11 @@ Die Anschlusskabel dienen dem Anschluss des SCHUNK-Produktes an die Spannungsver
 | KA WLN12T0150-LK-00500-A | 0310263 | 5 | 9.6 | 47.5 |  | 35 | M12 T-kodiert |
 | KA WLN12T0150-LK-01000-A | 0310265 | 10 | 9.6 | 47.5 |  | 35 | M12 T-kodiert |
 
-(1) Bitte beachten Sie den min. Biegeradius bei schleppkettentauglichen Kabeln oder den max. Torsionswinkel bei torsionstauglichen Kabeln. Diese betragen im Allgemeinen das 10 fache des Kabeldurchmessers oder +/- $180^{\circ} / \mathrm{m}$. Informationen zu max. Leitungslänge und dem min. Aderquerschnitt finden Sie in der jeweiligen Produktdokumentation.</chunk>
+(1) Bitte beachten Sie den min. Biegeradius bei schleppkettentauglichen Kabeln oder den max. Torsionswinkel bei torsionstauglichen Kabeln. Diese betragen im Allgemeinen das 10fache des Kabeldurchmessers oder +/- 180*1m. Informationen zu max. Leitungslänge und dem min. Aderquerschnitt finden Sie in der jeweiligen Produktdokumentation.</chunk>
 
 ---
 
-<chunk_context>The section on Page 12 details the specifications and options for PROFIBUS communication cables designed for SCHUNK's mechatronic products, emphasizing their compatibility with M12 connectors. It highlights various cable lengths and types, including those suitable for drag chains and torsion applications, which are critical for ensuring reliable data transmission in automated systems. This information supports the document's overall focus on providing comprehensive technical details for integrating SCHUNK's automation solutions, enhancing functionality and connectivity in industrial environments.</chunk_context>
+<chunk_context>The section on Page 12 details the specifications and options for PROFIBUS communication cables designed for SCHUNK's mechatronic products, emphasizing their compatibility with M12 connectors. This information is part of a broader discussion on the integration of various components, including communication and power supply connectors, which are essential for the effective operation of the Universalgreifer EGL and other automation technologies. The document highlights the importance of these cables in ensuring reliable communication within industrial automation systems, aligning with the overall theme of enhancing functionality and flexibility in automation solutions.</chunk_context>
 <chunk>### Page 12
  KOL 90 
 
@@ -376,7 +368,7 @@ Die Kommunikationskabel sind für die mechatronischen Produkte von SCHUNK passen
 
 ---
 
-<chunk_context>The section on Page 14 focuses on the termination of the bus line for the EGL 90 Universalgripper, specifically detailing the use of termination resistors necessary for proper communication within a PROFIBUS network. This information is crucial for ensuring reliable data transmission and system integrity in automated environments, aligning with the document's emphasis on the integration and functionality of SCHUNK's automation technology. The mention of the specific part number (ST5G1204-PB-A-A) and dimensions (47 mm, 15 mm) provides essential technical details for users implementing the system.</chunk_context>
+<chunk_context>The section on Page 14 focuses on the termination of the bus line for the EGL 90 Universalgripper, specifically detailing the use of termination resistors necessary for proper communication within the PROFIBUS network. This information is crucial for ensuring reliable data transmission and system integrity in automated environments, aligning with the document's emphasis on the integration and functionality of SCHUNK's automation technology. The mention of the specific part number (ST5G1204-PB-A-A) and its dimensions highlights the technical specifications that support the overall performance of the gripper system.</chunk_context>
 <chunk>### Page 14
  EGL 90 
 
@@ -418,4 +410,4 @@ info@de.schunk.com
 schunk.com
 
 Folgen Sie uns | Follow us
-(1) 2 (2) $x$ (1)</chunk>
+(1) 2 (2) 4 (1)</chunk>

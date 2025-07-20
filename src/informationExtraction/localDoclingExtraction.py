@@ -243,36 +243,19 @@ def process_pdf_enhanced(pdf_path: Path, page_range: Optional[list] = None, time
         if not check_ollama_connection():
             raise Exception("Ollama is not running. Please start Ollama service first.")
         
-        # Define model options (in order of preference)
-        model_options = [
-            "hf.co/unsloth/Nanonets-OCR-s-GGUF:Q4_K_M",
-        ]
+        # Use the required vision model
+        required_model = "hf.co/unsloth/Nanonets-OCR-s-GGUF:Q4_K_M"
         
-        selected_model = None
-        print("🔍 Checking available models...")
+        print("🔍 Checking for required vision model...")
         
-        available_models = get_available_models()
-        print(f"📋 Available models: {', '.join(available_models) if available_models else 'None'}")
+        if not check_ollama_model(required_model):
+            available_models = get_available_models()
+            print(f"📋 Available models: {', '.join(available_models) if available_models else 'None'}")
+            raise Exception(f"Required model '{required_model}' not found in Ollama.\n"
+                          f"Please install it with: ollama pull {required_model}")
         
-        # Try to find an available model
-        for model in model_options:
-            if check_ollama_model(model):
-                selected_model = model
-                print(f"✓ Using model: {selected_model}")
-                break
-        
-        if not selected_model:
-            print(f"⚠️  None of the preferred models found. Available models: {available_models}")
-            if available_models:
-                # Use the first available model that might work for vision
-                vision_models = [m for m in available_models if any(term in m.lower() for term in ['llava', 'vision', 'ocr', 'moondream', 'bakllava'])]
-                if vision_models:
-                    selected_model = vision_models[0]
-                    print(f"🔄 Trying available vision model: {selected_model}")
-                else:
-                    raise Exception(f"No suitable vision models found. Please install one of: {', '.join(model_options)}")
-            else:
-                raise Exception(f"No models available in Ollama. Please install one of: {', '.join(model_options)}")
+        selected_model = required_model
+        print(f"✓ Using required model: {selected_model}")
         
         # Configure VLM pipeline with selected model and timeout
         pipeline_options = VlmPipelineOptions(
@@ -418,12 +401,10 @@ Examples:
 
 Requirements:
   - Docling library installed
-  - For enhanced processing: Ollama running with vision model
+  - For enhanced processing: Ollama running with required vision model
   
-Recommended Ollama models (install with 'ollama pull <model>'):
-  - llava:7b (faster, good quality)
-  - moondream:latest (lightweight)
-  - hf.co/unsloth/Nanonets-OCR-s-GGUF:Q4_K_M (best OCR quality)
+Required Ollama model (install with 'ollama pull <model>'):
+  - hf.co/unsloth/Nanonets-OCR-s-GGUF:Q4_K_M
         """
     )
     

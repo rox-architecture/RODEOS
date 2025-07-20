@@ -55,20 +55,23 @@ OPENROUTER_API_KEY=your_openrouter_api_key_here
 Run the entire RODEOS pipeline (extraction → contextualization → semantic model creation) with simple commands:
 
 ```bash
-# Process single PDF (remote extraction, recommended)
+# Process single PDF (remote)
 make process FILE=document.pdf
 
-# Process with local extraction (privacy-first)
-make process FILE=document.pdf EXTRACTION_MODE=local
+# Process single PDF (local)
+make process-local FILE=document.pdf
 
-# Batch process all PDFs in assets/pdf/
+# Batch process all PDFs (remote)
 make process-batch
 
-# Batch with custom model
-make process-batch MODEL=anthropic/claude-3-haiku
+# Batch process all PDFs (local)
+make process-batch-local
 
-# Local extraction with custom model
-make process-batch EXTRACTION_MODE=local MODEL=openai/gpt-4o-mini
+# Custom remote model
+make process FILE=document.pdf REMOTE_MODEL=anthropic/claude-3-haiku
+
+# Custom local model
+make process-local FILE=document.pdf LOCAL_MODEL=llama3.2:3b
 
 # Check pipeline status
 make status

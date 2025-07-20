@@ -23,6 +23,7 @@ from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
 import requests
+from ollama import chat
 
 
 def validate_markdown_file(file_path: str) -> Path:
@@ -73,6 +74,119 @@ def get_openrouter_api_key() -> str:
             "Please set it with your OpenRouter API key."
         )
     return api_key
+
+
+def check_ollama_connection() -> bool:
+    """
+    Check if Ollama is running and accessible.
+    
+    Returns:
+        True if Ollama is accessible, False otherwise
+    """
+    try:
+        response = requests.get("http://localhost:11434/api/tags", timeout=5)
+        return response.status_code == 200
+    except Exception:
+        return False
+
+
+def clean_thinking_tags(text: str) -> str:
+    """
+    Remove <think> and </think> tags and their content from the response.
+    
+    Args:
+        text: Text that may contain thinking tags
+        
+    Returns:
+        Cleaned text without thinking tags and content
+    """
+    cleaned = re.sub(r'<think>.*?</think>', '', text, flags=re.DOTALL)
+    cleaned = re.sub(r'\n\s*\n\s*\n', '\n\n', cleaned)
+    return cleaned.strip()
+
+
+def call_model_local(prompt: str, model: str, temperature: float = 0.1) -> str:
+    """
+    Call a local model via Ollama.
+    
+    Args:
+        prompt: The prompt to send to the model
+        model: Model name
+        temperature: Sampling temperature
+        
+    Returns:
+        Model response text
+        
+    Raises:
+        Exception: If model call fails
+    """
+    try:
+        response = chat(
+            model=model,
+            messages=[{"role": "user", "content": prompt}],
+            keep_alive="-1h",
+            options={
+                "num_ctx": 16384,
+                "temperature": temperature,
+                "min_p": 0.01,
+                "repeat_penalty": 1.0,
+                "top_k": 64,
+                "top_p": 0.95,
+            },
+        )
+        content = response.message.content
+        return clean_thinking_tags(content)
+    except Exception as e:
+        raise Exception(f"Failed to call local model {model}: {str(e)}")
+
+
+def call_model_local_with_json_validation(prompt: str, model: str, temperature: float = 0.1, max_retries: int = 3) -> Dict:
+    """
+    Call local Ollama model with JSON validation and retry logic.
+    
+    Args:
+        prompt: The prompt to send to the model
+        model: Model name to use
+        temperature: Sampling temperature (low for consistency)
+        max_retries: Maximum number of retry attempts
+        
+    Returns:
+        Parsed JSON dictionary
+        
+    Raises:
+        Exception: If model call fails or JSON cannot be parsed after retries
+    """
+    for attempt in range(max_retries):
+        try:
+            raw_response = call_model_local(prompt, model, temperature)
+            
+            try:
+                json_str = extract_json_from_response(raw_response)
+                return json.loads(json_str)
+            except (json.JSONDecodeError, ValueError) as json_error:
+                if attempt < max_retries - 1:
+                    feedback_prompt = f"""
+{prompt}
+
+IMPORTANT: Your previous response was not valid JSON. Please respond with ONLY a valid JSON object, no explanations or additional text.
+
+Previous invalid response: {raw_response[:200]}...
+
+Error: {str(json_error)}
+
+Respond with ONLY valid JSON:
+"""
+                    prompt = feedback_prompt
+                    print(f"⚠️  Retry {attempt + 1}/{max_retries}: JSON parsing failed, retrying with feedback...")
+                    continue
+                else:
+                    raise Exception(f"Failed to get valid JSON after {max_retries} attempts: {json_error}")
+        except Exception as e:
+            if attempt == max_retries - 1:
+                raise Exception(f"Failed to call local model: {str(e)}")
+            continue
+    
+    raise Exception("Unexpected error in local model call")
 
 
 def extract_json_from_response(response: str) -> str:
@@ -283,13 +397,14 @@ def load_rodeos_template() -> Dict:
         raise Exception(f"Failed to load RODEOS template: {e}")
 
 
-def analyze_asset_type(chunks: List[Dict[str, str]], model: str) -> str:
+def analyze_asset_type(chunks: List[Dict[str, str]], model: str, use_remote: bool = True) -> str:
     """
     Analyze content to determine the asset type (Dataset, Model, or Service).
     
     Args:
         chunks: List of content chunks with context
-        model: OpenRouter model to use
+        model: Model to use (OpenRouter or local Ollama)
+        use_remote: Whether to use remote API via OpenRouter
         
     Returns:
         Asset type: "rodeos:Dataset", "rodeos:Model", or "rodeos:Service"
@@ -325,7 +440,10 @@ CRITICAL REQUIREMENTS:
 - Just the exact asset type string
 """
     
-    response = call_openrouter_api(prompt, model, temperature=0.1)
+    if use_remote:
+        response = call_openrouter_api(prompt, model, temperature=0.1)
+    else:
+        response = call_model_local(prompt, model, temperature=0.1)
     asset_type = response.strip()
     
     # Validate response
@@ -337,13 +455,14 @@ CRITICAL REQUIREMENTS:
     return asset_type
 
 
-def extract_basic_metadata(chunks: List[Dict[str, str]], model: str) -> Dict[str, str]:
+def extract_basic_metadata(chunks: List[Dict[str, str]], model: str, use_remote: bool = True) -> Dict[str, str]:
     """
     Extract basic metadata for dcat:Resource fields.
     
     Args:
         chunks: List of content chunks with context
-        model: OpenRouter model to use
+        model: Model to use (OpenRouter or local Ollama)
+        use_remote: Whether to use remote API via OpenRouter
         
     Returns:
         Dictionary with basic metadata fields
@@ -384,7 +503,10 @@ CRITICAL REQUIREMENTS:
 """
     
     try:
-        return call_openrouter_api_with_json_validation(prompt, model, temperature=0.1)
+        if use_remote:
+            return call_openrouter_api_with_json_validation(prompt, model, temperature=0.1)
+        else:
+            return call_model_local_with_json_validation(prompt, model, temperature=0.1)
     except Exception as e:
         print(f"⚠️  Warning: Failed to extract basic metadata: {e}")
         return {
@@ -400,14 +522,15 @@ CRITICAL REQUIREMENTS:
         }
 
 
-def extract_asset_specific_metadata(chunks: List[Dict[str, str]], asset_type: str, model: str) -> Dict[str, str]:
+def extract_asset_specific_metadata(chunks: List[Dict[str, str]], asset_type: str, model: str, use_remote: bool = True) -> Dict[str, str]:
     """
     Extract asset-specific metadata based on the determined asset type.
     
     Args:
         chunks: List of content chunks with context
         asset_type: The determined asset type
-        model: OpenRouter model to use
+        model: Model to use (OpenRouter or local Ollama)
+        use_remote: Whether to use remote API via OpenRouter
         
     Returns:
         Dictionary with asset-specific metadata
@@ -501,7 +624,10 @@ CRITICAL REQUIREMENTS:
 """
 
     try:
-        return call_openrouter_api_with_json_validation(prompt, model, temperature=0.1)
+        if use_remote:
+            return call_openrouter_api_with_json_validation(prompt, model, temperature=0.1)
+        else:
+            return call_model_local_with_json_validation(prompt, model, temperature=0.1)
     except Exception as e:
         print(f"⚠️  Warning: Failed to extract asset-specific metadata: {e}")
         return {}
@@ -556,14 +682,15 @@ def create_submodel_descriptions() -> Path:
     return description_file
 
 
-def select_submodel(chunks: List[Dict[str, str]], asset_type: str, model: str) -> Optional[Dict]:
+def select_submodel(chunks: List[Dict[str, str]], asset_type: str, model: str, use_remote: bool = True) -> Optional[Dict]:
     """
     Select the most appropriate submodel for the asset.
     
     Args:
         chunks: List of content chunks with context  
         asset_type: The determined asset type
-        model: OpenRouter model to use
+        model: Model to use (OpenRouter or local Ollama)
+        use_remote: Whether to use remote API via OpenRouter
         
     Returns:
         Dictionary containing the selected submodel or None
@@ -599,7 +726,10 @@ If none of the submodels are appropriate, respond with "none".
 Respond with only the submodel filename or "none".
 """
     
-    response = call_openrouter_api(prompt, model, temperature=0.1)
+    if use_remote:
+        response = call_openrouter_api(prompt, model, temperature=0.1)
+    else:
+        response = call_model_local(prompt, model, temperature=0.1)
     submodel_name = response.strip().lower()
     
     if submodel_name == "none":
@@ -619,13 +749,14 @@ Respond with only the submodel filename or "none".
         return None
 
 
-def create_semantic_model(file_path: Path, model: str = "openai/gpt-4o-mini") -> Dict:
+def create_semantic_model(file_path: Path, model: str = "openai/gpt-4o-mini", use_remote: bool = True) -> Dict:
     """
     Create a complete semantic model from the chunked markdown file.
     
     Args:
         file_path: Path to the chunked markdown file
-        model: OpenRouter model to use
+        model: Model to use (OpenRouter or local Ollama)
+        use_remote: Whether to use remote API via OpenRouter
         
     Returns:
         Complete semantic model dictionary
@@ -654,22 +785,22 @@ def create_semantic_model(file_path: Path, model: str = "openai/gpt-4o-mini") ->
         
         # Step 1: Determine asset type
         print("🤖 Analyzing asset type...")
-        asset_type = analyze_asset_type(chunks, model)
+        asset_type = analyze_asset_type(chunks, model, use_remote)
         print(f"✓ Determined asset type: {asset_type}")
         
         # Step 2: Extract basic metadata
         print("📊 Extracting basic metadata...")
-        basic_metadata = extract_basic_metadata(chunks, model)
+        basic_metadata = extract_basic_metadata(chunks, model, use_remote)
         print("✓ Basic metadata extracted")
         
         # Step 3: Extract asset-specific metadata
         print("🔧 Extracting asset-specific metadata...")
-        asset_metadata = extract_asset_specific_metadata(chunks, asset_type, model)
+        asset_metadata = extract_asset_specific_metadata(chunks, asset_type, model, use_remote)
         print("✓ Asset-specific metadata extracted")
         
         # Step 4: Select submodel
         print("🎯 Selecting appropriate submodel...")
-        submodel = select_submodel(chunks, asset_type, model)
+        submodel = select_submodel(chunks, asset_type, model, use_remote)
         if submodel:
             print("✓ Submodel selected")
         else:
@@ -767,21 +898,36 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  # Process single chunked file
+  # Process single chunked file (remote by default)
   python extraction.py document_CHUNKED.md
+  
+  # Process with local Ollama model
+  python extraction.py document_CHUNKED.md --local
   
   # Process all chunked files in assets/markdown
   python extraction.py --batch
   
-  # Use different model
+  # Batch process with local model
+  python extraction.py --batch --local
+  
+  # Use specific remote model
   python extraction.py document_CHUNKED.md --model anthropic/claude-3-haiku
+  
+  # Use specific local model
+  python extraction.py document_CHUNKED.md --local --model llama3.2:3b
   
   # Custom output directory
   python extraction.py document_CHUNKED.md --output-dir custom_output
 
-Requirements:
+Remote Requirements (default):
   - OPENROUTER_API_KEY environment variable set
   - Valid OpenRouter API key with credits
+
+Local Requirements:
+  - Ollama running locally
+  - A suitable LLM model installed (e.g., qwen2.5:3b, llama3.2:3b)
+
+Prerequisites:
   - Chunked markdown files (created by context.py)
         """
     )
@@ -801,7 +947,13 @@ Requirements:
     parser.add_argument(
         '--model',
         default='openai/gpt-4o-mini',
-        help='OpenRouter model to use (default: openai/gpt-4o-mini)'
+        help='Model to use (default: openai/gpt-4o-mini for remote, qwen2.5:3b for local)'
+    )
+    
+    parser.add_argument(
+        '--local',
+        action='store_true',
+        help='Use local Ollama model instead of OpenRouter API'
     )
     
     parser.add_argument(
@@ -816,10 +968,23 @@ Requirements:
     if not args.batch and not args.chunked_file:
         parser.error("Must specify either a chunked markdown file or use --batch flag")
     
+    # Determine processing mode and model
+    use_remote = not args.local
+    if args.local and args.model == 'openai/gpt-4o-mini':
+        # User specified --local but didn't change model, use local default
+        model = 'qwen2.5:3b'
+    else:
+        model = args.model
+    
     try:
-        # Check API key
-        get_openrouter_api_key()
-        print(f"🌐 Using model: {args.model}")
+        # Check requirements based on processing mode
+        if use_remote:
+            get_openrouter_api_key()
+            print(f"🌐 Using remote model: {model}")
+        else:
+            if not check_ollama_connection():
+                raise Exception("Ollama is not running. Please start Ollama service first.")
+            print(f"🏠 Using local model: {model}")
         
         output_dir = Path(args.output_dir)
         files_to_process = []
@@ -849,7 +1014,7 @@ Requirements:
         for file_path in files_to_process:
             try:
                 print(f"\n🚀 Processing: {file_path}")
-                semantic_model = create_semantic_model(file_path, args.model)
+                semantic_model = create_semantic_model(file_path, model, use_remote)
                 save_semantic_model(semantic_model, file_path, output_dir)
                 successful += 1
                 

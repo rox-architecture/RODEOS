@@ -9,7 +9,7 @@ This document has been processed to create semantic chunks with contextual infor
 
 ---
 
-<chunk_context>The document presents a product data sheet for the Universalgripper EGL, highlighting its features, applications, and benefits. It describes the servo-electric 2-finger parallel gripper, emphasizing its flexibility, robust design, and integration capabilities with existing control systems via PROFINET or PROFIBUS. Key specifications include a gripping force of 600 N and a stroke per jaw of 42.5 mm, making it suitable for handling a wide range of parts in various environmental conditions.</chunk_context>
+<chunk_context>The document provides an overview of the Universalgripper EGL, a servo-electric 2-finger parallel gripper designed for versatile applications in various environments. It highlights the gripper's features, such as sensitive gripping force control, a large programmable stroke, and integration of control and power electronics for decentralized systems. Key specifications include a gripping force of up to 600 N and a stroke of 42.5 mm per jaw, emphasizing its adaptability for handling a wide range of workpieces efficiently.</chunk_context>
 <chunk>## Local PDF Processing Result: SCHUNK_EGL
 
 **Source:** SCHUNK_EGL.pdf  
@@ -130,7 +130,7 @@ The components_
 
 ---
 
-<chunk_context>The section outlines the functional description of the DC servomotor used in the Universalgreifer EGL, detailing how it drives the gear rack of the gripper's base jaw through a gearbox. It highlights the integration of encoders for position feedback, the use of an electric brake for maintaining position during power loss, and the kinematic principles involved, such as the rack and pinion mechanism. This information is crucial for understanding the operational capabilities and technical specifications of the gripper, which is designed for precise handling in various industrial applications.</chunk_context>
+<chunk_context>The section outlines the functional description of the DC servomotor used in the Universalgreifer EGL, detailing how it drives the gear rack of the gripper's base jaw through a gearbox. It highlights the integration of encoders for position feedback, the use of an electric brake for maintaining position during power loss, and the kinematic principles involved, such as the rack-and-pinion mechanism. This information is crucial for understanding the operational capabilities and control mechanisms of the gripper, which is designed for precise handling in various industrial applications.</chunk_context>
 <chunk>## Funktionsbeschreibung
 
 Der DC-Servomotor treibt über ein Getriebe die Zahnstange der Grundbacke an. Die Position wird über einen Encoder erfasst.
@@ -207,7 +207,7 @@ The chart is divided into four sections, each representing a different category 
 
 ---
 
-<chunk_context>The section provides general information about the series of universal grippers, specifically the EGL model, detailing its operational principles, materials, and technical specifications. It highlights the servo-electric actuation via a brushless DC motor, the use of aluminum and steel in construction, and the gripper's capabilities, including gripping force, finger length, and operational timings. This information is crucial for understanding the product's functionality and integration into automated systems, aligning with the document's focus on advanced automation solutions and component specifications.</chunk_context>
+<chunk_context>The section provides general information about the series of universal grippers, specifically the EGL model, detailing its operational principles, materials, and features. It highlights the use of a rack and pinion mechanism, the servo-electric actuation via a brushless DC motor, and the materials used, such as aluminum alloy for the housing and steel for the jaws. Key specifications include a gripping force of up to 600 N, a 24-month warranty, and the inclusion of safety information and mounting accessories, emphasizing the gripper's versatility in handling various workpieces in different environments. This aligns with the document's overall focus on the technical specifications and applications of SCHUNK's automation products.</chunk_context>
 <chunk>## Allgemeine Informationen zur Baureihe
 
 Wirkprinzip: Ritzel-Zahnstangen-Prinzip
@@ -284,7 +284,7 @@ _In this image we can see a diagram. In the diagram we can see a block and a lab
 
 ---
 
-<chunk_context>This section outlines the options and special information regarding the electric control of the Universalgreifer EGL, emphasizing its fully integrated control and power electronics, which eliminate the need for external control units. It highlights the availability of various communication interfaces, such as PROFINET and PROFIBUS-DP, facilitating the establishment of industrial bus networks and easy integration into existing control concepts. Additionally, it notes that the base jaw interface is compatible with the PGN-plus-P universal gripper, allowing for the use of extensive finger accessories while adhering to operational limits.</chunk_context>
+<chunk_context>This section outlines the options and special information regarding the electric control of the Universalgreifer EGL, emphasizing its fully integrated control and power electronics, which eliminate the need for external control units. It highlights the availability of communication interfaces such as PROFINET and PROFIBUS-DP, facilitating the integration into existing industrial networks. Additionally, it notes that the base jaw interface is compatible with the PGN-plus-P universal gripper, allowing for the use of extensive finger accessories while adhering to operational limits. This information supports the document's focus on the versatility and ease of integration of the EGL gripper in automation applications.</chunk_context>
 <chunk>## Optionen und spezielle Informationen
 
 Die elektrische Ansteuerung des Greifers erfolgt über die komplett integrierte Regelungs- und Leistungselektronik. Somit sind keine zusätzlichen externen Regelungsseinheiten für das Modul notwendig.
@@ -343,7 +343,7 @@ Werkzeugwechsler
 
 ---
 
-<chunk_context>The document provides detailed technical specifications and descriptions of various mechanical components, including shafts and their functionalities within larger systems. This section specifically focuses on the shaft's design, highlighting its cylindrical shape and smooth surface, which are critical for its performance in mechanical applications. The broader context emphasizes the importance of precise engineering in components like shafts, which are integral to the operation of devices such as the Universalgreifer EGL, showcasing the document's focus on automation and handling technology.</chunk_context>
+<chunk_context>The section focuses on the detailed description of a mechanical component, specifically a shaft, which is part of the broader discussion on various mechanical elements within the document. It highlights the shaft's cylindrical shape and smooth surface, emphasizing its orientation and structural characteristics. This information is relevant to the overall theme of the document, which centers on the technical specifications and functionalities of mechanical components used in automation and gripping technology, such as the Universalgripper EGL.</chunk_context>
 <chunk>### Analysis and Description:
 
 - **Shaft**: The shaft is a cylindrical object with a smooth surface.
@@ -394,7 +394,7 @@ Zwischenbacke
 
 ---
 
-<chunk_context>The section on the EGL 90 Universalgripper provides detailed specifications and technical data for this servo-electric two-finger parallel gripper, highlighting its versatility and compatibility with various robotic systems, specifically UR models 3, 5, 10, and 16. Key features include a gripping force range of 50 to 600 N, a stroke of 42.5 mm per finger, and a maximum recommended workpiece weight of 3 kg. This information is crucial for understanding the gripper's operational capabilities and integration into automated systems, aligning with the document's focus on advanced automation solutions.</chunk_context>
+<chunk_context>The section on the EGL 90 Universalgripper provides detailed specifications and technical data for this electric two-finger parallel gripper, highlighting its versatility and compatibility with various robotic systems, including UR models. Key features include a gripping force range of 50 to 600 N, a stroke of 42.5 mm per finger, and a maximum recommended workpiece weight of 3 kg. This information is crucial for understanding the gripper's operational capabilities and integration into automated handling systems, aligning with the document's focus on advanced automation solutions.</chunk_context>
 <chunk>## EGL 90
 
 Universalgreifer
@@ -496,7 +496,7 @@ M12-Buchse PROFINET
 
 ---
 
-<chunk_context>The section focuses on the EGL 90 Universalgripper, highlighting its technical specifications and design features. It includes a detailed diagram of the component, labeled with various parts such as the main body and connection points, indicating its integration into larger systems. This information is part of a broader document that outlines the capabilities, applications, and technical data of SCHUNK's gripping technology, emphasizing the versatility and functionality of the EGL series in automation and handling tasks.</chunk_context>
+<chunk_context>The section focuses on the EGL 90 Universalgripper, detailing its technical specifications and design features. It includes diagrams illustrating the main body and various components, such as the finger interfaces and service connections, which are essential for integration into larger systems. This information is part of a broader discussion on the capabilities and applications of the EGL series, emphasizing its versatility and compatibility with different automation setups, including connections for power and communication protocols like PROFINET.</chunk_context>
 <chunk>## EGL 90
 
 Universalgreifer
@@ -525,12 +525,9 @@ Die Zeichnung zeigt den Greifer in der Grundausführung mit geöffneten Backen o
 - /L55461/L55465 Lochkreis DIN ISO-9409
 - /L55461/L55466 Durchgangslochbohrung zur Anschraubung
 
-<!-- page_break --></chunk>
+<!-- page_break -->
 
----
-
-<chunk_context>The section presents a technical drawing of the EOA-UR3510-EGL 90-AUB, which is part of the EGL 90 universal gripper system. This drawing includes detailed dimensions and labels, indicating its integration with additional components such as attachment jaws. The broader document focuses on the specifications, functionalities, and applications of the EGL 90 series, emphasizing its versatility and compatibility with various automation systems, including the use of different finger inserts for enhanced adaptability.</chunk_context>
-<chunk>## Hauptansicht EOA-UR3510-EGL 90-AUB mit Aufsatzbacken
+## Hauptansicht EOA-UR3510-EGL 90-AUB mit Aufsatzbacken
 
 The image is a technical drawing of a mechanical component. It is a part of a larger system, possibly a part of a larger system, and is labeled as "100 82" on the right side. The drawing is labeled with the following text: "100 82" on the right side, and "100 85" on the left side. The drawing is labeled with a series of numbers and measurements, which are likely the dimensions of the component.
 
@@ -590,7 +587,7 @@ The chart is divided into four sections, each representing a different category 
 
 ---
 
-<chunk_context>The section on "Variante PROFIBUS" details the specific electrical connections for the SCHUNK products, highlighting the M12 connectors used for PROFIBUS communication. This is part of a broader discussion on the integration of various components, including the Zwischenbacke ZBA-EGL 90, which allows for the attachment of additional accessories and compensates for lateral offsets in the gripping system. The document emphasizes the importance of proper electrical connections and compatibility with existing systems, reflecting the overall theme of enhancing automation and flexibility in industrial applications. Key identifiers and specifications for various components, such as the ZBA-EGL 90 and associated cables, are also provided to ensure accurate implementation.</chunk_context>
+<chunk_context>The section on "Variante PROFIBUS" details the specific electrical connections for the SCHUNK products, particularly focusing on the M12 connectors used for PROFIBUS communication. This is part of a broader discussion on the integration of various components, including the optional Zwischenbacke (intermediate jaws) and finger blanks, which enhance the functionality and adaptability of the EGL 90 universal gripper system. The document emphasizes the importance of these connections for ensuring compatibility and efficient operation within industrial automation systems, highlighting the modular design that allows for easy integration with existing setups.</chunk_context>
 <chunk>## Variante PROFIBUS
 
 In this image we can see a box.
@@ -683,7 +680,7 @@ Die Anschlusskabel dienen dem Anschluss des SCHUNK-Produktes an die Spannungsver
 
 ---
 
-<chunk_context>The section on "Kommunikationskabel PROFIBUS" details the specifications and options for communication cables designed for SCHUNK's mechatronic products, specifically highlighting their compatibility with PROFIBUS systems. It emphasizes the use of M12 connectors on both ends of the cables and provides a table listing various cable types, their identification numbers, and dimensions, which are crucial for integration into existing automation systems. This information aligns with the document's overall focus on the EGL 90 universal gripper and its associated components, showcasing the importance of reliable communication in automated handling solutions.</chunk_context>
+<chunk_context>The section on "Kommunikationskabel PROFIBUS" details the specifications and options for communication cables designed for SCHUNK's mechatronic products, specifically highlighting their compatibility with PROFIBUS systems. It includes a table listing various cable types, their identification numbers, and dimensions, emphasizing the use of M12 connectors for easy integration. This information supports the broader theme of the document, which focuses on the technical specifications and functionalities of SCHUNK's automation and gripping technology, particularly the EGL 90 universal gripper.</chunk_context>
 <chunk>## EGL 90
 
 ## Kommunikationskabel PROFIBUS
@@ -713,7 +710,7 @@ Die Kommunikationskabel sind passend konfektioniert für die mechatronischen SCH
 
 ---
 
-<chunk_context>The section on "Anschlusssteckverbinder Spannungsversorgung" details the connectors used to connect SCHUNK products to the power supply, emphasizing the option to use customer-supplied cables. It includes specifications for various connector types, such as the KBU-M12T-G 4P and KBU-M12T-W 4P, along with recommendations for wire gauge and installation practices. This information is part of a broader discussion on electrical connections and communication interfaces for SCHUNK's automation technology, highlighting the importance of proper connectivity for optimal performance in industrial applications.</chunk_context>
+<chunk_context>The section on "Anschlusssteckverbinder Spannungsversorgung" details the connectors used for connecting SCHUNK products to power supplies, emphasizing the use of customer-specific cables and screw connections for individual wires. It includes a table listing various connector types, their identification numbers, and specifications such as maximum dimensions and recommended wire cross-sections. This information is part of a broader discussion on the electrical and communication interfaces for SCHUNK's automation technology, which also covers communication cables for PROFINET, EtherNet/IP, and EtherCAT, highlighting the integration of these components into industrial systems.</chunk_context>
 <chunk>## Anschlusssteckverbinder Spannungsversorgung
 
 In this image, we can see a diagram. There are two text boxes.
@@ -818,7 +815,7 @@ The image depicts a diagram of a mechanical component, specifically a shaft. The
 
 ---
 
-<chunk_context>This section provides a technical analysis of a shaft component, describing its cylindrical shape and smooth surface, which is essential for its function in mechanical systems. It also discusses the use of termination resistors for the PROFIBUS bus system, indicating their importance in ensuring proper communication and signal integrity within the SCHUNK modules. The mention of specific identification numbers and dimensions for the termination resistors highlights the document's focus on precise technical specifications and compatibility within automation technology.</chunk_context>
+<chunk_context>This section provides a technical analysis of a shaft component, describing its cylindrical shape and smooth surface, which is essential for its function in mechanical systems. It also details the use of termination resistors for the PROFIBUS bus system, indicating their importance in ensuring proper communication and signal integrity within SCHUNK modules. The mention of specific identification numbers and dimensions for the termination resistors highlights the document's focus on precise technical specifications and compatibility within automation technology.</chunk_context>
 <chunk>### Analysis and Description:
 
 - **Shaft**: The shaft is a cylindrical object with a smooth surface.

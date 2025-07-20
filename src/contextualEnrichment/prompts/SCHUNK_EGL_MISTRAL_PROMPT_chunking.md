@@ -257,15 +257,7 @@ Die Zeichnung zeigt den Fingerrohling zur kundenspezifischen Nachbearbeitung.
 (3) Passung für Zentrierhülse
 (4) ABR-PGZN-plus
 
-Die Zeichnung zuigt den Fingerrohling zur kundenspezifischen Nachbearbeitung.
-
-| Bezeichnung | Ident.-Nr. | Material | Lieferumfang |
-| :-- | :-- | :-- | :-- |
-| Fingerrohling |  |  |  |
-| ABR-PGZN-plus 80 | 0300011 | Aluminium (3.4365) | 1 |
-| SBR-PGZN-plus 80 | 0300021 | Stahl (1.7131) | 1 |
-
-(1) Bei der Verwendung von Fingerrohlingen kann es bei einzelnen Greiferbaureihen zu einer Begrenzung des Schließhubs kommen. Bitte prüfen Sie dies im Vorfeld detailliert mithilfe der CAD-Daten und passen Sie die Nachbearbeitung der Finger entsprechend an.
+Die Zeichnung zu einer Begrenzung des Schließhubs kommen. Bitte prüfen Sie dies im Vorfeld detailliert mithilfe der CAD-Daten und passen Sie die Nachbearbeitung der Finger entsprechend an.
 <|end_chunk_27|><|start_chunk_28|>
  Anschlusskabel Spannungsversorgung 
 
@@ -274,7 +266,7 @@ Die Zeichnung zuigt den Fingerrohling zur kundenspezifischen Nachbearbeitung.
 Die Anschlusskabel dienen dem Anschluss des SCHUNK-Produktes an die Spannungsversorgung.
 
 | Bezeichnung | Ident.-Nr. | L1 | D1 | L2 | D2 | L3 | D3 |
-| :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
 |  |  | [m] | [mm] | [mm] | [mm] | [mm] |  |
 | Anschlusskabel Spannungsversorgung - schleppkettentauglich |  |  |  |  |  |  |  |
 | KA GLN12T0150-LK-00500-A | 0310262 | 5 | 9.6 | 51 | 15 |  | M12 T-kodiert |
@@ -282,7 +274,7 @@ Die Anschlusskabel dienen dem Anschluss des SCHUNK-Produktes an die Spannungsver
 | KA WLN12T0150-LK-00500-A | 0310263 | 5 | 9.6 | 47.5 |  | 35 | M12 T-kodiert |
 | KA WLN12T0150-LK-01000-A | 0310265 | 10 | 9.6 | 47.5 |  | 35 | M12 T-kodiert |
 
-(1) Bitte beachten Sie den min. Biegeradius bei schleppkettentauglichen Kabeln oder den max. Torsionswinkel bei torsionstauglichen Kabeln. Diese betragen im Allgemeinen das 10 fache des Kabeldurchmessers oder +/- $180^{\circ} / \mathrm{m}$. Informationen zu max. Leitungslänge und dem min. Aderquerschnitt finden Sie in der jeweiligen Produktdokumentation.
+(1) Bitte beachten Sie den min. Biegeradius bei schleppkettentauglichen Kabeln oder den max. Torsionswinkel bei torsionstauglichen Kabeln. Diese betragen im Allgemeinen das 10fache des Kabeldurchmessers oder +/- 180*1m. Informationen zu max. Leitungslänge und dem min. Aderquerschnitt finden Sie in der jeweiligen Produktdokumentation.
 <|end_chunk_28|><|start_chunk_29|>
 ### Page 12<|end_chunk_29|><|start_chunk_30|>
  KOL 90 
@@ -404,7 +396,7 @@ info@de.schunk.com
 schunk.com
 
 Folgen Sie uns | Follow us
-(1) 2 (2) $x$ (1)<|end_chunk_41|>
+(1) 2 (2) 4 (1)<|end_chunk_41|>
 </document>
 
 Respond only with the IDs of the chunks where you believe a split should occur. 
