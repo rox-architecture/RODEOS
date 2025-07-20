@@ -28,6 +28,7 @@ Anschlussstecker in Industrie-Standard für einen einfachen elektrischen Anschlu
 Service-Schnittstelle: USB Host und USB Device für komfortable Parametrierung und Firmwareupdates über USB-Stick oder PC
 Drehcodier- und DIP-Schalter für manuelle Feldbusadressierung, Baudrateneinstellung und Servicefunktionen
 ![img-2.jpeg](img-2.jpeg)
+![img-3.jpeg](img-3.jpeg)
 
 ### Page 3
 # Funktionsbeschreibung 
@@ -35,7 +36,7 @@ Drehcodier- und DIP-Schalter für manuelle Feldbusadressierung, Baudrateneinstel
 Der DC-Servomotor treibt über ein Getriebe die Zahnstange der Grundbacke an. Die Position wird über einen Encoder erfasst.
 Über die an den Spindelmuttern befestigten Grundbacken
 wird die Rotationsbewegung in die Linearbewegung der Grundbacke überführt.
-![img-3.jpeg](img-3.jpeg)
+![img-4.jpeg](img-4.jpeg)
 (1) Steuerelektronik
 
 Integrierte Regelungs- und Leistungselektronik zur dezentralen Ansteuerung des Servomotors
@@ -65,15 +66,17 @@ Betätigung: servoelektrisch, über bürstenlosen DC-Servomotor
 
 Gewährleistung: 24 Monate
 Lieferumfang: Greifer inklusive Sicherheitsinformationen und Beipack mit Zentrierhülsen für Greifermontage und Fingermontage. Produktspezifische Anleitungen und Software können unter schunk.com/downloads-manuals und schunk.com/downloads-software heruntergeladen werden.
+
 Greifkraft: ist die arithmetische Summe der an jeder Backe wirkenden Einzelkraft, im Abstand P (siehe Zeichnung)
 Fingerlänge: wird ab derselben Bezugsfläche wie der Abstand P in Richtung der Hauptachse gemessen.
+
 Wiederholgenauigkeit: ist definiert als Streuung der Endlage bei 100 aufeinanderfolgenden Hüben.
 
 Werkstückgewicht: wird errechnet bei Kraftschluss mit einem Haftreibwert von 0,1 und einer Sicherheit von 2 gegen Rutschen des Werkstücks bei Erdbeschleunigung g. Bei Formschluss ergeben sich deutlich höhere zulässige Werkstückgewichte.
 Schließ- und Öffnungszeiten: Minimale Schließ- und Öffnungszeiten sind reine Bewegungszeiten der Grundbacken bzw. Finger bei max. Geschwindigkeit, max. Beschleunigung, ohne Strombegrenzung (Maximalstrom) und Beachtung der maximal zulässigen Massen pro Finger.
 Nennströme: dürfen dauerhaft anliegen. Bei allen Strömen oberhalb des Nennstroms bis zum Maximalstrom sind die Hinweise in der jeweiligen Produktdokumentation zu beachten.
 Elektrische Bremse: Die eingebaute, elektrische Haltebremse dient der Fixierung und dem Erhalt der Position der Greiferbacken bei Spannungsabfall. Sie kann keine vollständigen Sicherheits- oder Greifkrafterhaltungsfunktionen abdecken.
-![img-4.jpeg](img-4.jpeg)
+![img-5.jpeg](img-5.jpeg)
 
 ## Anwendungsbeispiel
 
@@ -89,7 +92,7 @@ Hochflexible Handlingeinheit zum Greifen und Transportieren von unterschiedliche
 # SCHUNK bietet mehr ... 
 
 Die folgenden Komponenten machen das Produkt noch produktiver - die passende Ergänzung für höchste Funktionalität, Flexibilität, Zuverlässigkeit und Prozesssicherheit.
-![img-5.jpeg](img-5.jpeg)
+![img-6.jpeg](img-6.jpeg)
 
 Kommunikationskabel
 (1) Weitergehende Informationen zu diesen Produkten finden Sie auf den folgenden Produktseiten oder unter schunk.com.
@@ -101,16 +104,16 @@ Als Kommunikationsarten stehen vielfältige Schnittstellen wie PROFINET oder PRO
 Grundbacken-Schnittstelle: Die Schnittstelle der Grundbacken entspricht der des Universalgreifers PGN-plus-P. Somit kann das umfangreiche Fingerzubehör des PGN-plus-P unter Berücksichtigung der Störkonturen und der geltenden Einsatzgrenzen auch für diesen Greifer genutzt werden.
 
 ### Page 6
-![img-6.jpeg](img-6.jpeg)
-
-Greifkraft
 ![img-7.jpeg](img-7.jpeg)
 
-Fingerlänge
+Greifkraft
 ![img-8.jpeg](img-8.jpeg)
 
-Dimensionen und max. Belastungen
+Fingerlänge
 ![img-9.jpeg](img-9.jpeg)
+
+Dimensionen und max. Belastungen
+![img-10.jpeg](img-10.jpeg)
 (1) Die angegebenen Momente und Kräfte sind statische Werte, gelten je Grundbacke und dürfen gleichzeitig auftreten. Die Belastungen dürfen zusätzlich zu dem durch die Greifkraft erzeugten Moment auftreten.
 
 # Technische Daten 
@@ -151,7 +154,7 @@ Dimensionen und max. Belastungen
 
 ### Page 7
 Hauptansicht EGL 90-PN
-![img-10.jpeg](img-10.jpeg)
+![img-11.jpeg](img-11.jpeg)
 
 Die Zeichnung zeigt den Greifer in der Grundausführung mit geschlossenen Backen ohne maßliche Berücksichtigung der nachstehend beschriebenen Optionen.
 (1) Greiferanschluss
@@ -168,7 +171,7 @@ Die Zeichnung zeigt den Greifer in der Grundausführung mit geschlossenen Backen
 Universalgreifer
 
 Hauptansicht EOA-UR3510-EGL 90
-![img-11.jpeg](img-11.jpeg)
+![img-12.jpeg](img-12.jpeg)
 
 Die Zeichnung zeigt den Greifer in der Grundausführung mit geöffneten Backen ohne maßliche Berücksichtigung der nachstehend beschriebenen Optionen.
 (1) Greiferanschluss
@@ -187,7 +190,7 @@ bohrung im Gegenstück
 ### Page 9
 # Hauptansicht EOA-UR3510-EGL 90-AUB mit Aufsatzbacken 
 
-![img-12.jpeg](img-12.jpeg)
+![img-13.jpeg](img-13.jpeg)
 
 ### Page 10
 # EGL 90 
@@ -195,18 +198,18 @@ bohrung im Gegenstück
 Universalgreifer
 
 Maximal zulässige Auskragung
-![img-13.jpeg](img-13.jpeg)
-
-Drosselung
 ![img-14.jpeg](img-14.jpeg)
 
-Das Diagramm Drosselung zeigt den maximal zulässigen Motorstrom in Abhängigkeit von der Umgebungstemperatur.
+Drosselung
 ![img-15.jpeg](img-15.jpeg)
+
+Das Diagramm Drosselung zeigt den maximal zulässigen Motorstrom in Abhängigkeit von der Umgebungstemperatur.
+![img-16.jpeg](img-16.jpeg)
 
 Unzulässiger Bereich
 
 Variante PROFIBUS
-![img-16.jpeg](img-16.jpeg)
+![img-17.jpeg](img-17.jpeg)
 
 92 M12-Buchse PROFIBUS
 93 M12-Stecker PROFIBUS
@@ -215,11 +218,11 @@ Abweichendes Anschlussbild bei Variante PROFIBUS
 ### Page 11
 ## Zwischenbacke ZBA-EGL 90
 
-![img-17.jpeg](img-17.jpeg)
+![img-18.jpeg](img-18.jpeg)
 
 ## Fingerrohlinge ABR-/SBR-PGZN-plus 80
 
-![img-18.jpeg](img-18.jpeg)
+![img-19.jpeg](img-19.jpeg)
 
 Die Zeichnung zeigt den Fingerrohling zur kundenspezifischen Nachbearbeitung.
 
@@ -238,7 +241,7 @@ Die Zeichnung zu einer Begrenzung des Schließhubs kommen. Bitte prüfen Sie die
 
 # Anschlusskabel Spannungsversorgung 
 
-![img-19.jpeg](img-19.jpeg)
+![img-20.jpeg](img-20.jpeg)
 
 Die Anschlusskabel dienen dem Anschluss des SCHUNK-Produktes an die Spannungsversorgung.
 
@@ -258,7 +261,7 @@ Die Anschlusskabel dienen dem Anschluss des SCHUNK-Produktes an die Spannungsver
 
 ## Kommunikationskabel PROFIBUS
 
-![img-20.jpeg](img-20.jpeg)
+![img-21.jpeg](img-21.jpeg)
 
 Die Kommunikationskabel sind passend konfektioniert für die mechatronischen SCHUNK-Produkte. Sie verfügen beidseitig über M12-Steckverbinder.
 
@@ -275,7 +278,7 @@ Die Kommunikationskabel sind passend konfektioniert für die mechatronischen SCH
 
 ## Anschlusssteckverbinder Spannungsversorgung
 
-![img-21.jpeg](img-21.jpeg)
+![img-22.jpeg](img-22.jpeg)
 
 Die Steckverbinder dienen dem Anschluss der SCHUNK Produkte an die Spannungsversorgung. Hierbei kann ein kundenseitiges Kabel verwendet werden. Die Einzellitzen werden mittels Schraubverbindung im Steckverbinder geklemmt.
 
@@ -291,7 +294,7 @@ Die Steckverbinder dienen dem Anschluss der SCHUNK Produkte an die Spannungsvers
 ### Page 13
 # Anschlusskabel Kommunikation PROFINET, EtherNet/IP und EtherCAT 
 
-![img-22.jpeg](img-22.jpeg)
+![img-23.jpeg](img-23.jpeg)
 
 |  |  |  |  |  |  |  |
 | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
@@ -339,9 +342,9 @@ Universalgreifer
 
 ## Abschlusswiderstand
 
-![img-23.jpeg](img-23.jpeg)
+![img-24.jpeg](img-24.jpeg)
 (6) Anschluss modulseitig
-(15) Buchse
+(19) Buchse
 
 Die Abschlusswiderstände dienen zur Terminierung des Bus-Strangs direkt am SCHUNK-Modul.
 

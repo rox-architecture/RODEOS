@@ -1,0 +1,32 @@
+{
+  "_source_file": "abbDatenblattIrb8700SemanticModel.json",
+  "_asset_type": "rodeos:Model",
+  "_title": "IRB 8700 Heavy-Duty Industrial Robot",
+  "_identifier": "IRB 8700",
+  "properties": {
+    "dcterms:title": "IRB 8700 Heavy-Duty Industrial Robot",
+    "dcterms:type": "Technical Specification Document",
+    "dcterms:publisher": "ABB AG",
+    "dcterms:identifier": "IRB 8700",
+    "dcterms:description": "Technical specifications and details for the IRB 8700 heavy-duty industrial robot, including performance metrics, configurations, and operational parameters.",
+    "dcat:keyword": "industrial robot, heavy-duty, IRB 8700, LeanID, Foundry-Plus-2, RoHS, REACH",
+    "dcat:contactPoint": "Division Robotics, Grüner Weg 6, 61169 Friedberg, Telefon: +49 6031 85-0, E-Mail: robotervertrieb@de.abb.com",
+    "language": "de",
+    "contactEmail": "robotervertrieb@de.abb.com",
+    "contactPhone": "+49 6031 85-0",
+    "businessDomain": "Robotics",
+    "manufacturerName": "ABB AG",
+    "manufacturerProductDesignation": "IRB 8700",
+    "productImages": "img-0.jpeg, img-1.jpeg, img-2.jpeg",
+    "powerRequirements": "200-600 V, 50/60 Hz",
+    "temperatureRange": "+5°C bis +50°C",
+    "performanceMetrics": "25% schneller als vergleichbare Roboter der gleichen Klasse",
+    "conditionsOfOperation": "+5°C bis +50°C, max. 95% relative Luftfeuchtigkeit, max. 71 dB(A)",
+    "conformanceCertificates": "2002/95/EG (RoHS), Nr. 1907/2006 (REACH)",
+    "legalDisclaimers": "Technische Änderungen der Produkte sowie Änderungen im Inhalt dieses Dokuments behalten wir uns jederzeit ohne Vorankündigung vor. Bei Bestellungen sind die jeweils vereinbarten Beschaffenheiten maßgebend. Die ABB AG übernimmt keinerlei Verantwortung für eventuelle Fehler oder Unvollständigkeiten in diesem Dokument. Wir behalten uns alle Rechte an diesem Dokument und den darin enthaltenen Gegenständen und Abbildungen vor. Vervielfältigung, Bekanntgabe an Dritte oder Verwertung seines Inhaltes - auch von Teilen - ist ohne vorherige schriftliche Zustimmung durch die ABB AG verboten.",
+    "operationalContext": "Industrieroboter für 24/7 Produktion",
+    "supportedUseCases": "Schwerlastroboter mit hoher Traglast und Geschwindigkeit",
+    "deploymentEnvironment": "Industrie",
+    "compliesWith": "RoHS, REACH"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "_source_file": "roboceptionBoxpickSemanticModel.json",
+  "_asset_type": "rodeos:Service",
+  "_title": "Roboception rc_cube Edge Computer Manual",
+  "_identifier": "rc_cube Edge Computer",
+  "properties": {
+    "dcterms:title": "Roboception rc_cube Edge Computer Manual",
+    "dcterms:type": "Technical documentation",
+    "dcterms:publisher": "Roboception GmbH",
+    "dcterms:license": "Requires separate licenses for BoxPick and +Match extension",
+    "dcterms:identifier": "rc_cube Edge Computer",
+    "dcterms:description": "Manual for the rc_cube Edge Computer, covering modules like BoxPick and ItemPick for robotic pick-and-place applications",
+    "dcat:keyword": "robotic, pick-and-place, BoxPick, ItemPick, perception, rc_cube",
+    "rodeos:serviceTypeMain": "Perception",
+    "rodeos:serviceType": "BoxPick",
+    "dcat:endpointURL": "http://<host>/api/v2/pipelines/<0,1,2,3>/nodes/rc_boxpick/services",
+    "dcat:endpointDescription": "Provides services for detecting rectangular surfaces and calculating grasp points for robotic pick-and-place applications",
+    "language": "de",
+    "creationDate": "April 2025",
+    "relatedAssets": "BoxPick, ItemPick, ItemPickAI, LoadCarrier, CollisionCheck, SilhouetteMatch",
+    "creator": "Roboception GmbH",
+    "manufacturerName": "Roboception GmbH",
+    "manufacturerProductDesignation": "rc_cube Edge Computer",
+    "productImages": "img-0.jpeg, img-1.jpeg",
+    "supportedProtocols": "REST API",
+    "modelType": "RECTANGLE, TEXTURED_BOX",
+    "operationalContext": "robotic pick-and-place applications",
+    "supportedUseCases": "Bin-Picking applications"
+  }
+}

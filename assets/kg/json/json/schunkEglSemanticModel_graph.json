@@ -1,0 +1,32 @@
+{
+  "_source_file": "schunkEglSemanticModel.json",
+  "_asset_type": "rodeos:Model",
+  "_title": "Universalgreifer EGL Product Datasheet",
+  "_identifier": "EGL 90-PN, EOA-UR3510-EGL90, EOA-UR3510-EGL90-AUB",
+  "properties": {
+    "dcterms:title": "Universalgreifer EGL Product Datasheet",
+    "dcterms:type": "Product Datasheet",
+    "dcterms:publisher": "SCHUNK SE & Co. KG",
+    "dcterms:identifier": "EGL 90-PN, EOA-UR3510-EGL90, EOA-UR3510-EGL90-AUB",
+    "dcterms:description": "Technical documentation for the SCHUNK Universalgreifer EGL, a servoelectric 2-finger parallel gripper with precise force control and large stroke.",
+    "dcat:keyword": "gripper, servoelectric, parallel gripper, PROFINET, PROFIBUS, automation, industrial",
+    "dcat:contactPoint": "SCHUNK SE & Co. KG, Bahnhofstr. 106 - 134, D-74348 Lauffen/Neckar, Tel. +49-7133-103-0, Fax +49-7133-103-2399, info@de.schunk.com, schunk.com",
+    "rodeos:modelType": "Document Analysis",
+    "language": "de",
+    "documentationURL": "schunk.com/downloads-manuals",
+    "relatedAssets": "Schwenk-Neigeeinheit PW, Drehmodul PR 2, Antrieb PDU 2, Linearmodul mit Zahnriemenantrieb Beta",
+    "contactEmail": "info@de.schunk.com",
+    "contactPhone": "+49-7133-103-0",
+    "businessDomain": "Spanntechnik, Greiftechnik, Automatisierungstechnik",
+    "countryOfOrigin": "D",
+    "manufacturerName": "SCHUNK SE & Co. KG",
+    "manufacturerProductDesignation": "Universalgreifer EGL",
+    "productImages": "img-0.jpeg, img-1.jpeg, img-2.jpeg, img-3.jpeg, img-4.jpeg, img-5.jpeg, img-6.jpeg, img-7.jpeg, img-8.jpeg, img-9.jpeg, img-10.jpeg, img-11.jpeg, img-12.jpeg, img-13.jpeg, img-14.jpeg, img-15.jpeg, img-16.jpeg, img-17.jpeg, img-18.jpeg, img-19.jpeg, img-20.jpeg, img-21.jpeg, img-22.jpeg, img-23.jpeg, img-24.jpeg",
+    "compatibleHardware": "UR 3/5/10/16",
+    "supportedProtocols": "PROFINET, PROFIBUS, EtherNet/IP, EtherCAT",
+    "powerRequirements": "24 V DC",
+    "temperatureRange": "5/55",
+    "supportedUseCases": "Hochflexible Handlingeinheit zum Greifen und Transportieren von unterschiedlichen Werkstücken mit zufälliger Lageorientierung",
+    "linksTo": "schunk.com"
+  }
+}

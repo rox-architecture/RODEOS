@@ -1,0 +1,30 @@
+{
+  "_source_file": "abbDatenblattIrb6650sSemanticModel.json",
+  "_asset_type": "rodeos:Model",
+  "_title": "IRB 6650S Industrial Robot",
+  "_identifier": "IRB 6650S",
+  "properties": {
+    "dcterms:title": "IRB 6650S Industrial Robot",
+    "dcterms:type": "Industrial Robotics",
+    "dcterms:publisher": "ABB AG",
+    "dcterms:identifier": "IRB 6650S",
+    "dcterms:description": "Console-mounted industrial robot designed for machine operation, material handling, and spot welding with extended reach and 6-axis flexibility.",
+    "dcat:keyword": "industrial robot, machine operation, material handling, spot welding, press operation, die-casting, injection molding",
+    "dcat:contactPoint": "ABB AG, Division Robotics, Grüner Weg 6, 61169 Friedberg, Telefon: +49 6031 85-0, E-Mail: robotics@de.abb.com",
+    "rodeos:modelType": "Object Detection",
+    "language": "de",
+    "relatedAssets": "IRB 6700",
+    "contactEmail": "robotics@de.abb.com",
+    "contactPhone": "+49 6031 85-0",
+    "businessDomain": "Industrial robotics",
+    "manufacturerName": "ABB AG",
+    "manufacturerProductDesignation": "IRB 6650S",
+    "productImages": "img-0.jpeg, img-1.jpeg",
+    "powerRequirements": "2,4 kW",
+    "temperatureRange": "+5°C bis +52°C (operating), -25°C bis +55°C (transport and storage), up to +70°C (short-term)",
+    "conditionsOfOperation": "Relative Luftfeuchtigkeit: max.95 %, Geräuschpegel: max.73 dB(A)",
+    "legalDisclaimers": "Technische Änderungen der Produkte sowie Änderungen im Inhalt dieses Dokuments behalten wir uns jederzeit ohne Vorankündigung vor. Bei Bestellungen sind die jeweils vereinbarten Beschaffenheiten maßgebend. Die ABB AG übernimmt keinerlei Verantwortung für eventuelle Fehler oder Unvollständigkeiten in diesem Dokument.",
+    "operationalContext": "Industrial applications like machine operation, material handling, and spot welding",
+    "supportedUseCases": "Pressenbedienung, Druckguss, Spritzguss, Materialhandhabung, Punktschweißen"
+  }
+}

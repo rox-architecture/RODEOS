@@ -15,6 +15,10 @@ RODEOS is a vendor-neutral semantic blueprint co-defined by a consortium of 24 i
 
 This repository implements an LLM-assisted authoring workflow that converts technical documentation into structured, contextual chunks ready for semantic model transformation.
 
+## RODEOS KNOWLEDGE GRAPH
+
+![RODEOS Knowledge Graph](images/RoX_RODEOS_KG.png)
+
 ## 🚀 Quick Setup
 
 ### Prerequisites
@@ -67,6 +71,15 @@ make process-batch
 # Batch process all PDFs (local)
 make process-batch-local
 
+# Generate knowledge graph (remote)
+make kg
+
+# Generate knowledge graph (local)
+make kg-local
+
+# Open knowledge graph visualization
+make kg-open
+
 # Custom remote model
 make process FILE=document.pdf REMOTE_MODEL=anthropic/claude-3-haiku
 
@@ -80,7 +93,7 @@ make status
 make clean
 ```
 
-**Pipeline Flow:** PDF → Markdown → Chunked → Semantic Model (JSON)
+**Pipeline Flow:** PDF → Markdown → Chunked → Semantic Model (JSON) → Knowledge Graph
 
 ## 📋 Processing Pipeline
 
@@ -215,6 +228,45 @@ python src/extractInformation/extraction.py document_CHUNKED.md --output-dir cus
 - ✅ RODEOS structure compliance
 - ✅ Batch processing support
 
+### Phase 4: Knowledge Graph Generation
+
+Transform multiple semantic models into interactive knowledge graphs that visualize relationships between assets, properties, and metadata across your robotic ecosystem.
+
+```bash
+# Generate knowledge graph from all semantic models
+python src/knowledgeGraphGeneration/kg.py
+
+# Use local model for value normalization
+python src/knowledgeGraphGeneration/kg.py --local
+
+# Use different model for better normalization
+python src/knowledgeGraphGeneration/kg.py --model anthropic/claude-3-haiku
+
+# Custom input and output directories
+python src/knowledgeGraphGeneration/kg.py --models-dir custom_models --output-dir custom_kg
+```
+
+**What Knowledge Graph Generation Does:**
+1. **Data Extraction**: Processes all semantic models to extract graph-relevant properties and metadata
+2. **Value Normalization**: Uses LLM to normalize similar values (e.g., "Roboception GmbH" and "roboception" → "Roboception GmbH")
+3. **Graph Construction**: Builds NetworkX graph with nodes for assets and values, edges for relationships
+4. **Interactive Visualization**: Creates dynamic HTML visualization using pyvis with physics simulation
+5. **Data Export**: Saves graph structure and statistics as JSON for further analysis
+
+**Features:**
+- ✅ Automatic value normalization to reduce duplicates
+- ✅ Interactive HTML visualization with physics simulation
+- ✅ Color-coded nodes by property type (DCAT, RODEOS, metadata)
+- ✅ Comprehensive tooltips and relationship labels
+- ✅ JSON export for programmatic access
+- ✅ GEXF export for advanced analysis in Gephi
+- ✅ Statistics and metrics generation
+
+**Example Knowledge Graph:**
+<!-- Placeholder for knowledge graph visualization image -->
+![Knowledge Graph Example](assets/kg/example_knowledge_graph.png)
+*Interactive knowledge graph showing relationships between robotic assets, their properties, and metadata across the RODEOS ecosystem*
+
 ## 📁 Output Structure
 
 ```
@@ -227,6 +279,11 @@ assets/
 │   └── document_CHUNKED.md    # Contextualized chunks ready for semantic transformation
 ├── models/                 # Generated semantic models
 │   └── documentSemanticModel.json  # RODEOS-compliant JSON structure
+├── kg/                     # Knowledge graph outputs
+│   ├── knowledge_graph.html       # Interactive visualization
+│   ├── knowledge_graph_data.json  # Graph structure and statistics
+│   ├── knowledge_graph.gexf       # Gephi-compatible graph file
+│   └── example_knowledge_graph.png # Example visualization image
 └── submodels/              # AAS submodel templates
     ├── aas_ai_dataset.json
     ├── aas_ai_deployment.json
@@ -236,6 +293,10 @@ assets/
 src/contextualEnrichment/prompts/  # All LLM prompts for transparency
 ├── document_PROMPT_chunking.md
 └── document_PROMPT_contextualization.md
+
+src/knowledgeGraphGeneration/      # Individual model graph data
+├── documentSemanticModel_graph.json
+└── ...                           # One graph.json per semantic model
 ```
 
 ## 🎛️ Configuration Examples

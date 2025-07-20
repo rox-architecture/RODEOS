@@ -216,7 +216,7 @@ Für den Fall einer robotergeführten Kamera ist es abhängig von pose..frame un
 
 ## LoadCarrier
 
-Das BoxPick-Modul nutzt die Funktionalität zur Load Carrier Erkennung aus dem LoadCarrier Modul (rc. load. carrier, Abschnitt 6.3.2) mit den Laufzeitparametern, die für dieses Modul festgelegt wurden. Wenn sich jedoch mehrere Load Carrier in der Szene befinden, die zu der angegebenen Load Carrier ID passen, wird nur einer davon zurückgeliefert. In diesem Fall sollte eine 3D Region of Interest gesetzt werden, um sicherzustellen, dass immer derselbe Load Carrier für das BoxPick-Modul verwendet wird.
+Das BoxPick-Modul nutzt die Funktionalität zur Load Carrier Erkennung aus dem LoadCarrier Modul (rc.load.carrier, Abschnitt 6.3.2) mit den Laufzeitparametern, die für dieses Modul festgelegt wurden. Wenn sich jedoch mehrere Load Carrier in der Szene befinden, die zu der angegebenen Load Carrier ID passen, wird nur einer davon zurückgeliefert. In diesem Fall sollte eine 3D Region of Interest gesetzt werden, um sicherzustellen, dass immer derselbe Load Carrier für das BoxPick-Modul verwendet wird.
 
 Der Load Carrier wird verwendet um Fehldetektionen zu filtern, wenn BoxPick mit einem Objektmodell vom Typ TEXTURED_BOX aufgerufen wird, und alle drei Dimensionen $x, y$ und $z$ angegeben werden. In diesem Fall werden intern 3D Boxen generiert, indem die erkannten Rechtecken um die fehlende Dimension erweitert werden. Es werden dann nur die erkannten Rechtecke zurückgeliefert, bei denen die entsprechende 3D Box vollständig im Load Carrier enthalten ist.
 
@@ -915,12 +915,10 @@ Die Definition der Response mit jeweiligen Datentypen ist:
 }
 ```
 
-
-# set_preferred_orientation 
-
+set_preferred_orientation
 speichert die bevorzugte TCP-Orientierung zum Berechnen der Erreichbarkeit der Greifpunkte, die zur Filterung und optional zur Sortierung der vom detect..object Service zurückgelieferten Greifpunkte verwendet wird (siehe Setzen der bevorzugten TCP-Orientierung, Abschnitt 6.3.5.4).
 
-## Details
+# Details 
 
 Dieser Service kann wie folgt aufgerufen werden.
 
@@ -1354,8 +1352,7 @@ Tab. 6.39: Rückgabecodes der Services des BoxPick-Moduls
 
 BoxPick Templates sind nur mit der +Match-Erweiterung von BoxPick verfügbar. Für den Upload, Download, das Auflisten und Löschen von Templates werden spezielle REST-API-Endpunkte zur Verfügung gestellt. Templates können auch über die Web GUI hoch- und runtergeladen werden. Die Templates beinhalten die Greifpunkte und Posenvorgaben, falls Greifpunkte oder Posenvorgaben konfiguriert wurden. Bis zu 100 Templates können gleichzeitig auf dem rc_cube gespeichert werden.
 
-## GET /templates/rc_boxpick
-
+GET /templates/rc_boxpick
 listet alle rc_cadmatch-Templates auf.
 
 ## Musteranfrage
@@ -1538,34 +1535,6 @@ MONTAGE- UND BETRIEBSANLEITUNG
     }
 }
 ```
-
-
- 6.3.4.8 Rückgabecodes 
-
-Zusätzlich zur eigentlichen Serviceantwort gibt jeder Service einen sogenannten return_code bestehend aus einem Integer-Wert und einer optionalen Textnachricht zurück. Erfolgreiche Service-Anfragen werden mit einem Wert von $\theta$ quittiert. Positive Werte bedeuten, dass die Service-Anfrage zwar erfolgreich bearbeitet wurde, aber zusätzliche Informationen zur Verfügung stehen. Negative Werte bedeuten, dass Fehler aufgetreten sind. Für den Fall, dass mehrere Rückgabewerte zutreffend wären, wird der kleinste zurückgegeben, und die entsprechenden Textnachrichten werden in return_code.message akkumuliert.
-Die folgende Tabelle listet die möglichen Rückgabe-Codes auf:
-Tab. 6.35: Rückgabecodes der Services des ItemPick und ItemPickAI Moduls
-
-| Code | Beschreibung |
-| :--: | :-- |
-| 0 | Erfolgreich |
-| -1 | Ungültige(s) Argument(e) |
-| -3 | Ein interner Timeout ist aufgetreten, beispielsweise während der Boxerkennung, wenn der <br> Bereich der angegebenen Abmessungen zu groß ist. |
-| -4 | Die maximal erlaubte Zeitspanne für die interne Akquise der Bilddaten wurde überschritten. |
-| -8 | Das Template wurde während der Detektion gelöscht. |
-| -10 | Das neue Element konnte nicht hinzugefügt werden, da die maximal speicherbare Anzahl <br> an Load Carriern, ROIs oder Templates überschritten wurde. |
-| -11 | Sensor nicht verbunden, nicht unterstützt oder nicht bereit |
-| -200 | Ein schwerwiegender interner Fehler ist aufgetreten. |
-| -301 | Für die Anfrage zur Greifpunktberechnung compute_grasps wurden mehrere Objektmodelle <br> (item_models) übergeben. |
-| 10 | Die maximal speicherbare Anzahl an Load Carriern, ROIs oder Templates wurde erreicht. |
-| 11 | Mit dem Aufruf von set. load. carrier oder set. region. of. interest wurde ein bereits <br> existierendes Objekt mit derselben id überschrieben. |
-| 100 | Die angefragten Load Carrier wurden in der Szene nicht gefunden. |
-| 101 | Es wurden keine gültigen Greifflächen in der Szene gefunden. |
-| 102 | Der detektierte Load Carrier ist leer. |
-| 103 | Alle berechneten Greifpunkte sind in Kollision mit dem Load Carrier. |
-| 112 | Die Detektionen eines oder mehrerer Cluster wurden verworfen, da die minimale <br> Clusterabdeckung nicht erreicht wurde. |
-| 300 | Ein gültiges robot. pose-Argument wurde angegeben, ist aber nicht erforderlich. |
-| 999 | Zusätzliche Hinweise für die Anwendungsentwicklung |
 </chunk>
 
 Respond only with the succinct context for this chunk. Do not mention it is a chunk or that you are providing context.

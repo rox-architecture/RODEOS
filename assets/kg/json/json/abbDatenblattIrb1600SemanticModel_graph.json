@@ -1,0 +1,29 @@
+{
+  "_source_file": "abbDatenblattIrb1600SemanticModel.json",
+  "_asset_type": "rodeos:Model",
+  "_title": "IRB 1600 Industrial Robot",
+  "_identifier": "IRB 1600",
+  "properties": {
+    "dcterms:title": "IRB 1600 Industrial Robot",
+    "dcterms:type": "Industrial Robot",
+    "dcterms:publisher": "ABB AG",
+    "dcterms:identifier": "IRB 1600",
+    "dcterms:description": "An industrial robot designed for diverse applications including die casting, arc welding, machine tending, material handling, assembly, injection molding, and packaging.",
+    "dcat:keyword": "industrial robot, die casting, arc welding, machine tending, material handling, assembly, injection molding, packaging",
+    "dcat:contactPoint": "ABB AG, Division Robotics, Grüner Weg 6, 61169 Friedberg, Telefon: +49 6031 85-0, E-Mail: robotics@de.abb.com",
+    "language": "de",
+    "contactEmail": "robotics@de.abb.com",
+    "contactPhone": "+49 6031 85-0",
+    "businessDomain": "Robotics",
+    "manufacturerName": "ABB AG",
+    "manufacturerProductDesignation": "IRB 1600",
+    "productImages": "img-0.jpeg, img-1.jpeg, img-2.jpeg, img-3.jpeg",
+    "productClassName": "Industrieroboter",
+    "powerRequirements": "200-600 V, 50/60 Hz, 0,58 kW",
+    "temperatureRange": "+5°C bis +45°C",
+    "conditionsOfOperation": "Relative Luftfeuchtigkeit: max. 95%, Geräuschpegel: max. 70 dB(A), EMC/EMI-abgeschirmt",
+    "legalDisclaimers": "Technische Änderungen der Produkte sowie Änderungen im Inhalt dieses Dokuments behalten wir uns jederzeit ohne Vorankündigung vor. Bei Bestellungen sind die jeweils vereinbarten Beschaffenheiten maßgebend. Die ABB AG übernimmt keinerlei Verantwortung für eventuelle Fehler oder Unvollständigkeiten in diesem Dokument. Wir behalten uns alle Rechte an diesem Dokument und den darin enthaltenen Gegenständen und Abbildungen vor. Vervielfältigung, Bekanntgabe an Dritte oder Verwertung seines Inhaltes - auch von Teilen - ist ohne vorherige schriftliche Zustimmung durch die ABB AG verboten.",
+    "supportedUseCases": "Druckguss, Lichtbogenschweißen, Maschinenbedienung, Materialhandhabung, Montage, Spritzguss, Verpacken",
+    "deploymentEnvironment": "raue Umgebungen und anspruchsvolle Arbeitszyklen, Gießerei-Umgebungen"
+  }
+}

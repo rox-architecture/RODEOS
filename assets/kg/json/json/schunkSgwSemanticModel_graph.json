@@ -1,0 +1,33 @@
+{
+  "_source_file": "schunkSgwSemanticModel.json",
+  "_asset_type": "rodeos:Model",
+  "_title": "SCHUNK Winkelgreifer SGW Product Catalog",
+  "_identifier": "SGW 40, SGW 50, SGW 64",
+  "properties": {
+    "dcterms:title": "SCHUNK Winkelgreifer SGW Product Catalog",
+    "dcterms:type": "Product Catalog",
+    "dcterms:publisher": "SCHUNK GmbH & Co. KG",
+    "dcterms:identifier": "SGW 40, SGW 50, SGW 64",
+    "dcterms:description": "Technical documentation for SCHUNK's SGW series of lightweight, corrosion-resistant angle grippers, including specifications, features, and accessories.",
+    "dcat:keyword": "angle gripper, pneumatic gripper, lightweight, corrosion-resistant, plastic housing, industrial automation",
+    "dcat:contactPoint": "SCHUNK GmbH & Co. KG, Bahnhofstr. 106 - 134, D-74348 Lauffen/Neckar, Tel. +49-7133-103-0, Fax +49-7133-103-2399, info@de.schunk.com, schunk.com",
+    "rodeos:modelType": "Document Analysis",
+    "language": "de",
+    "documentationURL": "schunk.com",
+    "relatedAssets": "Druckerhaltungsventil SDV-P, Induktiver Näherungsschalter",
+    "contactEmail": "info@de.schunk.com",
+    "contactPhone": "+49-7133-103-0",
+    "businessDomain": "Spann- und Greiftechnik",
+    "countryOfOrigin": "D",
+    "manufacturerName": "SCHUNK GmbH & Co. KG",
+    "manufacturerArticleNumber": "0305204, 0305205, 0305206, 0305207, 0305208, 0305209",
+    "manufacturerProductDesignation": "Winkelgreifer SGW",
+    "productImages": "img-0.jpeg, img-1.jpeg, img-2.jpeg, img-3.jpeg, img-4.jpeg, img-5.jpeg, img-6.jpeg, img-7.jpeg, img-8.jpeg, img-9.jpeg, img-10.jpeg, img-11.jpeg, img-12.jpeg, img-13.jpeg, img-14.jpeg, img-15.jpeg, img-16.jpeg, img-17.jpeg, img-18.jpeg, img-19.jpeg, img-20.jpeg, img-21.jpeg, img-22.jpeg, img-23.jpeg, img-24.jpeg, img-25.jpeg, img-26.jpeg, img-27.jpeg, img-28.jpeg, img-29.jpeg",
+    "temperatureRange": "5 / 90",
+    "performanceMetrics": "Wiederholgenauigkeit: 0.1 mm",
+    "conditionsOfOperation": "sauberen und leicht verschmutzten Umgebungen",
+    "conformanceCertificates": "ISO 8573-1:2010",
+    "operationalContext": "Roboterhandling mit Greifeinheit zum Be- und Entladen von runden Kunststoffhülsen",
+    "supportedUseCases": "Beladen von Werkzeugmaschinen"
+  }
+}

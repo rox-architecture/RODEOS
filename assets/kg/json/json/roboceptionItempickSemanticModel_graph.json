@@ -1,0 +1,26 @@
+{
+  "_source_file": "roboceptionItempickSemanticModel.json",
+  "_asset_type": "rodeos:Service",
+  "_title": "ItemPick API Documentation",
+  "_identifier": "",
+  "properties": {
+    "dcterms:title": "ItemPick API Documentation",
+    "dcterms:type": "API Documentation",
+    "dcterms:publisher": "Roboception GmbH",
+    "dcterms:description": "Documentation outlining the return codes and functionalities of the rc_cube Edge Computer's API, specifically for the ItemPick and BoxPick modules.",
+    "dcat:version": "May 2025",
+    "dcat:keyword": "API, ItemPick,robotic perception",
+    "rodeos:usedModels": "TEXTURED_BOX",
+    "rodeos:serviceTypeMain": "Detection, Picking and Grasping",
+    "rodeos:serviceType": "ItemPick Module Services",
+    "dcat:endpointURL": "http://<host>/api/v2/pipelines/<0,1,2,3>/nodes/rc_boxpick/services/detect_items",
+    "rodeos:inputDataType": "JSON",
+    "rodeos:outputDataType": "JSON",
+    "dcat:endpointDescription": "Service to detect rectangles and compute grasp points.",
+    "language": "de",
+    "relatedAssets": "ItemPick, ItemPickAI, LoadCarrier",
+    "creator": "Roboception GmbH",
+    "manufacturerName": "Roboception GmbH",
+    "manufacturerProductDesignation": "rc_cube Edge Computer"
+  }
+}

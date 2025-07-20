@@ -30,6 +30,12 @@ help:
 	@echo "  1. PDF → Markdown (Mistral API)"
 	@echo "  2. Markdown → Chunked (Context analysis)"
 	@echo "  3. Chunked → Semantic Model (RODEOS extraction)"
+	@echo "  4. Models → Knowledge Graph (Graph generation - batch only)"
+	@echo ""
+	@echo "Knowledge Graph Commands:"
+	@echo "  make kg                                 # Generate knowledge graph (remote)"
+	@echo "  make kg-local                           # Generate knowledge graph (local)"
+	@echo "  make kg-open                            # Open knowledge graph visualization"
 
 # Process single PDF file (remote)
 .PHONY: process
@@ -84,10 +90,14 @@ process-batch:
 		echo "Processing $$pdf with Mistral API..."; \
 		uv run src/informationExtraction/mistralApiExtraction.py "$$pdf" || echo "Failed: $$pdf"; \
 	done
-	@echo "💭 Step 2/3: Contextualization (remote: $(REMOTE_MODEL))"
+	@echo "💭 Step 2/4: Contextualization (remote: $(REMOTE_MODEL))"
 	@uv run src/contextualEnrichment/context.py --batch --model $(REMOTE_MODEL)
-	@echo "🎯 Step 3/3: Semantic Model Extraction (remote: $(REMOTE_MODEL))"
+	@echo "🎯 Step 3/4: Semantic Model Extraction (remote: $(REMOTE_MODEL))"
 	@uv run src/extractInformation/extraction.py --batch --model $(REMOTE_MODEL)
+	@echo "🔗 Step 4/4: Knowledge Graph Generation (remote: $(REMOTE_MODEL))"
+	@uv run src/knowledgeGraphGeneration/kg.py --model $(REMOTE_MODEL)
+	@echo "🌐 Opening knowledge graph visualization..."
+	@open assets/kg/knowledge_graph.html || xdg-open assets/kg/knowledge_graph.html || echo "Please open assets/kg/knowledge_graph.html manually"
 	@echo "✅ Remote batch pipeline completed"
 
 # Process all PDF files (local)
@@ -109,11 +119,39 @@ process-batch-local:
 		echo "Processing $$pdf with local extraction..."; \
 		uv run src/informationExtraction/localDoclingExtraction.py "$$pdf" --enhanced || echo "Failed: $$pdf"; \
 	done
-	@echo "💭 Step 2/3: Contextualization (local: $(LOCAL_MODEL))"
+	@echo "💭 Step 2/4: Contextualization (local: $(LOCAL_MODEL))"
 	@uv run src/contextualEnrichment/context.py --batch --local --model $(LOCAL_MODEL)
-	@echo "🎯 Step 3/3: Semantic Model Extraction (local: $(LOCAL_MODEL))"
+	@echo "🎯 Step 3/4: Semantic Model Extraction (local: $(LOCAL_MODEL))"
 	@uv run src/extractInformation/extraction.py --batch --local --model $(LOCAL_MODEL)
+	@echo "🔗 Step 4/4: Knowledge Graph Generation (local: $(LOCAL_MODEL))"
+	@uv run src/knowledgeGraphGeneration/kg.py --local --model $(LOCAL_MODEL)
+	@echo "🌐 Opening knowledge graph visualization..."
+	@open assets/kg/knowledge_graph.html || xdg-open assets/kg/knowledge_graph.html || echo "Please open assets/kg/knowledge_graph.html manually"
 	@echo "✅ Local batch pipeline completed"
+
+# Generate knowledge graph (remote)
+.PHONY: kg
+kg:
+	@echo "🔗 Generating knowledge graph (remote: $(REMOTE_MODEL))"
+	@uv run src/knowledgeGraphGeneration/kg.py --model $(REMOTE_MODEL)
+	@echo "✅ Knowledge graph generation completed"
+
+# Generate knowledge graph (local)
+.PHONY: kg-local
+kg-local:
+	@echo "🔗 Generating knowledge graph (local: $(LOCAL_MODEL))"
+	@uv run src/knowledgeGraphGeneration/kg.py --local --model $(LOCAL_MODEL)
+	@echo "✅ Knowledge graph generation completed"
+
+# Open knowledge graph visualization
+.PHONY: kg-open
+kg-open:
+	@if [ -f "assets/kg/knowledge_graph.html" ]; then \
+		echo "🌐 Opening knowledge graph visualization..."; \
+		open assets/kg/knowledge_graph.html || xdg-open assets/kg/knowledge_graph.html || echo "Please open assets/kg/knowledge_graph.html manually"; \
+	else \
+		echo "❌ No knowledge graph found. Run 'make kg' or 'make kg-local' first."; \
+	fi
 
 # Clean generated files
 .PHONY: clean
@@ -123,6 +161,7 @@ clean:
 	@rm -rf assets/markdown/*_DOCLING_*.md
 	@rm -rf assets/markdown/*_CHUNKED.md
 	@rm -rf assets/models/*.json
+	@rm -rf assets/kg/*
 	@rm -rf src/contextualEnrichment/prompts/*.md
 	@echo "✅ Cleanup completed"
 
@@ -133,4 +172,5 @@ status:
 	@echo "PDF files: $$(ls -1 $(PDF_DIR)/*.pdf 2>/dev/null | wc -l)"
 	@echo "Extracted markdowns: $$(ls -1 $(MARKDOWN_DIR)/*_MISTRAL.md $(MARKDOWN_DIR)/*_DOCLING_*.md 2>/dev/null | wc -l)"
 	@echo "Chunked markdowns: $$(ls -1 $(MARKDOWN_DIR)/*_CHUNKED.md 2>/dev/null | wc -l)"
-	@echo "Semantic models: $$(ls -1 assets/models/*.json 2>/dev/null | wc -l)" 
+	@echo "Semantic models: $$(ls -1 assets/models/*.json 2>/dev/null | wc -l)"
+	@echo "Knowledge graphs: $$(ls -1 assets/kg/*.html assets/kg/*.json 2>/dev/null | wc -l)" 

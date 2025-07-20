@@ -215,7 +215,7 @@ Für den Fall einer robotergeführten Kamera ist es abhängig von pose..frame un
 <|end_chunk_20|><|start_chunk_21|>
 ## LoadCarrier
 
-Das BoxPick-Modul nutzt die Funktionalität zur Load Carrier Erkennung aus dem LoadCarrier Modul (rc. load. carrier, Abschnitt 6.3.2) mit den Laufzeitparametern, die für dieses Modul festgelegt wurden. Wenn sich jedoch mehrere Load Carrier in der Szene befinden, die zu der angegebenen Load Carrier ID passen, wird nur einer davon zurückgeliefert. In diesem Fall sollte eine 3D Region of Interest gesetzt werden, um sicherzustellen, dass immer derselbe Load Carrier für das BoxPick-Modul verwendet wird.
+Das BoxPick-Modul nutzt die Funktionalität zur Load Carrier Erkennung aus dem LoadCarrier Modul (rc.load.carrier, Abschnitt 6.3.2) mit den Laufzeitparametern, die für dieses Modul festgelegt wurden. Wenn sich jedoch mehrere Load Carrier in der Szene befinden, die zu der angegebenen Load Carrier ID passen, wird nur einer davon zurückgeliefert. In diesem Fall sollte eine 3D Region of Interest gesetzt werden, um sicherzustellen, dass immer derselbe Load Carrier für das BoxPick-Modul verwendet wird.
 
 Der Load Carrier wird verwendet um Fehldetektionen zu filtern, wenn BoxPick mit einem Objektmodell vom Typ TEXTURED_BOX aufgerufen wird, und alle drei Dimensionen $x, y$ und $z$ angegeben werden. In diesem Fall werden intern 3D Boxen generiert, indem die erkannten Rechtecken um die fehlende Dimension erweitert werden. Es werden dann nur die erkannten Rechtecke zurückgeliefert, bei denen die entsprechende 3D Box vollständig im Load Carrier enthalten ist.
 <|end_chunk_21|><|start_chunk_22|>
@@ -914,27 +914,25 @@ Die Definition der Response mit jeweiligen Datentypen ist:
 }
 ```
 
-<|end_chunk_78|><|start_chunk_79|>
- set_preferred_orientation 
-
+set_preferred_orientation
 speichert die bevorzugte TCP-Orientierung zum Berechnen der Erreichbarkeit der Greifpunkte, die zur Filterung und optional zur Sortierung der vom detect..object Service zurückgelieferten Greifpunkte verwendet wird (siehe Setzen der bevorzugten TCP-Orientierung, Abschnitt 6.3.5.4).
-<|end_chunk_79|><|start_chunk_80|>
-## Details
+<|end_chunk_78|><|start_chunk_79|>
+ Details 
 
 Dieser Service kann wie folgt aufgerufen werden.
-<|end_chunk_80|><|start_chunk_81|>
+<|end_chunk_79|><|start_chunk_80|>
 ## API Version 2
 
 PUT http://<host>/api/v2/pipelines/<0,1,2,3>/nodes/rc_boxpick/services/set_preferred_ ...orientation
-<|end_chunk_81|><|start_chunk_82|>
+<|end_chunk_80|><|start_chunk_81|>
 ## API Version 1 (veraltet)
 
 PUT http://<host>/api/v1/nodes/rc_boxpick/services/set_preferred_orientation
-<|end_chunk_82|><|start_chunk_83|>
+<|end_chunk_81|><|start_chunk_82|>
 ## Request
 
 Die Definition der Request-Argumente mit jeweiligen Datentypen ist:
-<|end_chunk_83|><|start_chunk_84|>
+<|end_chunk_82|><|start_chunk_83|>
 ### Page 24
 ```
 {
@@ -950,7 +948,7 @@ Die Definition der Request-Argumente mit jeweiligen Datentypen ist:
 }
 ```
 
-<|end_chunk_84|><|start_chunk_85|>
+<|end_chunk_83|><|start_chunk_84|>
  Response 
 
 Die Definition der Response mit jeweiligen Datentypen ist:
@@ -969,23 +967,23 @@ Die Definition der Response mit jeweiligen Datentypen ist:
 
 get_preferred_orientation
 gibt die bevorzugte TCP-Orientierung zurück, die für die Filterung und optional für die Sortierung der vom detect_object Service zurückgelieferten Greifpunkte verwendet wird (siehe Setzen der bevorzugten TCP-Orientierung, Abschnitt 6.3.5.4).
-<|end_chunk_85|><|start_chunk_86|>
+<|end_chunk_84|><|start_chunk_85|>
 ## Details
 
 Dieser Service kann wie folgt aufgerufen werden.
-<|end_chunk_86|><|start_chunk_87|>
+<|end_chunk_85|><|start_chunk_86|>
 ## API Version 2
 
 PUT http://<host>/api/v2/pipelines/<0,1,2,3>/nodes/rc_boxpick/services/get_preferred_ $\rightarrow$ orientation
-<|end_chunk_87|><|start_chunk_88|>
+<|end_chunk_86|><|start_chunk_87|>
 ## API Version 1 (veraltet)
 
 PUT http://<host>/api/v1/nodes/rc_boxpick/services/get_preferred_orientation
-<|end_chunk_88|><|start_chunk_89|>
+<|end_chunk_87|><|start_chunk_88|>
 ## Request
 
 Dieser Service hat keine Argumente.
-<|end_chunk_89|><|start_chunk_90|>
+<|end_chunk_88|><|start_chunk_89|>
 ## Response
 
 Die Definition der Response mit jeweiligen Datentypen ist:
@@ -1001,7 +999,7 @@ Die Definition der Response mit jeweiligen Datentypen ist:
             "z": "float64"
     },
 ```
-<|end_chunk_90|><|start_chunk_91|>
+<|end_chunk_89|><|start_chunk_90|>
 ### Page 25
 (Fortsetzung der vorherigen Seite)
 
@@ -1017,19 +1015,19 @@ Die Definition der Response mit jeweiligen Datentypen ist:
 
 set_sorting_strategies
 speichert die gewählte Strategie zur Sortierung der Greifpunkte, die vom compute_grasps Service zurückgeliefert werden (siehe Berechnung der Greifpunkte, Abschnitt 6.3.5.3).
-<|end_chunk_91|><|start_chunk_92|>
+<|end_chunk_90|><|start_chunk_91|>
  Details 
 
 Dieser Service kann wie folgt aufgerufen werden.
-<|end_chunk_92|><|start_chunk_93|>
+<|end_chunk_91|><|start_chunk_92|>
 ## API Version 2
 
 PUT http://<host>/api/v2/pipelines/<0,1,2,3>/nodes/rc_boxpick/services/set_sorting_ $\ldots$ strategies
-<|end_chunk_93|><|start_chunk_94|>
+<|end_chunk_92|><|start_chunk_93|>
 ## API Version 1 (veraltet)
 
 PUT http://<host>/api/v1/nodes/rc_boxpick/services/set_sorting_strategies
-<|end_chunk_94|><|start_chunk_95|>
+<|end_chunk_93|><|start_chunk_94|>
 ## Request
 
 Nur eine Sortierstrategie darf einen Gewichtswert weight größer als 0 haben. Wenn alle Werte für weight auf 0 gesetzt sind, wird die Standardsortierstrategie verwendet.
@@ -1061,7 +1059,7 @@ Die Definition der Request-Argumente mit jeweiligen Datentypen ist:
     },
     "gravity": {
 ```
-<|end_chunk_95|><|start_chunk_96|>
+<|end_chunk_94|><|start_chunk_95|>
 ### Page 26
 (Fortsetzung der vorherigen Seite)
 
@@ -1075,7 +1073,7 @@ Die Definition der Request-Argumente mit jeweiligen Datentypen ist:
 }
 ```
 
-<|end_chunk_96|><|start_chunk_97|>
+<|end_chunk_95|><|start_chunk_96|>
  Response 
 
 Die Definition der Response mit jeweiligen Datentypen ist:
@@ -1094,23 +1092,23 @@ Die Definition der Response mit jeweiligen Datentypen ist:
 
 get_sorting_strategies
 gibt die gewählte Sortierstrategie zurück, die zur Sortierung der vom compute-grasps Service zurückgelieferten Greifpunkte verwendet wird (siehe Berechnung der Greifpunkte, Abschnitt 6.3.5.3).
-<|end_chunk_97|><|start_chunk_98|>
+<|end_chunk_96|><|start_chunk_97|>
 ## Details
 
 Dieser Service kann wie folgt aufgerufen werden.
-<|end_chunk_98|><|start_chunk_99|>
+<|end_chunk_97|><|start_chunk_98|>
 ## API Version 2
 
 PUT http://<host>/api/v2/pipelines/<0,1,2,3>/nodes/rc_boxpick/services/get_sorting_ $\ldots$ strategies
-<|end_chunk_99|><|start_chunk_100|>
+<|end_chunk_98|><|start_chunk_99|>
 ## API Version 1 (veraltet)
 
 PUT http://<host>/api/v1/nodes/rc_boxpick/services/get_sorting_strategies
-<|end_chunk_100|><|start_chunk_101|>
+<|end_chunk_99|><|start_chunk_100|>
 ## Request
 
 Dieser Service hat keine Argumente.
-<|end_chunk_101|><|start_chunk_102|>
+<|end_chunk_100|><|start_chunk_101|>
 ## Response
 
 Wenn alle Werte für weight 0 sind, wird die Standardsortierstrategie verwendet.
@@ -1129,7 +1127,7 @@ Die Definition der Response mit jeweiligen Datentypen ist:
         },
         "weight": "float64"
 ```
-<|end_chunk_102|><|start_chunk_103|>
+<|end_chunk_101|><|start_chunk_102|>
 ### Page 27
 (Fortsetzung der vorherigen Seite)
 
@@ -1161,23 +1159,23 @@ Die Definition der Response mit jeweiligen Datentypen ist:
 
 start
 startet das Modul und versetzt es in den Zustand RUNNING.
-<|end_chunk_103|><|start_chunk_104|>
+<|end_chunk_102|><|start_chunk_103|>
  Details 
 
 Dieser Service kann wie folgt aufgerufen werden.
-<|end_chunk_104|><|start_chunk_105|>
+<|end_chunk_103|><|start_chunk_104|>
 ## API Version 2
 
 PUT http://<host>/api/v2/pipelines/<0,1,2,3>/nodes/rc_boxpick/services/start
-<|end_chunk_105|><|start_chunk_106|>
+<|end_chunk_104|><|start_chunk_105|>
 ## API Version 1 (veraltet)
 
 PUT http://<host>/api/v1/nodes/rc_boxpick/services/start
-<|end_chunk_106|><|start_chunk_107|>
+<|end_chunk_105|><|start_chunk_106|>
 ## Request
 
 Dieser Service hat keine Argumente.
-<|end_chunk_107|><|start_chunk_108|>
+<|end_chunk_106|><|start_chunk_107|>
 ## Response
 
 Es kann vorkommen, dass der Zustandsübergang noch nicht vollständig abgeschlossen ist, wenn die Serviceantwort generiert wird. In diesem Fall liefert diese den entsprechenden, sich von IDLE unterscheidenden Zustand zurück.
@@ -1192,26 +1190,26 @@ Die Definition der Response mit jeweiligen Datentypen ist:
     }
 }
 ```
-<|end_chunk_108|><|start_chunk_109|>
+<|end_chunk_107|><|start_chunk_108|>
 ### Page 28
 stoppt das Modul und versetzt es in den Zustand IDLE.
-<|end_chunk_109|><|start_chunk_110|>
+<|end_chunk_108|><|start_chunk_109|>
  Details 
 
 Dieser Service kann wie folgt aufgerufen werden.
-<|end_chunk_110|><|start_chunk_111|>
+<|end_chunk_109|><|start_chunk_110|>
 ## API Version 2
 
 PUT http://<host>/api/v2/pipelines/<0,1,2,3>/nodes/rc_boxpick/services/stop
-<|end_chunk_111|><|start_chunk_112|>
+<|end_chunk_110|><|start_chunk_111|>
 ## API Version 1 (veraltet)
 
 PUT http://<host>/api/v1/nodes/rc_boxpick/services/stop
-<|end_chunk_112|><|start_chunk_113|>
+<|end_chunk_111|><|start_chunk_112|>
 ## Request
 
 Dieser Service hat keine Argumente.
-<|end_chunk_113|><|start_chunk_114|>
+<|end_chunk_112|><|start_chunk_113|>
 ## Response
 
 Es kann vorkommen, dass der Zustandsübergang noch nicht vollständig abgeschlossen ist, wenn die Serviceantwort generiert wird. In diesem Fall liefert diese den entsprechenden, sich von IDLE unterscheidenden Zustand zurück.
@@ -1230,19 +1228,19 @@ Die Definition der Response mit jeweiligen Datentypen ist:
 
 trigger_dump
 speichert die Detektion auf dem angeschlossenen USB Speicher, die dem übergebenen Zeitstempel entspricht, oder die letzte, falls kein Zeitstempel angegeben wurde.
-<|end_chunk_114|><|start_chunk_115|>
+<|end_chunk_113|><|start_chunk_114|>
 ## Details
 
 Dieser Service kann wie folgt aufgerufen werden.
-<|end_chunk_115|><|start_chunk_116|>
+<|end_chunk_114|><|start_chunk_115|>
 ## API Version 2
 
 PUT http://<host>/api/v2/pipelines/<0,1,2,3>/nodes/rc_boxpick/services/trigger_dump
-<|end_chunk_116|><|start_chunk_117|>
+<|end_chunk_115|><|start_chunk_116|>
 ## API Version 1 (veraltet)
 
 PUT http://<host>/api/v1/nodes/rc_boxpick/services/trigger_dump
-<|end_chunk_117|><|start_chunk_118|>
+<|end_chunk_116|><|start_chunk_117|>
 ## Request
 
 Die Definition der Request-Argumente mit jeweiligen Datentypen ist:
@@ -1256,7 +1254,7 @@ Die Definition der Request-Argumente mit jeweiligen Datentypen ist:
             "sec": "int32"
         }
 ```
-<|end_chunk_118|><|start_chunk_119|>
+<|end_chunk_117|><|start_chunk_118|>
 ### Page 29
 (Fortsetzung der vorherigen Seite)
 
@@ -1265,7 +1263,7 @@ Die Definition der Request-Argumente mit jeweiligen Datentypen ist:
 }
 ```
 
-<|end_chunk_119|><|start_chunk_120|>
+<|end_chunk_118|><|start_chunk_119|>
  Response 
 
 Die Definition der Response mit jeweiligen Datentypen ist:
@@ -1284,23 +1282,23 @@ Die Definition der Response mit jeweiligen Datentypen ist:
 
 reset_defaults
 stellt die Werkseinstellungen der Parameter und der Sortierstrategie dieses Moduls wieder her und wendet sie an („factory reset").
-<|end_chunk_120|><|start_chunk_121|>
+<|end_chunk_119|><|start_chunk_120|>
 ## Details
 
 Dieser Service kann wie folgt aufgerufen werden.
-<|end_chunk_121|><|start_chunk_122|>
+<|end_chunk_120|><|start_chunk_121|>
 ## API Version 2
 
 PUT http://<host>/api/v2/pipelines/<0,1,2,3>/nodes/rc_boxpick/services/reset_defaults
-<|end_chunk_122|><|start_chunk_123|>
+<|end_chunk_121|><|start_chunk_122|>
 ## API Version 1 (veraltet)
 
 PUT http://<host>/api/v1/nodes/rc_boxpick/services/reset_defaults
-<|end_chunk_123|><|start_chunk_124|>
+<|end_chunk_122|><|start_chunk_123|>
 ## Request
 
 Dieser Service hat keine Argumente.
-<|end_chunk_124|><|start_chunk_125|>
+<|end_chunk_123|><|start_chunk_124|>
 ## Response
 
 Die Definition der Response mit jeweiligen Datentypen ist:
@@ -1317,11 +1315,11 @@ Die Definition der Response mit jeweiligen Datentypen ist:
 }
 ```
 
-<|end_chunk_125|><|start_chunk_126|>
+<|end_chunk_124|><|start_chunk_125|>
 ### 6.3.5.9 Rückgabecodes
 
 Zusätzlich zur eigentlichen Serviceantwort gibt jeder Service einen sogenannten return_code bestehend aus einem Integer-Wert und einer optionalen Textnachricht zurück. Erfolgreiche Service-Anfragen werden mit einem Wert von 0 quittiert. Positive Werte bedeuten, dass die Service-Anfrage zwar erfolgreich bearbeitet wurde, aber zusätzliche Informationen zur Verfügung stehen. Negative Werte bedeuten, dass Fehler aufgetreten sind. Für den Fall, dass mehrere Rückgabewerte zutreffend wären, wird
-<|end_chunk_126|><|start_chunk_127|>
+<|end_chunk_125|><|start_chunk_126|>
 ### Page 30
 der kleinste zurückgegeben, und die entsprechenden Textnachrichten werden in return. code.message akkumuliert.
 
@@ -1348,19 +1346,18 @@ Tab. 6.39: Rückgabecodes der Services des BoxPick-Moduls
 | 112 | Die Detektionen eines oder mehrerer Cluster wurden verworfen, da die minimale <br> Clusterabdeckung nicht erreicht wurde. |
 | 300 | Ein gültiges robot. pose-Argument wurde angegeben, ist aber nicht erforderlich. |
 | 999 | Zusätzliche Hinweise für die Anwendungsentwicklung |
-<|end_chunk_127|><|start_chunk_128|>
+<|end_chunk_126|><|start_chunk_127|>
  6.3.5.10 BoxPick Template API" 
 
 BoxPick Templates sind nur mit der +Match-Erweiterung von BoxPick verfügbar. Für den Upload, Download, das Auflisten und Löschen von Templates werden spezielle REST-API-Endpunkte zur Verfügung gestellt. Templates können auch über die Web GUI hoch- und runtergeladen werden. Die Templates beinhalten die Greifpunkte und Posenvorgaben, falls Greifpunkte oder Posenvorgaben konfiguriert wurden. Bis zu 100 Templates können gleichzeitig auf dem rc_cube gespeichert werden.
-<|end_chunk_128|><|start_chunk_129|>
-## GET /templates/rc_boxpick
 
+GET /templates/rc_boxpick
 listet alle rc_cadmatch-Templates auf.
-<|end_chunk_129|><|start_chunk_130|>
+<|end_chunk_127|><|start_chunk_128|>
 ## Musteranfrage
 
 GET /api/v2/templates/rc_boxpick HTTP/1.1
-<|end_chunk_130|><|start_chunk_131|>
+<|end_chunk_128|><|start_chunk_129|>
 ## Musterantwort
 
 ```
@@ -1373,30 +1370,30 @@ Content-Type: application/json
 }
 ```
 
-<|end_chunk_131|><|start_chunk_132|>
+<|end_chunk_129|><|start_chunk_130|>
 ## Antwort-Header
-<|end_chunk_132|><|start_chunk_133|>
+<|end_chunk_130|><|start_chunk_131|>
 ### Page 31
 - Content-Type - application/json application/ubjson
 
-<|end_chunk_133|><|start_chunk_134|>
+<|end_chunk_131|><|start_chunk_132|>
  Statuscodes 
 
 - 200 OK - Erfolgreiche Verarbeitung (Rückgabewert: Array der Templates)
 - 404 Not Found - Modul nicht gefunden
 
-<|end_chunk_134|><|start_chunk_135|>
+<|end_chunk_132|><|start_chunk_133|>
 ## Referenzierte Datenmodelle
 
 - Template (Abschnitt 7.3.4)
 
 GET /templates/rc_boxpick/\{id\}
 ruft ein rc_boxpick-Template ab. Falls der angefragte Content-Typ application/octet-stream ist, wird das Template als Datei zurückgegeben.
-<|end_chunk_135|><|start_chunk_136|>
+<|end_chunk_133|><|start_chunk_134|>
 ## Musteranfrage
 
 GET /api/v2/templates/rc_boxpick/<id> HTTP/1.1
-<|end_chunk_136|><|start_chunk_137|>
+<|end_chunk_134|><|start_chunk_135|>
 ## Musterantwort
 
 ```
@@ -1407,35 +1404,35 @@ Content-Type: application/json
 }
 ```
 
-<|end_chunk_137|><|start_chunk_138|>
+<|end_chunk_135|><|start_chunk_136|>
 ## Parameter
 
 - id (string) - ID des Templates (obligatorisch)
 
-<|end_chunk_138|><|start_chunk_139|>
+<|end_chunk_136|><|start_chunk_137|>
 ## Antwort-Header
 
 - Content-Type - application/json application/ubjson application/octet-stream
 
-<|end_chunk_139|><|start_chunk_140|>
+<|end_chunk_137|><|start_chunk_138|>
 ## Statuscodes
 
 - 200 OK - Erfolgreiche Verarbeitung (Rückgabewert: Template)
 - 404 Not Found - Modul oder Template wurden nicht gefunden.
 
-<|end_chunk_140|><|start_chunk_141|>
+<|end_chunk_138|><|start_chunk_139|>
 ## Referenzierte Datenmodelle
 
 - Template (Abschnitt 7.3.4)
 
 PUT /templates/rc_boxpick/\{id\}
 erstellt oder aktualisiert ein rc_boxpick-Template.
-<|end_chunk_141|><|start_chunk_142|>
+<|end_chunk_139|><|start_chunk_140|>
 ## Musteranfrage
 
 PUT /api/v2/templates/rc_boxpick/<id> HTTP/1.1
 Accept: multipart/form-data application/json
-<|end_chunk_142|><|start_chunk_143|>
+<|end_chunk_140|><|start_chunk_141|>
 ## Musterantwort
 
 HTTP/1.1 200 OK
@@ -1443,27 +1440,27 @@ Content-Type: application/json
 \{
 "id": "string"
 \}
-<|end_chunk_143|><|start_chunk_144|>
+<|end_chunk_141|><|start_chunk_142|>
 ## Parameter
 
 - id (string) - ID des Templates (obligatorisch)
-<|end_chunk_144|><|start_chunk_145|>
-### Page 32<|end_chunk_145|><|start_chunk_146|>
+<|end_chunk_142|><|start_chunk_143|>
+### Page 32<|end_chunk_143|><|start_chunk_144|>
  Formularparameter 
 
 - file - Template-Datei (obligatorisch)
 
-<|end_chunk_146|><|start_chunk_147|>
+<|end_chunk_144|><|start_chunk_145|>
 ## Anfrage-Header
 
 - Accept - multipart/form-data application/json
 
-<|end_chunk_147|><|start_chunk_148|>
+<|end_chunk_145|><|start_chunk_146|>
 ## Antwort-Header
 
 - Content-Type - application/json application/ubjson
 
-<|end_chunk_148|><|start_chunk_149|>
+<|end_chunk_146|><|start_chunk_147|>
 ## Statuscodes
 
 - 200 OK - Erfolgreiche Verarbeitung (Rückgabewert: Template)
@@ -1472,48 +1469,48 @@ Content-Type: application/json
 - 404 Not Found - Modul oder Template wurden nicht gefunden.
 - 413 Request Entity Too Large - Template ist zu groß.
 
-<|end_chunk_149|><|start_chunk_150|>
+<|end_chunk_147|><|start_chunk_148|>
 ## Referenzierte Datenmodelle
 
 - Template (Abschnitt 7.3.4)
 
 DELETE /templates/rc_boxpick/\{id\}
 entfernt ein rc_boxpick-Template.
-<|end_chunk_150|><|start_chunk_151|>
+<|end_chunk_148|><|start_chunk_149|>
 ## Musteranfrage
 
 DELETE /api/v2/templates/rc_boxpick/<id> HTTP/1.1
 Accept: application/json application/ubjson
-<|end_chunk_151|><|start_chunk_152|>
+<|end_chunk_149|><|start_chunk_150|>
 ## Parameter
 
 - id (string) - ID des Templates (obligatorisch)
 
-<|end_chunk_152|><|start_chunk_153|>
+<|end_chunk_150|><|start_chunk_151|>
 ## Anfrage-Header
 
 - Accept - application/json application/ubjson
 
-<|end_chunk_153|><|start_chunk_154|>
+<|end_chunk_151|><|start_chunk_152|>
 ## Antwort-Header
 
 - Content-Type - application/json application/ubjson
 
-<|end_chunk_154|><|start_chunk_155|>
+<|end_chunk_152|><|start_chunk_153|>
 ## Statuscodes
 
 - 200 OK - Erfolgreiche Verarbeitung
 - 403 Forbidden - Verboten, z.B. weil keine gültige Lizenz für das CADMatchModul vorliegt.
 - 404 Not Found - Modul oder Template wurden nicht gefunden.
 
-<|end_chunk_155|><|start_chunk_156|>
+<|end_chunk_153|><|start_chunk_154|>
 ### 6.3.6 SilhouetteMatch
-<|end_chunk_156|><|start_chunk_157|>
+<|end_chunk_154|><|start_chunk_155|>
 ### 6.3.6.1 Einführung
 
 Das SilhouetteMatch-Modul ist ein optionales Modul, welches intern auf dem rc_cube läuft, und benötigt eine eigene Lizenz (Abschnitt 9.5), welche erworben werden muss.
 
-Bemerkung: Dieses Modul ist nicht verfügbar in Kamerapipelines vom Typ zivid oder blaze.<|end_chunk_157|>
+Bemerkung: Dieses Modul ist nicht verfügbar in Kamerapipelines vom Typ zivid oder blaze.<|end_chunk_155|>
 </document>
 
 Respond only with the IDs of the chunks where you believe a split should occur. 

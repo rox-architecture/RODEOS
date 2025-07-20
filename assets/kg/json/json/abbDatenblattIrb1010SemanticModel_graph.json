@@ -1,0 +1,33 @@
+{
+  "_source_file": "abbDatenblattIrb1010SemanticModel.json",
+  "_asset_type": "rodeos:Model",
+  "_title": "IRB 1010 Industrial Robot Documentation",
+  "_identifier": "IRB 1010-1.5/0.37",
+  "properties": {
+    "dcterms:title": "IRB 1010 Industrial Robot Documentation",
+    "dcterms:type": "Technical Specification",
+    "dcterms:publisher": "ABB AG",
+    "dcterms:identifier": "IRB 1010-1.5/0.37",
+    "dcterms:description": "Document detailing the specifications, features, and applications of ABB's IRB 1010 industrial robot, designed for high-precision manufacturing of small electronics and educational use.",
+    "dcat:keyword": "IRB 1010, ABB, industrial robot, small electronics, wearables, precision, manufacturing, education, OmniCore, Robot Control Mate",
+    "dcat:contactPoint": "ABB AG, Division Robotics, Grüner Weg 6, 61169 Friedberg, Telefon: +49 6031 85-0, E-Mail: robotics@de.abb.com",
+    "rodeos:modelType": "Object Detection",
+    "language": "de",
+    "creator": "ABB AG",
+    "contactEmail": "robotics@de.abb.com",
+    "contactPhone": "+49 6031 85-0",
+    "businessDomain": "Robotics",
+    "manufacturerName": "ABB",
+    "manufacturerProductDesignation": "IRB 1010",
+    "productImages": "img-0.jpeg, img-1.jpeg, img-2.jpeg",
+    "productClassName": "Industrieroboter",
+    "powerRequirements": "200-600 V, 50/60 Hz",
+    "temperatureRange": "+5°C bis +45°C",
+    "conditionsOfOperation": "Umgebungstemperatur: +5°C bis +45°C, Relative Luftfeuchtigkeit: max. 95%, Geräuschpegel: max. 70 dB (A)",
+    "conformanceCertificates": "EMC/EMI-abgeschirmt, ESD-zertifiziert",
+    "legalDisclaimers": "Technische Änderungen der Produkte sowie Änderungen im Inhalt dieses Dokuments behalten wir uns jederzeit ohne Vorankündigung vor. Bei Bestellungen sind die jeweils vereinbarten Beschaffenheiten maßgebend. Die ABB AG übernimmt keinerlei Verantwortung für eventuelle Fehler oder Unvollständigkeiten in diesem Dokument. Wir behalten uns alle Rechte an diesem Dokument und den darin enthaltenen Gegenständen und Abbildungen vor. Vervielfältigung, Bekanntgabe an Dritte oder Verwertung seines Inhaltes - auch von Teilen - ist ohne vorherige schriftliche Zustimmung durch die ABB AG verboten.",
+    "operationalContext": "Materialhandhabung, Pick-and-Place-Aufgaben, Klebstoffauftrag, Entfernung von Folien und Montage",
+    "supportedUseCases": "Fertigung von Kleinelektronik, Bildungseinrichtungen",
+    "deploymentEnvironment": "Industrie, Bildung"
+  }
+}

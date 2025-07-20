@@ -633,6 +633,281 @@ CRITICAL REQUIREMENTS:
         return {}
 
 
+def extract_metadata_fields(chunks: List[Dict[str, str]], model: str, use_remote: bool = True) -> Dict[str, str]:
+    """
+    Extract comprehensive metadata fields from the document content.
+    
+    Args:
+        chunks: List of content chunks with context
+        model: Model to use (OpenRouter or local Ollama)
+        use_remote: Whether to use remote API via OpenRouter
+        
+    Returns:
+        Dictionary with metadata fields (only non-empty values)
+    """
+    # Combine all content for comprehensive analysis
+    full_content = ""
+    for chunk in chunks:
+        full_content += f"Context: {chunk['context']}\n"
+        full_content += f"Content: {chunk['content']}\n\n"
+    
+    prompt = f"""
+Extract detailed metadata from the following document content. Only extract information that is explicitly mentioned or clearly derivable from the content. DO NOT make up or hallucinate any information.
+
+CONTENT:
+{full_content}
+
+Extract the following metadata fields and respond with ONLY a valid JSON object. Use empty string for any field not found or not clearly mentioned in the content:
+
+{{
+    "language": "Document language (e.g., 'en', 'de', 'fr')",
+    "creationDate": "Creation date if mentioned",
+    "lastModifiedDate": "Last modified date if mentioned",
+    "accessRights": "Access rights or permissions mentioned",
+    "documentationURL": "URL to documentation if mentioned",
+    "relatedAssets": "Related assets or components mentioned",
+    "multilingualTitle": "Title in other languages if mentioned",
+    "multilingualDescription": "Description in other languages if mentioned",
+    
+    "creator": "Creator or author name",
+    "contactEmail": "Contact email address",
+    "contactPhone": "Contact phone number",
+    "companyLogo": "Company logo URL or reference",
+    "businessDomain": "Business domain or industry sector",
+    "countryOfOrigin": "Country of origin",
+    "legalEntityID": "Legal entity identifier",
+    
+    "manufacturerName": "Manufacturer name",
+    "manufacturerArticleNumber": "Manufacturer article number",
+    "manufacturerProductDesignation": "Product designation",
+    "manufacturerOrderCode": "Order code",
+    "versionNumber": "Version number",
+    "revisionNumber": "Revision number",
+    "productImages": "Product images URLs or references",
+    "productImageNotes": "Notes about product images",
+    
+    "classificationSystem": "Classification system used",
+    "classificationSystemVersion": "Classification system version",
+    "classificationSystemURL": "Classification system URL",
+    "productClassID": "Product class identifier",
+    "productClassCodedName": "Product class coded name",
+    "productClassName": "Product class name",
+    "referenceToTechnicalPropertyArea": "Technical property area reference",
+    
+    "runtimeEnvironment": "Runtime environment requirements",
+    "compatibleHardware": "Compatible hardware",
+    "operatingSystemRequirements": "OS requirements",
+    "softwareDependencies": "Software dependencies",
+    "inputShape": "Input shape specifications",
+    "latency": "Latency requirements or measurements",
+    "inputConstraints": "Input constraints",
+    "supportedProtocols": "Supported protocols",
+    "powerRequirements": "Power requirements",
+    "temperatureRange": "Operating temperature range",
+    "memoryRequirements": "Memory requirements",
+    "cpuGpuSpecs": "CPU/GPU specifications",
+    "executionPlatform": "Execution platform",
+    
+    "modelType": "Type of model (if applicable)",
+    "modelProvider": "Model provider",
+    "modelVersion": "Model version",
+    "trainingDatasetReference": "Training dataset reference",
+    "trainingMethod": "Training method used",
+    "performanceMetrics": "Performance metrics",
+    "modelBiasInformation": "Model bias information",
+    "confidenceScoreThresholds": "Confidence score thresholds",
+    
+    "semanticID": "Semantic identifier",
+    "supplementalSemanticIDs": "Supplemental semantic IDs",
+    "conceptDescriptions": "Concept descriptions",
+    "ontologicalAlignment": "Ontological alignment",
+    "broaderNarrowerConceptLinks": "Broader/narrower concept links",
+    "referenceToDomainVocabulary": "Domain vocabulary reference",
+    
+    "usageRestrictions": "Usage restrictions or limitations",
+    "safetyWarnings": "Safety warnings",
+    "conditionsOfOperation": "Operating conditions",
+    "notSuitableFor": "Not suitable for (applications/conditions)",
+    "validityDate": "Validity date",
+    "conformanceCertificates": "Conformance certificates",
+    "privacySensitivityLevel": "Privacy sensitivity level",
+    "legalDisclaimers": "Legal disclaimers",
+    
+    "operationalContext": "Operational context",
+    "geographicDeploymentScope": "Geographic deployment scope",
+    "localizationRequirements": "Localization requirements",
+    "supportedUseCases": "Supported use cases",
+    "deploymentEnvironment": "Deployment environment",
+    "integrationComplexity": "Integration complexity",
+    
+    "digitalTwinAASReference": "Digital twin AAS reference",
+    "compliesWith": "Standards compliance",
+    "linksTo": "Links to other resources",
+    "isReplacedBy": "Replaced by",
+    "replaces": "Replaces",
+    "sameAs": "Same as",
+    "canBeCombinedWith": "Can be combined with",
+    "hasDependencyOn": "Has dependency on",
+    "providesExtensionFor": "Provides extension for"
+}}
+
+CRITICAL REQUIREMENTS:
+- ONLY extract information explicitly mentioned in the content
+- Use empty string for fields not found in the content
+- Do not make assumptions or generate information
+- Be precise and factual
+- Respond with ONLY valid JSON, no explanations or markdown formatting
+- Do not include ```json``` markers or any other text
+"""
+    
+    try:
+        if use_remote:
+            metadata = call_openrouter_api_with_json_validation(prompt, model, temperature=0.1)
+        else:
+            metadata = call_model_local_with_json_validation(prompt, model, temperature=0.1)
+        
+        # Filter out empty values
+        filtered_metadata = {k: v for k, v in metadata.items() if v and v.strip()}
+        
+        return filtered_metadata
+        
+    except Exception as e:
+        print(f"⚠️  Warning: Failed to extract metadata fields: {e}")
+        return {}
+
+
+def enhance_submodel_with_content(chunks: List[Dict[str, str]], submodel: Dict, model: str, use_remote: bool = True) -> Dict:
+    """
+    Enhance the selected submodel by populating its fields with relevant content from the document.
+    
+    Args:
+        chunks: List of content chunks with context
+        submodel: The selected submodel JSON structure
+        model: Model to use (OpenRouter or local Ollama)
+        use_remote: Whether to use remote API via OpenRouter
+        
+    Returns:
+        Enhanced submodel with populated fields (only non-empty values)
+    """
+    if not submodel:
+        return {}
+    
+    # Combine all content for analysis
+    full_content = ""
+    for chunk in chunks:
+        full_content += f"Context: {chunk['context']}\n"
+        full_content += f"Content: {chunk['content']}\n\n"
+    
+    # Convert submodel to a flat structure for easier prompting
+    submodel_fields = {}
+    
+    def flatten_dict(d, parent_key='', sep=':'):
+        """Flatten nested dictionary structure"""
+        items = []
+        for k, v in d.items():
+            new_key = f"{parent_key}{sep}{k}" if parent_key else k
+            if isinstance(v, dict):
+                items.extend(flatten_dict(v, new_key, sep=sep).items())
+            else:
+                items.append((new_key, v))
+        return dict(items)
+    
+    submodel_fields = flatten_dict(submodel)
+    
+    # Create field descriptions for the prompt
+    field_descriptions = []
+    for field_key, field_value in submodel_fields.items():
+        if isinstance(field_value, str):
+            # Create a description based on the field name
+            field_desc = field_key.replace(':', ' ').replace('_', ' ').title()
+            field_descriptions.append(f'"{field_key}": "{field_desc} (extract relevant value from document)"')
+    
+    fields_json = "{\n    " + ",\n    ".join(field_descriptions) + "\n}"
+    
+    prompt = f"""
+Enhance the following submodel by extracting relevant information from the document content. Only populate fields where you can find explicit, relevant information in the content. DO NOT make up or hallucinate any information.
+
+DOCUMENT CONTENT:
+{full_content}
+
+SUBMODEL FIELDS TO POPULATE:
+{fields_json}
+
+Instructions:
+1. Analyze the document content carefully
+2. For each field, extract ONLY information that is explicitly mentioned and relevant
+3. Use empty string for fields where no relevant information is found
+4. Be precise and factual - do not infer or assume information
+5. Keep values concise but informative
+6. Only include fields that have meaningful content
+
+Respond with ONLY a valid JSON object containing the populated fields:
+"""
+    
+    try:
+        if use_remote:
+            enhanced_fields = call_openrouter_api_with_json_validation(prompt, model, temperature=0.1)
+        else:
+            enhanced_fields = call_model_local_with_json_validation(prompt, model, temperature=0.1)
+        
+        # Filter out empty values and reconstruct nested structure
+        populated_fields = {}
+        for k, v in enhanced_fields.items():
+            if v:  # Check if value exists
+                if isinstance(v, str) and v.strip():  # String values must be non-empty after strip
+                    populated_fields[k] = v.strip()
+                elif not isinstance(v, str) and v:  # Non-string values (like numbers, booleans) just need to exist
+                    populated_fields[k] = v
+        
+        if not populated_fields:
+            return {}
+        
+        # Reconstruct nested structure
+        def unflatten_dict(flat_dict, sep=':'):
+            """Reconstruct nested dictionary from flattened structure"""
+            result = {}
+            for key, value in flat_dict.items():
+                parts = key.split(sep)
+                d = result
+                for part in parts[:-1]:
+                    if part not in d:
+                        d[part] = {}
+                    d = d[part]
+                d[parts[-1]] = value
+            return result
+        
+        enhanced_submodel = unflatten_dict(populated_fields)
+        
+        # Ensure we maintain the original structure but only with populated fields
+        def merge_structures(original, enhanced):
+            """Merge enhanced content back into original structure, keeping only populated fields"""
+            if not isinstance(original, dict) or not isinstance(enhanced, dict):
+                return enhanced if enhanced else None
+            
+            result = {}
+            for key in original.keys():
+                if key in enhanced:
+                    if isinstance(original[key], dict):
+                        merged = merge_structures(original[key], enhanced[key])
+                        if merged:
+                            result[key] = merged
+                    else:
+                        if enhanced[key]:
+                            if isinstance(enhanced[key], str):
+                                if enhanced[key].strip():
+                                    result[key] = enhanced[key].strip()
+                            else:
+                                result[key] = enhanced[key]
+            return result if result else {}
+        
+        final_submodel = merge_structures(submodel, enhanced_submodel)
+        return final_submodel
+        
+    except Exception as e:
+        print(f"⚠️  Warning: Failed to enhance submodel: {e}")
+        return {}
+
+
 def create_submodel_descriptions() -> Path:
     """
     Create a markdown file describing all available submodels.
@@ -803,8 +1078,25 @@ def create_semantic_model(file_path: Path, model: str = "openai/gpt-4o-mini", us
         submodel = select_submodel(chunks, asset_type, model, use_remote)
         if submodel:
             print("✓ Submodel selected")
+            
+            # Step 4a: Enhance submodel with document content
+            print("🔧 Enhancing submodel with document content...")
+            enhanced_submodel = enhance_submodel_with_content(chunks, submodel, model, use_remote)
+            if enhanced_submodel:
+                print(f"✓ Submodel enhanced with {len(str(enhanced_submodel))} characters of content")
+                submodel = enhanced_submodel
+            else:
+                print("ℹ️  No submodel enhancements applied")
         else:
             print("ℹ️  No suitable submodel found")
+        
+        # Step 5: Extract comprehensive metadata fields
+        print("📋 Extracting comprehensive metadata...")
+        metadata_fields = extract_metadata_fields(chunks, model, use_remote)
+        if metadata_fields:
+            print(f"✓ Extracted {len(metadata_fields)} metadata fields")
+        else:
+            print("ℹ️  No additional metadata extracted")
         
         # Build the semantic model
         semantic_model = {
@@ -821,6 +1113,7 @@ def create_semantic_model(file_path: Path, model: str = "openai/gpt-4o-mini", us
                 "assets": {
                     asset_type: asset_metadata
                 },
+                "metadata": metadata_fields,
                 "submodels": [submodel] if submodel else []
             }
         }
