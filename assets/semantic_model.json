@@ -54,12 +54,16 @@
                    "instances":{
                       "rodeos:roboter":{
                          "mandatory":{
-                            
+                            "rodeos:payload":"xsd:decimal",
+                            "rodeos:maxVelocity":"xsd:decimal",
+                            "rodeos:DOF":"xsd:integer",
+                            "rodeos:operatingVoltage":"xsd:decimal",
+                            "rodeos:interface":"xsd:text"
                          },
                          "optional":{
-                            "rodeos:payload":"xsd:decimal",
                             "rodeos:reach":"xsd:decimal",
-                            "rodeos:accuracy":"xsd:decimal"
+                            "rodeos:accuracy":"xsd:decimal",
+                            "rodeos:minVelocity":"xsd:decimal"
                          },
                          "instances":{
                             "rodeos:mobileRobot":{
@@ -73,31 +77,39 @@
                                "instances":{
                                   "rodeos:agv":{
                                      "mandatory":{
-                                        
+                                        "rodeos:aasSubmodel":"xsd:anyUri"
                                      },
                                      "optional":{
-                                        "rodeos:guidanceSystem":"xsd:text",
-                                        "rodeos:loadCapacity":"xsd:decimal"
+                                        "rodeos:operatingTime":"xsd:duration"
+                                     },
+                                     "defaultValues":{
+                                        "rodeos:aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
                                      }
                                   },
                                   "rodeos:amr":{
                                      "mandatory":{
-                                        
+                                        "rodeos:aasSubmodel":"xsd:anyUri"
                                      },
                                      "optional":{
-                                        "rodeos:navigationSystem":"xsd:text",
-                                        "rodeos:autonomyLevel":"xsd:integer"
+                                        "rodeos:environmentType":"enum[indoor, outdoor, hybrid]"
+                                     },
+                                     "defaultValues":{
+                                        "rodeos:aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
                                      }
                                   }
                                }
                             },
                             "rodeos:stationaryRobot":{
                                "mandatory":{
-                                  
+                                  "rodeos:mounting":"xsd:text",
+                                  "rodeos:positionAccuracy":"xsd:decimal",
+                                  "rodeos:repeatability":"xsd:decimal",
+                                  "rodeos:isCobot":"xsd:boolean"
                                },
                                "optional":{
                                   "rodeos:workspaceVolume":"xsd:decimal",
-                                  "rodeos:repeatability":"xsd:decimal"
+                                  "rodeos:pedestal":"xsd:boolean",
+                                  "rodeos:kinematicModel":"xsd:text"
                                },
                                "instances":{
                                   "rodeos:parallelRobot":{
@@ -111,20 +123,25 @@
                                      "instances":{
                                         "rodeos:hexapod":{
                                            "mandatory":{
-                                              
+                                              "rodeos:aasSubmodel":"xsd:anyUri"
                                            },
                                            "optional":{
-                                              "rodeos:legCount":"xsd:integer",
-                                              "rodeos:actuatorType":"xsd:text"
+                                              
+                                           },
+                                           "defaultValues":{
+                                              "rodeos:aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
                                            }
                                         },
                                         "rodeos:delta":{
                                            "mandatory":{
-                                              
+                                              "rodeos:aasSubmodel":"xsd:anyUri"
                                            },
                                            "optional":{
-                                              "rodeos:armLength":"xsd:decimal",
-                                              "rodeos:baseDiameter":"xsd:decimal"
+                                              "rodeos:pickRateMax":"xsd:decimal",
+                                              "rodeos:workspaceShape":"skos:concept"
+                                           },
+                                           "defaultValues":{
+                                              "rodeos:aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
                                            }
                                         }
                                      }
@@ -140,48 +157,61 @@
                                      "instances":{
                                         "rodeos:cylindrical":{
                                            "mandatory":{
-                                              
+                                              "rodeos:aasSubmodel":"xsd:anyUri"
                                            },
                                            "optional":{
-                                              "rodeos:radialReach":"xsd:decimal",
-                                              "rodeos:verticalStroke":"xsd:decimal"
+                                              "rodeos:radialTravel":"xsd:decimal",
+                                              "rodeos:verticalTravelZ":"xsd:decimal"
+                                           },
+                                           "defaultValues":{
+                                              "rodeos:aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
                                            }
                                         },
                                         "rodeos:articulated":{
                                            "mandatory":{
-                                              
+                                              "rodeos:aasSubmodel":"xsd:anyUri"
                                            },
                                            "optional":{
-                                              "rodeos:degreesOfFreedom":"xsd:integer",
-                                              "rodeos:jointLimits":"xsd:text"
+                                              "rodeos:wristPayload":"xsd:decimal"
+                                           },
+                                           "defaultValues":{
+                                              "rodeos:aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
                                            }
                                         },
                                         "rodeos:scara":{
                                            "mandatory":{
-                                              
+                                              "rodeos:aasSubmodel":"xsd:anyUri"
                                            },
                                            "optional":{
-                                              "rodeos:horizontalReach":"xsd:decimal",
-                                              "rodeos:verticalStroke":"xsd:decimal"
+                                              "rodeos:planarReachRadius":"xsd:decimal",
+                                              "rodeos:verticalStrokeZ":"xsd:decimal"
+                                           },
+                                           "defaultValues":{
+                                              "rodeos:aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
                                            }
                                         },
                                         "rodeos:cartesian":{
                                            "mandatory":{
-                                              
+                                              "rodeos:aasSubmodel":"xsd:anyUri"
                                            },
                                            "optional":{
-                                              "rodeos:xAxisTravel":"xsd:decimal",
-                                              "rodeos:yAxisTravel":"xsd:decimal",
-                                              "rodeos:zAxisTravel":"xsd:decimal"
+                                              "rodeos:linearTravelXYZ":"schema:quantitativeValue",
+                                              "rodeos:linearAxisSpeedMax":"xsd:decimal"
+                                           },
+                                           "defaultValues":{
+                                              "rodeos:aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
                                            }
                                         },
                                         "rodeos:polarSpherical":{
                                            "mandatory":{
-                                              
+                                              "rodeos:aasSubmodel":"xsd:anyUri"
                                            },
                                            "optional":{
-                                              "rodeos:radialReach":"xsd:decimal",
-                                              "rodeos:angularRange":"xsd:decimal"
+                                              "rodeos:radialRange":"schema:quantitativeValue",
+                                              "rodeos:polarAngleRange":"schema:quantitativeValue"
+                                           },
+                                           "defaultValues":{
+                                              "rodeos:aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
                                            }
                                         }
                                      }
@@ -192,121 +222,184 @@
                       },
                       "rodeos:tooling":{
                          "mandatory":{
-                            
+                            "rodeos:supplyVoltage":"xsd:decimal",
+                            "rodeos:interfaceProtocol":"xsd:text",
+                            "rodeos:manufacturer":"xsd:text"
                          },
                          "optional":{
                             "rodeos:toolWeight":"xsd:decimal",
                             "rodeos:toolMaterial":"xsd:text"
                          },
                          "instances":{
-                            "rodeos:welding":{
+                            "rodeos:weldingTool":{
                                "mandatory":{
-                                  
+                                  "rodeos:weldingType":"enum[MAG, MIG, SpotWeldingGuns, LaserWelding]",
+                                  "rodeos:aasSubmodel":"xsd:anyUri"
                                },
                                "optional":{
-                                  "rodeos:weldingType":"xsd:text",
-                                  "rodeos:powerRating":"xsd:decimal"
+                                  "rodeos:weldingCurrent":"xsd:decimal",
+                                  "rodeos:voltage":"xsd:decimal",
+                                  "rodeos:wireFeedRate":"xsd:decimal",
+                                  "rodeos:electrodeLife":"xsd:decimal"
+                               },
+                               "defaultValues":{
+                                  "rodeos:aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
                                }
                             },
-                            "rodeos:gripping":{
+                            "rodeos:gripperTool":{
                                "mandatory":{
-                                  
+                                  "rodeos:gripperType":"enum[MechanicalParallel, Vacuum, Magnetic, Soft, Adhesion, ToolChanger]",
+                                  "rodeos:aasSubmodel":"xsd:anyUri"
                                },
                                "optional":{
-                                  "rodeos:gripForce":"xsd:decimal",
-                                  "rodeos:gripType":"xsd:text"
+                                  "rodeos:gripForceMax":"xsd:decimal",
+                                  "rodeos:strokePerFinger":"xsd:decimal",
+                                  "rodeos:objectSizeRange":"xsd:text",
+                                  "rodeos:interfaceMechanical":"xsd:text"
+                               },
+                               "defaultValues":{
+                                  "rodeos:aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
                                }
                             },
                             "rodeos:cuttingSeparationTool":{
                                "mandatory":{
-                                  
+                                  "rodeos:cuttingSeparationToolType":"enum[Shears, LaserCutter, PlasmaCutter, MillingSpindles]",
+                                  "rodeos:aasSubmodel":"xsd:anyUri"
                                },
                                "optional":{
                                   "rodeos:cuttingSpeed":"xsd:decimal",
-                                  "rodeos:toolDiameter":"xsd:decimal"
+                                  "rodeos:spindleSpeed":"xsd:decimal",
+                                  "rodeos:energySource":"xsd:text",
+                                  "rodeos:toolWear":"xsd:decimal"
+                               },
+                               "defaultValues":{
+                                  "rodeos:aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
                                }
                             },
                             "rodeos:screwingAssemblyTool":{
                                "mandatory":{
-                                  
+                                  "rodeos:screwingAssemblyToolType":"enum[Screwdrivers, RivetingTools, AdhesiveDispensingSystem]",
+                                  "rodeos:aasSubmodel":"xsd:anyUri"
                                },
                                "optional":{
                                   "rodeos:torqueRange":"xsd:decimal",
-                                  "rodeos:screwSize":"xsd:text"
+                                  "rodeos:rotationSpeed":"xsd:decimal",
+                                  "rodeos:dispensingRate":"xsd:decimal"
+                               },
+                               "defaultValues":{
+                                  "rodeos:aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
                                }
                             },
                             "rodeos:grindingPolishingFinishingTool":{
                                "mandatory":{
-                                  
+                                  "rodeos:grindingPolishingFinishingToolType":"enum[Grinders, Polishers, Brushes]",
+                                  "rodeos:aasSubmodel":"xsd:anyUri"
                                },
                                "optional":{
-                                  "rodeos:gritSize":"xsd:integer",
-                                  "rodeos:rotationSpeed":"xsd:decimal"
+                                  "rodeos:rotationSpeed":"xsd:decimal",
+                                  "rodeos:abrasiveForce":"xsd:decimal",
+                                  "rodeos:toolDiameter":"xsd:decimal",
+                                  "rodeos:wearRate":"xsd:decimal"
+                               },
+                               "defaultValues":{
+                                  "rodeos:aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
                                }
                             },
                             "rodeos:dispensingAdditiveTool":{
                                "mandatory":{
-                                  
+                                  "rodeos:dispensingAdditiveToolType":"enum[SealantAdhesiveDispensers, PaintPowderCoaters, ExtrusionPrintHeads]",
+                                  "rodeos:aasSubmodel":"xsd:anyUri"
                                },
                                "optional":{
-                                  "rodeos:flowRate":"xsd:decimal",
-                                  "rodeos:materialType":"xsd:text"
+                                  "rodeos:materialFlowRate":"xsd:decimal",
+                                  "rodeos:nozzleSize":"xsd:decimal",
+                                  "rodeos:layerThickness":"xsd:decimal",
+                                  "rodeos:temperature":"xsd:decimal"
+                               },
+                               "defaultValues":{
+                                  "rodeos:aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
                                }
                             },
                             "rodeos:measuringInspectionTool":{
                                "mandatory":{
-                                  
+                                  "rodeos:measuringInspectionToolType":"enum[3DProbes, InlineGauges, VisionInspectionCameras, NDTTools]",
+                                  "rodeos:aasSubmodel":"xsd:anyUri"
                                },
                                "optional":{
                                   "rodeos:measurementAccuracy":"xsd:decimal",
-                                  "rodeos:measurementRange":"xsd:decimal"
+                                  "rodeos:range":"xsd:decimal",
+                                  "rodeos:repeatability":"xsd:decimal"
+                               },
+                               "defaultValues":{
+                                  "rodeos:aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
                                }
                             },
                             "rodeos:specialTool":{
                                "mandatory":{
-                                  
+                                  "rodeos:specialToolType":"enum[ToolChangers, MultiTools, HybridEndEffectors]",
+                                  "rodeos:aasSubmodel":"xsd:anyUri"
                                },
                                "optional":{
-                                  "rodeos:customFunction":"xsd:text",
-                                  "rodeos:specialRequirements":"xsd:text"
+                                  "rodeos:interfaceStandard":"xsd:text",
+                                  "rodeos:changeoverTime":"xsd:decimal",
+                                  "rodeos:numberOfPorts":"xsd:integer"
+                               },
+                               "defaultValues":{
+                                  "rodeos:aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
                                }
                             }
                          }
                       },
                       "rodeos:controller":{
                          "mandatory":{
-                            
                          },
                          "optional":{
-                            "rodeos:processingPower":"xsd:decimal",
-                            "rodeos:memoryCapacity":"xsd:decimal"
+                            "rodeos:cpuArchitecture":"xsd:text",
+                            "rodeos:processorClock":"xsd:decimal",
+                            "rodeos:realTimeSupport":"xsd:boolean",
+                            "rodeos:communicationInterfaces":"skos:concept",
+                            "rodeos:powerSupply":"xsd:text"
                          },
                          "instances":{
                             "rodeos:robotController":{
                                "mandatory":{
-                                  
+                                  "rodeos:aasSubmodel":"xsd:anyUri"
                                },
                                "optional":{
-                                  "rodeos:controlCycles":"xsd:integer",
-                                  "rodeos:supportedProtocols":"List[xsd:text]"
+                                  "rodeos:maxAxesSupported":"xsd:integer",
+                                  "rodeos:driveInterfaces":"skos:concept"
+                               },
+                               "defaultValues":{
+                                  "rodeos:aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
                                }
                             },
                             "rodeos:plc":{
                                "mandatory":{
-                                  
+                                  "rodeos:aasSubmodel":"xsd:anyUri"
                                },
                                "optional":{
-                                  "rodeos:ioPoints":"xsd:integer",
-                                  "rodeos:programmingLanguage":"xsd:text"
+                                  "rodeos:scanTimeTypical":"xsd:duration",
+                                  "rodeos:programMemory":"xsd:decimal",
+                                  "rodeos:ioCapacity":"xsd:text"
+                               },
+                               "defaultValues":{
+                                  "rodeos:aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
                                }
                             },
                             "rodeos:ipc":{
                                "mandatory":{
-                                  
+                                  "rodeos:aasSubmodel":"xsd:anyUri",
+                                  "rodeos:formFactor":"skos:concept"
                                },
                                "optional":{
-                                  "rodeos:operatingSystem":"xsd:text",
-                                  "rodeos:interfaceTypes":"List[xsd:text]"
+                                  "rodeos:ramSize":"xsd:decimal",
+                                  "rodeos:storageCapacity":"xsd:decimal",
+                                  "rodeos:gpuAccelerators":"xsd:text",
+                                  "rodeos:expansionSlots":"xsd:text",
+                                  "rodeos:industrialRatings":"xsd:text"
+                               },
+                               "defaultValues":{
+                                  "rodeos:aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
                                }
                             }
                          }
@@ -317,61 +410,92 @@
                          },
                          "optional":{
                             "rodeos:measurementRange":"xsd:decimal",
-                            "rodeos:resolution":"xsd:decimal"
+                            "rodeos:measurementAccuracy":"xsd:decimal",
+                            "rodeos:samplingRate":"xsd:decimal",
+                            "rodeos:fieldOfView":"xsd:decimal"
                          },
                          "instances":{
                             "rodeos:visionSensor":{
                                "mandatory":{
-                                  
+                                  "rodeos:aasSubmodel":"xsd:anyUri"
                                },
                                "optional":{
                                   "rodeos:resolution":"xsd:text",
-                                  "rodeos:frameRate":"xsd:integer"
+                                  "rodeos:frameRate":"xsd:decimal",
+                                  "rodeos:fieldOfView":"schema:quantitativeValue",
+                                  "rodeos:interfaceType":"skos:concept"
+                               },
+                               "defaultValues":{
+                                  "rodeos:aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
                                }
                             },
-                            "rodeos:lidarsensor":{
+                            "rodeos:lidarSensor":{
                                "mandatory":{
-                                  
+                                  "rodeos:aasSubmodel":"xsd:anyUri"
                                },
                                "optional":{
-                                  "rodeos:scanRange":"xsd:decimal",
-                                  "rodeos:angularResolution":"xsd:decimal"
+                                  "rodeos:scanRate":"xsd:decimal",
+                                  "rodeos:angularResolution":"xsd:decimal",
+                                  "rodeos:maxRange":"xsd:decimal",
+                                  "rodeos:fieldOfView":"schema:quantitativeValue",
+                                  "rodeos:numChannels":"xsd:integer"
+                               },
+                               "defaultValues":{
+                                  "rodeos:aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
                                }
                             },
                             "rodeos:forceTorqueSensor":{
                                "mandatory":{
-                                  
+                                  "rodeos:aasSubmodel":"xsd:anyUri"
                                },
                                "optional":{
-                                  "rodeos:forceRange":"xsd:decimal",
-                                  "rodeos:torqueRange":"xsd:decimal"
+                                  "rodeos:forceRange":"schema:quantitativeValue",
+                                  "rodeos:torqueRange":"schema:quantitativeValue",
+                                  "rodeos:resolutionForce":"xsd:decimal",
+                                  "rodeos:resolutionTorque":"xsd:decimal"
+                               },
+                               "defaultValues":{
+                                  "rodeos:aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
                                }
                             },
                             "rodeos:tactileProximitySensor":{
                                "mandatory":{
-                                  
+                                  "rodeos:aasSubmodel":"xsd:anyUri"
                                },
                                "optional":{
-                                  "rodeos:detectionRange":"xsd:decimal",
-                                  "rodeos:sensitivity":"xsd:decimal"
+                                  "rodeos:sensingPrinciple":"skos:concept",
+                                  "rodeos:sensingRange":"schema:quantitativeValue",
+                                  "rodeos:responseTime":"xsd:duration",
+                                  "rodeos:switchingFrequency":"xsd:decimal",
+                                  "rodeos:hysteresis":"xsd:decimal"
+                               },
+                               "defaultValues":{
+                                  "rodeos:aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
                                }
                             },
                             "rodeos:inertialSensor":{
                                "mandatory":{
-                                  
+                                  "rodeos:aasSubmodel":"xsd:anyUri"
                                },
                                "optional":{
-                                  "rodeos:accelerometerRange":"xsd:decimal",
-                                  "rodeos:gyroscopeRange":"xsd:decimal"
+                                  "rodeos:gyroRange":"schema:quantitativeValue",
+                                  "rodeos:accelRange":"schema:quantitativeValue"
+                               },
+                               "defaultValues":{
+                                  "rodeos:aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
                                }
                             },
                             "rodeos:encoder":{
                                "mandatory":{
-                                  
+                                  "rodeos:aasSubmodel":"xsd:anyUri"
                                },
                                "optional":{
-                                  "rodeos:pulsesPerRevolution":"xsd:integer",
-                                  "rodeos:interfaceType":"xsd:text"
+                                  "rodeos:encoderType":"enum[Incremental, Absolute]",
+                                  "rodeos:resolutionCounts":"xsd:integer",
+                                  "rodeos:maxSpeed":"xsd:decimal"
+                               },
+                               "defaultValues":{
+                                  "rodeos:aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
                                }
                             }
                          }
@@ -390,7 +514,7 @@
                       "rodeos:robotOperationSoftware":{
                          "mandatory":{
                             "rodeos:robotOperationSystemType":"enum[ROS1, ROS2, Orcos, vendorSpecificMiddleware]",
-                            "aasSubmodel":"xsd:anyUri"
+                            "rodeos:aasSubmodel":"xsd:anyUri"
                          },
                          "optional":{
                             "rodeos:supportedApis":"List[xsd:anyUri]",
@@ -398,13 +522,13 @@
                             "rodeos:osDependencies":"List[xsd:text]"
                          },
                          "defaultValues":{
-                            "aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
+                            "rodeos:aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
                          }
                       },
                       "rodeos:motionControlSoftware":{
                          "mandatory":{
                             "rodeos:motionControlSystemType":"enum[trajectoryPlanning, inverseKinematicSolvers, servoDriverControl]",
-                            "aasSubmodel":"xsd:anyUri"
+                            "rodeos:aasSubmodel":"xsd:anyUri"
                          },
                          "optional":{
                             "rodeos:supportedRobotTypes":"List[xsd:text]",
@@ -412,55 +536,60 @@
                             "rodeos:dofSupport":"xsd:integer"
                          },
                          "defaultValues":{
-                            "aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
+                            "rodeos:aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
                          }
                       },
                       "rodeos:perceptionVisionSoftware":{
                          "mandatory":{
                             "rodeos:perceptionVisionSoftwareType":"enum[2d3dVisionLibraries, objectDetection, slam]",
-                            "aasSubmodel":"xsd:anyUri"
+                            "rodeos:aasSubmodel":"xsd:anyUri"
                          },
                          "optional":{
-                            
+                            "rodeos:inputFormats":"List[xsd:text]",
+                            "rodeos:mlFrameworks":"List[xsd:text]",
+                            "rodeos:accuracyMetrics":"xsd:text"
                          },
                          "defaultValues":{
-                            "aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
+                            "rodeos:aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
                          }
                       },
                       "rodeos:simulationDigitalTwinSoftware":{
                          "mandatory":{
                             "rodeos:simulationDigitalTwinSoftwareType":"enum[physicsEngine, cadKinematics, digitalTwinConnectors]",
-                            "aasSubmodel":"xsd:anyUri"
+                            "rodeos:aasSubmodel":"xsd:anyUri"
                          },
                          "optional":{
-                            
+                            "rodeos:physicsFidelity":"xsd:text",
+                            "rodeos:supportedRobotModels":"List[xsd:text]",
+                            "rodeos:fileFormatCompatibility":"List[xsd:text]"
                          },
                          "defaultValues":{
-                            "aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
+                            "rodeos:aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
                          }
                       },
                       "rodeos:aiAnalyticsSoftware":{
                          "mandatory":{
-                            "rodeos:aiAnalyticsSoftwareType":"enum[mlModel, dataAnalticsPipeline, reinforcementLearning]",
-                            "aasSubmodel":"xsd:anyUri"
+                            "rodeos:aiAnalyticsSoftwareType":"enum[mlModel, dataAnalyticsPipeline, reinforcementLearning]",
+                            "rodeos:aasSubmodel":"xsd:anyUri"
                          },
                          "optional":{
-                            
+                            "rodeos:modelArchitecture":"xsd:text"
                          },
                          "defaultValues":{
-                            "aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
+                            "rodeos:aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
                          }
                       },
                       "rodeos:integrationOrchestration":{
                          "mandatory":{
                             "rodeos:integrationOrchestrationType":"enum[workflowOrchestration, dataIntegrationMiddleware, mesErpConnector]",
-                            "aasSubmodel":"xsd:anyUri"
+                            "rodeos:aasSubmodel":"xsd:anyUri"
                          },
                          "optional":{
-                            
+                            "rodeos:supportedProtocols":"List[xsd:text]",
+                            "rodeos:deploymentVariants":"List[xsd:text]"
                          },
                          "defaultValues":{
-                            "aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
+                            "rodeos:aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
                          }
                       }
                    }
