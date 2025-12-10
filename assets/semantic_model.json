@@ -499,6 +499,24 @@
                                }
                             }
                          }
+                      },
+                      "rodeos:workpieceComponent":{
+                         "mandatory":{
+                            "rodeos:material":"xsd:text",
+                            "rodeos:geometry":"xsd:anyUri",
+                            "rodeos:workpieceType":"enum[blank, milled_part, turned_part, injection_molded_part, assembled_unit, sheet_metal_part, additive_part, casting, test_specimen, custom_part]",
+                            "rodeos:aasSubmodel":"xsd:anyUri"
+                         },
+                         "optional":{
+                            "rodeos:batchId":"xsd:text",
+                            "rodeos:processingState":"skos:concept",
+                            "rodeos:associatedDataset":"xsd:anyUri",
+                            "rodeos:workpieceDimensions":"xsd:text",
+                            "rodeos:serialNumber":"xsd:text"
+                         },
+                         "defaultValues":{
+                            "rodeos:aasSubmodel":"https://raw.githubusercontent.com/admin-shell-io/submodel-templates/refs/heads/main/published/Technical_Data/2/0/IDTA%2002003_Sample_TechnicalData.json"
+                         }
                       }
                    }
                 },
