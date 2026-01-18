@@ -1,0 +1,86 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Universal Robots UR10e Cartesian Robot for Automotive Machine Tending",
+    "dcterms:type": "Industrial Robot",
+    "dcterms:publisher": "Universal Robots A/S",
+    "dcterms:license": "https://www.universal-robots.com/eula",
+    "dcterms:identifier": "UR-10e-CARTESIAN-MT-AUTO-2024",
+    "dcterms:description": "A 6-axis collaborative cartesian robot system designed for machine tending applications in automotive assembly lines. Features 10kg payload capacity, ±0.05mm repeatability, and integrated safety functions compliant with ISO 10218-1.",
+    "dcat:version": "3.12.456",
+    "dcat:keyword": [
+      "cartesian robot",
+      "machine tending",
+      "automotive assembly",
+      "collaborative robot",
+      "UR10e",
+      "industrial automation"
+    ],
+    "dcat:contactPoint": "https://www.universal-robots.com/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "schema:minValue": 500,
+        "schema:maxValue": 850,
+        "schema:unitCode": "MMT",
+        "schema:value": 650
+      },
+      "rodeos:framework": "UR+ Ecosystem"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Universal Robots",
+        "rodeos:hardwareAssetType": "cartesian"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 5.0,
+          "rodeos:maxVelocity": 2.0,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 48.0,
+          "rodeos:interface": "Ethernet/IP, Modbus TCP, TCP/IP Socket",
+          "rodeos:reach": 850.0,
+          "rodeos:accuracy": 0.1,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted",
+            "rodeos:positionAccuracy": 0.05,
+            "rodeos:repeatability": 0.03,
+            "rodeos:isCobot": true,
+            "rodeos:workspaceVolume": 0.5,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "Cartesian (XYZ)"
+          },
+          "child": {
+            "@type": "rodeos:serielRobot",
+            "properties": {
+              "rodeos:jointCount": 6,
+              "rodeos:maxJointSpeed": 180.0
+            },
+            "child": {
+              "@type": "rodeos:cartesian",
+              "properties": {
+                "rodeos:aasSubmodel": "https://example.com/aas/submodels/cartesian/universal-robots/automotive-assembly-machine-tending",
+                "rodeos:linearTravelXYZ": {
+                  "@type": "schema:quantitativeValue",
+                  "schema:value": 1500,
+                  "schema:unitCode": "MMT"
+                },
+                "rodeos:linearAxisSpeedMax": 2.5
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Denso Wave Spot Welding Dataset for Electronics Manufacturing",
+    "dcterms:type": "Dataset",
+    "dcterms:publisher": "Denso Wave Incorporated",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "DENSO-WAVE-SW-2023-D001",
+    "dcterms:description": "Comprehensive dataset containing operational parameters, quality metrics, and performance data from Denso Wave industrial robots performing spot welding in electronics manufacturing applications. Includes weld current, electrode force, cycle times, and quality inspection results.",
+    "dcat:version": "2.1.3",
+    "dcat:keyword": [
+      "spot welding",
+      "industrial robotics",
+      "electronics manufacturing",
+      "quality control",
+      "process optimization",
+      "Denso Wave",
+      "welding parameters",
+      "production data"
+    ],
+    "dcat:contactPoint": "mailto:technical.support@denso-wave.com",
+    "rodeos:coreType": "Dataset"
+  },
+  "child": {
+    "@type": "rodeos:Dataset",
+    "properties": {
+      "dprod:informationSensitivityClassification": "Internal",
+      "dprod:type": "OperationalData",
+      "rodeos:dataFormat": "CSV",
+      "rodeos:isDataproduct": true,
+      "dcat:byteSize": 5242880,
+      "rodeos:dataTypeSchema": "https://densowave.com/schemas/welding_dataset_v1.json",
+      "dcat:checksum": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dcat:endpointDescription": "REST API endpoint providing access to spot welding operational datasets with OAuth2 authentication",
+      "dcat:endpointURL": "https://api.densowave.com/datasets/welding/v1",
+      "dcat:protocol": "HTTPS",
+      "dprod:dataProductOwner": "Manufacturing Data Operations Team - Denso Wave"
+    }
+  }
+}

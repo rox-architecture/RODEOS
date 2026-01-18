@@ -1,0 +1,65 @@
+{
+  "company": "Epson Robotics",
+  "industry": "Automotive assembly",
+  "application": "material transport",
+  "assets": [
+    {
+      "leaf": "rodeos:gripperTool",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:tooling",
+        "rodeos:gripperTool"
+      ],
+      "file": "model_gripperTool.json"
+    },
+    {
+      "leaf": "rodeos:weldingTool",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:tooling",
+        "rodeos:weldingTool"
+      ],
+      "file": "model_weldingTool.json"
+    },
+    {
+      "leaf": "rodeos:amr",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:roboter",
+        "rodeos:mobileRobot",
+        "rodeos:amr"
+      ],
+      "file": "model_amr.json"
+    },
+    {
+      "leaf": "rodeos:cuttingSeparationTool",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:tooling",
+        "rodeos:cuttingSeparationTool"
+      ],
+      "file": "model_cuttingSeparationTool.json"
+    },
+    {
+      "leaf": "rodeos:polarSpherical",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:roboter",
+        "rodeos:stationaryRobot",
+        "rodeos:serielRobot",
+        "rodeos:polarSpherical"
+      ],
+      "file": "model_polarSpherical.json"
+    }
+  ]
+}

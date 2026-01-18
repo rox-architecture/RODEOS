@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "SICK AG Incremental Encoder for Quality Inspection Systems",
+    "dcterms:type": "Sensor",
+    "dcterms:publisher": "SICK AG",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "SICK-ENC-2024-QI-001",
+    "dcterms:description": "High-precision incremental encoder designed for quality inspection applications in electronics manufacturing. Provides accurate position feedback for automated optical inspection systems with resolution up to 5000 pulses per revolution and operating temperature range of -20°C to 85°C.",
+    "dcat:version": "2.1.3",
+    "dcat:keyword": [
+      "incremental encoder",
+      "quality inspection",
+      "position feedback",
+      "electronics manufacturing",
+      "SICK AG",
+      "optical inspection",
+      "industrial sensor"
+    ],
+    "dcat:contactPoint": "https://www.sick.com/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 10000,
+        "unitCode": "PUL",
+        "minValue": 0,
+        "maxValue": 65535,
+        "description": "Absolute encoder with 16-bit resolution"
+      },
+      "rodeos:framework": "SICK HIPERFACE DSL interface protocol"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "SICK AG",
+        "rodeos:hardwareAssetType": "rodeos:encoder"
+      },
+      "child": {
+        "@type": "rodeos:sensor",
+        "properties": {
+          "rodeos:measurementRange": 360.0,
+          "rodeos:measurementAccuracy": 0.001,
+          "rodeos:samplingRate": 10000.0,
+          "rodeos:fieldOfView": 360.0
+        },
+        "child": {
+          "@type": "rodeos:encoder",
+          "properties": {
+            "rodeos:aasSubmodel": "https://example.com/aas/submodels/encoder/12345",
+            "rodeos:encoderType": "Incremental",
+            "rodeos:resolutionCounts": 1024,
+            "rodeos:maxSpeed": 6000.0
+          }
+        }
+      }
+    }
+  }
+}

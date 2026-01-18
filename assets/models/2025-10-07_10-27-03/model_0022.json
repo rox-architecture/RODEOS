@@ -1,0 +1,74 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Staubli Force Torque Sensor for Metal Fabrication Pick-and-Place Applications",
+    "dcterms:type": "sensor",
+    "dcterms:publisher": "Staubli International AG",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "ST-FTS-MF-PNP-001",
+    "dcterms:description": "High-precision 6-axis force torque sensor designed for robotic pick-and-place operations in metal fabrication environments. Features overload protection, temperature compensation, and IP67 rating for industrial durability.",
+    "dcat:version": "2.1.3",
+    "dcat:keyword": [
+      "force sensor",
+      "torque sensor",
+      "robotics",
+      "metal fabrication",
+      "pick-and-place",
+      "industrial automation",
+      "Staubli",
+      "6-axis"
+    ],
+    "dcat:contactPoint": "https://www.staubli.com/en-us/robotics/contact/",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 1000,
+        "unitCode": "N",
+        "minValue": 0,
+        "maxValue": 2000
+      },
+      "rodeos:framework": "Stäubli CS9"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Staubli",
+        "rodeos:hardwareAssetType": "rodeos:forceTorqueSensor"
+      },
+      "child": {
+        "@type": "rodeos:sensor",
+        "properties": {
+          "rodeos:measurementRange": 100.0,
+          "rodeos:measurementAccuracy": 0.25,
+          "rodeos:samplingRate": 1000.0,
+          "rodeos:fieldOfView": 360.0
+        },
+        "child": {
+          "@type": "rodeos:forceTorqueSensor",
+          "properties": {
+            "rodeos:aasSubmodel": "https://industrial-assets.com/aas/staubli/forceTorqueSensor/12345",
+            "rodeos:forceRange": {
+              "@type": "schema:quantitativeValue",
+              "schema:minValue": -1000,
+              "schema:maxValue": 1000,
+              "schema:unitCode": "N"
+            },
+            "rodeos:torqueRange": {
+              "@type": "schema:quantitativeValue",
+              "schema:minValue": -50,
+              "schema:maxValue": 50,
+              "schema:unitCode": "Nm"
+            },
+            "rodeos:resolutionForce": 0.1,
+            "rodeos:resolutionTorque": 0.01
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Epson Robotics PLC Palletizing System for Pharmaceutical Applications",
+    "dcterms:type": "Hardware",
+    "dcterms:publisher": "Epson Robotics",
+    "dcterms:license": "https://global.epson.com/support/license/industrial-robotics.html",
+    "dcterms:identifier": "EPS-PLC-PHARM-PAL-2024-001",
+    "dcterms:description": "Programmable Logic Controller system designed for high-speed palletizing operations in pharmaceutical manufacturing environments. Features GX-Works3 programming environment, IEC 61131-3 compliance, and validated for cGMP requirements.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "PLC",
+      "Palletizing",
+      "Pharmaceutical",
+      "Automation",
+      "Epson Robotics",
+      "Industrial Control",
+      "GMP Compliance",
+      "Material Handling"
+    ],
+    "dcat:contactPoint": "https://www.epsonrobotics.com/support/contact-technical",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 6,
+        "unitCode": "AX",
+        "minValue": 1,
+        "maxValue": 8
+      },
+      "rodeos:framework": "Epson RC+ 7.0"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Epson Robotics",
+        "rodeos:hardwareAssetType": "rodeos:plc"
+      },
+      "child": {
+        "@type": "rodeos:controller",
+        "properties": {
+          "rodeos:cpuArchitecture": "ARM Cortex-A9",
+          "rodeos:processorClock": 1.2,
+          "rodeos:realTimeSupport": true,
+          "rodeos:communicationInterfaces": "Ethernet/IP",
+          "rodeos:powerSupply": "24V DC"
+        },
+        "child": {
+          "@type": "rodeos:plc",
+          "properties": {
+            "rodeos:aasSubmodel": "https://assets.epsonrobotics.com/aas/submodels/plc/pharmaceutical-palletizing/12345",
+            "rodeos:scanTimeTypical": "PT50MS",
+            "rodeos:programMemory": 64.0,
+            "rodeos:ioCapacity": "2048 digital I/O points, 256 analog I/O channels"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Keyence Aerospace Welding Tool for Packing Applications",
+    "dcterms:type": "skos:concept",
+    "dcterms:publisher": "Keyence Corporation",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "KEY-WELD-AERO-PACK-001",
+    "dcterms:description": "High-precision welding tool designed for aerospace packing applications, featuring advanced automation capabilities and compliance with industry standards.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "welding",
+      "aerospace",
+      "packing",
+      "automation",
+      "Keyence",
+      "robotics"
+    ],
+    "dcat:contactPoint": "https://www.keyence.com/contact/",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 0.95,
+        "schema:unitText": "welding accuracy"
+      },
+      "rodeos:framework": "Keyence Aerospace Welding Framework v2.1"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Keyence",
+        "rodeos:hardwareAssetType": "rodeos:weldingTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "EtherNet/IP",
+          "rodeos:manufacturer": "Keyence",
+          "rodeos:toolWeight": 2.5,
+          "rodeos:toolMaterial": "Stainless Steel AISI 304"
+        },
+        "child": {
+          "@type": "rodeos:weldingTool",
+          "properties": {
+            "rodeos:weldingType": "MIG",
+            "rodeos:aasSubmodel": "https://assets.keyence.com/aas/welding-tools/aerospace-mig-welder-2024/submodel",
+            "rodeos:weldingCurrent": 250.5,
+            "rodeos:voltage": 28.2,
+            "rodeos:wireFeedRate": 450.75,
+            "rodeos:electrodeLife": 5000.0
+          }
+        }
+      }
+    }
+  }
+}

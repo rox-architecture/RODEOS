@@ -1,0 +1,29 @@
+{
+  "company": "Rockwell Automation",
+  "industry": "Renewable energy",
+  "application": "assembly",
+  "assets": [
+    {
+      "leaf": "rodeos:agv",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:roboter",
+        "rodeos:mobileRobot",
+        "rodeos:agv"
+      ],
+      "file": "model_agv.json"
+    },
+    {
+      "leaf": "rodeos:perceptionVisionSoftware",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:softwareComponent",
+        "rodeos:perceptionVisionSoftware"
+      ],
+      "file": "model_perceptionVisionSoftware.json"
+    }
+  ]
+}

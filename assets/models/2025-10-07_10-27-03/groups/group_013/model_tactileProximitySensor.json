@@ -1,0 +1,71 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "KUKA Tactile Proximity Sensor for Medical Device Palletizing",
+    "dcterms:type": "sensor",
+    "dcterms:publisher": "KUKA AG",
+    "dcterms:license": "https://www.kuka.com/en-de/terms-and-conditions",
+    "dcterms:identifier": "KUKA-TPS-MEDPAL-2024-001",
+    "dcterms:description": "High-precision tactile proximity sensor designed for medical device palletizing applications. Features sterile-compliant materials, sub-millimeter detection accuracy, and IP67 rating for cleanroom environments. Integrates with KUKA robot controllers via standard IO-Link interface.",
+    "dcat:version": "2.3.1",
+    "dcat:keyword": [
+      "tactile sensor",
+      "proximity detection",
+      "medical devices",
+      "palletizing",
+      "KUKA",
+      "automation",
+      "IO-Link",
+      "cleanroom compatible"
+    ],
+    "dcat:contactPoint": "https://www.kuka.com/en-de/contact/technical-support",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 0.05,
+        "unitCode": "MMT",
+        "minValue": 0.01,
+        "maxValue": 0.1,
+        "description": "Tactile detection range with 0.05mm resolution"
+      },
+      "rodeos:framework": "KUKA.SafeOperation integrated with KUKA.PalletTech for medical device palletizing applications"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "KUKA AG",
+        "rodeos:hardwareAssetType": "tactileProximitySensor"
+      },
+      "child": {
+        "@type": "rodeos:sensor",
+        "properties": {
+          "rodeos:measurementRange": 0.1,
+          "rodeos:measurementAccuracy": 1.0,
+          "rodeos:samplingRate": 10.0,
+          "rodeos:fieldOfView": 500.0
+        },
+        "child": {
+          "@type": "rodeos:tactileProximitySensor",
+          "properties": {
+            "rodeos:aasSubmodel": "https://example.com/aas/submodels/tactileProximitySensor/001",
+            "rodeos:sensingPrinciple": "capacitive",
+            "rodeos:sensingRange": {
+              "value": 20,
+              "unitCode": "MMT",
+              "minValue": 5,
+              "maxValue": 30
+            },
+            "rodeos:responseTime": "PT0.005S",
+            "rodeos:switchingFrequency": 1000,
+            "rodeos:hysteresis": 0.5
+          }
+        }
+      }
+    }
+  }
+}

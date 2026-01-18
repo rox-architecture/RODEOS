@@ -1,0 +1,72 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "WAGO LIDAR Sensor for Renewable Energy Pick-and-Place Automation",
+    "dcterms:type": "Sensor",
+    "dcterms:publisher": "WAGO GmbH",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "WAGO-LIDAR-RE-PNP-001",
+    "dcterms:description": "High-precision LIDAR sensor designed for renewable energy applications, specifically optimized for pick-and-place automation systems. Features environmental resistance, real-time object detection, and industrial-grade reliability.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "LIDAR",
+      "Renewable Energy",
+      "Pick-and-Place",
+      "Automation",
+      "Sensor",
+      "WAGO",
+      "Industrial Robotics"
+    ],
+    "dcat:contactPoint": "mailto:support@wago.com",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 905,
+        "minValue": 850,
+        "maxValue": 950,
+        "unitCode": "NM"
+      },
+      "rodeos:framework": "WAGO PFC200 Series Automation Framework"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "WAGO",
+        "rodeos:hardwareAssetType": "lidarSensor"
+      },
+      "child": {
+        "@type": "rodeos:sensor",
+        "properties": {
+          "rodeos:measurementRange": 30.0,
+          "rodeos:measurementAccuracy": 0.02,
+          "rodeos:samplingRate": 100000.0,
+          "rodeos:fieldOfView": {
+            "@type": "schema:quantitativeValue",
+            "schema:value": 270.0,
+            "schema:unitCode": "DDN"
+          }
+        },
+        "child": {
+          "@type": "rodeos:lidarSensor",
+          "properties": {
+            "rodeos:aasSubmodel": "https://asset-shell.wago.com/renewable-energy/lidar-sensors/pick-and-place/12345678/submodel",
+            "rodeos:scanRate": 25.0,
+            "rodeos:angularResolution": 0.1,
+            "rodeos:maxRange": 200.0,
+            "rodeos:fieldOfView": {
+              "@type": "schema:quantitativeValue",
+              "schema:value": 270.0,
+              "schema:unitCode": "DDN"
+            },
+            "rodeos:numChannels": 16
+          }
+        }
+      }
+    }
+  }
+}

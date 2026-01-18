@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "FANUC Palletizing Welding Tool Component",
+    "dcterms:type": "skos:concept",
+    "dcterms:publisher": "FANUC Corporation",
+    "dcterms:license": "https://www.fanuc.com/legal/software-license",
+    "dcterms:identifier": "FANUC-PWT-2024-PHARM",
+    "dcterms:description": "Industrial welding tool component designed for pharmaceutical palletizing applications, featuring precision control, sanitary design compliance, and integration with FANUC robotic systems for automated material handling.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "welding",
+      "palletizing",
+      "pharmaceutical",
+      "automation",
+      "robotics",
+      "FANUC",
+      "industrial",
+      "material handling"
+    ],
+    "dcat:contactPoint": "https://www.fanuc.com/contact/technical-support",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 7.5,
+        "schema:unitCode": "kg"
+      },
+      "rodeos:framework": "FANUC R-30iB Plus Controller"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "FANUC",
+        "rodeos:hardwareAssetType": "rodeos:weldingTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "DeviceNet",
+          "rodeos:manufacturer": "FANUC",
+          "rodeos:toolWeight": 8.5,
+          "rodeos:toolMaterial": "Stainless Steel 316L"
+        },
+        "child": {
+          "@type": "rodeos:weldingTool",
+          "properties": {
+            "rodeos:weldingType": "MAG",
+            "rodeos:aasSubmodel": "https://example.com/aas/submodels/fanuc-welding-tool-12345",
+            "rodeos:weldingCurrent": 250.5,
+            "rodeos:voltage": 28.0,
+            "rodeos:wireFeedRate": 8.2,
+            "rodeos:electrodeLife": 5000.0
+          }
+        }
+      }
+    }
+  }
+}

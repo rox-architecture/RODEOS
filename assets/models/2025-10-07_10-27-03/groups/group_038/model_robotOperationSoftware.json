@@ -1,0 +1,69 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Rockwell Automation Aerospace Palletizing Robot Operation Software",
+    "dcterms:type": "Software",
+    "dcterms:publisher": "Rockwell Automation",
+    "dcterms:license": "https://www.rockwellautomation.com/en-us/company/terms-of-use.html",
+    "dcterms:identifier": "RA-AERO-PALLET-SW-2024",
+    "dcterms:description": "Industrial robot operation software specialized for aerospace component palletizing applications, featuring advanced path planning, collision avoidance, and integration with Rockwell Automation control systems.",
+    "dcat:version": "v2.4.1",
+    "dcat:keyword": [
+      "robotics",
+      "automation",
+      "palletizing",
+      "aerospace",
+      "industrial software",
+      "Rockwell Automation"
+    ],
+    "dcat:contactPoint": "https://www.rockwellautomation.com/en-us/support.html",
+    "rodeos:coreType": "Service"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": "4.5.2",
+        "unitText": "version"
+      },
+      "rodeos:framework": "FactoryTalk® View Studio"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "@type": "schema:quantitativeValue",
+          "value": "4.5.2",
+          "unitText": "version"
+        },
+        "rodeos:softwareAssetType": "softwareAssetType"
+      },
+      "child": {
+        "@type": "rodeos:robotOperationSoftware",
+        "properties": {
+          "rodeos:robotOperationSystemType": "vendorSpecificMiddleware",
+          "rodeos:aasSubmodel": "https://rockwell-automation.com/aas/robotOperationSoftware/aerospace-palletizing/v1",
+          "rodeos:supportedApis": [
+            "https://rockwell-automation.com/api/robotOperationSoftware/v1/palletizing",
+            "https://rockwell-automation.com/api/robotOperationSoftware/v1/motion-control",
+            "https://rockwell-automation.com/api/robotOperationSoftware/v1/vision-integration"
+          ],
+          "rodeos:supportedHardwareDrivers": [
+            "Rockwell Kinetix 5700 Servo Drive",
+            "Rockwell PowerFlex 525 AC Drive",
+            "Rockwell 1734-AENT Point I/O",
+            "Rockwell 5069-L306ER CompactLogix Controller"
+          ],
+          "rodeos:osDependencies": [
+            "Rockwell FactoryTalk View SE",
+            "Rockwell Studio 5000 Logix Designer",
+            "Rockwell RSLinx Classic",
+            "Windows 10 IoT Enterprise LTSC"
+          ]
+        }
+      }
+    }
+  }
+}

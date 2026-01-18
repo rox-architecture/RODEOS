@@ -1,0 +1,83 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Universal Robots Cylindrical Robot Assembly System for Medical Devices",
+    "dcterms:type": "robotics:IndustrialRobot",
+    "dcterms:publisher": "Universal Robots A/S",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "UR-CYL-MED-ASSEM-001",
+    "dcterms:description": "A cylindrical coordinate industrial robot system designed for precision assembly applications in medical device manufacturing. Features ISO Class 5 cleanroom compatibility, force/torque sensing, and validated repeatability of ±0.03mm for critical component assembly.",
+    "dcat:version": "v2.5.1",
+    "dcat:keyword": [
+      "cylindrical robot",
+      "medical device assembly",
+      "UR robot",
+      "cleanroom automation",
+      "precision assembly",
+      "collaborative robotics"
+    ],
+    "dcat:contactPoint": "https://www.universal-robots.com/contact/",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 5,
+        "unitCode": "MMT",
+        "minValue": 3,
+        "maxValue": 7
+      },
+      "rodeos:framework": "URCap"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Universal Robots",
+        "rodeos:hardwareAssetType": "cylindrical"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 5.0,
+          "rodeos:maxVelocity": 2.0,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 48.0,
+          "rodeos:interface": "Ethernet/IP, Modbus TCP, TCP/IP socket",
+          "rodeos:reach": 850.0,
+          "rodeos:accuracy": 0.03,
+          "rodeos:minVelocity": 0.01
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted",
+            "rodeos:positionAccuracy": 0.03,
+            "rodeos:repeatability": 0.01,
+            "rodeos:isCobot": true,
+            "rodeos:workspaceVolume": 0.5,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "Cylindrical coordinate system"
+          },
+          "child": {
+            "@type": "rodeos:serielRobot",
+            "properties": {
+              "rodeos:jointCount": 6,
+              "rodeos:maxJointSpeed": 180.0
+            },
+            "child": {
+              "@type": "rodeos:cylindrical",
+              "properties": {
+                "rodeos:aasSubmodel": "https://example.com/aas/submodels/cylindrical/ur-medical-assembly-001",
+                "rodeos:radialTravel": 500.0,
+                "rodeos:verticalTravelZ": 300.0
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

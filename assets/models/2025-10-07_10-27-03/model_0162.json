@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "FANUC R-30iB Encoder Unit for Spot Welding Applications",
+    "dcterms:type": "Component",
+    "dcterms:publisher": "FANUC Corporation",
+    "dcterms:license": "https://www.fanuc.com/europe/en/legal/software-license-terms",
+    "dcterms:identifier": "FANUC-ENC-R30iB-PHARMA-SW-001",
+    "dcterms:description": "High-precision rotary encoder unit designed for FANUC R-30iB controllers in pharmaceutical industry spot welding applications. Features IP67 protection, absolute positioning, and pharmaceutical-grade sealing for cleanroom environments.",
+    "dcat:version": "v2.1.4",
+    "dcat:keyword": [
+      "encoder",
+      "spot welding",
+      "pharmaceutical",
+      "FANUC",
+      "robotics",
+      "automation",
+      "position feedback",
+      "rotary encoder"
+    ],
+    "dcat:contactPoint": "https://www.fanuc.com/america/en/contact/technical-support",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 2500,
+        "unitCode": "PPR",
+        "minValue": 1000,
+        "maxValue": 5000,
+        "description": "High-resolution incremental encoder with 2500 pulses per revolution"
+      },
+      "rodeos:framework": "FANUC Encoder Interface Protocol v2.1"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "FANUC",
+        "rodeos:hardwareAssetType": "encoder"
+      },
+      "child": {
+        "@type": "rodeos:sensor",
+        "properties": {
+          "rodeos:measurementRange": 360.0,
+          "rodeos:measurementAccuracy": 0.01,
+          "rodeos:samplingRate": 1000.0,
+          "rodeos:fieldOfView": 360.0
+        },
+        "child": {
+          "@type": "rodeos:encoder",
+          "properties": {
+            "rodeos:aasSubmodel": "https://example.com/aas/submodels/encoder-fanuc-pharma-welding",
+            "rodeos:encoderType": "Absolute",
+            "rodeos:resolutionCounts": 16384,
+            "rodeos:maxSpeed": 6000.0
+          }
+        }
+      }
+    }
+  }
+}

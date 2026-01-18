@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Omron Screwing Assembly Tool for Electronics Manufacturing Transport",
+    "dcterms:type": "Tool",
+    "dcterms:publisher": "Omron Corporation",
+    "dcterms:license": "https://www.omron.com/global/en/terms-of-use/",
+    "dcterms:identifier": "OMRON-SAT-EMT-2024-001",
+    "dcterms:description": "Industrial-grade automated screwing assembly tool designed for precision fastening operations in electronics manufacturing material transport systems. Features torque control, error detection, and integration with Omron automation controllers.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "screwing assembly",
+      "electronics manufacturing",
+      "material transport",
+      "automation tool",
+      "torque control",
+      "Omron"
+    ],
+    "dcat:contactPoint": "https://www.omron.com/global/en/contact/",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "schema:value": 1,
+        "schema:unitCode": "EA"
+      },
+      "rodeos:framework": "Omron Sysmac Automation Platform"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Omron",
+        "rodeos:hardwareAssetType": "screwingAssemblyTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "EtherNet/IP",
+          "rodeos:manufacturer": "Omron",
+          "rodeos:toolWeight": 3.2,
+          "rodeos:toolMaterial": "Anodized Aluminum"
+        },
+        "child": {
+          "@type": "rodeos:screwingAssemblyTool",
+          "properties": {
+            "rodeos:screwingAssemblyToolType": "Screwdrivers",
+            "rodeos:aasSubmodel": "https://assets.omron.com/aas/screwingAssemblyTool/electronics-manufacturing/12345",
+            "rodeos:torqueRange": 0.5,
+            "rodeos:rotationSpeed": 3000.0,
+            "rodeos:dispensingRate": 500.0
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Rockwell Automation Delta Robot for Food and Beverage Spot Welding",
+    "dcterms:type": "Industrial Robot",
+    "dcterms:publisher": "Rockwell Automation",
+    "dcterms:license": "https://www.rockwellautomation.com/en-us/company/terms-of-use.html",
+    "dcterms:identifier": "RA-DELTA-SW-FB-001",
+    "dcterms:description": "A delta-style robotic system designed for high-speed spot welding applications in food and beverage manufacturing environments. Features stainless steel construction, IP67 rating for washdown compatibility, and integrated vision guidance for precise weld placement.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "delta robot",
+      "spot welding",
+      "food grade",
+      "stainless steel",
+      "IP67",
+      "vision guidance",
+      "Rockwell Automation",
+      "industrial automation"
+    ],
+    "dcat:contactPoint": "https://www.rockwellautomation.com/en-us/support.html",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "schema:value": 6,
+        "schema:unitCode": "DOF"
+      },
+      "rodeos:framework": "Rockwell Automation Integrated Motion Control Framework"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Rockwell Automation",
+        "rodeos:hardwareAssetType": "delta"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 5.5,
+          "rodeos:maxVelocity": 4.2,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 400.0,
+          "rodeos:interface": "EtherNet/IP",
+          "rodeos:reach": 1.2,
+          "rodeos:accuracy": 0.05,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted",
+            "rodeos:positionAccuracy": 0.05,
+            "rodeos:repeatability": 0.02,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 0.785,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "Parallel kinematic (delta)"
+          },
+          "child": {
+            "@type": "rodeos:parallelRobot",
+            "properties": {
+              "rodeos:platformSize": 10.0,
+              "rodeos:stiffness": 0.1
+            },
+            "child": {
+              "@type": "rodeos:delta",
+              "properties": {
+                "rodeos:aasSubmodel": "https://rockwell-automation.com/aas/food-beverage/delta-robot/spot-welding/submodel",
+                "rodeos:pickRateMax": 120.5,
+                "rodeos:workspaceShape": "rodeos:hemispherical"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

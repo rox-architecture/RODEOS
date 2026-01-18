@@ -1,0 +1,67 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Techman Robot Dispensing Additive Tool for Food and Beverage Assembly",
+    "dcterms:type": "https://www.techmanrobot.com/en/ontology#DispensingTool",
+    "dcterms:publisher": "Techman Robot Inc.",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "TM-DAT-FB-001",
+    "dcterms:description": "A precision dispensing additive tool designed for food and beverage assembly applications, featuring hygienic design, programmable flow control, and compliance with industry safety standards.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "dispensing",
+      "additive",
+      "tool",
+      "food",
+      "beverage",
+      "assembly",
+      "robotics",
+      "automation",
+      "Techman Robot"
+    ],
+    "dcat:contactPoint": "https://www.techmanrobot.com/en/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 1.5,
+        "schema:unitCode": "kg",
+        "schema:minValue": 0.1,
+        "schema:maxValue": 3.0
+      },
+      "rodeos:framework": "TMFlow"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Techman Robot",
+        "rodeos:hardwareAssetType": "rodeos:dispensingAdditiveTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "EtherCAT",
+          "rodeos:manufacturer": "Techman Robot",
+          "rodeos:toolWeight": 2.8,
+          "rodeos:toolMaterial": "Stainless Steel 316L"
+        },
+        "child": {
+          "@type": "rodeos:dispensingAdditiveTool",
+          "properties": {
+            "rodeos:dispensingAdditiveToolType": "SealantAdhesiveDispensers",
+            "rodeos:aasSubmodel": "https://techmanrobot.com/aas/submodels/dispensingAdditiveTool/12345",
+            "rodeos:materialFlowRate": 12.5,
+            "rodeos:nozzleSize": 0.8,
+            "rodeos:layerThickness": 0.2,
+            "rodeos:temperature": 25.0
+          }
+        }
+      }
+    }
+  }
+}

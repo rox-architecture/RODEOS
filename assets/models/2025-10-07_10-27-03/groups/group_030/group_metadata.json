@@ -1,0 +1,55 @@
+{
+  "company": "Bosch Rexroth",
+  "industry": "Pharmaceuticals",
+  "application": "quality inspection",
+  "assets": [
+    {
+      "leaf": "rodeos:screwingAssemblyTool",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:tooling",
+        "rodeos:screwingAssemblyTool"
+      ],
+      "file": "model_screwingAssemblyTool.json"
+    },
+    {
+      "leaf": "rodeos:lidarSensor",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:sensor",
+        "rodeos:lidarSensor"
+      ],
+      "file": "model_lidarSensor.json"
+    },
+    {
+      "leaf": "rodeos:hexapod",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:roboter",
+        "rodeos:stationaryRobot",
+        "rodeos:parallelRobot",
+        "rodeos:hexapod"
+      ],
+      "file": "model_hexapod.json"
+    },
+    {
+      "leaf": "rodeos:articulated",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:roboter",
+        "rodeos:stationaryRobot",
+        "rodeos:serielRobot",
+        "rodeos:articulated"
+      ],
+      "file": "model_articulated.json"
+    }
+  ]
+}

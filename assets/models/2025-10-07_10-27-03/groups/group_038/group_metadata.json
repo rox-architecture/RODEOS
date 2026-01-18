@@ -1,0 +1,49 @@
+{
+  "company": "Rockwell Automation",
+  "industry": "Aerospace",
+  "application": "palletizing",
+  "assets": [
+    {
+      "leaf": "rodeos:screwingAssemblyTool",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:tooling",
+        "rodeos:screwingAssemblyTool"
+      ],
+      "file": "model_screwingAssemblyTool.json"
+    },
+    {
+      "leaf": "rodeos:robotOperationSoftware",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:softwareComponent",
+        "rodeos:robotOperationSoftware"
+      ],
+      "file": "model_robotOperationSoftware.json"
+    },
+    {
+      "leaf": "rodeos:forceTorqueSensor",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:sensor",
+        "rodeos:forceTorqueSensor"
+      ],
+      "file": "model_forceTorqueSensor.json"
+    },
+    {
+      "leaf": "rodeos:motionControlSoftware",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:softwareComponent",
+        "rodeos:motionControlSoftware"
+      ],
+      "file": "model_motionControlSoftware.json"
+    }
+  ]
+}

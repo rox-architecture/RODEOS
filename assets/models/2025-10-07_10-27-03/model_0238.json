@@ -1,0 +1,69 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Yaskawa Motoman AGV Pick-and-Place System for Automotive Assembly",
+    "dcterms:type": "skos:concept",
+    "dcterms:publisher": "Yaskawa Motoman",
+    "dcterms:license": "https://www.yaskawa.com/legal/software-license-agreement",
+    "dcterms:identifier": "YM-AGV-PP-AUTO-001",
+    "dcterms:description": "Automated guided vehicle system designed for high-precision pick-and-place operations in automotive assembly lines, featuring advanced navigation, payload handling, and integration capabilities with existing robotic workcells.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "AGV",
+      "Automated Guided Vehicle",
+      "Pick-and-Place",
+      "Automotive Assembly",
+      "Yaskawa Motoman",
+      "Material Handling",
+      "Robotics",
+      "Automation"
+    ],
+    "dcat:contactPoint": "https://www.yaskawa.com/support/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "schema:value": 1.0,
+        "schema:unitCode": "EA"
+      },
+      "rodeos:framework": "Yaskawa Motoman MotoPick AGV System"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Yaskawa Motoman",
+        "rodeos:hardwareAssetType": "agv"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 50.0,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 48.0,
+          "rodeos:interface": "EtherCAT",
+          "rodeos:reach": 1500.0,
+          "rodeos:accuracy": 0.05,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:mobileRobot",
+          "properties": {
+            "rodeos:maxSpeed": 2.5,
+            "rodeos:batteryCapacity": 24.0
+          },
+          "child": {
+            "@type": "rodeos:agv",
+            "properties": {
+              "rodeos:aasSubmodel": "https://example.com/aas/submodels/agv-automotive-assembly-pick-place",
+              "rodeos:operatingTime": "PT8H30M"
+            }
+          }
+        }
+      }
+    }
+  }
+}

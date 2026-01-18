@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Beckhoff TwinCAT Bin Picking Robot Controller",
+    "dcterms:type": "Robot Controller",
+    "dcterms:publisher": "Beckhoff Automation GmbH & Co. KG",
+    "dcterms:license": "https://www.beckhoff.com/en-en/terms-of-use/",
+    "dcterms:identifier": "BCK-TC-BINPICK-CTRL-001",
+    "dcterms:description": "Industrial-grade robot controller optimized for medical device bin picking applications, featuring real-time motion control, vision system integration, and sterile environment compliance",
+    "dcat:version": "4.5.2",
+    "dcat:keyword": [
+      "bin picking",
+      "medical devices",
+      "robot controller",
+      "TwinCAT",
+      "Beckhoff",
+      "automation",
+      "real-time control",
+      "vision guidance"
+    ],
+    "dcat:contactPoint": "https://www.beckhoff.com/en-en/support/technical-support/",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "schema:value": 1.0,
+        "schema:unitCode": "CUNIT"
+      },
+      "rodeos:framework": "TwinCAT 3"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Beckhoff",
+        "rodeos:hardwareAssetType": "robotController"
+      },
+      "child": {
+        "@type": "rodeos:controller",
+        "properties": {
+          "rodeos:cpuArchitecture": "cpuArchitecture",
+          "rodeos:processorClock": 3.3,
+          "rodeos:realTimeSupport": false,
+          "rodeos:communicationInterfaces": "communicationInterfaces"
+        },
+        "child": {
+          "@type": "rodeos:robotController",
+          "properties": {
+            "rodeos:aasSubmodel": "https://example.com/aas/submodels/beckhoff-bin-picking-controller",
+            "rodeos:maxAxesSupported": 8,
+            "rodeos:driveInterfaces": "EtherCAT"
+          }
+        }
+      }
+    }
+  }
+}

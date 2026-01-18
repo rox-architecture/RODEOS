@@ -1,0 +1,66 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Denso Wave GrindingPolishingFinishingTool for Arc Welding Applications",
+    "dcterms:type": "Industrial Robotics Tool",
+    "dcterms:publisher": "Denso Wave Inc.",
+    "dcterms:license": "https://www.denso-wave.com/en/terms/license.html",
+    "dcterms:identifier": "DENSO-GPFT-AW-2024-001",
+    "dcterms:description": "High-precision grinding, polishing, and finishing tool designed for arc welding applications in plastics processing industries. Features adaptive force control, integrated cooling, and real-time wear monitoring.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "grinding tool",
+      "polishing",
+      "finishing",
+      "arc welding",
+      "plastics processing",
+      "industrial robotics",
+      "Denso Wave",
+      "automation"
+    ],
+    "dcat:contactPoint": "https://www.denso-wave.com/en/contact/technical-support.html",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 4.5,
+        "unitCode": "KW",
+        "minValue": 3.0,
+        "maxValue": 6.0
+      },
+      "rodeos:framework": "Denso Wave ARC Mate Series Welding Framework"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Denso Wave",
+        "rodeos:hardwareAssetType": "rodeos:grindingPolishingFinishingTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "EtherNet/IP",
+          "rodeos:manufacturer": "Denso Wave",
+          "rodeos:toolWeight": 2.8,
+          "rodeos:toolMaterial": "Stainless Steel AISI 304"
+        },
+        "child": {
+          "@type": "rodeos:grindingPolishingFinishingTool",
+          "properties": {
+            "rodeos:grindingPolishingFinishingToolType": "Grinders",
+            "rodeos:aasSubmodel": "https://asset-shell.denso-wave.com/robotics/grinding-tools/arc-welding-plastics/12345",
+            "rodeos:rotationSpeed": 12000.5,
+            "rodeos:abrasiveForce": 45.2,
+            "rodeos:toolDiameter": 125.0,
+            "rodeos:wearRate": 0.15
+          }
+        }
+      }
+    }
+  }
+}

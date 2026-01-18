@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "ABB Robotics Spot Welding Controller IRC5",
+    "dcterms:type": "http://purl.org/dc/dcmitype/PhysicalResource",
+    "dcterms:publisher": "ABB Robotics",
+    "dcterms:license": "https://www.abb.com/robotics/legal/software-license",
+    "dcterms:identifier": "ABB-IRC5-SW-FB-2024",
+    "dcterms:description": "Industrial robot controller optimized for spot welding applications in food and beverage manufacturing environments. Features enhanced safety protocols, precise motion control, and integrated welding parameter management.",
+    "dcat:version": "v3.2.1",
+    "dcat:keyword": [
+      "spot welding",
+      "robot controller",
+      "food industry",
+      "automation",
+      "IRC5",
+      "ABB Robotics",
+      "welding control",
+      "industrial automation"
+    ],
+    "dcat:contactPoint": "https://www.abb.com/robotics/support",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 4,
+        "unitCode": "UN/CEFACT",
+        "unitText": "axes"
+      },
+      "rodeos:framework": "RobotWare SpotPack"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "ABB Robotics",
+        "rodeos:hardwareAssetType": "robotController"
+      },
+      "child": {
+        "@type": "rodeos:controller",
+        "properties": {
+          "rodeos:cpuArchitecture": "ARM Cortex-A53",
+          "rodeos:processorClock": 1.2,
+          "rodeos:realTimeSupport": true,
+          "rodeos:communicationInterfaces": "Ethernet/IP, PROFINET, DeviceNet",
+          "rodeos:powerSupply": "24V DC, 10A"
+        },
+        "child": {
+          "@type": "rodeos:robotController",
+          "properties": {
+            "rodeos:aasSubmodel": "https://example.com/aas/submodels/robotController/ABB/spotWelding",
+            "rodeos:maxAxesSupported": 8,
+            "rodeos:driveInterfaces": "EtherCAT"
+          }
+        }
+      }
+    }
+  }
+}

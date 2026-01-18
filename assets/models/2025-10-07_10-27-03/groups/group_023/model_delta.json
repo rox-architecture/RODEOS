@@ -1,0 +1,84 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Schunk GmbH Delta Robot Palletizing System",
+    "dcterms:type": "Physical Asset",
+    "dcterms:publisher": "Schunk GmbH",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "SCH-DELTA-PHARMA-PALL-001",
+    "dcterms:description": "High-speed delta robot system designed for pharmaceutical palletizing applications. Features stainless steel construction, IP67 rating, and GMP-compliant design for cleanroom environments. Capable of handling up to 120 cycles per minute with ±0.1mm repeatability.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "delta robot",
+      "palletizing",
+      "pharmaceutical",
+      "automation",
+      "Schunk",
+      "GMP compliant",
+      "cleanroom",
+      "high speed"
+    ],
+    "dcat:contactPoint": "https://schunk.com/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 6,
+        "unitCode": "kg",
+        "additionalProperty": "Payload capacity"
+      },
+      "rodeos:framework": "Schunk Delta Robot Framework for Pharmaceutical Palletizing"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Schunk GmbH",
+        "rodeos:hardwareAssetType": "delta"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 10.5,
+          "rodeos:maxVelocity": 2.8,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 48.0,
+          "rodeos:interface": "EtherCAT",
+          "rodeos:reach": 1100.0,
+          "rodeos:accuracy": 0.05,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "floor-mounted",
+            "rodeos:positionAccuracy": 0.05,
+            "rodeos:repeatability": 0.02,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 0.8,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "4-axis parallel kinematic"
+          },
+          "child": {
+            "@type": "rodeos:parallelRobot",
+            "properties": {
+              "rodeos:platformSize": 50.0,
+              "rodeos:stiffness": 3.3
+            },
+            "child": {
+              "@type": "rodeos:delta",
+              "properties": {
+                "rodeos:aasSubmodel": "https://industrialdigitaltwin.org/environments/Pharmaceuticals/Palletizing/SchunkDeltaRobot/1/0",
+                "rodeos:pickRateMax": 120.5,
+                "rodeos:workspaceShape": "spherical"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

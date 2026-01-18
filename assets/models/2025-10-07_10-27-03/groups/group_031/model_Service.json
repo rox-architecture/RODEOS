@@ -1,0 +1,47 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Rockwell Automation Arc Welding Service for Aerospace Applications",
+    "dcterms:type": "Service",
+    "dcterms:publisher": "Rockwell Automation",
+    "dcterms:license": "https://www.rockwellautomation.com/en-us/company/terms-of-use.html",
+    "dcterms:identifier": "RA-AW-SVC-001",
+    "dcterms:description": "A comprehensive arc welding service solution designed specifically for aerospace manufacturing applications, providing precision welding automation, quality control, and integration with existing production systems.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "arc welding",
+      "aerospace",
+      "robotics",
+      "automation",
+      "welding service",
+      "manufacturing",
+      "industrial automation"
+    ],
+    "dcat:contactPoint": "https://www.rockwellautomation.com/en-us/support/contact.html",
+    "rodeos:coreType": "Service"
+  },
+  "child": {
+    "@type": "rodeos:Service",
+    "properties": {
+      "rodeos:usedModels": [
+        "https://www.rockwellautomation.com/models/arcpro-5000",
+        "https://www.rockwellautomation.com/models/weldmaster-7x"
+      ],
+      "rodeos:serviceTypeMain": "rodeos:WeldingService",
+      "rodeos:serviceType": "rodeos:ArcWeldingService",
+      "dcat:endpointURL": "https://api.rockwellautomation.com/aerospace/arcwelding/v1",
+      "rodeos:input": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 220,
+        "schema:unitCode": "VLT"
+      },
+      "rodeos:output": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 150,
+        "schema:unitCode": "AMP"
+      },
+      "dcat:endpointDescription": "REST API endpoint for Rockwell Automation's aerospace arc welding service, providing real-time monitoring, control, and optimization of robotic welding cells with support for multiple welding models and protocols.",
+      "dcat:landingPage": "https://www.rockwellautomation.com/aerospace/arc-welding-services"
+    }
+  }
+}

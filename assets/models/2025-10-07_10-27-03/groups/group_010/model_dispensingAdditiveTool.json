@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "FANUC R-2000iC/210F Additive Dispensing Tool for Pharmaceutical Palletizing",
+    "dcterms:type": "Industrial Automation Component",
+    "dcterms:publisher": "FANUC Corporation",
+    "dcterms:license": "https://www.fanuc.com/legal/software-license",
+    "dcterms:identifier": "FANUC-DISP-ADT-PH2024",
+    "dcterms:description": "Precision additive dispensing tool integrated with FANUC R-2000iC/210F robotic arm for pharmaceutical palletizing applications. Features high-accuracy volumetric control, sanitary design compliant with pharmaceutical standards, and integrated vision guidance for precise material placement.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "robotic dispensing",
+      "additive manufacturing",
+      "pharmaceutical automation",
+      "palletizing",
+      "FANUC robotics",
+      "precision tooling",
+      "sanitary design",
+      "volumetric control"
+    ],
+    "dcat:contactPoint": "https://www.fanuc.com/support/technical-assistance",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 1,
+        "unitCode": "EA"
+      },
+      "rodeos:framework": "FANUC R-30iB Plus Controller"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "FANUC",
+        "rodeos:hardwareAssetType": "rodeos:dispensingAdditiveTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "DeviceNet",
+          "rodeos:manufacturer": "FANUC",
+          "rodeos:toolWeight": 5.8,
+          "rodeos:toolMaterial": "Stainless Steel 316L"
+        },
+        "child": {
+          "@type": "rodeos:dispensingAdditiveTool",
+          "properties": {
+            "rodeos:dispensingAdditiveToolType": "SealantAdhesiveDispensers",
+            "rodeos:aasSubmodel": "https://industrial.fanuc.com/aas/submodels/dispensing-tool/pharma-palletizing/12345",
+            "rodeos:materialFlowRate": 12.5,
+            "rodeos:nozzleSize": 1.2,
+            "rodeos:layerThickness": 0.8,
+            "rodeos:temperature": 23.5
+          }
+        }
+      }
+    }
+  }
+}

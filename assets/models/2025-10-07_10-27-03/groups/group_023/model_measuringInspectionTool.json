@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Schunk Pharma-Grade Palletizing Inspection Tool",
+    "dcterms:type": "https://w3id.org/rodeos/ns/measuringInspectionTool",
+    "dcterms:publisher": "Schunk GmbH",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "SCH-PH-INSP-TOOL-2024-001",
+    "dcterms:description": "High-precision measuring and inspection tool designed for pharmaceutical palletizing applications. Ensures compliance with GMP standards through automated quality control of palletized pharmaceutical products, including dimensional verification, label inspection, and package integrity checks.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "pharmaceuticals",
+      "palletizing",
+      "inspection",
+      "quality control",
+      "GMP compliance",
+      "automation",
+      "Schunk",
+      "measuring tool"
+    ],
+    "dcat:contactPoint": "https://www.schunk.com/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 1.5,
+        "unitCode": "MMT",
+        "minValue": 0.1,
+        "maxValue": 3.0
+      },
+      "rodeos:framework": "Schunk Precision Measurement Framework v2.1"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Schunk GmbH",
+        "rodeos:hardwareAssetType": "rodeos:measuringInspectionTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "EtherNet/IP",
+          "rodeos:manufacturer": "Schunk GmbH",
+          "rodeos:toolWeight": 3.2,
+          "rodeos:toolMaterial": "Stainless Steel 316L"
+        },
+        "child": {
+          "@type": "rodeos:measuringInspectionTool",
+          "properties": {
+            "rodeos:measuringInspectionToolType": "VisionInspectionCameras",
+            "rodeos:aasSubmodel": "https://assetadministration-shell.com/schunk/pharma-palletizing-vision-inspection/1/0/Submodel",
+            "rodeos:measurementAccuracy": 0.02,
+            "rodeos:range": 2000.0,
+            "rodeos:repeatability": 0.005
+          }
+        }
+      }
+    }
+  }
+}

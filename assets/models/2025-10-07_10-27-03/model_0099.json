@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "FANUC AI Analytics Software for Plastics Processing Packing",
+    "dcterms:type": "Software",
+    "dcterms:publisher": "FANUC Corporation",
+    "dcterms:license": "https://www.fanuc.com/legal/software-license",
+    "dcterms:identifier": "FANUC-AI-PACK-PLASTICS-1.0",
+    "dcterms:description": "AI-powered analytics software designed for optimizing packing operations in plastics processing. Provides real-time monitoring, predictive maintenance alerts, and quality control insights using machine learning algorithms.",
+    "dcat:version": "1.0.2",
+    "dcat:keyword": [
+      "AI analytics",
+      "plastics processing",
+      "packing automation",
+      "predictive maintenance",
+      "quality control",
+      "industrial software",
+      "FANUC"
+    ],
+    "dcat:contactPoint": "https://www.fanuc.com/support/software",
+    "rodeos:coreType": "Service"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 2.5,
+        "unitCode": "GHz",
+        "minValue": 2.0,
+        "maxValue": 3.2
+      },
+      "rodeos:framework": "FANUC iRVision AI Analytics Framework"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "@type": "schema:quantitativeValue",
+          "value": 2.5,
+          "unitCode": "GHz",
+          "minValue": 2.0,
+          "maxValue": 3.2
+        }
+      },
+      "child": {
+        "@type": "rodeos:aiAnalyticsSoftware",
+        "properties": {
+          "rodeos:aiAnalyticsSoftwareType": "mlModel",
+          "rodeos:aasSubmodel": "https://fanuc.com/aas/plastics-packing/ml-model/v1",
+          "rodeos:modelArchitecture": "Convolutional Neural Network (CNN) with ResNet-50 backbone for visual quality inspection and packing optimization in plastics processing applications"
+        }
+      }
+    }
+  }
+}

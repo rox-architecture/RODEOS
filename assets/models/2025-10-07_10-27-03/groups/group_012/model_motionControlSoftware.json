@@ -1,0 +1,68 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Techman Robot Pick-and-Place Motion Control Software",
+    "dcterms:type": "Software",
+    "dcterms:publisher": "Techman Robot",
+    "dcterms:license": "https://www.techmanrobot.com/license/commercial",
+    "dcterms:identifier": "TM-PPSW-2024-001",
+    "dcterms:description": "Advanced motion control software optimized for high-speed pick-and-place operations in electronics manufacturing, featuring precision trajectory planning, collision avoidance, and seamless integration with robotic arms and vision systems.",
+    "dcat:version": "v2.5.1",
+    "dcat:keyword": [
+      "motion control",
+      "pick-and-place",
+      "robotics",
+      "automation",
+      "electronics manufacturing",
+      "Techman Robot",
+      "software"
+    ],
+    "dcat:contactPoint": "https://support.techmanrobot.com/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "schema:minValue": 0.1,
+        "schema:maxValue": 2.5,
+        "schema:unitCode": "MMT",
+        "schema:value": 1.2
+      },
+      "rodeos:framework": "Techman Robot TMFlow Framework"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "schema:minValue": 0.1,
+          "schema:maxValue": 2.5,
+          "schema:unitCode": "MMT",
+          "schema:value": 1.2
+        },
+        "rodeos:softwareAssetType": "motionControl"
+      },
+      "child": {
+        "@type": "rodeos:motionControlSoftware",
+        "properties": {
+          "rodeos:motionControlSystemType": "trajectoryPlanning",
+          "rodeos:aasSubmodel": "https://techmanrobot.com/assets/motionControlSoftware/aas/submodel",
+          "rodeos:supportedRobotTypes": [
+            "SCARA",
+            "6-axis articulated",
+            "Delta",
+            "Cartesian"
+          ],
+          "rodeos:motionPlanningAlgorithms": [
+            "RRT*",
+            "PRM",
+            "A*",
+            "Potential Fields"
+          ],
+          "rodeos:dofSupport": 12
+        }
+      }
+    }
+  }
+}

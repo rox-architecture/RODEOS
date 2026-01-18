@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "ABB Robotics Spot Welding AI Analytics Software",
+    "dcterms:type": "Software",
+    "dcterms:publisher": "ABB Robotics",
+    "dcterms:license": "https://www.abb.com/robotics/software-license",
+    "dcterms:identifier": "ABB-SW-AI-ANALYTICS-2024",
+    "dcterms:description": "AI-powered analytics software for optimizing spot welding processes in metal fabrication. Provides real-time monitoring, quality prediction, and process optimization using machine learning algorithms.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "AI analytics",
+      "spot welding",
+      "metal fabrication",
+      "process optimization",
+      "quality monitoring",
+      "real-time analytics",
+      "machine learning",
+      "industrial robotics"
+    ],
+    "dcat:contactPoint": "https://www.abb.com/robotics/support",
+    "rodeos:coreType": "Service"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "schema:quantitativeValue": {
+          "value": 0.95,
+          "unitCode": "C62",
+          "description": "Welding quality prediction accuracy"
+        }
+      },
+      "rodeos:framework": "ABB Ability™ Analytics Platform"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "schema:quantitativeValue": {
+            "value": 0.95,
+            "unitCode": "C62",
+            "description": "Welding quality prediction accuracy"
+          }
+        },
+        "rodeos:softwareAssetType": {
+          "skos:concept": {
+            "prefLabel": "Predictive Analytics Module",
+            "inScheme": "https://example.org/schemas/software-types"
+          }
+        }
+      },
+      "child": {
+        "@type": "rodeos:aiAnalyticsSoftware",
+        "properties": {
+          "rodeos:aiAnalyticsSoftwareType": "mlModel",
+          "rodeos:aasSubmodel": "https://industrial.abb.com/aas/submodels/spotwelding-analytics-v1",
+          "rodeos:modelArchitecture": "Convolutional Neural Network (CNN) with ResNet-50 backbone for weld quality classification, integrated with real-time sensor data processing pipeline for predictive maintenance and process optimization in spot welding applications"
+        }
+      }
+    }
+  }
+}

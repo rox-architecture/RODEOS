@@ -1,0 +1,82 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Universal Robots Hexapod Spot Welding System",
+    "dcterms:type": "Robotic Automation System",
+    "dcterms:publisher": "Universal Robots",
+    "dcterms:license": "https://www.universal-robots.com/license-terms",
+    "dcterms:identifier": "UR-Hexapod-SW-Medical-001",
+    "dcterms:description": "A six-axis hexapod robotic system designed for precision spot welding applications in medical device manufacturing, featuring high accuracy repeatability and sterile environment compatibility.",
+    "dcat:version": "v2.5.1",
+    "dcat:keyword": [
+      "hexapod",
+      "spot welding",
+      "medical devices",
+      "robotics",
+      "automation",
+      "Universal Robots",
+      "precision welding",
+      "sterile manufacturing"
+    ],
+    "dcat:contactPoint": "https://www.universal-robots.com/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "schema:minValue": 0.5,
+        "schema:maxValue": 1.3,
+        "schema:unitCode": "MTR",
+        "schema:value": 0.85
+      },
+      "rodeos:framework": "URCap for Hexapod Integration"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Universal Robots",
+        "rodeos:hardwareAssetType": "hexapod"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 5.0,
+          "rodeos:maxVelocity": 2.0,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 48.0,
+          "rodeos:interface": "Ethernet/IP, Modbus TCP, REST API",
+          "rodeos:reach": 850.0,
+          "rodeos:accuracy": 0.03,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted",
+            "rodeos:positionAccuracy": 0.05,
+            "rodeos:repeatability": 0.02,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 1.8,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "Parallel kinematic structure with 6 degrees of freedom"
+          },
+          "child": {
+            "@type": "rodeos:parallelRobot",
+            "properties": {
+              "rodeos:platformSize": 1.0,
+              "rodeos:stiffness": 0.5
+            },
+            "child": {
+              "@type": "rodeos:hexapod",
+              "properties": {
+                "rodeos:aasSubmodel": "https://example.com/aas/submodels/hexapod-welding-medical"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

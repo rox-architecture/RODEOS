@@ -1,0 +1,66 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Rockwell Automation Inertial Sensor for Aerospace Arc Welding",
+    "dcterms:type": "sensor",
+    "dcterms:publisher": "Rockwell Automation",
+    "dcterms:license": "https://www.rockwellautomation.com/en-us/company/terms-of-use.html",
+    "dcterms:identifier": "RA-IS-AW-2024-001",
+    "dcterms:description": "High-precision inertial sensor designed for aerospace arc welding applications, providing real-time motion and orientation data to ensure welding accuracy and quality in demanding industrial environments.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "inertial sensor",
+      "aerospace",
+      "arc welding",
+      "motion tracking",
+      "industrial automation",
+      "Rockwell Automation"
+    ],
+    "dcat:contactPoint": "https://www.rockwellautomation.com/en-us/support/contact-technical-support.html",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 9.81,
+        "unitCode": "MTS"
+      },
+      "rodeos:framework": "Rockwell Automation FactoryTalk"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Rockwell Automation",
+        "rodeos:hardwareAssetType": "inertialSensor"
+      },
+      "child": {
+        "@type": "rodeos:sensor",
+        "properties": {
+          "rodeos:measurementRange": 360.0,
+          "rodeos:measurementAccuracy": 0.05,
+          "rodeos:samplingRate": 1000.0,
+          "rodeos:fieldOfView": 180.0
+        },
+        "child": {
+          "@type": "rodeos:inertialSensor",
+          "properties": {
+            "rodeos:aasSubmodel": "https://rockwell-automation.com/aas/inertialSensor/aerospace-arcwelding-001",
+            "rodeos:gyroRange": {
+              "@type": "schema:quantitativeValue",
+              "schema:value": 2000,
+              "schema:unitCode": "DPS"
+            },
+            "rodeos:accelRange": {
+              "@type": "schema:quantitativeValue",
+              "schema:value": 16,
+              "schema:unitCode": "G"
+            }
+          }
+        }
+      }
+    }
+  }
+}

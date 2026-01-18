@@ -1,0 +1,67 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "FANUC IPC Quality Inspection System for Logistics and Warehousing",
+    "dcterms:type": "skos:concept",
+    "dcterms:publisher": "FANUC Corporation",
+    "dcterms:license": "https://www.fanuc.com/legal/license-agreement",
+    "dcterms:identifier": "FANUC-IPC-QI-LW-001",
+    "dcterms:description": "Industrial PC-based quality inspection system designed for logistics and warehousing applications. Features high-speed image processing, machine learning algorithms for defect detection, and seamless integration with FANUC robotics for automated material handling and inspection workflows.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "quality inspection",
+      "industrial PC",
+      "FANUC",
+      "logistics",
+      "warehousing",
+      "machine vision",
+      "automation",
+      "robotics"
+    ],
+    "dcat:contactPoint": "https://www.fanuc.com/contact/support",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 0.05,
+        "unitCode": "MMT",
+        "minValue": 0.01,
+        "maxValue": 0.1
+      },
+      "rodeos:framework": "FANUC iRVision"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "FANUC",
+        "rodeos:hardwareAssetType": "ipc"
+      },
+      "child": {
+        "@type": "rodeos:controller",
+        "properties": {
+          "rodeos:cpuArchitecture": "ARM Cortex-A53",
+          "rodeos:processorClock": 1.2,
+          "rodeos:realTimeSupport": true,
+          "rodeos:communicationInterfaces": "Ethernet/IP, PROFINET, Modbus TCP, CC-Link IE Field",
+          "rodeos:powerSupply": "24V DC, 5A"
+        },
+        "child": {
+          "@type": "rodeos:ipc",
+          "properties": {
+            "rodeos:aasSubmodel": "https://industrial.fanuc.com/aas/submodels/ipc/logistics-quality-inspection/v1.2",
+            "rodeos:formFactor": "rodeos:ipcFormFactorRackMount",
+            "rodeos:ramSize": 32.0,
+            "rodeos:storageCapacity": 2000.0,
+            "rodeos:gpuAccelerators": "NVIDIA Quadro RTX 4000 with 8GB GDDR6",
+            "rodeos:expansionSlots": "2x PCIe x16, 2x PCIe x4, 1x PCIe x1",
+            "rodeos:industrialRatings": "IP54 protection, operating temperature -10°C to 60°C, vibration resistance 5G"
+          }
+        }
+      }
+    }
+  }
+}

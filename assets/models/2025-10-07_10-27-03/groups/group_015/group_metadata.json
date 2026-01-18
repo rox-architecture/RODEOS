@@ -1,0 +1,63 @@
+{
+  "company": "Schunk GmbH",
+  "industry": "Food and beverage",
+  "application": "quality inspection",
+  "assets": [
+    {
+      "leaf": "rodeos:lidarSensor",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:sensor",
+        "rodeos:lidarSensor"
+      ],
+      "file": "model_lidarSensor.json"
+    },
+    {
+      "leaf": "rodeos:robotController",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:controller",
+        "rodeos:robotController"
+      ],
+      "file": "model_robotController.json"
+    },
+    {
+      "leaf": "rodeos:delta",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:roboter",
+        "rodeos:stationaryRobot",
+        "rodeos:parallelRobot",
+        "rodeos:delta"
+      ],
+      "file": "model_delta.json"
+    },
+    {
+      "leaf": "rodeos:robotOperationSoftware",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:softwareComponent",
+        "rodeos:robotOperationSoftware"
+      ],
+      "file": "model_robotOperationSoftware.json"
+    },
+    {
+      "leaf": "rodeos:plc",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:controller",
+        "rodeos:plc"
+      ],
+      "file": "model_plc.json"
+    }
+  ]
+}

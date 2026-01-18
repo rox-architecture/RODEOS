@@ -1,0 +1,82 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "WAGO Hexapod Bin Picking System",
+    "dcterms:type": "robotics:hexapod",
+    "dcterms:publisher": "WAGO GmbH & Co. KG",
+    "dcterms:license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "dcterms:identifier": "WAGO-HXP-BP-2024-001",
+    "dcterms:description": "A six-legged robotic system designed for automated bin picking operations in logistics and warehousing environments. Features advanced computer vision, precision grasping capabilities, and adaptive motion planning for handling various item shapes and sizes.",
+    "dcat:version": "2.3.1",
+    "dcat:keyword": [
+      "hexapod",
+      "bin picking",
+      "robotics",
+      "automation",
+      "logistics",
+      "warehousing",
+      "WAGO",
+      "material handling"
+    ],
+    "dcat:contactPoint": "https://www.wago.com/global/contact-technical-support",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "schema:minValue": 5,
+        "schema:maxValue": 50,
+        "schema:unitCode": "kg",
+        "schema:value": 25
+      },
+      "rodeos:framework": "WAGO Hexapod Control Framework v2.1"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "WAGO",
+        "rodeos:hardwareAssetType": "hexapod"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 15.0,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 48.0,
+          "rodeos:interface": "EtherCAT",
+          "rodeos:reach": 1200.0,
+          "rodeos:accuracy": 0.05,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted",
+            "rodeos:positionAccuracy": 0.05,
+            "rodeos:repeatability": 0.02,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 2.5,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "Parallel kinematic hexapod (Stewart platform)"
+          },
+          "child": {
+            "@type": "rodeos:parallelRobot",
+            "properties": {
+              "rodeos:platformSize": 1.0,
+              "rodeos:stiffness": 3.3
+            },
+            "child": {
+              "@type": "rodeos:hexapod",
+              "properties": {
+                "rodeos:aasSubmodel": "https://wago.com/aas/submodels/hexapod-bin-picking-logistics"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

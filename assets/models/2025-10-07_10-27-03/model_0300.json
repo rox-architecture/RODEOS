@@ -1,0 +1,39 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Epson Robotics Food Quality Inspection Dataset",
+    "dcterms:type": "Dataset",
+    "dcterms:publisher": "Epson Robotics",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "EPS-FQI-2023-D001",
+    "dcterms:description": "Comprehensive dataset containing annotated images and sensor data for food quality inspection applications, including defect detection, size verification, and contamination identification in food processing environments.",
+    "dcat:version": "1.2.0",
+    "dcat:keyword": [
+      "food inspection",
+      "quality control",
+      "computer vision",
+      "defect detection",
+      "Epson robotics",
+      "automated inspection",
+      "food safety"
+    ],
+    "dcat:contactPoint": "mailto:robotics.support@epson.com",
+    "rodeos:coreType": "Dataset"
+  },
+  "child": {
+    "@type": "rodeos:Dataset",
+    "properties": {
+      "dprod:informationSensitivityClassification": "confidential",
+      "dprod:type": "analytical",
+      "rodeos:dataFormat": "application/parquet",
+      "rodeos:isDataproduct": true,
+      "dcat:byteSize": 1073741824,
+      "rodeos:dataTypeSchema": "https://schema.org/Dataset",
+      "dcat:checksum": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dcat:endpointDescription": "REST API endpoint providing access to quality inspection datasets with filtering capabilities by timestamp, batch ID, and defect type",
+      "dcat:endpointURL": "https://api.epsonrobotics.com/datasets/quality-inspection/v1",
+      "dcat:protocol": "HTTPS",
+      "dprod:dataProductOwner": "Epson Robotics Quality Assurance Department"
+    }
+  }
+}

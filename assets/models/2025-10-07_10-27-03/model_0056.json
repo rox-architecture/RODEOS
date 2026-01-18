@@ -1,0 +1,85 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Schunk GmbH Cartesian Robot System for Material Transport",
+    "dcterms:type": "robotics:CartesianRobot",
+    "dcterms:publisher": "Schunk GmbH",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "SCH-CART-LOG-2024-001",
+    "dcterms:description": "Industrial-grade Cartesian robot system designed for automated material transport applications in logistics and warehousing environments. Features high precision linear motion, modular design, and integration capabilities with warehouse management systems.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "Cartesian robot",
+      "material transport",
+      "logistics automation",
+      "warehousing",
+      "linear motion",
+      "Schunk GmbH",
+      "industrial robotics"
+    ],
+    "dcat:contactPoint": "https://www.schunk.com/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "schema:value": 1,
+        "schema:unitCode": "C62"
+      },
+      "rodeos:framework": "Schunk Motion Control Framework"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Schunk GmbH",
+        "rodeos:hardwareAssetType": "cartesian"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 25.0,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 48.0,
+          "rodeos:interface": "EtherCAT",
+          "rodeos:reach": 1500.0,
+          "rodeos:accuracy": 0.05,
+          "rodeos:minVelocity": 0.01
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted",
+            "rodeos:positionAccuracy": 0.05,
+            "rodeos:repeatability": 0.02,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 8.5,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "Cartesian Gantry"
+          },
+          "child": {
+            "@type": "rodeos:serielRobot",
+            "properties": {
+              "rodeos:jointCount": 10,
+              "rodeos:maxJointSpeed": 5.0
+            },
+            "child": {
+              "@type": "rodeos:cartesian",
+              "properties": {
+                "rodeos:aasSubmodel": "https://industrial.schunk.com/aas/cartesian/material-transport/12345",
+                "rodeos:linearTravelXYZ": {
+                  "@type": "schema:quantitativeValue",
+                  "schema:value": 5000,
+                  "schema:unitCode": "MMT"
+                },
+                "rodeos:linearAxisSpeedMax": 2.5
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Schunk Bin Picking Simulation Digital Twin Software",
+    "dcterms:type": "Software",
+    "dcterms:publisher": "Schunk GmbH",
+    "dcterms:license": "https://www.schunk.com/terms/license",
+    "dcterms:identifier": "SCH-SIM-BP-DT-2024-1",
+    "dcterms:description": "A high-fidelity digital twin simulation software designed for bin picking applications in electronics manufacturing. Provides realistic modeling of Schunk grippers, vision systems, and material handling components with collision detection, path optimization, and performance analytics.",
+    "dcat:version": "2.4.1",
+    "dcat:keyword": [
+      "bin picking",
+      "digital twin",
+      "simulation",
+      "robotics",
+      "automation",
+      "electronics manufacturing",
+      "Schunk",
+      "gripper",
+      "vision system"
+    ],
+    "dcat:contactPoint": "https://www.schunk.com/contact/support",
+    "rodeos:coreType": "Service"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 0.95,
+        "schema:unitText": "accuracy"
+      },
+      "rodeos:framework": "ROS 2 Humble Hawksbill"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "@type": "schema:quantitativeValue",
+          "schema:value": 0.95,
+          "schema:unitText": "accuracy"
+        },
+        "rodeos:softwareAssetType": {
+          "@id": "skos:concept",
+          "skos:prefLabel": "Simulation Software"
+        }
+      },
+      "child": {
+        "@type": "rodeos:simulationDigitalTwinSoftware",
+        "properties": {
+          "rodeos:simulationDigitalTwinSoftwareType": "physicsEngine",
+          "rodeos:aasSubmodel": "https://asset-shell.schunk.com/simulation-digital-twin-software/bin-picking/1/0",
+          "rodeos:physicsFidelity": "High-fidelity physics simulation with accurate collision detection, material properties, and gravity effects optimized for bin picking applications",
+          "rodeos:supportedRobotModels": [
+            "Schunk LWA 4P",
+            "Schunk PG 70",
+            "Universal Robots UR10e",
+            "Fanuc LR Mate 200iD",
+            "KUKA KR AGILUS"
+          ],
+          "rodeos:fileFormatCompatibility": [
+            "STEP",
+            "IGES",
+            "STL",
+            "OBJ",
+            "VRML",
+            "Collada",
+            "URDF"
+          ]
+        }
+      }
+    }
+  }
+}

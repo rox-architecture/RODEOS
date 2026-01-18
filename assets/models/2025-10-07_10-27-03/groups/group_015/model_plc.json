@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Schunk GmbH PLC System for Food Quality Inspection",
+    "dcterms:type": "skos:concept",
+    "dcterms:publisher": "Schunk GmbH",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "SCH-PLC-FB-QI-2024-001",
+    "dcterms:description": "Programmable Logic Controller system designed by Schunk GmbH for automated quality inspection in food and beverage processing, ensuring compliance with industry standards and enhancing production efficiency through real-time monitoring and control.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "PLC",
+      "quality inspection",
+      "food processing",
+      "automation",
+      "Schunk GmbH",
+      "industrial robotics",
+      "real-time monitoring",
+      "beverage industry"
+    ],
+    "dcat:contactPoint": "mailto:support@schunk.com",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 1,
+        "unitCode": "C62"
+      },
+      "rodeos:framework": "Schunk FoodSafe Automation Framework"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Schunk GmbH",
+        "rodeos:hardwareAssetType": "plc"
+      },
+      "child": {
+        "@type": "rodeos:controller",
+        "properties": {
+          "rodeos:cpuArchitecture": "cpuArchitecture",
+          "rodeos:realTimeSupport": true,
+          "rodeos:powerSupply": "powerSupply"
+        },
+        "child": {
+          "@type": "rodeos:plc",
+          "properties": {
+            "rodeos:aasSubmodel": "https://example.com/aas/schunk-plc-quality-inspection/submodel",
+            "rodeos:scanTimeTypical": "PT0.05S",
+            "rodeos:programMemory": 512.0,
+            "rodeos:ioCapacity": "1024 digital I/O points, 64 analog I/O channels"
+          }
+        }
+      }
+    }
+  }
+}

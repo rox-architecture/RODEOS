@@ -1,0 +1,67 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Bosch Rexroth Aerospace Bin Picking Integration Orchestration System",
+    "dcterms:type": "skos:concept",
+    "dcterms:publisher": "Bosch Rexroth AG",
+    "dcterms:license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "dcterms:identifier": "BOSCH-REXROTH-AERO-BP-IOS-2024-001",
+    "dcterms:description": "A comprehensive integration orchestration system designed for aerospace bin picking applications, featuring advanced robotics coordination, vision system integration, and real-time data processing for high-precision component handling.",
+    "dcat:version": "2.4.1",
+    "dcat:keyword": [
+      "bin picking",
+      "aerospace",
+      "robotics",
+      "automation",
+      "integration",
+      "orchestration",
+      "Bosch Rexroth",
+      "industrial automation"
+    ],
+    "dcat:contactPoint": "https://www.boschrexroth.com/en/contact",
+    "rodeos:coreType": "Service"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 2.5,
+        "unitCode": "SEC"
+      },
+      "rodeos:framework": "Bosch Rexroth ctrlX CORE"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "@type": "schema:quantitativeValue",
+          "value": 2.5,
+          "unitCode": "SEC"
+        },
+        "rodeos:softwareAssetType": "softwareAssetType"
+      },
+      "child": {
+        "@type": "rodeos:integrationOrchestration",
+        "properties": {
+          "rodeos:integrationOrchestrationType": "workflowOrchestration",
+          "rodeos:aasSubmodel": "https://industrial.boschrexroth.com/aas/submodels/bin-picking-orchestration/v1",
+          "rodeos:supportedProtocols": [
+            "OPC UA",
+            "MQTT",
+            "HTTP/REST",
+            "ROS/ROS2",
+            "MTConnect"
+          ],
+          "rodeos:deploymentVariants": [
+            "On-premises server",
+            "Cloud-hosted",
+            "Edge computing device",
+            "Hybrid cloud-edge"
+          ]
+        }
+      }
+    }
+  }
+}

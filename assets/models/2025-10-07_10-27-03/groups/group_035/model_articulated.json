@@ -1,0 +1,82 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "IFM Electronic Articulated Robot for Medical Device Palletizing",
+    "dcterms:type": "Robotic System",
+    "dcterms:publisher": "IFM Electronic GmbH",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "IFM-ART-MEDPAL-001",
+    "dcterms:description": "Articulated robotic system designed for high-precision palletizing of medical devices, featuring advanced motion control and sterile environment compatibility.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "articulated robot",
+      "medical devices",
+      "palletizing",
+      "automation",
+      "IFM Electronic",
+      "industrial robotics"
+    ],
+    "dcat:contactPoint": "mailto:support@ifm.com",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 6,
+        "unitCode": "DOF",
+        "minValue": 4,
+        "maxValue": 7
+      },
+      "rodeos:framework": "IFM O3D vision system with integrated PLC programming interface"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "IFM Electronic",
+        "rodeos:hardwareAssetType": "articulated"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 60.0,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 24.0,
+          "rodeos:interface": "EtherNet/IP, IO-Link, Digital I/O",
+          "rodeos:reach": 1650.0,
+          "rodeos:accuracy": 0.05,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted",
+            "rodeos:positionAccuracy": 0.05,
+            "rodeos:repeatability": 0.02,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 2.5,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "6-axis articulated"
+          },
+          "child": {
+            "@type": "rodeos:serielRobot",
+            "properties": {
+              "rodeos:jointCount": 6,
+              "rodeos:maxJointSpeed": 180.0
+            },
+            "child": {
+              "@type": "rodeos:articulated",
+              "properties": {
+                "rodeos:aasSubmodel": "https://ifm.com/aas/submodels/articulated-robot-palletizing",
+                "rodeos:wristPayload": 150.0
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

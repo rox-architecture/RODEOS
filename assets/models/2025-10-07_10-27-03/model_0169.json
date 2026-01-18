@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "KUKA Robot Controller for Food and Beverage Assembly",
+    "dcterms:type": "Industrial Automation Equipment",
+    "dcterms:publisher": "KUKA AG",
+    "dcterms:license": "https://www.kuka.com/en-de/terms-and-conditions",
+    "dcterms:identifier": "KRC4-FB-ASSEMBLY-001",
+    "dcterms:description": "A high-precision robot controller designed for food-safe assembly applications, featuring IP67 protection, hygienic design, and compliance with food industry regulations. Optimized for pick-and-place, component insertion, and packaging operations in food production environments.",
+    "dcat:version": "V2.7.1",
+    "dcat:keyword": [
+      "robot controller",
+      "industrial automation",
+      "food industry",
+      "assembly",
+      "KUKA",
+      "KRC4",
+      "hygienic design",
+      "IP67",
+      "food-safe"
+    ],
+    "dcat:contactPoint": "https://www.kuka.com/en-de/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 4,
+        "schema:unitCode": "CNTR"
+      },
+      "rodeos:framework": "KUKA System Software 8.6"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "KUKA AG",
+        "rodeos:hardwareAssetType": "robotController"
+      },
+      "child": {
+        "@type": "rodeos:controller",
+        "properties": {
+          "rodeos:cpuArchitecture": "x86-64",
+          "rodeos:processorClock": 2.8,
+          "rodeos:realTimeSupport": true,
+          "rodeos:communicationInterfaces": "EtherCAT, PROFINET, EtherNet/IP",
+          "rodeos:powerSupply": "24V DC, 10A"
+        },
+        "child": {
+          "@type": "rodeos:robotController",
+          "properties": {
+            "rodeos:aasSubmodel": "https://example.com/aas/kuka/krc5/assembly/submodel",
+            "rodeos:maxAxesSupported": 8,
+            "rodeos:driveInterfaces": "rodeos:EtherCAT"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "IFM Electronic Hexapod Palletizing System",
+    "dcterms:type": "robotic automation system",
+    "dcterms:publisher": "IFM Electronic GmbH",
+    "dcterms:license": "https://ifm.com/professional/legal/licenses/industrial-automation",
+    "dcterms:identifier": "IFM-HEX-PLT-MED-2024-001",
+    "dcterms:description": "A six-axis parallel kinematic hexapod robot system designed for high-precision palletizing applications in medical device manufacturing, featuring IFM's proprietary motion control and vision guidance systems",
+    "dcat:version": "2.3.1",
+    "dcat:keyword": [
+      "hexapod",
+      "palletizing",
+      "medical devices",
+      "parallel kinematics",
+      "automation",
+      "robotics",
+      "IFM Electronic",
+      "precision handling",
+      "sterile environment",
+      "GMP compliance"
+    ],
+    "dcat:contactPoint": "https://ifm.com/contact/industrial-automation-support",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 6,
+        "unitCode": "rodeos:axisCount"
+      },
+      "rodeos:framework": "IFM Hexapod Motion Control Framework"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "IFM Electronic",
+        "rodeos:hardwareAssetType": "hexapod"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 25.0,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 48.0,
+          "rodeos:interface": "EtherNet/IP, IO-Link, OPC UA",
+          "rodeos:reach": 1500.0,
+          "rodeos:accuracy": 0.05,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted",
+            "rodeos:positionAccuracy": 0.05,
+            "rodeos:repeatability": 0.02,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 8.5,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "Parallel kinematic structure with six degrees of freedom"
+          },
+          "child": {
+            "@type": "rodeos:parallelRobot",
+            "properties": {
+              "rodeos:platformSize": 1.0,
+              "rodeos:stiffness": 0.1
+            },
+            "child": {
+              "@type": "rodeos:hexapod",
+              "properties": {
+                "rodeos:aasSubmodel": "https://ifm.com/aas/submodels/hexapod-palletizing-medical-devices"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

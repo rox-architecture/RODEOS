@@ -1,0 +1,86 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "SICK AG Cylindrical Robotic Arc Welding System for Aerospace Applications",
+    "dcterms:type": "skos:concept",
+    "dcterms:publisher": "SICK AG",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "SICK-CYL-AW-AS-001",
+    "dcterms:description": "A high-precision cylindrical robotic system designed for automated arc welding applications in the aerospace industry, featuring advanced sensor integration and real-time quality monitoring capabilities.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "robotics",
+      "automation",
+      "arc welding",
+      "aerospace",
+      "cylindrical",
+      "SICK AG",
+      "industrial",
+      "precision welding",
+      "quality control"
+    ],
+    "dcat:contactPoint": "https://www.sick.com/us/en/contact/",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 6,
+        "unitCode": "MMT",
+        "minValue": 4,
+        "maxValue": 8
+      },
+      "rodeos:framework": "SICK AppSpace"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "SICK AG",
+        "rodeos:hardwareAssetType": "rodeos:cylindrical"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 6.0,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 24.0,
+          "rodeos:interface": "Ethernet/IP, PROFINET, DeviceNet",
+          "rodeos:reach": 1.8,
+          "rodeos:accuracy": 0.05,
+          "rodeos:minVelocity": 0.01
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted",
+            "rodeos:positionAccuracy": 0.05,
+            "rodeos:repeatability": 0.02,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 12.5,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "6-axis articulated"
+          },
+          "child": {
+            "@type": "rodeos:serielRobot",
+            "properties": {
+              "rodeos:jointCount": 6,
+              "rodeos:maxJointSpeed": 180.0
+            },
+            "child": {
+              "@type": "rodeos:cylindrical",
+              "properties": {
+                "rodeos:aasSubmodel": "https://industrial-assets.sick.com/aas/submodels/cylindrical/arc-welding/aerospace/1.0",
+                "rodeos:radialTravel": 500.0,
+                "rodeos:verticalTravelZ": 300.0
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

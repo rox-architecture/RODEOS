@@ -1,0 +1,44 @@
+{
+  "company": "IFM Electronic",
+  "industry": "Medical devices",
+  "application": "palletizing",
+  "assets": [
+    {
+      "leaf": "rodeos:articulated",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:roboter",
+        "rodeos:stationaryRobot",
+        "rodeos:serielRobot",
+        "rodeos:articulated"
+      ],
+      "file": "model_articulated.json"
+    },
+    {
+      "leaf": "rodeos:robotController",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:controller",
+        "rodeos:robotController"
+      ],
+      "file": "model_robotController.json"
+    },
+    {
+      "leaf": "rodeos:hexapod",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:roboter",
+        "rodeos:stationaryRobot",
+        "rodeos:parallelRobot",
+        "rodeos:hexapod"
+      ],
+      "file": "model_hexapod.json"
+    }
+  ]
+}

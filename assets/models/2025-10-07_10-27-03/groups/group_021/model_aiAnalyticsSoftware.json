@@ -1,0 +1,57 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Rockwell Automation AI Analytics Software for Pick-and-Place Applications",
+    "dcterms:type": "Software",
+    "dcterms:publisher": "Rockwell Automation, Inc.",
+    "dcterms:license": "https://www.rockwellautomation.com/en-us/company/terms-of-use.html",
+    "dcterms:identifier": "RA-AI-PICKPLACE-V2.5",
+    "dcterms:description": "AI-powered analytics software designed for pick-and-place automation systems in food and beverage manufacturing. Provides real-time object recognition, path optimization, and quality control monitoring to enhance operational efficiency and reduce errors.",
+    "dcat:version": "2.5.1",
+    "dcat:keyword": [
+      "AI analytics",
+      "pick-and-place",
+      "food and beverage",
+      "automation",
+      "robotics",
+      "machine vision",
+      "quality control"
+    ],
+    "dcat:contactPoint": "https://www.rockwellautomation.com/en-us/support/contact-technical-support.html",
+    "rodeos:coreType": "Service"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 0.95,
+        "schema:unitText": "accuracy"
+      },
+      "rodeos:framework": "Rockwell Automation FactoryTalk Analytics for Devices AI Framework"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "@type": "schema:quantitativeValue",
+          "schema:value": 0.95,
+          "schema:unitText": "accuracy"
+        },
+        "rodeos:softwareAssetType": {
+          "@type": "skos:concept",
+          "skos:prefLabel": "Machine Learning Module"
+        }
+      },
+      "child": {
+        "@type": "rodeos:aiAnalyticsSoftware",
+        "properties": {
+          "rodeos:aiAnalyticsSoftwareType": "mlModel",
+          "rodeos:aasSubmodel": "https://rockwell-automation.com/aas/food-beverage/pick-place/ml-model/v1",
+          "rodeos:modelArchitecture": "Convolutional Neural Network (CNN) with ResNet-50 backbone for object recognition and spatial transformer networks for precise coordinate prediction"
+        }
+      }
+    }
+  }
+}

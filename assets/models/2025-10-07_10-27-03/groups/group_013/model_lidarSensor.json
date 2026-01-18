@@ -1,0 +1,72 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "KUKA LIDAR Sensor for Medical Device Palletizing",
+    "dcterms:type": "Sensor",
+    "dcterms:publisher": "KUKA AG",
+    "dcterms:license": "https://www.kuka.com/en-de/terms-conditions",
+    "dcterms:identifier": "KUKA-LIDAR-MEDPAL-2024-001",
+    "dcterms:description": "High-precision LIDAR sensor designed for medical device palletizing applications, featuring sub-millimeter accuracy, IP67 rating, and compliance with medical industry cleanliness standards. Optimized for integration with KUKA robotic systems.",
+    "dcat:version": "2.3.1",
+    "dcat:keyword": [
+      "LIDAR",
+      "palletizing",
+      "medical devices",
+      "KUKA",
+      "automation",
+      "safety sensor",
+      "3D scanning"
+    ],
+    "dcat:contactPoint": "https://www.kuka.com/en-de/contact/technical-support",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 2.5,
+        "minValue": 1.0,
+        "maxValue": 5.0,
+        "unitCode": "M"
+      },
+      "rodeos:framework": "KUKA.LiDAR.SensingFramework v3.7"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "KUKA AG",
+        "rodeos:hardwareAssetType": "lidarSensor"
+      },
+      "child": {
+        "@type": "rodeos:sensor",
+        "properties": {
+          "rodeos:measurementRange": 10.0,
+          "rodeos:measurementAccuracy": 0.005,
+          "rodeos:samplingRate": 100000.0,
+          "rodeos:fieldOfView": {
+            "schema:minValue": 0,
+            "schema:maxValue": 270,
+            "schema:unitCode": "DDN"
+          }
+        },
+        "child": {
+          "@type": "rodeos:lidarSensor",
+          "properties": {
+            "rodeos:aasSubmodel": "https://asset-shell.com/aas/KUKA/LIDAR-Sensor-Medical-Palletizing/1",
+            "rodeos:scanRate": 25.0,
+            "rodeos:angularResolution": 0.1,
+            "rodeos:maxRange": 30.0,
+            "rodeos:fieldOfView": {
+              "schema:minValue": 0,
+              "schema:maxValue": 270,
+              "schema:unitCode": "DDN"
+            },
+            "rodeos:numChannels": 16
+          }
+        }
+      }
+    }
+  }
+}

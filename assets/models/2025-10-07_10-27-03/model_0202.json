@@ -1,0 +1,66 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "KUKA AG Dispensing Additive Tool for Quality Inspection",
+    "dcterms:type": "skos:concept",
+    "dcterms:publisher": "KUKA AG",
+    "dcterms:license": "https://www.kuka.com/en-de/terms-of-use",
+    "dcterms:identifier": "KUKA-DAT-QI-001",
+    "dcterms:description": "A precision dispensing additive tool designed for automated quality inspection processes in logistics and warehousing applications. Provides controlled material deposition for inspection marking and sample preparation.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "dispensing",
+      "additive tool",
+      "quality inspection",
+      "robotics",
+      "automation",
+      "logistics",
+      "warehousing",
+      "KUKA"
+    ],
+    "dcat:contactPoint": "https://www.kuka.com/en-de/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 2.5,
+        "unitCode": "KUKA",
+        "minValue": 1.0,
+        "maxValue": 5.0
+      },
+      "rodeos:framework": "KUKA System Software 8.6"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "KUKA AG",
+        "rodeos:hardwareAssetType": "rodeos:dispensingAdditiveTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "EtherNet/IP",
+          "rodeos:manufacturer": "KUKA AG",
+          "rodeos:toolWeight": 3.5,
+          "rodeos:toolMaterial": "Stainless Steel AISI 316L"
+        },
+        "child": {
+          "@type": "rodeos:dispensingAdditiveTool",
+          "properties": {
+            "rodeos:dispensingAdditiveToolType": "SealantAdhesiveDispensers",
+            "rodeos:aasSubmodel": "https://asset-shell.kuka.com/dispensingAdditiveTool/QA-ADH-2024-001",
+            "rodeos:materialFlowRate": 15.75,
+            "rodeos:nozzleSize": 0.8,
+            "rodeos:layerThickness": 0.25,
+            "rodeos:temperature": 45.0
+          }
+        }
+      }
+    }
+  }
+}

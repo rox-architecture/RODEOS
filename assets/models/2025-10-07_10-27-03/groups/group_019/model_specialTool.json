@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Schunk Arc Welding Special Tool for Plastics Processing",
+    "dcterms:type": "Special Tool",
+    "dcterms:publisher": "Schunk GmbH",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "SCH-AW-PLAST-2024-001",
+    "dcterms:description": "A specialized robotic tool designed for arc welding applications in plastics processing, featuring precision control, heat management, and compatibility with industrial automation systems.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "arc welding",
+      "plastics processing",
+      "robotic tool",
+      "Schunk",
+      "automation",
+      "special tool"
+    ],
+    "dcat:contactPoint": "https://www.schunk.com/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 2.5,
+        "unitCode": "KGM",
+        "minValue": 1.8,
+        "maxValue": 3.2
+      },
+      "rodeos:framework": "Schunk ArcWelder Pro 2500"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Schunk GmbH",
+        "rodeos:hardwareAssetType": "rodeos:specialTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "DeviceNet",
+          "rodeos:manufacturer": "Schunk GmbH",
+          "rodeos:toolWeight": 3.5,
+          "rodeos:toolMaterial": "Stainless Steel"
+        },
+        "child": {
+          "@type": "rodeos:specialTool",
+          "properties": {
+            "rodeos:specialToolType": "HybridEndEffectors",
+            "rodeos:aasSubmodel": "https://assetadministration.schunk.com/specialtools/arcwelding/hybrid-effector-v2",
+            "rodeos:interfaceStandard": "ISO 9409-1-50-4-M6",
+            "rodeos:changeoverTime": 12.5,
+            "rodeos:numberOfPorts": 4
+          }
+        }
+      }
+    }
+  }
+}

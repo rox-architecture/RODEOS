@@ -1,0 +1,44 @@
+{
+  "company": "Yaskawa Motoman",
+  "industry": "Aerospace",
+  "application": "material transport",
+  "assets": [
+    {
+      "leaf": "rodeos:scara",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:roboter",
+        "rodeos:stationaryRobot",
+        "rodeos:serielRobot",
+        "rodeos:scara"
+      ],
+      "file": "model_scara.json"
+    },
+    {
+      "leaf": "rodeos:dispensingAdditiveTool",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:tooling",
+        "rodeos:dispensingAdditiveTool"
+      ],
+      "file": "model_dispensingAdditiveTool.json"
+    },
+    {
+      "leaf": "rodeos:polarSpherical",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:roboter",
+        "rodeos:stationaryRobot",
+        "rodeos:serielRobot",
+        "rodeos:polarSpherical"
+      ],
+      "file": "model_polarSpherical.json"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "company": "Schunk GmbH",
+  "industry": "Plastics processing",
+  "application": "arc welding",
+  "assets": [
+    {
+      "leaf": "rodeos:specialTool",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:tooling",
+        "rodeos:specialTool"
+      ],
+      "file": "model_specialTool.json"
+    },
+    {
+      "leaf": "rodeos:integrationOrchestration",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:softwareComponent",
+        "rodeos:integrationOrchestration"
+      ],
+      "file": "model_integrationOrchestration.json"
+    }
+  ]
+}

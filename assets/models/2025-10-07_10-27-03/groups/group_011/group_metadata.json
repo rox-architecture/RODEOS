@@ -1,0 +1,29 @@
+{
+  "company": "Beckhoff",
+  "industry": "Renewable energy",
+  "application": "material transport",
+  "assets": [
+    {
+      "leaf": "rodeos:plc",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:controller",
+        "rodeos:plc"
+      ],
+      "file": "model_plc.json"
+    },
+    {
+      "leaf": "rodeos:encoder",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:sensor",
+        "rodeos:encoder"
+      ],
+      "file": "model_encoder.json"
+    }
+  ]
+}

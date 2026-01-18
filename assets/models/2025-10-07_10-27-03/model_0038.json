@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "IFM Electronic Welding Tool for Renewable Energy Material Transport",
+    "dcterms:type": "skos:concept",
+    "dcterms:publisher": "IFM Electronic GmbH",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "IFM-WT-REN-2024-001",
+    "dcterms:description": "Industrial welding tool designed for material transport applications in renewable energy sectors, featuring precision control and compatibility with automation systems.",
+    "dcat:version": "v2.1.0",
+    "dcat:keyword": [
+      "welding",
+      "renewable energy",
+      "material transport",
+      "automation",
+      "robotics",
+      "IFM Electronic"
+    ],
+    "dcat:contactPoint": "mailto:support@ifm.com",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 150,
+        "unitCode": "kg",
+        "minValue": 120,
+        "maxValue": 180
+      },
+      "rodeos:framework": "IFM O2D Series Object Detection and Measurement"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "IFM Electronic",
+        "rodeos:hardwareAssetType": "rodeos:weldingTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "IO-Link",
+          "rodeos:manufacturer": "IFM Electronic",
+          "rodeos:toolWeight": 3.2,
+          "rodeos:toolMaterial": "Stainless Steel AISI 316L"
+        },
+        "child": {
+          "@type": "rodeos:weldingTool",
+          "properties": {
+            "rodeos:weldingType": "MIG",
+            "rodeos:aasSubmodel": "https://ifm.com/aas/submodels/weldingTool/12345",
+            "rodeos:weldingCurrent": 250.5,
+            "rodeos:voltage": 28.0,
+            "rodeos:wireFeedRate": 8.2,
+            "rodeos:electrodeLife": 1500.0
+          }
+        }
+      }
+    }
+  }
+}

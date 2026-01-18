@@ -1,0 +1,95 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Epson Polar Spherical Robot System for Automotive Material Transport",
+    "dcterms:type": "Physical Object",
+    "dcterms:publisher": "Epson Robotics",
+    "dcterms:license": "https://global.epson.com/support/robotics/license.html",
+    "dcterms:identifier": "EPS-PSR-AT2024-MT001",
+    "dcterms:description": "A polar spherical coordinate robot system designed for material transport applications in automotive assembly lines. Features high-precision positioning, payload handling up to 20kg, and seamless integration with existing conveyor systems.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "robotics",
+      "automation",
+      "material handling",
+      "automotive",
+      "spherical robot",
+      "Epson",
+      "industrial automation",
+      "assembly line"
+    ],
+    "dcat:contactPoint": "https://robotics.epson.com/support/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 7.5,
+        "unitCode": "kg",
+        "minValue": 5.0,
+        "maxValue": 10.0
+      },
+      "rodeos:framework": "Epson RC+ 7.0"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Epson Robotics",
+        "rodeos:hardwareAssetType": "polarSpherical"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 5.0,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 230.0,
+          "rodeos:interface": "EtherCAT",
+          "rodeos:reach": 1.2,
+          "rodeos:accuracy": 0.02,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted",
+            "rodeos:positionAccuracy": 0.05,
+            "rodeos:repeatability": 0.02,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 2.5,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "Polar coordinate system with spherical wrist"
+          },
+          "child": {
+            "@type": "rodeos:serielRobot",
+            "properties": {
+              "rodeos:jointCount": 4,
+              "rodeos:maxJointSpeed": 180.5
+            },
+            "child": {
+              "@type": "rodeos:polarSpherical",
+              "properties": {
+                "rodeos:aasSubmodel": "https://assets.automation.epson.com/robotics/polarSpherical/aas/automotive-material-transport",
+                "rodeos:radialRange": {
+                  "@type": "schema:quantitativeValue",
+                  "schema:minValue": 500,
+                  "schema:maxValue": 2500,
+                  "schema:unitCode": "MMT"
+                },
+                "rodeos:polarAngleRange": {
+                  "@type": "schema:quantitativeValue",
+                  "schema:minValue": -180,
+                  "schema:maxValue": 180,
+                  "schema:unitCode": "DD"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

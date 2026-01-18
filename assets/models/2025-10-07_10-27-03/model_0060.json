@@ -1,0 +1,67 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Omron Grinding/Polishing/Finishing Tool for Electronics Packing",
+    "dcterms:type": "skos:concept",
+    "dcterms:publisher": "Omron Corporation",
+    "dcterms:license": "https://www.omron.com/global/en/about/legal/terms-of-use/",
+    "dcterms:identifier": "OMRON-GPFT-ELEC-PACK-001",
+    "dcterms:description": "Industrial robotic grinding, polishing, and finishing tool designed for precision surface treatment in electronics manufacturing packing applications. Features automated operation, consistent quality output, and integration with Omron automation systems.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "grinding",
+      "polishing",
+      "finishing",
+      "robotic tool",
+      "electronics manufacturing",
+      "packing",
+      "automation",
+      "surface treatment",
+      "Omron"
+    ],
+    "dcat:contactPoint": "https://www.omron.com/global/en/support/contact/",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 1.5,
+        "unitCode": "MM",
+        "minValue": 0.5,
+        "maxValue": 3.0
+      },
+      "rodeos:framework": "Omron Sysmac Studio"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Omron",
+        "rodeos:hardwareAssetType": "rodeos:grindingPolishingFinishingTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "EtherNet/IP",
+          "rodeos:manufacturer": "Omron",
+          "rodeos:toolWeight": 3.2,
+          "rodeos:toolMaterial": "Stainless Steel"
+        },
+        "child": {
+          "@type": "rodeos:grindingPolishingFinishingTool",
+          "properties": {
+            "rodeos:grindingPolishingFinishingToolType": "Grinders",
+            "rodeos:aasSubmodel": "https://industrial.omron.com/aas/submodels/grinding-tool-sm-2024",
+            "rodeos:rotationSpeed": 3500.5,
+            "rodeos:abrasiveForce": 12.75,
+            "rodeos:toolDiameter": 125.0,
+            "rodeos:wearRate": 0.0025
+          }
+        }
+      }
+    }
+  }
+}

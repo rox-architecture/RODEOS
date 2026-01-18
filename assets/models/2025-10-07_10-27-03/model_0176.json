@@ -1,0 +1,81 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Keyence Hexapod Robotic Packing System for Renewable Energy Applications",
+    "dcterms:type": "http://www.productontology.org/id/Robotic_automation_system",
+    "dcterms:publisher": "Keyence Corporation",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "KEY-HEX-PACK-REN-2024-001",
+    "dcterms:description": "A high-precision hexapod robotic system designed for automated packing operations in renewable energy component manufacturing. Features 6-axis parallel kinematics for superior stability and accuracy in handling solar panels, wind turbine components, and energy storage systems.",
+    "dcat:version": "2.3.1",
+    "dcat:keyword": [
+      "hexapod robot",
+      "renewable energy",
+      "packing automation",
+      "Keyence",
+      "6-axis parallel kinematics",
+      "solar panel handling",
+      "wind turbine components",
+      "robotic packaging"
+    ],
+    "dcat:contactPoint": "https://www.keyence.com/contact/",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 6,
+        "schema:unitCode": "UN"
+      },
+      "rodeos:framework": "Keyence Hexapod Motion Control Framework"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Keyence",
+        "rodeos:hardwareAssetType": "hexapod"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 12.5,
+          "rodeos:maxVelocity": 2.4,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 48.0,
+          "rodeos:interface": "EtherCAT",
+          "rodeos:reach": 850.0,
+          "rodeos:accuracy": 0.05,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted",
+            "rodeos:positionAccuracy": 0.05,
+            "rodeos:repeatability": 0.02,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 2.5,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "Parallel kinematic structure"
+          },
+          "child": {
+            "@type": "rodeos:parallelRobot",
+            "properties": {
+              "rodeos:platformSize": 0.5,
+              "rodeos:stiffness": 10.0
+            },
+            "child": {
+              "@type": "rodeos:hexapod",
+              "properties": {
+                "rodeos:aasSubmodel": "https://example.com/aas/submodels/hexapod-packing-renewable-energy-keyence"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Staubli Robot Controller for Bin Picking Applications",
+    "dcterms:type": "Hardware",
+    "dcterms:publisher": "Stäubli International AG",
+    "dcterms:license": "https://www.staubli.com/en-us/legal/terms-of-use",
+    "dcterms:identifier": "STB-RC-BP-FB-2024",
+    "dcterms:description": "Industrial robot controller specifically designed for bin picking applications in food and beverage industry, featuring high-speed precision, food-grade compliance, and advanced vision system integration",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "robot controller",
+      "bin picking",
+      "food industry",
+      "automation",
+      "Stäubli",
+      "robotics",
+      "vision system",
+      "packaging"
+    ],
+    "dcat:contactPoint": "https://www.staubli.com/en-us/support/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 1,
+        "unitCode": "UN",
+        "minValue": 1,
+        "maxValue": 1
+      },
+      "rodeos:framework": "Stäubli CS9 Controller Platform"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Staubli",
+        "rodeos:hardwareAssetType": "robotController"
+      },
+      "child": {
+        "@type": "rodeos:controller",
+        "properties": {
+          "rodeos:cpuArchitecture": "ARM Cortex-A9",
+          "rodeos:processorClock": 1.2,
+          "rodeos:realTimeSupport": true,
+          "rodeos:communicationInterfaces": "Ethernet/IP, PROFINET, EtherCAT, Modbus TCP",
+          "rodeos:powerSupply": "24V DC, 5A"
+        },
+        "child": {
+          "@type": "rodeos:robotController",
+          "properties": {
+            "rodeos:aasSubmodel": "https://industrialdigitaltwin.org/environments/FoodBeverageBinPicking/Submodels/RobotController/Staubli/12345",
+            "rodeos:maxAxesSupported": 6,
+            "rodeos:driveInterfaces": "EtherCAT"
+          }
+        }
+      }
+    }
+  }
+}

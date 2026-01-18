@@ -1,0 +1,66 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Denso Wave Spot Welding Motion Control Software",
+    "dcterms:type": "Software",
+    "dcterms:publisher": "Denso Wave Inc.",
+    "dcterms:license": "https://www.denso-wave.com/en/license/industrial-robotics-software",
+    "dcterms:identifier": "DENSO-SW-MCS-V2.5.1",
+    "dcterms:description": "Advanced motion control software optimized for high-precision spot welding applications in electronics manufacturing. Provides real-time path planning, force control, and adaptive welding parameter adjustment for consistent weld quality across production runs.",
+    "dcat:version": "2.5.1",
+    "dcat:keyword": [
+      "motion control",
+      "spot welding",
+      "robotics software",
+      "industrial automation",
+      "electronics manufacturing",
+      "real-time control",
+      "Denso Wave"
+    ],
+    "dcat:contactPoint": "mailto:robotics-support@denso-wave.com",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "schema:value": "4.2",
+        "schema:unitCode": "VERSION"
+      },
+      "rodeos:framework": "Denso Wave Robotics Framework"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "schema:value": "4.2",
+          "schema:unitCode": "VERSION"
+        },
+        "rodeos:softwareAssetType": {
+          "skos:prefLabel": "Motion Control Software",
+          "skos:inScheme": "https://example.org/softwareTypes"
+        }
+      },
+      "child": {
+        "@type": "rodeos:motionControlSoftware",
+        "properties": {
+          "rodeos:motionControlSystemType": "trajectoryPlanning",
+          "rodeos:aasSubmodel": "https://densowave.com/aas/motioncontrol/spotwelding/v1",
+          "rodeos:supportedRobotTypes": [
+            "SCARA",
+            "Articulated",
+            "Cartesian"
+          ],
+          "rodeos:motionPlanningAlgorithms": [
+            "RRT*",
+            "PRM",
+            "A*",
+            "Potential Fields"
+          ],
+          "rodeos:dofSupport": 6
+        }
+      }
+    }
+  }
+}

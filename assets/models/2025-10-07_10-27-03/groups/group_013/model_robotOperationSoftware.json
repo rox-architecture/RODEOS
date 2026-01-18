@@ -1,0 +1,71 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "KUKA.Palletizing Medical Software Suite",
+    "dcterms:type": "Software",
+    "dcterms:publisher": "KUKA AG",
+    "dcterms:license": "https://www.kuka.com/en-de/products/software/licensing-terms",
+    "dcterms:identifier": "KUKA-PMS-2024-MED",
+    "dcterms:description": "Specialized robot operation software for medical device palletizing applications, featuring sterile environment compliance, precision handling protocols, and validated traceability systems for regulatory requirements.",
+    "dcat:version": "v4.2.1",
+    "dcat:keyword": [
+      "medical robotics",
+      "palletizing",
+      "sterile handling",
+      "KUKA",
+      "automation software",
+      "FDA compliant",
+      "ISO 13485"
+    ],
+    "dcat:contactPoint": "https://www.kuka.com/en-de/services/contact",
+    "rodeos:coreType": "Service"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 4.2,
+        "schema:unitCode": "rodeos:version"
+      },
+      "rodeos:framework": "KUKA System Software (KSS)"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "@type": "schema:quantitativeValue",
+          "schema:value": 4.2,
+          "schema:unitCode": "rodeos:version"
+        },
+        "rodeos:softwareAssetType": "softwareAssetType"
+      },
+      "child": {
+        "@type": "rodeos:robotOperationSoftware",
+        "properties": {
+          "rodeos:robotOperationSystemType": "vendorSpecificMiddleware",
+          "rodeos:aasSubmodel": "https://assets.kuka.com/aas/medical-palletizing-software/v1.0",
+          "rodeos:supportedApis": [
+            "https://api.kuka.com/robotics/v2.0",
+            "https://api.kuka.com/palletizing/v1.5",
+            "https://api.kuka.com/safety/v1.2"
+          ],
+          "rodeos:supportedHardwareDrivers": [
+            "KUKA KR C4",
+            "KUKA KR C5",
+            "KUKA ServoGun",
+            "KUKA VisionTech",
+            "SICK safety scanners"
+          ],
+          "rodeos:osDependencies": [
+            "VxWorks 7.0",
+            "KUKA System Software 8.6",
+            "EtherCAT Master Stack",
+            "OPC UA Server 2.1"
+          ]
+        }
+      }
+    }
+  }
+}

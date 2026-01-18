@@ -1,0 +1,53 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Staubli Palletizing Analytics Suite",
+    "dcterms:type": "Software",
+    "dcterms:publisher": "Staubli International AG",
+    "dcterms:license": "https://www.staubli.com/en/license/industrial-software",
+    "dcterms:identifier": "STB-PLTZ-ANL-2024-V1",
+    "dcterms:description": "AI-powered analytics software for optimizing robotic palletizing operations in renewable energy applications. Provides real-time performance monitoring, predictive maintenance alerts, and efficiency optimization for Staubli robotic cells.",
+    "dcat:version": "1.2.0",
+    "dcat:keyword": [
+      "robotic palletizing",
+      "AI analytics",
+      "renewable energy",
+      "industrial automation",
+      "predictive maintenance",
+      "performance optimization"
+    ],
+    "dcat:contactPoint": "mailto:support.analytics@staubli.com",
+    "rodeos:coreType": "Service"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 4.2,
+        "unitCode": "rodeos:aiAnalyticsCapabilityLevel"
+      },
+      "rodeos:framework": "Staubli VAL AI Analytics Framework"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "@type": "schema:quantitativeValue",
+          "value": 4.2,
+          "unitCode": "rodeos:aiAnalyticsCapabilityLevel"
+        },
+        "rodeos:softwareAssetType": "softwareAssetType"
+      },
+      "child": {
+        "@type": "rodeos:aiAnalyticsSoftware",
+        "properties": {
+          "rodeos:aiAnalyticsSoftwareType": "mlModel",
+          "rodeos:aasSubmodel": "https://staubli.com/aas/renewable-energy/palletizing/analytics-software/submodel",
+          "rodeos:modelArchitecture": "Convolutional Neural Network (CNN) with attention mechanisms for object recognition and path optimization in palletizing operations, integrated with reinforcement learning components for adaptive stacking strategies"
+        }
+      }
+    }
+  }
+}

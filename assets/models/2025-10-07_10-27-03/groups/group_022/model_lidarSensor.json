@@ -1,0 +1,70 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "ABB Robotics LIDAR Sensor for Aerospace Palletizing",
+    "dcterms:type": "sensor",
+    "dcterms:publisher": "ABB Robotics",
+    "dcterms:license": "https://www.abb.com/robotics/license",
+    "dcterms:identifier": "ABB-LIDAR-AERO-PALLET-001",
+    "dcterms:description": "High-precision LIDAR sensor designed for aerospace palletizing applications, providing real-time 3D spatial data for accurate object detection and positioning in automated material handling systems.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "LIDAR",
+      "sensor",
+      "palletizing",
+      "aerospace",
+      "automation",
+      "3D scanning",
+      "ABB Robotics"
+    ],
+    "dcat:contactPoint": "https://www.abb.com/robotics/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "schema:minValue": 0.1,
+        "schema:maxValue": 100.0,
+        "schema:unitCode": "M",
+        "schema:value": 30.0
+      },
+      "rodeos:framework": "ABB RobotWare"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "ABB Robotics",
+        "rodeos:hardwareAssetType": "lidarSensor"
+      },
+      "child": {
+        "@type": "rodeos:sensor",
+        "properties": {
+          "rodeos:measurementRange": 5.0,
+          "rodeos:measurementAccuracy": 500.0,
+          "rodeos:fieldOfView": {
+            "minValue": 0,
+            "maxValue": 270,
+            "unitCode": "DDD"
+          }
+        },
+        "child": {
+          "@type": "rodeos:lidarSensor",
+          "properties": {
+            "rodeos:aasSubmodel": "https://example.com/aas/submodels/lidarSensor/12345",
+            "rodeos:scanRate": 20.0,
+            "rodeos:angularResolution": 0.1,
+            "rodeos:maxRange": 200.0,
+            "rodeos:fieldOfView": {
+              "minValue": 0,
+              "maxValue": 270,
+              "unitCode": "DDD"
+            },
+            "rodeos:numChannels": 16
+          }
+        }
+      }
+    }
+  }
+}

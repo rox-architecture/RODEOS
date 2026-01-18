@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Yaskawa Motoman Cutting Separation Tool for Pick-and-Place Operations",
+    "dcterms:type": "Industrial Automation Component",
+    "dcterms:publisher": "Yaskawa Motoman",
+    "dcterms:license": "https://www.yaskawa.com/license",
+    "dcterms:identifier": "YM-CST-PP-2024-001",
+    "dcterms:description": "A high-precision cutting separation tool designed for logistics and warehousing applications, specifically optimized for pick-and-place operations. Features advanced motion control, durable construction, and seamless integration with Yaskawa Motoman robotic systems.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "cutting tool",
+      "separation",
+      "pick-and-place",
+      "logistics",
+      "warehousing",
+      "Yaskawa Motoman",
+      "robotics",
+      "automation"
+    ],
+    "dcat:contactPoint": "https://www.yaskawa.com/support",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 1.5,
+        "unitCode": "SEC",
+        "minValue": 1.0,
+        "maxValue": 2.0
+      },
+      "rodeos:framework": "Yaskawa Motoman MotoPlus SDK"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Yaskawa Motoman",
+        "rodeos:hardwareAssetType": "cuttingSeparationTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "DeviceNet",
+          "rodeos:manufacturer": "Yaskawa Motoman",
+          "rodeos:toolWeight": 3.5,
+          "rodeos:toolMaterial": "Stainless Steel"
+        },
+        "child": {
+          "@type": "rodeos:cuttingSeparationTool",
+          "properties": {
+            "rodeos:cuttingSeparationToolType": "Shears",
+            "rodeos:aasSubmodel": "https://yaskawa.com/aas/submodels/cuttingSeparationTool/12345",
+            "rodeos:cuttingSpeed": 2.5,
+            "rodeos:energySource": "Electric",
+            "rodeos:toolWear": 0.15
+          }
+        }
+      }
+    }
+  }
+}

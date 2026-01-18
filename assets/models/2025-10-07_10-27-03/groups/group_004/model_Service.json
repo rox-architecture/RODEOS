@@ -1,0 +1,46 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "ABB Spot Welding Service for Metal Fabrication",
+    "dcterms:type": "http://example.com/skos/concepts/industrial-automation-service",
+    "dcterms:publisher": "ABB Robotics",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "ABB-SW-SVC-MF-2024-001",
+    "dcterms:description": "Professional robotic spot welding service designed for metal fabrication applications, featuring ABB's advanced IRB 6700 series robots with integrated welding controllers and real-time monitoring capabilities.",
+    "dcat:version": "2.3.1",
+    "dcat:keyword": [
+      "spot welding",
+      "robotic automation",
+      "metal fabrication",
+      "ABB Robotics",
+      "industrial service",
+      "welding automation"
+    ],
+    "dcat:contactPoint": "https://new.abb.com/products/robotics/contact",
+    "rodeos:coreType": "Service"
+  },
+  "child": {
+    "@type": "rodeos:Service",
+    "properties": {
+      "rodeos:usedModels": [
+        "https://www.abb.com/robotics/models/IRB6700",
+        "https://www.abb.com/robotics/models/IRB1600"
+      ],
+      "rodeos:serviceTypeMain": "rodeos:WeldingService",
+      "rodeos:serviceType": "rodeos:SpotWeldingService",
+      "dcat:endpointURL": "https://api.abb.com/robotics/spot-welding-service/v1",
+      "rodeos:input": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 1.5,
+        "schema:unitCode": "SEC"
+      },
+      "rodeos:output": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 45,
+        "schema:unitCode": "HUR"
+      },
+      "dcat:endpointDescription": "ABB Robotics Spot Welding Service API providing real-time monitoring, control, and optimization of robotic spot welding operations in metal fabrication environments.",
+      "dcat:landingPage": "https://www.abb.com/robotics/services/spot-welding"
+    }
+  }
+}

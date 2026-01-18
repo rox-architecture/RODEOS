@@ -1,0 +1,42 @@
+{
+  "company": "ABB Robotics",
+  "industry": "Aerospace",
+  "application": "palletizing",
+  "assets": [
+    {
+      "leaf": "rodeos:weldingTool",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:tooling",
+        "rodeos:weldingTool"
+      ],
+      "file": "model_weldingTool.json"
+    },
+    {
+      "leaf": "rodeos:lidarSensor",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:sensor",
+        "rodeos:lidarSensor"
+      ],
+      "file": "model_lidarSensor.json"
+    },
+    {
+      "leaf": "rodeos:cylindrical",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:roboter",
+        "rodeos:stationaryRobot",
+        "rodeos:serielRobot",
+        "rodeos:cylindrical"
+      ],
+      "file": "model_cylindrical.json"
+    }
+  ]
+}

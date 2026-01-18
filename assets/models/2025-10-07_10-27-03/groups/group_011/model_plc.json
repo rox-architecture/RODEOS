@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Beckhoff TwinCAT PLC for Renewable Energy Material Transport Systems",
+    "dcterms:type": "Programmable Logic Controller",
+    "dcterms:publisher": "Beckhoff Automation GmbH & Co. KG",
+    "dcterms:license": "https://www.beckhoff.com/en-en/terms/licensing/",
+    "dcterms:identifier": "BKHF-TC-PLC-REN-MT-2024-001",
+    "dcterms:description": "Industrial-grade programmable logic controller optimized for material transport applications in renewable energy facilities. Features real-time control, high-speed I/O processing, and integrated safety functions compliant with IEC 61131-3 standards.",
+    "dcat:version": "3.1.4024.10",
+    "dcat:keyword": [
+      "PLC",
+      "Beckhoff",
+      "TwinCAT",
+      "renewable energy",
+      "material transport",
+      "automation",
+      "IEC 61131-3",
+      "industrial control",
+      "real-time processing"
+    ],
+    "dcat:contactPoint": "https://www.beckhoff.com/en-en/support/technical-support/",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "schema:value": 1.0,
+        "schema:unitCode": "EA"
+      },
+      "rodeos:framework": "TwinCAT 3"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Beckhoff",
+        "rodeos:hardwareAssetType": "plc"
+      },
+      "child": {
+        "@type": "rodeos:controller",
+        "properties": {
+          "rodeos:cpuArchitecture": "ARM Cortex-A9",
+          "rodeos:processorClock": 1.0,
+          "rodeos:realTimeSupport": true,
+          "rodeos:communicationInterfaces": "EtherCAT",
+          "rodeos:powerSupply": "24 V DC"
+        },
+        "child": {
+          "@type": "rodeos:plc",
+          "properties": {
+            "rodeos:aasSubmodel": "https://example.com/aas/submodels/beckhoff-plc-renewable-energy-material-transport",
+            "rodeos:scanTimeTypical": "PT50MS",
+            "rodeos:programMemory": 128.0,
+            "rodeos:ioCapacity": "2048 digital I/O, 512 analog I/O, 32 motion axes"
+          }
+        }
+      }
+    }
+  }
+}

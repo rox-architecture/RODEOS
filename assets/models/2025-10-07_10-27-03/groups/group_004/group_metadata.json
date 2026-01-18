@@ -1,0 +1,56 @@
+{
+  "company": "ABB Robotics",
+  "industry": "Metal fabrication",
+  "application": "spot welding",
+  "assets": [
+    {
+      "leaf": "rodeos:integrationOrchestration",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:softwareComponent",
+        "rodeos:integrationOrchestration"
+      ],
+      "file": "model_integrationOrchestration.json"
+    },
+    {
+      "leaf": "rodeos:aiAnalyticsSoftware",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:softwareComponent",
+        "rodeos:aiAnalyticsSoftware"
+      ],
+      "file": "model_aiAnalyticsSoftware.json"
+    },
+    {
+      "leaf": "rodeos:perceptionVisionSoftware",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:softwareComponent",
+        "rodeos:perceptionVisionSoftware"
+      ],
+      "file": "model_perceptionVisionSoftware.json"
+    },
+    {
+      "leaf": "rodeos:dispensingAdditiveTool",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:tooling",
+        "rodeos:dispensingAdditiveTool"
+      ],
+      "file": "model_dispensingAdditiveTool.json"
+    },
+    {
+      "leaf": "rodeos:Service",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Service"
+      ],
+      "file": "model_Service.json"
+    }
+  ]
+}

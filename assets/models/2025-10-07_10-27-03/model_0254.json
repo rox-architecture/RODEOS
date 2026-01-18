@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "SICK AG Gripper Tool for Electronics Assembly",
+    "dcterms:type": "Tool",
+    "dcterms:publisher": "SICK AG",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "SICK-GT-ELEC-ASSEM-2024",
+    "dcterms:description": "Precision gripper tool designed for high-speed electronics assembly applications, featuring adaptive force control and ESD-safe materials compliant with industry standards.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "gripper",
+      "electronics",
+      "assembly",
+      "automation",
+      "robotics",
+      "SICK"
+    ],
+    "dcat:contactPoint": "https://www.sick.com/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 2.5,
+        "unitCode": "kg",
+        "minValue": 0.1,
+        "maxValue": 5.0
+      },
+      "rodeos:framework": "SICK Gripper Control Framework v2.1"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "SICK AG",
+        "rodeos:hardwareAssetType": "gripperTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "IO-Link",
+          "rodeos:manufacturer": "SICK AG",
+          "rodeos:toolWeight": 0.85,
+          "rodeos:toolMaterial": "Anodized Aluminum"
+        },
+        "child": {
+          "@type": "rodeos:gripperTool",
+          "properties": {
+            "rodeos:gripperType": "MechanicalParallel",
+            "rodeos:aasSubmodel": "https://assetadministration-shell.com/sick-ag/gripper-tool/assembly-electronics/mechanical-parallel/v1",
+            "rodeos:gripForceMax": 120.5,
+            "rodeos:strokePerFinger": 25.0,
+            "rodeos:objectSizeRange": "5-50 mm",
+            "rodeos:interfaceMechanical": "ISO 9409-1-50-4-M6"
+          }
+        }
+      }
+    }
+  }
+}

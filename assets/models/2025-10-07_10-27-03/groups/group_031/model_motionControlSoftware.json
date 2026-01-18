@@ -1,0 +1,72 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Rockwell Automation Arc Welding Motion Control Software",
+    "dcterms:type": "Software",
+    "dcterms:publisher": "Rockwell Automation",
+    "dcterms:license": "https://www.rockwellautomation.com/en-us/legal/software-license.html",
+    "dcterms:identifier": "RA-AMCS-AW-2024",
+    "dcterms:description": "Advanced motion control software specifically designed for precision arc welding applications in the aerospace industry, featuring real-time path correction, seam tracking, and adaptive welding parameter control.",
+    "dcat:version": "v4.2.1",
+    "dcat:keyword": [
+      "motion control",
+      "arc welding",
+      "aerospace",
+      "robotics",
+      "automation",
+      "welding software",
+      "precision control"
+    ],
+    "dcat:contactPoint": "https://www.rockwellautomation.com/en-us/support.html",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 5.2,
+        "minValue": 1.0,
+        "maxValue": 10.0,
+        "unitCode": "rodeos:softwareComplexityIndex"
+      },
+      "rodeos:framework": "Studio 5000 Logix Designer"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "@type": "schema:quantitativeValue",
+          "value": 5.2,
+          "minValue": 1.0,
+          "maxValue": 10.0,
+          "unitCode": "rodeos:softwareComplexityIndex"
+        },
+        "rodeos:softwareAssetType": {
+          "@type": "skos:Concept",
+          "prefLabel": "Motion Control Software",
+          "inScheme": "https://example.org/schemes/softwareAssetTypes"
+        }
+      },
+      "child": {
+        "@type": "rodeos:motionControlSoftware",
+        "properties": {
+          "rodeos:motionControlSystemType": "trajectoryPlanning",
+          "rodeos:aasSubmodel": "https://rockwell-automation.com/aas/motion-control/arc-welding-aerospace",
+          "rodeos:supportedRobotTypes": [
+            "Articulated",
+            "SCARA",
+            "Gantry"
+          ],
+          "rodeos:motionPlanningAlgorithms": [
+            "RRT*",
+            "PRM",
+            "A*"
+          ],
+          "rodeos:dofSupport": 6
+        }
+      }
+    }
+  }
+}

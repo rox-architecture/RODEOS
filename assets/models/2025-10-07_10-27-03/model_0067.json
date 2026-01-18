@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Siemens Arc Welding Dispensing Additive Tool",
+    "dcterms:type": "skos:concept",
+    "dcterms:publisher": "Siemens AG",
+    "dcterms:license": "https://www.siemens.com/global/en/legal/terms-of-use.html",
+    "dcterms:identifier": "SIEMENS-AW-DAT-2024-001",
+    "dcterms:description": "Industrial-grade dispensing additive tool designed for arc welding applications in renewable energy manufacturing. Features precision material deposition, automated control integration, and compatibility with Siemens automation systems.",
+    "dcat:version": "2.3.1",
+    "dcat:keyword": [
+      "arc welding",
+      "additive manufacturing",
+      "dispensing tool",
+      "renewable energy",
+      "industrial automation",
+      "Siemens",
+      "robotics"
+    ],
+    "dcat:contactPoint": "https://support.industry.siemens.com/",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 0.8,
+        "minValue": 0.5,
+        "maxValue": 1.2,
+        "unitCode": "LPM"
+      },
+      "rodeos:framework": "Siemens Sinumerik CNC Framework"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Siemens",
+        "rodeos:hardwareAssetType": "rodeos:dispensingAdditiveTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "PROFINET",
+          "rodeos:manufacturer": "Siemens",
+          "rodeos:toolWeight": 3.5,
+          "rodeos:toolMaterial": "Stainless Steel AISI 304"
+        },
+        "child": {
+          "@type": "rodeos:dispensingAdditiveTool",
+          "properties": {
+            "rodeos:dispensingAdditiveToolType": "ExtrusionPrintHeads",
+            "rodeos:aasSubmodel": "https://siemens.com/aas/submodels/renewable-energy/arc-welding-dispensing-tool",
+            "rodeos:materialFlowRate": 12.5,
+            "rodeos:nozzleSize": 1.2,
+            "rodeos:layerThickness": 0.8,
+            "rodeos:temperature": 210.0
+          }
+        }
+      }
+    }
+  }
+}

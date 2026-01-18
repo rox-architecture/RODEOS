@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "SICK AG Motion Control Software for Food and Beverage Assembly",
+    "dcterms:type": "Software",
+    "dcterms:publisher": "SICK AG",
+    "dcterms:license": "https://www.sick.com/us/en/legal/software-license-terms/c/g91901",
+    "dcterms:identifier": "SICK-MCS-FB-ASSEMBLY-v2.1",
+    "dcterms:description": "Industrial motion control software optimized for food and beverage assembly applications, featuring precision control, hygienic design compliance, and integration capabilities with SICK AG sensor systems.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "motion control",
+      "food and beverage",
+      "assembly",
+      "industrial automation",
+      "SICK AG",
+      "robotics",
+      "precision control",
+      "hygienic design"
+    ],
+    "dcat:contactPoint": "https://www.sick.com/us/en/support/contact/c/g91902",
+    "rodeos:coreType": "Service"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "schema:value": 3.2,
+        "schema:unitCode": "VERSION"
+      },
+      "rodeos:framework": "SICK AppSpace"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "schema:value": 3.2,
+          "schema:unitCode": "VERSION"
+        }
+      },
+      "child": {
+        "@type": "rodeos:motionControlSoftware",
+        "properties": {
+          "rodeos:motionControlSystemType": "trajectoryPlanning",
+          "rodeos:aasSubmodel": "https://assetadministration-shell.com/sick/motion-control-software/submodel",
+          "rodeos:supportedRobotTypes": [
+            "SCARA",
+            "Articulated",
+            "Delta",
+            "Cartesian"
+          ],
+          "rodeos:motionPlanningAlgorithms": [
+            "RRT*",
+            "PRM",
+            "A*",
+            "Potential Fields"
+          ],
+          "rodeos:dofSupport": 6
+        }
+      }
+    }
+  }
+}

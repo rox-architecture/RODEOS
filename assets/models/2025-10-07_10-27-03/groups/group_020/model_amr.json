@@ -1,0 +1,71 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Omron LD-250 AMR for Spot Welding Applications",
+    "dcterms:type": "http://www.w3.org/2004/02/skos/core#Concept",
+    "dcterms:publisher": "Omron Corporation",
+    "dcterms:license": "https://industrial.omron.com/en/support/license-agreement",
+    "dcterms:identifier": "OMN-AMR-SW-250-001",
+    "dcterms:description": "Autonomous Mobile Robot designed for spot welding operations in plastics processing environments. Features precision navigation, integrated welding control systems, and collision avoidance capabilities.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "AMR",
+      "autonomous mobile robot",
+      "spot welding",
+      "plastics processing",
+      "industrial automation",
+      "Omron",
+      "robotics"
+    ],
+    "dcat:contactPoint": "https://industrial.omron.com/en/contact/technical-support",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 150,
+        "unitCode": "kg",
+        "minValue": 100,
+        "maxValue": 200
+      },
+      "rodeos:framework": "Omron LD Series Autonomous Mobile Robot with integrated spot welding module"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Omron",
+        "rodeos:hardwareAssetType": "amr"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 50.0,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 48.0,
+          "rodeos:interface": "EtherCAT",
+          "rodeos:reach": 1500.0,
+          "rodeos:accuracy": 0.05,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:mobileRobot",
+          "properties": {
+            "rodeos:maxSpeed": 1.8,
+            "rodeos:batteryCapacity": 72.5
+          },
+          "child": {
+            "@type": "rodeos:amr",
+            "properties": {
+              "rodeos:aasSubmodel": "https://industrial.omron.com/aas/submodels/amr/spotwelding-plastics-v1",
+              "rodeos:environmentType": "indoor"
+            }
+          }
+        }
+      }
+    }
+  }
+}

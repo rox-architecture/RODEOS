@@ -1,0 +1,82 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Mitsubishi Electric RV-F Series Articulated Robot for Aerospace Pick-and-Place Applications",
+    "dcterms:type": "Physical Asset",
+    "dcterms:publisher": "Mitsubishi Electric Corporation",
+    "dcterms:license": "https://www.mitsubishielectric.com/fa/terms_of_use/",
+    "dcterms:identifier": "ME-RVF-7F-DL-AERO-PNP-001",
+    "dcterms:description": "High-precision 6-axis articulated industrial robot designed for aerospace component handling and pick-and-place operations. Features enhanced rigidity, repeatability of ±0.02mm, and compliance with aerospace cleanliness standards.",
+    "dcat:version": "v2.5.1",
+    "dcat:keyword": [
+      "articulated robot",
+      "aerospace automation",
+      "pick-and-place",
+      "Mitsubishi Electric",
+      "6-axis",
+      "RV-F series",
+      "component handling",
+      "industrial robotics"
+    ],
+    "dcat:contactPoint": "https://www.mitsubishielectric.com/fa/contact/",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 6,
+        "unitCode": "rodeos:axisCount"
+      },
+      "rodeos:framework": "MELFA Smart Plus"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Mitsubishi Electric",
+        "rodeos:hardwareAssetType": "articulatedRobot"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 12.0,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 400.0,
+          "rodeos:interface": "EtherCAT",
+          "rodeos:reach": 1420.0,
+          "rodeos:accuracy": 0.02,
+          "rodeos:minVelocity": 0.05
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted",
+            "rodeos:positionAccuracy": 0.05,
+            "rodeos:repeatability": 0.02,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 2.5,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "6-axis articulated"
+          },
+          "child": {
+            "@type": "rodeos:serielRobot",
+            "properties": {
+              "rodeos:jointCount": 6,
+              "rodeos:maxJointSpeed": 180.0
+            },
+            "child": {
+              "@type": "rodeos:articulated",
+              "properties": {
+                "rodeos:aasSubmodel": "https://industrial-assets.mitsubishielectric.com/aas/articulated/robotics/aerospace/pick-and-place/v1.0",
+                "rodeos:wristPayload": 12.5
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

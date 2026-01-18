@@ -1,0 +1,71 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Rockwell Automation Vision Sensor for Pharmaceutical Packing Applications",
+    "dcterms:type": "sensor",
+    "dcterms:publisher": "Rockwell Automation",
+    "dcterms:license": "https://www.rockwellautomation.com/en-us/company/terms-of-use.html",
+    "dcterms:identifier": "RA-VS-PHARM-PACK-2024",
+    "dcterms:description": "High-precision vision sensor system designed for pharmaceutical packing applications, providing quality inspection, label verification, and package integrity checks in compliance with industry regulations.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "vision sensor",
+      "pharmaceutical",
+      "packing",
+      "quality control",
+      "automation",
+      "Rockwell Automation"
+    ],
+    "dcat:contactPoint": "https://www.rockwellautomation.com/en-us/support.html",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 0.1,
+        "minValue": 0.05,
+        "maxValue": 0.15,
+        "unitCode": "mm"
+      },
+      "rodeos:framework": "FactoryTalk® Vision"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Rockwell Automation",
+        "rodeos:hardwareAssetType": "Vision Sensor"
+      },
+      "child": {
+        "@type": "rodeos:sensor",
+        "properties": {
+          "rodeos:measurementRange": 2.5,
+          "rodeos:measurementAccuracy": 0.05,
+          "rodeos:samplingRate": 60.0,
+          "rodeos:fieldOfView": {
+            "value": 60,
+            "unitCode": "DDD"
+          }
+        },
+        "child": {
+          "@type": "rodeos:visionSensor",
+          "properties": {
+            "rodeos:aasSubmodel": "https://rockwell-automation.com/aas/pharma-packing-vision-sensor-001/submodel",
+            "rodeos:resolution": "1920x1080",
+            "rodeos:frameRate": 60.0,
+            "rodeos:fieldOfView": {
+              "value": 60,
+              "unitCode": "DDD"
+            },
+            "rodeos:interfaceType": {
+              "prefLabel": "GigE Vision",
+              "inScheme": "https://rockwell-automation.com/skos/vision-interfaces"
+            }
+          }
+        }
+      }
+    }
+  }
+}

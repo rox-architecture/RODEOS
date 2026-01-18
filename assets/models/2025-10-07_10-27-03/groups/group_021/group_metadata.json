@@ -1,0 +1,30 @@
+{
+  "company": "Rockwell Automation",
+  "industry": "Food and beverage",
+  "application": "pick-and-place",
+  "assets": [
+    {
+      "leaf": "rodeos:aiAnalyticsSoftware",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:softwareComponent",
+        "rodeos:aiAnalyticsSoftware"
+      ],
+      "file": "model_aiAnalyticsSoftware.json"
+    },
+    {
+      "leaf": "rodeos:cartesian",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:roboter",
+        "rodeos:stationaryRobot",
+        "rodeos:serielRobot",
+        "rodeos:cartesian"
+      ],
+      "file": "model_cartesian.json"
+    }
+  ]
+}

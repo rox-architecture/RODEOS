@@ -1,0 +1,70 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Epson Robotics AMR Material Transport System",
+    "dcterms:type": "http://www.productontology.org/id/Autonomous_mobile_robot",
+    "dcterms:publisher": "Epson Robotics",
+    "dcterms:license": "https://global.epson.com/Support/legal/",
+    "dcterms:identifier": "EPS-AMR-MT-2024-001",
+    "dcterms:description": "Autonomous Mobile Robot designed for material transport in automotive assembly lines, featuring advanced navigation, payload handling, and integration with existing manufacturing systems.",
+    "dcat:version": "v2.5.1",
+    "dcat:keyword": [
+      "AMR",
+      "material transport",
+      "automotive",
+      "Epson Robotics",
+      "autonomous navigation",
+      "industrial automation"
+    ],
+    "dcat:contactPoint": "https://www.epsonrobotics.com/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 150,
+        "schema:unitCode": "kg",
+        "schema:minValue": 0,
+        "schema:maxValue": 150
+      },
+      "rodeos:framework": "Epson RC+ 7.0"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Epson Robotics",
+        "rodeos:hardwareAssetType": "amr"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 50.0,
+          "rodeos:maxVelocity": 1.8,
+          "rodeos:DOF": 3,
+          "rodeos:operatingVoltage": 48.0,
+          "rodeos:interface": "Ethernet/IP, Modbus TCP, REST API",
+          "rodeos:reach": 2.5,
+          "rodeos:accuracy": 0.5,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:mobileRobot",
+          "properties": {
+            "rodeos:maxSpeed": 2.5,
+            "rodeos:batteryCapacity": 48.0
+          },
+          "child": {
+            "@type": "rodeos:amr",
+            "properties": {
+              "rodeos:aasSubmodel": "https://submodels.epsonrobotics.com/amr/automotive/material-transport/v1.0",
+              "rodeos:environmentType": "indoor"
+            }
+          }
+        }
+      }
+    }
+  }
+}

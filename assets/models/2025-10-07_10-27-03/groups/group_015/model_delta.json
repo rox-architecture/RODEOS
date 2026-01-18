@@ -1,0 +1,83 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Schunk Delta Food Quality Inspection System",
+    "dcterms:type": "Robotic Automation Component",
+    "dcterms:publisher": "Schunk GmbH",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "SCH-DELTA-FQI-2024-001",
+    "dcterms:description": "Delta parallel robot system designed for high-speed quality inspection applications in food and beverage production lines. Features precision vision systems, hygienic design, and IP67 protection for washdown environments.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "delta robot",
+      "quality inspection",
+      "food processing",
+      "vision system",
+      "automation",
+      "Schunk",
+      "parallel kinematics",
+      "hygienic design"
+    ],
+    "dcat:contactPoint": "https://www.schunk.com/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 6,
+        "unitCode": "DOF"
+      },
+      "rodeos:framework": "Schunk Delta Robot Inspection Framework v2.1"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Schunk GmbH",
+        "rodeos:hardwareAssetType": "delta"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 3.5,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 48.0,
+          "rodeos:interface": "EtherCAT",
+          "rodeos:reach": 850.0,
+          "rodeos:accuracy": 0.02,
+          "rodeos:minVelocity": 0.01
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Ceiling-mounted",
+            "rodeos:positionAccuracy": 0.02,
+            "rodeos:repeatability": 0.01,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 0.8,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "Parallel kinematic structure with three arms and a central wrist"
+          },
+          "child": {
+            "@type": "rodeos:parallelRobot",
+            "properties": {
+              "rodeos:platformSize": 3.3,
+              "rodeos:stiffness": 0.1
+            },
+            "child": {
+              "@type": "rodeos:delta",
+              "properties": {
+                "rodeos:aasSubmodel": "https://example.com/schunk/aas/delta-robot-quality-inspection/submodel",
+                "rodeos:pickRateMax": 120.0,
+                "rodeos:workspaceShape": "rodeos:hemispherical"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Schunk FoodSafe Inspector Pro",
+    "dcterms:type": "Software",
+    "dcterms:publisher": "Schunk GmbH",
+    "dcterms:license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "dcterms:identifier": "SCH-FS-INSP-PRO-V2.1",
+    "dcterms:description": "Advanced robotic operation software for automated quality inspection in food and beverage processing environments. Provides real-time defect detection, compliance monitoring, and production analytics.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "robotics",
+      "quality inspection",
+      "food safety",
+      "machine vision",
+      "automation",
+      "compliance monitoring"
+    ],
+    "dcat:contactPoint": "https://www.schunk.com/contact/robotics-support",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 4.2,
+        "minValue": 1.0,
+        "maxValue": 5.0,
+        "unitCode": "PERCENT"
+      },
+      "rodeos:framework": "ROS 2 (Robot Operating System)"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "@type": "schema:quantitativeValue",
+          "value": 4.2,
+          "minValue": 1.0,
+          "maxValue": 5.0,
+          "unitCode": "PERCENT"
+        },
+        "rodeos:softwareAssetType": {
+          "@id": "skos:concept",
+          "prefLabel": "Vision Processing Software"
+        }
+      },
+      "child": {
+        "@type": "rodeos:robotOperationSoftware",
+        "properties": {
+          "rodeos:robotOperationSystemType": "vendorSpecificMiddleware",
+          "rodeos:aasSubmodel": "https://assetadministration.schunk.com/robotics/software/inspection-food-beverage/v1.2",
+          "rodeos:supportedApis": [
+            "https://api.schunk.com/robotics/inspection/v2",
+            "https://api.schunk.com/vision/quality/v1",
+            "https://api.schunk.com/io/plc-integration/v3"
+          ],
+          "rodeos:supportedHardwareDrivers": [
+            "Schunk PG70 Gripper",
+            "Schunk SDH2 Hand",
+            "Sick Visionary-T Mini",
+            "Keyence IV Series",
+            "Omron FH Series",
+            "Fanuc R-30iB Controller",
+            "KUKA KRC4 Controller"
+          ],
+          "rodeos:osDependencies": [
+            "Linux Kernel 5.4+",
+            "Real-Time Patch (PREEMPT_RT)",
+            "OpenCV 4.5+",
+            "Eigen3",
+            "Boost 1.75+",
+            "Python 3.8+",
+            "Node.js 16+"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Denso Wave Grinding Polishing Finishing Tool for Medical Device Bin Picking",
+    "dcterms:type": "Industrial Automation Equipment",
+    "dcterms:publisher": "Denso Wave Incorporated",
+    "dcterms:license": "https://www.denso-wave.com/en/terms/license.html",
+    "dcterms:identifier": "DENSO-GPFT-MEDBIN-2024-001",
+    "dcterms:description": "Precision grinding, polishing, and finishing tool designed for medical device manufacturing applications. Specifically optimized for bin picking operations with high accuracy and repeatability requirements. Features advanced force control and vision integration capabilities.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "grinding",
+      "polishing",
+      "finishing",
+      "medical devices",
+      "bin picking",
+      "robotics",
+      "automation",
+      "Denso Wave",
+      "precision tooling"
+    ],
+    "dcat:contactPoint": "https://www.denso-wave.com/en/support/contact.html",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 4.2,
+        "unitCode": "kg",
+        "minValue": 3.8,
+        "maxValue": 4.6
+      },
+      "rodeos:framework": "Denso RC8 Controller Framework"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Denso Wave",
+        "rodeos:hardwareAssetType": "grindingPolishingFinishingTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "EtherNet/IP",
+          "rodeos:manufacturer": "Denso Wave",
+          "rodeos:toolWeight": 3.2,
+          "rodeos:toolMaterial": "Stainless Steel AISI 316L"
+        },
+        "child": {
+          "@type": "rodeos:grindingPolishingFinishingTool",
+          "properties": {
+            "rodeos:grindingPolishingFinishingToolType": "Grinders",
+            "rodeos:aasSubmodel": "https://densowave.com/aas/submodels/grinding-tool-medical-bin-picking",
+            "rodeos:rotationSpeed": 12000.0,
+            "rodeos:abrasiveForce": 45.5,
+            "rodeos:toolDiameter": 25.4,
+            "rodeos:wearRate": 0.002
+          }
+        }
+      }
+    }
+  }
+}

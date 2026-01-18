@@ -1,0 +1,50 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Beckhoff Bin Picking Automation Service",
+    "dcterms:type": "https://w3id.org/rodeos/ns/core#Service",
+    "dcterms:publisher": "Beckhoff Automation GmbH & Co. KG",
+    "dcterms:license": "https://www.beckhoff.com/en-us/terms-of-use/",
+    "dcterms:identifier": "BECKHOFF-BIN-PICKING-SERVICE-2024",
+    "dcterms:description": "Industrial automation service for robotic bin picking applications in logistics and warehousing, featuring high-speed object recognition, precise motion control, and seamless integration with Beckhoff's PC-based control technology.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "bin picking",
+      "robotics",
+      "automation",
+      "logistics",
+      "warehousing",
+      "machine vision",
+      "motion control",
+      "Beckhoff",
+      "TwinCAT"
+    ],
+    "dcat:contactPoint": "https://www.beckhoff.com/en-us/contact/",
+    "rodeos:coreType": "Service"
+  },
+  "child": {
+    "@type": "rodeos:Service",
+    "properties": {
+      "rodeos:usedModels": [
+        "https://beckhoff.com/models/bin-picking-vision",
+        "https://beckhoff.com/models/twin-cat-motion-control",
+        "https://beckhoff.com/models/plc-logic-warehouse"
+      ],
+      "rodeos:serviceTypeMain": "http://data.rodeos.io/concepts/bin-picking",
+      "rodeos:serviceType": "http://data.rodeos.io/concepts/automation-service",
+      "dcat:endpointURL": "https://api.beckhoff.com/bin-picking/v1",
+      "rodeos:input": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 1,
+        "schema:unitCode": "EA"
+      },
+      "rodeos:output": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 1,
+        "schema:unitCode": "EA"
+      },
+      "dcat:endpointDescription": "REST API endpoint for Beckhoff's bin picking service, providing real-time item identification, pose estimation, and robotic control commands for warehouse automation systems.",
+      "dcat:landingPage": "https://www.beckhoff.com/en-us/products/automation/bin-picking-service"
+    }
+  }
+}

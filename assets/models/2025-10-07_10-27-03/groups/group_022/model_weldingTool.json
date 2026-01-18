@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "ABB Welding Tool for Aerospace Palletizing",
+    "dcterms:type": "skos:concept",
+    "dcterms:publisher": "ABB Robotics",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "ABB-WT-AERO-PAL-001",
+    "dcterms:description": "Industrial welding tool designed for aerospace component palletizing applications, featuring precision control and high-duty cycle operation",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "welding",
+      "aerospace",
+      "palletizing",
+      "robotics",
+      "automation",
+      "ABB",
+      "industrial tool"
+    ],
+    "dcat:contactPoint": "https://www.abb.com/robotics/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 6,
+        "unitCode": "KVA"
+      },
+      "rodeos:framework": "ABB RobotWare Palletizing"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "ABB Robotics",
+        "rodeos:hardwareAssetType": "weldingTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "DeviceNet",
+          "rodeos:manufacturer": "ABB Robotics",
+          "rodeos:toolWeight": 8.5,
+          "rodeos:toolMaterial": "Stainless Steel AISI 304"
+        },
+        "child": {
+          "@type": "rodeos:weldingTool",
+          "properties": {
+            "rodeos:weldingType": "MIG",
+            "rodeos:aasSubmodel": "https://abb-robotics.com/aas/welding-tools/mig-palletizing-aerospace",
+            "rodeos:weldingCurrent": 250.5,
+            "rodeos:voltage": 28.0,
+            "rodeos:wireFeedRate": 8.5,
+            "rodeos:electrodeLife": 1500.0
+          }
+        }
+      }
+    }
+  }
+}

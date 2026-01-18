@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "WAGO Aerospace Palletizing Special Tool",
+    "dcterms:type": "specialTool",
+    "dcterms:publisher": "WAGO GmbH",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "WAGO-AERO-PALL-SPEC-TOOL-001",
+    "dcterms:description": "A specialized robotic tool designed for aerospace component palletizing applications, featuring high-precision gripping, adaptive force control, and compatibility with industry-standard automation interfaces.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "palletizing",
+      "aerospace",
+      "robotics",
+      "automation",
+      "special tool",
+      "WAGO",
+      "end effector",
+      "gripper"
+    ],
+    "dcat:contactPoint": "https://www.wago.com/global/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 150,
+        "unitCode": "kg",
+        "minValue": 0,
+        "maxValue": 200
+      },
+      "rodeos:framework": "WAGO Automation Framework for Aerospace Palletizing"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "WAGO",
+        "rodeos:hardwareAssetType": "specialTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "EtherCAT",
+          "rodeos:manufacturer": "WAGO",
+          "rodeos:toolWeight": 8.5,
+          "rodeos:toolMaterial": "Anodized Aluminum"
+        },
+        "child": {
+          "@type": "rodeos:specialTool",
+          "properties": {
+            "rodeos:specialToolType": "ToolChangers",
+            "rodeos:aasSubmodel": "https://asset-shell.wago.com/aas/special-tools/tool-changer-7x24",
+            "rodeos:interfaceStandard": "ISO 9409-1-50-4-M6",
+            "rodeos:changeoverTime": 2.5,
+            "rodeos:numberOfPorts": 4
+          }
+        }
+      }
+    }
+  }
+}

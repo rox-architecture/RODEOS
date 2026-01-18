@@ -1,0 +1,81 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Rockwell Automation Articulated Robot for Pharmaceutical Packing",
+    "dcterms:type": "http://www.w3.org/2004/02/skos/core#Concept",
+    "dcterms:publisher": "Rockwell Automation",
+    "dcterms:license": "https://www.rockwellautomation.com/en-us/company/terms-of-use.html",
+    "dcterms:identifier": "RA-ART-PHARM-PACK-001",
+    "dcterms:description": "An articulated robotic system designed for high-precision packing applications in pharmaceutical manufacturing, featuring cleanroom compliance, vision guidance, and integrated safety systems.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "articulated robot",
+      "pharmaceutical packing",
+      "automation",
+      "Rockwell Automation",
+      "cleanroom compliant",
+      "vision system",
+      "material handling"
+    ],
+    "dcat:contactPoint": "https://www.rockwellautomation.com/en-us/support/contact-technical-support.html",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 6,
+        "unitCode": "rodeos:DegreesOfFreedom"
+      },
+      "rodeos:framework": "Rockwell Automation PackML Implementation Framework"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Rockwell Automation",
+        "rodeos:hardwareAssetType": "articulated"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 25.5,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 480.0,
+          "rodeos:interface": "EtherNet/IP",
+          "rodeos:reach": 1.8,
+          "rodeos:accuracy": 0.05,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted",
+            "rodeos:positionAccuracy": 0.05,
+            "rodeos:repeatability": 0.02,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 2.5,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "6-axis articulated"
+          },
+          "child": {
+            "@type": "rodeos:serielRobot",
+            "properties": {
+              "rodeos:jointCount": 10,
+              "rodeos:maxJointSpeed": 1.0
+            },
+            "child": {
+              "@type": "rodeos:articulated",
+              "properties": {
+                "rodeos:aasSubmodel": "https://rockwell-automation.com/aas/submodels/pharmaceutical-packing-articulated-robot",
+                "rodeos:wristPayload": 25.5
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "ABB Robotics Cylindrical Robot for Aerospace Palletizing",
+    "dcterms:type": "Industrial Robot",
+    "dcterms:publisher": "ABB Robotics",
+    "dcterms:license": "https://www.abb.com/robotics/license",
+    "dcterms:identifier": "ABB-CYL-AERO-PALL-001",
+    "dcterms:description": "A high-precision cylindrical robot system designed for aerospace component palletizing applications, featuring ABB's advanced motion control and payload handling capabilities",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "cylindrical robot",
+      "palletizing",
+      "aerospace",
+      "ABB Robotics",
+      "industrial automation",
+      "material handling"
+    ],
+    "dcat:contactPoint": "https://www.abb.com/robotics/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 6,
+        "unitCode": "kg",
+        "minValue": 0,
+        "maxValue": 100
+      },
+      "rodeos:framework": "RobotWare for Palletizing"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "ABB Robotics",
+        "rodeos:hardwareAssetType": "cylindrical"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 120.0,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 400.0,
+          "rodeos:interface": "EtherNet/IP",
+          "rodeos:reach": 2.6,
+          "rodeos:accuracy": 0.05,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted",
+            "rodeos:positionAccuracy": 0.05,
+            "rodeos:repeatability": 0.02,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 2.5,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "Articulated"
+          },
+          "child": {
+            "@type": "rodeos:serielRobot",
+            "properties": {
+              "rodeos:jointCount": 6,
+              "rodeos:maxJointSpeed": 180.0
+            },
+            "child": {
+              "@type": "rodeos:cylindrical",
+              "properties": {
+                "rodeos:aasSubmodel": "https://industrial-assets.com/aas/abb-robotics/palletizing-cylindrical/aerospace/submodel",
+                "rodeos:radialTravel": 1500.5,
+                "rodeos:verticalTravelZ": 1200.75
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

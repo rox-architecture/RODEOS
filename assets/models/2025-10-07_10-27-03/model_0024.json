@@ -1,0 +1,66 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Techman Robot Arc Welding Tool for Pharmaceutical Applications",
+    "dcterms:type": "Equipment",
+    "dcterms:publisher": "Techman Robot",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "TM-WELD-PHARMA-001",
+    "dcterms:description": "Precision arc welding tool designed for pharmaceutical manufacturing applications, featuring sterile-compatible materials and high-accuracy positioning for critical weld joints in cleanroom environments.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "arc welding",
+      "pharmaceutical",
+      "robotics",
+      "automation",
+      "sterile",
+      "precision welding",
+      "cleanroom compatible",
+      "Techman Robot"
+    ],
+    "dcat:contactPoint": "https://www.techmanrobot.com/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 12.5,
+        "unitCode": "AMP",
+        "minValue": 8.0,
+        "maxValue": 15.0
+      },
+      "rodeos:framework": "Techman ArcWelder Framework v2.1"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Techman Robot",
+        "rodeos:hardwareAssetType": "rodeos:weldingTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "EtherNet/IP",
+          "rodeos:manufacturer": "Techman Robot",
+          "rodeos:toolWeight": 2.8,
+          "rodeos:toolMaterial": "Stainless Steel 316L"
+        },
+        "child": {
+          "@type": "rodeos:weldingTool",
+          "properties": {
+            "rodeos:weldingType": "MIG",
+            "rodeos:aasSubmodel": "https://techmanrobot.com/aas/weldingTool/submodel/12345",
+            "rodeos:weldingCurrent": 250.5,
+            "rodeos:voltage": 28.3,
+            "rodeos:wireFeedRate": 8.2,
+            "rodeos:electrodeLife": 1500.0
+          }
+        }
+      }
+    }
+  }
+}

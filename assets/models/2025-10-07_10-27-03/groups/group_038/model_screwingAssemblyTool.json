@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Rockwell Automation Screwing Assembly Tool for Aerospace Palletizing",
+    "dcterms:type": "Industrial Automation Component",
+    "dcterms:publisher": "Rockwell Automation, Inc.",
+    "dcterms:license": "https://www.rockwellautomation.com/en-us/company/terms-of-use.html",
+    "dcterms:identifier": "RA-SAT-747-AERO-PAL",
+    "dcterms:description": "High-precision robotic screwing assembly tool designed for aerospace component palletizing applications. Features torque control, error-proof fastening, and integration with Rockwell Automation control systems.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "robotic assembly",
+      "screwing tool",
+      "aerospace manufacturing",
+      "palletizing automation",
+      "torque control",
+      "Rockwell Automation"
+    ],
+    "dcat:contactPoint": "https://www.rockwellautomation.com/en-us/support/contact-technical-support.html",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 150,
+        "unitCode": "NM",
+        "minValue": 50,
+        "maxValue": 300
+      },
+      "rodeos:framework": "Allen-Bradley Kinetix 5700 Servo Drive with Integrated Safety"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Rockwell Automation",
+        "rodeos:hardwareAssetType": "screwingAssemblyTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "EtherNet/IP",
+          "rodeos:manufacturer": "Rockwell Automation",
+          "rodeos:toolWeight": 5.8,
+          "rodeos:toolMaterial": "Stainless Steel AISI 316"
+        },
+        "child": {
+          "@type": "rodeos:screwingAssemblyTool",
+          "properties": {
+            "rodeos:screwingAssemblyToolType": "Screwdrivers",
+            "rodeos:aasSubmodel": "https://rockwellautomation.com/aas/screwingAssemblyTool/aerospace-palletizing/submodel",
+            "rodeos:torqueRange": 50.5,
+            "rodeos:rotationSpeed": 1200.0,
+            "rodeos:dispensingRate": 0.0
+          }
+        }
+      }
+    }
+  }
+}

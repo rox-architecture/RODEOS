@@ -1,0 +1,53 @@
+{
+  "company": "FANUC",
+  "industry": "Logistics and warehousing",
+  "application": "quality inspection",
+  "assets": [
+    {
+      "leaf": "rodeos:tactileProximitySensor",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:sensor",
+        "rodeos:tactileProximitySensor"
+      ],
+      "file": "model_tactileProximitySensor.json"
+    },
+    {
+      "leaf": "rodeos:ipc",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:controller",
+        "rodeos:ipc"
+      ],
+      "file": "model_ipc.json"
+    },
+    {
+      "leaf": "rodeos:lidarSensor",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:sensor",
+        "rodeos:lidarSensor"
+      ],
+      "file": "model_lidarSensor.json"
+    },
+    {
+      "leaf": "rodeos:articulated",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:roboter",
+        "rodeos:stationaryRobot",
+        "rodeos:serielRobot",
+        "rodeos:articulated"
+      ],
+      "file": "model_articulated.json"
+    }
+  ]
+}

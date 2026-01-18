@@ -1,0 +1,40 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Denso Wave Bin Picking Dataset for Pharmaceutical Applications",
+    "dcterms:type": "Dataset",
+    "dcterms:publisher": "Denso Wave",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "DENSO-WAVE-BIN-PICKING-PHARMA-2023",
+    "dcterms:description": "A comprehensive dataset containing 3D point clouds, RGB-D images, and annotated metadata for bin picking applications in pharmaceutical manufacturing environments. Includes various medication containers, vials, and packaging materials with precise pose annotations.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "bin picking",
+      "pharmaceutical automation",
+      "robotic vision",
+      "3D perception",
+      "object recognition",
+      "industrial robotics",
+      "Denso Wave",
+      "dataset"
+    ],
+    "dcat:contactPoint": "mailto:robotics-support@denso-wave.com",
+    "rodeos:coreType": "Dataset"
+  },
+  "child": {
+    "@type": "rodeos:Dataset",
+    "properties": {
+      "dprod:informationSensitivityClassification": "Confidential",
+      "dprod:type": "RawSensorData",
+      "rodeos:dataFormat": "application/octet-stream",
+      "rodeos:isDataproduct": true,
+      "dcat:byteSize": 5368709120,
+      "rodeos:dataTypeSchema": "https://schema.denso-wave.com/pharma/bin-picking/v1.2",
+      "dcat:checksum": "a1b2c3d4e5f67890",
+      "dcat:endpointDescription": "REST API endpoint providing access to bin picking dataset with authentication required",
+      "dcat:endpointURL": "https://api.denso-wave.com/datasets/pharma-bin-picking/v1",
+      "dcat:protocol": "HTTPS",
+      "dprod:dataProductOwner": "Denso Wave Pharmaceutical Automation Division"
+    }
+  }
+}

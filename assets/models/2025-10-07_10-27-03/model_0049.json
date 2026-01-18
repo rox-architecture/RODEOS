@@ -1,0 +1,48 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Schunk Arc Welding Service for Electronics Manufacturing",
+    "dcterms:type": "Service",
+    "dcterms:publisher": "Schunk GmbH",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "SCH-ARCWELD-SVC-2024",
+    "dcterms:description": "Professional arc welding service specifically designed for electronics manufacturing applications, providing precision welding solutions with Schunk's industry-leading robotic automation technology.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "arc welding",
+      "electronics manufacturing",
+      "robotic automation",
+      "precision welding",
+      "industrial service",
+      "Schunk GmbH"
+    ],
+    "dcat:contactPoint": "https://www.schunk.com/contact",
+    "rodeos:coreType": "Service"
+  },
+  "child": {
+    "@type": "rodeos:Service",
+    "properties": {
+      "rodeos:usedModels": [
+        "https://example.com/schunk/models/Schunk_LWA_4P",
+        "https://example.com/schunk/models/Schunk_PGN_Plus_100"
+      ],
+      "rodeos:serviceTypeMain": "rodeos:WeldingService",
+      "rodeos:serviceType": "rodeos:ArcWeldingService",
+      "dcat:endpointURL": "https://api.schunk.com/robotics/arc-welding/v1",
+      "rodeos:input": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 1,
+        "schema:unitCode": "UN/CEFACT",
+        "schema:unitText": "EACH"
+      },
+      "rodeos:output": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 1,
+        "schema:unitCode": "UN/CEFACT",
+        "schema:unitText": "EACH"
+      },
+      "dcat:endpointDescription": "REST API endpoint for Schunk GmbH's arc welding service, providing real-time control and monitoring of robotic welding operations in electronics manufacturing environments.",
+      "dcat:landingPage": "https://www.schunk.com/products/robotics/arc-welding-services"
+    }
+  }
+}

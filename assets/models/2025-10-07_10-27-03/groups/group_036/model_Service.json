@@ -1,0 +1,49 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Omron Electronics Manufacturing Material Transport Service",
+    "dcterms:type": "Service",
+    "dcterms:publisher": "Omron Corporation",
+    "dcterms:license": "https://www.omron.com/global/en/terms-of-use/",
+    "dcterms:identifier": "OMRON-EM-MTS-2024-001",
+    "dcterms:description": "Industrial automation service providing automated material transport solutions for electronics manufacturing facilities, featuring autonomous guided vehicles, conveyor systems, and integrated control software for optimized logistics operations.",
+    "dcat:version": "2.3.1",
+    "dcat:keyword": [
+      "material transport",
+      "automated guided vehicles",
+      "conveyor systems",
+      "electronics manufacturing",
+      "industrial automation",
+      "logistics automation",
+      "Omron"
+    ],
+    "dcat:contactPoint": "https://www.omron.com/global/en/contact/",
+    "rodeos:coreType": "Service"
+  },
+  "child": {
+    "@type": "rodeos:Service",
+    "properties": {
+      "rodeos:usedModels": [
+        "https://industrial.omron.com/en/products/ld-mobile-robot",
+        "https://industrial.omron.com/en/products/hd-1500-autonomous-vehicle"
+      ],
+      "rodeos:serviceTypeMain": "material-transport",
+      "rodeos:serviceType": "automated-guided-vehicle",
+      "dcat:endpointURL": "https://api.omron-automation.com/material-transport/v1",
+      "rodeos:input": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 1500,
+        "schema:unitCode": "KGM",
+        "schema:name": "Maximum payload capacity"
+      },
+      "rodeos:output": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 2.5,
+        "schema:unitCode": "MTS",
+        "schema:name": "Transport speed"
+      },
+      "dcat:endpointDescription": "REST API endpoint for Omron material transport service providing real-time status monitoring, route optimization, and fleet management capabilities for automated guided vehicles in electronics manufacturing environments.",
+      "dcat:landingPage": "https://automation.omron.com/en/us/solutions/material-transport"
+    }
+  }
+}

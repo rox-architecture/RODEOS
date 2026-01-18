@@ -1,0 +1,33 @@
+{
+  "company": "Mitsubishi Electric",
+  "industry": "Food and beverage",
+  "application": "spot welding",
+  "assets": [
+    {
+      "leaf": "rodeos:scara",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:roboter",
+        "rodeos:stationaryRobot",
+        "rodeos:serielRobot",
+        "rodeos:scara"
+      ],
+      "file": "model_scara.json"
+    },
+    {
+      "leaf": "rodeos:cylindrical",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:roboter",
+        "rodeos:stationaryRobot",
+        "rodeos:serielRobot",
+        "rodeos:cylindrical"
+      ],
+      "file": "model_cylindrical.json"
+    }
+  ]
+}

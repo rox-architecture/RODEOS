@@ -1,0 +1,66 @@
+{
+  "company": "Schunk GmbH",
+  "industry": "Pharmaceuticals",
+  "application": "palletizing",
+  "assets": [
+    {
+      "leaf": "rodeos:cartesian",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:roboter",
+        "rodeos:stationaryRobot",
+        "rodeos:serielRobot",
+        "rodeos:cartesian"
+      ],
+      "file": "model_cartesian.json"
+    },
+    {
+      "leaf": "rodeos:grindingPolishingFinishingTool",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:tooling",
+        "rodeos:grindingPolishingFinishingTool"
+      ],
+      "file": "model_grindingPolishingFinishingTool.json"
+    },
+    {
+      "leaf": "rodeos:visionSensor",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:sensor",
+        "rodeos:visionSensor"
+      ],
+      "file": "model_visionSensor.json"
+    },
+    {
+      "leaf": "rodeos:measuringInspectionTool",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:tooling",
+        "rodeos:measuringInspectionTool"
+      ],
+      "file": "model_measuringInspectionTool.json"
+    },
+    {
+      "leaf": "rodeos:delta",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:roboter",
+        "rodeos:stationaryRobot",
+        "rodeos:parallelRobot",
+        "rodeos:delta"
+      ],
+      "file": "model_delta.json"
+    }
+  ]
+}

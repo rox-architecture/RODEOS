@@ -1,0 +1,51 @@
+{
+  "company": "KUKA AG",
+  "industry": "Medical devices",
+  "application": "palletizing",
+  "assets": [
+    {
+      "leaf": "rodeos:robotOperationSoftware",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:softwareComponent",
+        "rodeos:robotOperationSoftware"
+      ],
+      "file": "model_robotOperationSoftware.json"
+    },
+    {
+      "leaf": "rodeos:tactileProximitySensor",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:sensor",
+        "rodeos:tactileProximitySensor"
+      ],
+      "file": "model_tactileProximitySensor.json"
+    },
+    {
+      "leaf": "rodeos:amr",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:roboter",
+        "rodeos:mobileRobot",
+        "rodeos:amr"
+      ],
+      "file": "model_amr.json"
+    },
+    {
+      "leaf": "rodeos:lidarSensor",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:sensor",
+        "rodeos:lidarSensor"
+      ],
+      "file": "model_lidarSensor.json"
+    }
+  ]
+}

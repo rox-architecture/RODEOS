@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "WAGO Welding Tool for Automotive Assembly Material Transport",
+    "dcterms:type": "http://www.w3.org/2004/02/skos/core#Concept",
+    "dcterms:publisher": "WAGO GmbH & Co. KG",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "WAGO-WT-AMT-2024-001",
+    "dcterms:description": "Industrial welding tool designed for automotive assembly applications, specifically optimized for material transport operations. Features precision welding capabilities, robust construction, and integration with automated transport systems.",
+    "dcat:version": "2.1.3",
+    "dcat:keyword": [
+      "welding",
+      "automotive",
+      "assembly",
+      "material transport",
+      "industrial automation",
+      "robotics",
+      "WAGO"
+    ],
+    "dcat:contactPoint": "mailto:support.industrial@wago.com",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 150,
+        "unitCode": "kg",
+        "minValue": 0,
+        "maxValue": 200
+      },
+      "rodeos:framework": "WAGO-I/O-SYSTEM 750"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "WAGO",
+        "rodeos:hardwareAssetType": "rodeos:weldingTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "EtherNet/IP",
+          "rodeos:manufacturer": "WAGO",
+          "rodeos:toolWeight": 3.2,
+          "rodeos:toolMaterial": "Stainless Steel AISI 304"
+        },
+        "child": {
+          "@type": "rodeos:weldingTool",
+          "properties": {
+            "rodeos:weldingType": "MIG",
+            "rodeos:aasSubmodel": "https://assetadministration-shell.com/wago/weldingTool_MIG_001/submodel",
+            "rodeos:weldingCurrent": 250.5,
+            "rodeos:voltage": 28.2,
+            "rodeos:wireFeedRate": 8.5,
+            "rodeos:electrodeLife": 1500.75
+          }
+        }
+      }
+    }
+  }
+}

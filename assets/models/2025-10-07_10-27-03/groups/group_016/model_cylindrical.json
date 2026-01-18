@@ -1,0 +1,86 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "WAGO Cylindrical Palletizing Robot System",
+    "dcterms:type": "Industrial Robot",
+    "dcterms:publisher": "WAGO GmbH & Co. KG",
+    "dcterms:license": "https://www.wago.com/global/licensing-terms",
+    "dcterms:identifier": "WAGO-CYL-PLTZ-2024-001",
+    "dcterms:description": "A cylindrical coordinate robotic system designed for high-speed palletizing applications in medical device manufacturing. Features precision positioning, sterile environment compatibility, and integrated safety systems compliant with medical industry standards.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "cylindrical robot",
+      "palletizing",
+      "medical devices",
+      "automation",
+      "WAGO",
+      "industrial robotics",
+      "packaging",
+      "sterile environment"
+    ],
+    "dcat:contactPoint": "https://www.wago.com/global/contact-technical-support",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 150,
+        "schema:unitCode": "mm",
+        "schema:minValue": 100,
+        "schema:maxValue": 200,
+        "schema:additionalProperty": "Stroke length"
+      },
+      "rodeos:framework": "WAGO PFC200 Series Automation Controller"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "WAGO",
+        "rodeos:hardwareAssetType": "rodeos:cylindrical"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 50.0,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 24.0,
+          "rodeos:interface": "EtherCAT",
+          "rodeos:reach": 2000.0,
+          "rodeos:accuracy": 0.05,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted",
+            "rodeos:positionAccuracy": 0.05,
+            "rodeos:repeatability": 0.02,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 2.5,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "SCARA"
+          },
+          "child": {
+            "@type": "rodeos:serielRobot",
+            "properties": {
+              "rodeos:jointCount": 6,
+              "rodeos:maxJointSpeed": 180.0
+            },
+            "child": {
+              "@type": "rodeos:cylindrical",
+              "properties": {
+                "rodeos:aasSubmodel": "https://asset-shell.wago.com/cylindrical-robot/palletizing-medical-devices/submodel",
+                "rodeos:radialTravel": 1500.0,
+                "rodeos:verticalTravelZ": 2500.0
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

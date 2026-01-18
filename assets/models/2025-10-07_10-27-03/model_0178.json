@@ -1,0 +1,74 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Rockwell Automation LIDAR Sensor for Food and Beverage Pick-and-Place Applications",
+    "dcterms:type": "sensor",
+    "dcterms:publisher": "Rockwell Automation",
+    "dcterms:license": "https://www.rockwellautomation.com/en-us/company/terms-of-use.html",
+    "dcterms:identifier": "RA-LIDAR-FB-PP-001",
+    "dcterms:description": "High-precision LIDAR sensor designed for food and beverage industry pick-and-place automation systems. Features environmental sealing, washdown capability, and precise object detection for handling various food packaging materials.",
+    "dcat:version": "2.1.3",
+    "dcat:keyword": [
+      "LIDAR",
+      "sensor",
+      "food industry",
+      "beverage industry",
+      "pick-and-place",
+      "automation",
+      "Rockwell Automation",
+      "object detection",
+      "industrial robotics"
+    ],
+    "dcat:contactPoint": "https://www.rockwellautomation.com/en-us/support/contact.html",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 0.05,
+        "unitCode": "MMT",
+        "minValue": 0.02,
+        "maxValue": 200.0
+      },
+      "rodeos:framework": "Studio 5000 Logix Designer"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Rockwell Automation",
+        "rodeos:hardwareAssetType": "lidarSensor"
+      },
+      "child": {
+        "@type": "rodeos:sensor",
+        "properties": {
+          "rodeos:measurementRange": 10.5,
+          "rodeos:measurementAccuracy": 0.002,
+          "rodeos:samplingRate": 100000.0,
+          "rodeos:fieldOfView": {
+            "schema:minValue": 0.0,
+            "schema:maxValue": 270.0,
+            "schema:unitCode": "DDD"
+          }
+        },
+        "child": {
+          "@type": "rodeos:lidarSensor",
+          "properties": {
+            "rodeos:aasSubmodel": "https://rockwell-automation.com/aas/food-beverage/lidar-sensor/pick-place/12345",
+            "rodeos:scanRate": 25.0,
+            "rodeos:angularResolution": 0.1,
+            "rodeos:maxRange": 30.0,
+            "rodeos:fieldOfView": {
+              "schema:minValue": 0.0,
+              "schema:maxValue": 270.0,
+              "schema:unitCode": "DDD"
+            },
+            "rodeos:numChannels": 16
+          }
+        }
+      }
+    }
+  }
+}

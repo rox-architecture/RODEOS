@@ -1,0 +1,74 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Universal Robots Arc Welding Simulation Digital Twin Software",
+    "dcterms:type": "Software",
+    "dcterms:publisher": "Universal Robots A/S",
+    "dcterms:license": "https://www.universal-robots.com/eula/",
+    "dcterms:identifier": "UR-SIM-DT-ARCWELD-2024",
+    "dcterms:description": "Digital twin simulation software for Universal Robots collaborative robots, specifically optimized for medical device arc welding applications. Provides real-time process simulation, weld path validation, and collision detection in a virtual environment.",
+    "dcat:version": "2.4.1",
+    "dcat:keyword": [
+      "robotics",
+      "simulation",
+      "digital twin",
+      "arc welding",
+      "medical devices",
+      "collaborative robots",
+      "UR",
+      "Universal Robots"
+    ],
+    "dcat:contactPoint": "mailto:support@universal-robots.com",
+    "rodeos:coreType": "Service"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "schema:minValue": 0.1,
+        "schema:maxValue": 10.0,
+        "schema:unitCode": "mm",
+        "schema:value": 2.5
+      },
+      "rodeos:framework": "Universal Robots Simulation Framework"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "schema:minValue": 0.1,
+          "schema:maxValue": 10.0,
+          "schema:unitCode": "mm",
+          "schema:value": 2.5
+        },
+        "rodeos:softwareAssetType": {
+          "skos:prefLabel": "Simulation Software",
+          "skos:inScheme": "https://example.org/softwareTypes"
+        }
+      },
+      "child": {
+        "@type": "rodeos:simulationDigitalTwinSoftware",
+        "properties": {
+          "rodeos:simulationDigitalTwinSoftwareType": "digitalTwinConnectors",
+          "rodeos:aasSubmodel": "https://universalrobots.com/aas/submodels/medical-arc-welding-simulation",
+          "rodeos:physicsFidelity": "High-fidelity physics simulation with accurate arc dynamics, thermal modeling, and material deformation",
+          "rodeos:supportedRobotModels": [
+            "UR3e",
+            "UR5e",
+            "UR10e",
+            "UR16e"
+          ],
+          "rodeos:fileFormatCompatibility": [
+            "STEP",
+            "IGES",
+            "STL",
+            "OBJ",
+            "VRML",
+            "COLLADA"
+          ]
+        }
+      }
+    }
+  }
+}

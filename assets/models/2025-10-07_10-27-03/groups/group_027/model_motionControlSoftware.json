@@ -1,0 +1,70 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Mitsubishi Electric Bin Picking Motion Control Software",
+    "dcterms:type": "Software",
+    "dcterms:publisher": "Mitsubishi Electric Corporation",
+    "dcterms:license": "https://www.mitsubishielectric.com/legal/software-license",
+    "dcterms:identifier": "ME-BPSW-2024-1",
+    "dcterms:description": "Advanced motion control software specifically designed for bin picking applications in the food and beverage industry. Features high-speed object recognition, precise trajectory planning, and collision avoidance algorithms optimized for handling variable food products.",
+    "dcat:version": "v2.4.1",
+    "dcat:keyword": [
+      "bin picking",
+      "motion control",
+      "food handling",
+      "robotics",
+      "automation",
+      "vision guidance",
+      "Mitsubishi Electric"
+    ],
+    "dcat:contactPoint": "https://www.mitsubishielectric.com/support/industrial-automation",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "schema:minValue": 0.1,
+        "schema:maxValue": 2.5,
+        "schema:unitCode": "MM",
+        "schema:value": 0.5
+      },
+      "rodeos:framework": "MELFA-Works"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "schema:minValue": 0.1,
+          "schema:maxValue": 2.5,
+          "schema:unitCode": "MM",
+          "schema:value": 0.5
+        },
+        "rodeos:softwareAssetType": {
+          "skos:prefLabel": "Motion Control Software",
+          "skos:definition": "Software component for controlling robotic motion in bin picking applications"
+        }
+      },
+      "child": {
+        "@type": "rodeos:motionControlSoftware",
+        "properties": {
+          "rodeos:motionControlSystemType": "trajectoryPlanning",
+          "rodeos:aasSubmodel": "https://industrial-assets.mitsubishielectric.com/motion-control/software/bin-picking/aas/submodel",
+          "rodeos:supportedRobotTypes": [
+            "SCARA",
+            "Articulated",
+            "Delta"
+          ],
+          "rodeos:motionPlanningAlgorithms": [
+            "RRT*",
+            "PRM",
+            "A*",
+            "Potential Fields"
+          ],
+          "rodeos:dofSupport": 6
+        }
+      }
+    }
+  }
+}

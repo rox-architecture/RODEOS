@@ -1,0 +1,86 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Beckhoff Cartesian Robot System for Electronics Quality Inspection",
+    "dcterms:type": "robotics:CartesianRobot",
+    "dcterms:publisher": "Beckhoff Automation GmbH & Co. KG",
+    "dcterms:license": "https://www.beckhoff.com/en-en/terms/license-agreement/",
+    "dcterms:identifier": "BECK-CART-QI-2024-001",
+    "dcterms:description": "High-precision Cartesian robot system designed for automated quality inspection in electronics manufacturing, featuring integrated vision systems and precision motion control for component verification and defect detection.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "Cartesian robot",
+      "quality inspection",
+      "electronics manufacturing",
+      "machine vision",
+      "automation",
+      "Beckhoff",
+      "precision positioning"
+    ],
+    "dcat:contactPoint": "mailto:support@beckhoff.com",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 6,
+        "unitCode": "AXL"
+      },
+      "rodeos:framework": "TwinCAT Vision"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Beckhoff",
+        "rodeos:hardwareAssetType": "cartesian"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 5.0,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 48.0,
+          "rodeos:interface": "EtherCAT",
+          "rodeos:reach": 850.0,
+          "rodeos:accuracy": 0.02,
+          "rodeos:minVelocity": 0.01
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted",
+            "rodeos:positionAccuracy": 0.02,
+            "rodeos:repeatability": 0.01,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 0.5,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "Cartesian XYZ"
+          },
+          "child": {
+            "@type": "rodeos:serielRobot",
+            "properties": {
+              "rodeos:jointCount": 6,
+              "rodeos:maxJointSpeed": 180.0
+            },
+            "child": {
+              "@type": "rodeos:cartesian",
+              "properties": {
+                "rodeos:aasSubmodel": "https://example.com/aas/submodels/beckhoff-cartesian-quality-inspection",
+                "rodeos:linearTravelXYZ": {
+                  "@type": "schema:quantitativeValue",
+                  "schema:value": 1200,
+                  "schema:unitCode": "MMT"
+                },
+                "rodeos:linearAxisSpeedMax": 2.5
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

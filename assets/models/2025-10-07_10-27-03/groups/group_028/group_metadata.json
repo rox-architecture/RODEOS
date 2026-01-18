@@ -1,0 +1,44 @@
+{
+  "company": "SICK AG",
+  "industry": "Aerospace",
+  "application": "arc welding",
+  "assets": [
+    {
+      "leaf": "rodeos:specialTool",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:tooling",
+        "rodeos:specialTool"
+      ],
+      "file": "model_specialTool.json"
+    },
+    {
+      "leaf": "rodeos:delta",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:roboter",
+        "rodeos:stationaryRobot",
+        "rodeos:parallelRobot",
+        "rodeos:delta"
+      ],
+      "file": "model_delta.json"
+    },
+    {
+      "leaf": "rodeos:cylindrical",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:roboter",
+        "rodeos:stationaryRobot",
+        "rodeos:serielRobot",
+        "rodeos:cylindrical"
+      ],
+      "file": "model_cylindrical.json"
+    }
+  ]
+}

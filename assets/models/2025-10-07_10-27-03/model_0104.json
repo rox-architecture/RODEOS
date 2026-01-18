@@ -1,0 +1,67 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Denso Wave IPC Controller for Automotive Assembly Systems",
+    "dcterms:type": "Hardware Component",
+    "dcterms:publisher": "Denso Wave Incorporated",
+    "dcterms:license": "https://www.denso-wave.com/en/terms/license.html",
+    "dcterms:identifier": "DENSO-IPC-AUTO-ASSEMBLY-2024",
+    "dcterms:description": "Industrial PC controller designed for automotive assembly line automation, featuring real-time processing, robust connectivity, and high reliability for continuous operation in manufacturing environments.",
+    "dcat:version": "v2.5.1",
+    "dcat:keyword": [
+      "IPC",
+      "Industrial PC",
+      "Automotive Assembly",
+      "Automation",
+      "Denso Wave",
+      "Controller",
+      "Real-time Processing",
+      "Manufacturing"
+    ],
+    "dcat:contactPoint": "https://www.denso-wave.com/en/support/contact.html",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 1.0,
+        "minValue": 0.5,
+        "maxValue": 2.0,
+        "unitCode": "EA"
+      },
+      "rodeos:framework": "IPC Series for Automotive Assembly Integration"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Denso Wave",
+        "rodeos:hardwareAssetType": "rodeos:ipc"
+      },
+      "child": {
+        "@type": "rodeos:controller",
+        "properties": {
+          "rodeos:cpuArchitecture": "ARM Cortex-A9",
+          "rodeos:processorClock": 1.2,
+          "rodeos:realTimeSupport": true,
+          "rodeos:communicationInterfaces": "EtherCAT",
+          "rodeos:powerSupply": "24V DC ±10%, 50W max"
+        },
+        "child": {
+          "@type": "rodeos:ipc",
+          "properties": {
+            "rodeos:aasSubmodel": "https://densowave.com/aas/ipc/automotive-assembly/12345",
+            "rodeos:formFactor": "rack-mount",
+            "rodeos:ramSize": 16.0,
+            "rodeos:storageCapacity": 512.0,
+            "rodeos:gpuAccelerators": "NVIDIA Quadro RTX 4000",
+            "rodeos:expansionSlots": "2x PCIe x16, 1x PCIe x4, 2x PCI",
+            "rodeos:industrialRatings": "IP54, Operating temperature: 0°C to 50°C, Vibration resistance: 5G"
+          }
+        }
+      }
+    }
+  }
+}

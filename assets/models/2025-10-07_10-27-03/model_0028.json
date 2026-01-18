@@ -1,0 +1,74 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "IFM Electronic Force/Torque Sensor for Aerospace Bin Picking",
+    "dcterms:type": "sensor",
+    "dcterms:publisher": "IFM Electronic GmbH",
+    "dcterms:license": "https://www.ifm.com/us/en/legal/terms-of-use",
+    "dcterms:identifier": "IFM-FTS-AERO-BP-001",
+    "dcterms:description": "High-precision 6-axis force/torque sensor designed for aerospace bin picking applications. Provides accurate force and torque measurements in X, Y, and Z axes with integrated temperature compensation and overload protection. Features IP67 protection rating, Ethernet connectivity, and real-time data streaming capabilities.",
+    "dcat:version": "2.1.3",
+    "dcat:keyword": [
+      "force sensor",
+      "torque sensor",
+      "6-axis",
+      "aerospace",
+      "bin picking",
+      "robotic gripper",
+      "industrial automation",
+      "IFM Electronic"
+    ],
+    "dcat:contactPoint": "https://www.ifm.com/us/en/contact/technical-support",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 6,
+        "schema:unitCode": "N",
+        "schema:minValue": 0,
+        "schema:maxValue": 500
+      },
+      "rodeos:framework": "IFM O3D series force-torque sensing framework"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "IFM Electronic",
+        "rodeos:hardwareAssetType": "forceTorqueSensor"
+      },
+      "child": {
+        "@type": "rodeos:sensor",
+        "properties": {
+          "rodeos:measurementRange": 500.0,
+          "rodeos:measurementAccuracy": 0.25,
+          "rodeos:samplingRate": 1000.0,
+          "rodeos:fieldOfView": 120.0
+        },
+        "child": {
+          "@type": "rodeos:forceTorqueSensor",
+          "properties": {
+            "rodeos:aasSubmodel": "https://ifm.com/aas/forceTorqueSensor/aerospaceBinPicking/submodel",
+            "rodeos:forceRange": {
+              "@type": "schema:quantitativeValue",
+              "schema:minValue": -1000,
+              "schema:maxValue": 1000,
+              "schema:unitCode": "N"
+            },
+            "rodeos:torqueRange": {
+              "@type": "schema:quantitativeValue",
+              "schema:minValue": -50,
+              "schema:maxValue": 50,
+              "schema:unitCode": "Nm"
+            },
+            "rodeos:resolutionForce": 0.1,
+            "rodeos:resolutionTorque": 0.01
+          }
+        }
+      }
+    }
+  }
+}

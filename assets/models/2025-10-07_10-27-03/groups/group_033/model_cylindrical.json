@@ -1,0 +1,84 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Denso Wave Palletizing Cylindrical Robot Specification",
+    "dcterms:type": "TechnicalSpecification",
+    "dcterms:publisher": "Denso Wave Incorporated",
+    "dcterms:license": "https://www.denso-wave.com/en/terms/license.html",
+    "dcterms:identifier": "DENSO-CYL-PLT-2024-001",
+    "dcterms:description": "Technical specification for Denso Wave cylindrical robotic arm designed for high-speed palletizing applications in logistics and warehousing environments. Features precision motion control, IP67 protection rating, and integrated vision system compatibility.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "cylindrical robot",
+      "palletizing",
+      "logistics automation",
+      "warehousing",
+      "Denso Wave",
+      "industrial robotics",
+      "material handling"
+    ],
+    "dcat:contactPoint": "https://www.denso-wave.com/en/support/technical-contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 6,
+        "unitCode": "MMT",
+        "minValue": 4,
+        "maxValue": 8
+      },
+      "rodeos:framework": "Denso RC8"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Denso Wave",
+        "rodeos:hardwareAssetType": "rodeos:cylindrical"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 20.0,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 200.0,
+          "rodeos:interface": "EtherCAT",
+          "rodeos:reach": 1800.0,
+          "rodeos:accuracy": 0.05,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted",
+            "rodeos:positionAccuracy": 0.05,
+            "rodeos:repeatability": 0.02,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 2.5,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "6-axis articulated"
+          },
+          "child": {
+            "@type": "rodeos:serielRobot",
+            "properties": {
+              "rodeos:jointCount": 6,
+              "rodeos:maxJointSpeed": 180.0
+            },
+            "child": {
+              "@type": "rodeos:cylindrical",
+              "properties": {
+                "rodeos:aasSubmodel": "https://densowave.com/aas/submodels/cylindrical-palletizing-robot",
+                "rodeos:radialTravel": 2.5,
+                "rodeos:verticalTravelZ": 1.8
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

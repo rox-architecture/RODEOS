@@ -1,0 +1,75 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "SICK AG AMR Spot Welding System",
+    "dcterms:type": "Robotic Automation Asset",
+    "dcterms:publisher": "SICK AG",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "SICK-AMR-SW-2024-001",
+    "dcterms:description": "Autonomous Mobile Robot (AMR) system designed for spot welding applications in logistics and warehousing environments. Features advanced navigation, precision welding capabilities, and integration with industrial automation systems.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "AMR",
+      "spot welding",
+      "autonomous robotics",
+      "logistics automation",
+      "warehousing",
+      "SICK AG",
+      "industrial robotics"
+    ],
+    "dcat:contactPoint": "https://www.sick.com/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 150,
+        "unitCode": "kg",
+        "additionalProperty": {
+          "payloadCapacity": 150,
+          "maximumSpeed": "2.0 m/s",
+          "batteryLife": "10 hours",
+          "operatingTemperature": "0°C to 40°C"
+        }
+      },
+      "rodeos:framework": "SICK AG Navigation and Control Framework v2.5"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "SICK AG",
+        "rodeos:hardwareAssetType": "amr"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 50.0,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 48.0,
+          "rodeos:interface": "EtherCAT",
+          "rodeos:reach": 1200.0,
+          "rodeos:accuracy": 0.05,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:mobileRobot",
+          "properties": {
+            "rodeos:maxSpeed": 2.5,
+            "rodeos:batteryCapacity": 25.0
+          },
+          "child": {
+            "@type": "rodeos:amr",
+            "properties": {
+              "rodeos:aasSubmodel": "https://industrial.sick.com/aas/submodels/amr-welding-001",
+              "rodeos:environmentType": "indoor"
+            }
+          }
+        }
+      }
+    }
+  }
+}

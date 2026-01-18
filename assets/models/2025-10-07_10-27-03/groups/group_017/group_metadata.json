@@ -1,0 +1,29 @@
+{
+  "company": "SICK AG",
+  "industry": "Electronics manufacturing",
+  "application": "quality inspection",
+  "assets": [
+    {
+      "leaf": "rodeos:lidarSensor",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:sensor",
+        "rodeos:lidarSensor"
+      ],
+      "file": "model_lidarSensor.json"
+    },
+    {
+      "leaf": "rodeos:encoder",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:sensor",
+        "rodeos:encoder"
+      ],
+      "file": "model_encoder.json"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Yaskawa Motoman AMR for Pharmaceutical Pick-and-Place Operations",
+    "dcterms:type": "Autonomous Mobile Robot",
+    "dcterms:publisher": "Yaskawa Motoman",
+    "dcterms:license": "https://www.motoman.com/en-us/about/terms-of-use",
+    "dcterms:identifier": "YM-AMR-PP-PH-001",
+    "dcterms:description": "An Autonomous Mobile Robot (AMR) system designed by Yaskawa Motoman for precise pick-and-place applications in pharmaceutical manufacturing environments. Features advanced navigation, sterile-compliant construction, and integration with pharmaceutical handling systems.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "AMR",
+      "Autonomous Mobile Robot",
+      "Pharmaceutical",
+      "Pick-and-Place",
+      "Yaskawa Motoman",
+      "Robotics",
+      "Automation"
+    ],
+    "dcat:contactPoint": "https://www.motoman.com/en-us/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "schema:value": 150,
+        "schema:unitCode": "kg",
+        "schema:minValue": 0,
+        "schema:maxValue": 200
+      },
+      "rodeos:framework": "Yaskawa Motoman MotoMINI"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Yaskawa Motoman",
+        "rodeos:hardwareAssetType": "amr"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 5.0,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 48.0,
+          "rodeos:interface": "EtherCAT",
+          "rodeos:reach": 1200.0,
+          "rodeos:accuracy": 0.05,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:mobileRobot",
+          "properties": {
+            "rodeos:maxSpeed": 1.8,
+            "rodeos:batteryCapacity": 25.5
+          },
+          "child": {
+            "@type": "rodeos:amr",
+            "properties": {
+              "rodeos:aasSubmodel": "https://example.com/aas/submodels/motoman-amr-pharma-pickplace",
+              "rodeos:environmentType": "indoor"
+            }
+          }
+        }
+      }
+    }
+  }
+}

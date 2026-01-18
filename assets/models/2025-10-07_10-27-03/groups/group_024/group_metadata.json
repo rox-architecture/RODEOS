@@ -1,0 +1,39 @@
+{
+  "company": "Keyence",
+  "industry": "Aerospace",
+  "application": "assembly",
+  "assets": [
+    {
+      "leaf": "rodeos:gripperTool",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:tooling",
+        "rodeos:gripperTool"
+      ],
+      "file": "model_gripperTool.json"
+    },
+    {
+      "leaf": "rodeos:encoder",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:sensor",
+        "rodeos:encoder"
+      ],
+      "file": "model_encoder.json"
+    },
+    {
+      "leaf": "rodeos:aiAnalyticsSoftware",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:softwareComponent",
+        "rodeos:aiAnalyticsSoftware"
+      ],
+      "file": "model_aiAnalyticsSoftware.json"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Epson Robotics Welding Tool for Automotive Material Transport",
+    "dcterms:type": "Industrial Equipment",
+    "dcterms:publisher": "Epson Robotics",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "EPS-WLD-AUTO-TRANS-001",
+    "dcterms:description": "A precision welding tool designed by Epson Robotics for automotive assembly applications, specifically optimized for material transport operations with high repeatability and reliability.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "welding",
+      "robotics",
+      "automotive",
+      "material transport",
+      "Epson",
+      "assembly"
+    ],
+    "dcat:contactPoint": "https://www.epsonrobotics.com/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 12.5,
+        "unitCode": "KGM",
+        "minValue": 10.0,
+        "maxValue": 15.0
+      },
+      "rodeos:framework": "Epson RC+ 7.0"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Epson Robotics",
+        "rodeos:hardwareAssetType": "weldingTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "EtherNet/IP",
+          "rodeos:manufacturer": "Epson Robotics",
+          "rodeos:toolWeight": 5.8,
+          "rodeos:toolMaterial": "Aluminum alloy"
+        },
+        "child": {
+          "@type": "rodeos:weldingTool",
+          "properties": {
+            "rodeos:weldingType": "MIG",
+            "rodeos:aasSubmodel": "https://assets.epson-robotics.com/automotive/welding-tools/model-xt200/aas/submodel/welding-parameters",
+            "rodeos:weldingCurrent": 250.5,
+            "rodeos:voltage": 28.2,
+            "rodeos:wireFeedRate": 8.7,
+            "rodeos:electrodeLife": 1500.0
+          }
+        }
+      }
+    }
+  }
+}

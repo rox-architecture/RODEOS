@@ -1,0 +1,66 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Rockwell Automation Grinding/Polishing/Finishing Tool for Spot Welding",
+    "dcterms:type": "skos:concept",
+    "dcterms:publisher": "Rockwell Automation",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "RA-GPFT-SW-2024-001",
+    "dcterms:description": "Industrial grinding, polishing, and finishing tool designed for spot welding applications in logistics and warehousing environments. Provides precision surface treatment for weld joints with automated control integration.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "grinding",
+      "polishing",
+      "finishing",
+      "spot welding",
+      "industrial automation",
+      "logistics",
+      "warehousing",
+      "Rockwell Automation"
+    ],
+    "dcat:contactPoint": "mailto:industrial.support@rockwellautomation.com",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 250,
+        "unitCode": "N",
+        "minValue": 200,
+        "maxValue": 300
+      },
+      "rodeos:framework": "Studio 5000 Logix Designer"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Rockwell Automation",
+        "rodeos:hardwareAssetType": "rodeos:grindingPolishingFinishingTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "EtherNet/IP",
+          "rodeos:manufacturer": "Rockwell Automation",
+          "rodeos:toolWeight": 5.8,
+          "rodeos:toolMaterial": "Hardened Steel"
+        },
+        "child": {
+          "@type": "rodeos:grindingPolishingFinishingTool",
+          "properties": {
+            "rodeos:grindingPolishingFinishingToolType": "Grinders",
+            "rodeos:aasSubmodel": "https://rockwellautomation.com/aas/submodels/grinding-tool-12345",
+            "rodeos:rotationSpeed": 3500.5,
+            "rodeos:abrasiveForce": 12.75,
+            "rodeos:toolDiameter": 125.0,
+            "rodeos:wearRate": 0.002
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Keyence Aerospace Assembly Analytics Suite",
+    "dcterms:type": "Software",
+    "dcterms:publisher": "Keyence Corporation",
+    "dcterms:license": "https://www.keyence.com/license/commercial",
+    "dcterms:identifier": "KEY-AERO-ASSEMBLY-AI-V2",
+    "dcterms:description": "AI-powered analytics software for aerospace assembly processes, providing real-time quality monitoring, defect detection, and process optimization using machine vision and deep learning algorithms",
+    "dcat:version": "2.3.1",
+    "dcat:keyword": [
+      "aerospace",
+      "assembly",
+      "AI analytics",
+      "machine vision",
+      "quality control",
+      "process optimization",
+      "real-time monitoring"
+    ],
+    "dcat:contactPoint": "https://www.keyence.com/support/industrial-automation",
+    "rodeos:coreType": "Service"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 0.95,
+        "minValue": 0.0,
+        "maxValue": 1.0,
+        "unitCode": "C62"
+      },
+      "rodeos:framework": "Keyence AI Core Framework"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "@type": "schema:quantitativeValue",
+          "value": 0.95,
+          "minValue": 0.0,
+          "maxValue": 1.0,
+          "unitCode": "C62"
+        },
+        "rodeos:softwareAssetType": {
+          "@id": "skos:concept",
+          "prefLabel": "Machine Learning Model"
+        }
+      },
+      "child": {
+        "@type": "rodeos:aiAnalyticsSoftware",
+        "properties": {
+          "rodeos:aiAnalyticsSoftwareType": "mlModel",
+          "rodeos:aasSubmodel": "https://keyence.com/aas/submodels/aerospace-assembly-analytics-v1",
+          "rodeos:modelArchitecture": "Convolutional Neural Network (CNN) with ResNet-50 backbone for visual inspection and anomaly detection in aerospace assembly processes, integrated with temporal analysis modules for sequence validation"
+        }
+      }
+    }
+  }
+}

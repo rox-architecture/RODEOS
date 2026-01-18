@@ -1,0 +1,66 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "IFM Electronic IPC Bin Picking System for Automotive Assembly",
+    "dcterms:type": "http://purl.org/dc/dcmitype/PhysicalObject",
+    "dcterms:publisher": "IFM Electronic GmbH",
+    "dcterms:license": "https://www.ifm.com/de/de/legal/terms-of-use",
+    "dcterms:identifier": "IFM-IPC-BP-AUTO-001",
+    "dcterms:description": "Industrial PC system optimized for bin picking applications in automotive assembly lines, featuring real-time vision processing, robotic control interfaces, and high reliability for continuous operation.",
+    "dcat:version": "v2.5.3",
+    "dcat:keyword": [
+      "bin picking",
+      "automotive assembly",
+      "industrial PC",
+      "machine vision",
+      "robotic control",
+      "real-time processing",
+      "IFM Electronic"
+    ],
+    "dcat:contactPoint": "https://www.ifm.com/de/de/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 0.95,
+        "unitCode": "P1",
+        "minValue": 0.8,
+        "maxValue": 1.0
+      },
+      "rodeos:framework": "IFM O3D vision sensor framework with integrated object recognition algorithms"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "IFM Electronic",
+        "rodeos:hardwareAssetType": "rodeos:ipc"
+      },
+      "child": {
+        "@type": "rodeos:controller",
+        "properties": {
+          "rodeos:cpuArchitecture": "x86-64",
+          "rodeos:processorClock": 1.8,
+          "rodeos:realTimeSupport": true,
+          "rodeos:communicationInterfaces": "Ethernet/IP, PROFINET, OPC UA",
+          "rodeos:powerSupply": "24 V DC, 5 A"
+        },
+        "child": {
+          "@type": "rodeos:ipc",
+          "properties": {
+            "rodeos:aasSubmodel": "https://ifm.com/aas/ipc/automotive-bin-picking/v1.0",
+            "rodeos:formFactor": "rack-mount",
+            "rodeos:ramSize": 16.0,
+            "rodeos:storageCapacity": 512.0,
+            "rodeos:gpuAccelerators": "NVIDIA Jetson AGX Orin, 32-core GPU",
+            "rodeos:expansionSlots": "2x PCIe x16, 1x M.2 NVMe, 4x USB 3.2",
+            "rodeos:industrialRatings": "IP67, operating temperature -20°C to 70°C, shock resistance 50G, vibration resistance 5Grms"
+          }
+        }
+      }
+    }
+  }
+}

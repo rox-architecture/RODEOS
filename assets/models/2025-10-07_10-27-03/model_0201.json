@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Rockwell Automation Dispensing Additive Tool for Quality Inspection",
+    "dcterms:type": "Tool",
+    "dcterms:publisher": "Rockwell Automation",
+    "dcterms:license": "https://www.rockwellautomation.com/en-us/company/terms-of-use.html",
+    "dcterms:identifier": "RA-DAT-QI-2024-001",
+    "dcterms:description": "Industrial-grade dispensing additive tool designed for precision material deposition in plastics processing quality inspection applications. Features automated control, real-time monitoring, and compliance with industry standards for repeatable quality assurance.",
+    "dcat:version": "v2.5.1",
+    "dcat:keyword": [
+      "dispensing",
+      "additive tool",
+      "plastics processing",
+      "quality inspection",
+      "automation",
+      "Rockwell Automation",
+      "industrial robotics"
+    ],
+    "dcat:contactPoint": "https://www.rockwellautomation.com/en-us/support/contact.html",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 4.2,
+        "unitCode": "kg"
+      },
+      "rodeos:framework": "Rockwell Automation FactoryTalk AssetCentre"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Rockwell Automation",
+        "rodeos:hardwareAssetType": "rodeos:dispensingAdditiveTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "EtherNet/IP",
+          "rodeos:manufacturer": "Rockwell Automation",
+          "rodeos:toolWeight": 3.5,
+          "rodeos:toolMaterial": "Stainless Steel 316L"
+        },
+        "child": {
+          "@type": "rodeos:dispensingAdditiveTool",
+          "properties": {
+            "rodeos:dispensingAdditiveToolType": "SealantAdhesiveDispensers",
+            "rodeos:aasSubmodel": "https://rockwell-automation.com/aas/plastics-processing/dispensing-tool/submodel/quality-inspection",
+            "rodeos:materialFlowRate": 12.5,
+            "rodeos:nozzleSize": 0.8,
+            "rodeos:layerThickness": 0.15,
+            "rodeos:temperature": 45.0
+          }
+        }
+      }
+    }
+  }
+}

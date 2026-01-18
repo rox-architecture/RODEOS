@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Yaskawa Motoman Automotive Quality Inspection System",
+    "dcterms:type": "skos:concept",
+    "dcterms:publisher": "Yaskawa Motoman",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "YM-AQIS-2024-001",
+    "dcterms:description": "High-precision robotic inspection system designed for automotive assembly quality control, featuring advanced vision systems and measurement capabilities for dimensional verification and defect detection.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "robotic inspection",
+      "quality control",
+      "automotive assembly",
+      "vision system",
+      "metrology",
+      "Yaskawa Motoman"
+    ],
+    "dcat:contactPoint": "https://www.motoman.com/en-us/support/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 0.02,
+        "unitText": "mm"
+      },
+      "rodeos:framework": "Yaskawa Motoman MotoSight 3D Vision System"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Yaskawa Motoman",
+        "rodeos:hardwareAssetType": "measuringInspectionTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "EtherNet/IP",
+          "rodeos:manufacturer": "Yaskawa Motoman",
+          "rodeos:toolWeight": 3.2,
+          "rodeos:toolMaterial": "Anodized Aluminum"
+        },
+        "child": {
+          "@type": "rodeos:measuringInspectionTool",
+          "properties": {
+            "rodeos:measuringInspectionToolType": "VisionInspectionCameras",
+            "rodeos:aasSubmodel": "https://asset-shell.yaskawa.com/motoman/inspection-tools/vision-camera-12345",
+            "rodeos:measurementAccuracy": 0.015,
+            "rodeos:range": 1200.0,
+            "rodeos:repeatability": 0.005
+          }
+        }
+      }
+    }
+  }
+}

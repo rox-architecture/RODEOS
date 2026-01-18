@@ -1,0 +1,81 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "FANUC M-710iC/50H Articulated Robot for Quality Inspection",
+    "dcterms:type": "Industrial Robot",
+    "dcterms:publisher": "FANUC Corporation",
+    "dcterms:license": "https://www.fanuc.com/legal/software-license",
+    "dcterms:identifier": "FANUC-M710iC-50H-QI-2024",
+    "dcterms:description": "Six-axis articulated industrial robot designed for precision quality inspection applications in logistics and warehousing environments. Features high-speed vision integration, IP67 protection, and payload capacity up to 50kg.",
+    "dcat:version": "v2.5.1",
+    "dcat:keyword": [
+      "articulated robot",
+      "quality inspection",
+      "FANUC",
+      "logistics automation",
+      "warehousing",
+      "machine vision",
+      "industrial robotics",
+      "six-axis"
+    ],
+    "dcat:contactPoint": "https://www.fanuc.com/contact-technical-support",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "schema:value": 6,
+        "schema:unitCode": "EA"
+      },
+      "rodeos:framework": "FANUC iRVision"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "FANUC",
+        "rodeos:hardwareAssetType": "rodeos:articulated"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 6.0,
+          "rodeos:maxVelocity": 1800.0,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 48.0,
+          "rodeos:interface": "EtherNet/IP, PROFINET, DeviceNet, CC-Link IE Field",
+          "rodeos:reach": 910.0,
+          "rodeos:accuracy": 0.02,
+          "rodeos:minVelocity": 5.0
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted",
+            "rodeos:positionAccuracy": 0.02,
+            "rodeos:repeatability": 0.01,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 4.5,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "6-axis articulated"
+          },
+          "child": {
+            "@type": "rodeos:serielRobot",
+            "properties": {
+              "rodeos:jointCount": 6,
+              "rodeos:maxJointSpeed": 180.0
+            },
+            "child": {
+              "@type": "rodeos:articulated",
+              "properties": {
+                "rodeos:aasSubmodel": "https://industrial.fanuc.com/aas/articulated/logistics/quality-inspection/submodel",
+                "rodeos:wristPayload": 5.5
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

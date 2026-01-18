@@ -1,0 +1,71 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Mitsubishi Electric Inertial Sensor for Quality Inspection",
+    "dcterms:type": "sensor",
+    "dcterms:publisher": "Mitsubishi Electric Corporation",
+    "dcterms:license": "https://www.mitsubishielectric.com/legal/terms-of-use",
+    "dcterms:identifier": "ME-IS-QI-2024-001",
+    "dcterms:description": "High-precision inertial sensor designed for quality inspection applications in logistics and warehousing environments. Provides accurate motion detection and orientation data for automated inspection systems.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "inertial sensor",
+      "quality inspection",
+      "logistics",
+      "warehousing",
+      "motion detection",
+      "Mitsubishi Electric",
+      "automation"
+    ],
+    "dcat:contactPoint": "https://www.mitsubishielectric.com/support/industrial-automation",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 16,
+        "unitCode": "g",
+        "minValue": 0,
+        "maxValue": 16
+      },
+      "rodeos:framework": "Mitsubishi Electric MELSEC Series"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Mitsubishi Electric",
+        "rodeos:hardwareAssetType": "rodeos:inertialSensor"
+      },
+      "child": {
+        "@type": "rodeos:sensor",
+        "properties": {
+          "rodeos:measurementRange": 360.0,
+          "rodeos:measurementAccuracy": 0.05,
+          "rodeos:samplingRate": 1000.0,
+          "rodeos:fieldOfView": 180.0
+        },
+        "child": {
+          "@type": "rodeos:inertialSensor",
+          "properties": {
+            "rodeos:aasSubmodel": "https://industrial-assets.com/aas/mitsubishi-electric/inertial-sensor/quality-inspection/submodel",
+            "rodeos:gyroRange": {
+              "@type": "schema:quantitativeValue",
+              "schema:minValue": -2000,
+              "schema:maxValue": 2000,
+              "schema:unitCode": "DEG"
+            },
+            "rodeos:accelRange": {
+              "@type": "schema:quantitativeValue",
+              "schema:minValue": -16,
+              "schema:maxValue": 16,
+              "schema:unitCode": "MTS"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "IFM Electronic Hexapod Robotic Assembly System",
+    "dcterms:type": "Robotic Automation Asset",
+    "dcterms:publisher": "IFM Electronic GmbH",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "IFM-HEX-ASM-AERO-2024",
+    "dcterms:description": "A high-precision hexapod robotic system designed for aerospace assembly applications, featuring six degrees of freedom motion control, integrated vision systems, and compliance with aerospace industry standards for precision and reliability.",
+    "dcat:version": "2.3.1",
+    "dcat:keyword": [
+      "hexapod",
+      "robotics",
+      "aerospace",
+      "assembly",
+      "automation",
+      "precision",
+      "motion control",
+      "IFM Electronic"
+    ],
+    "dcat:contactPoint": "https://www.ifm.com/us/en/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 6,
+        "unitCode": "rodeos:axisCount"
+      },
+      "rodeos:framework": "IFM Electronic Hexapod Motion Control Framework"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "IFM Electronic",
+        "rodeos:hardwareAssetType": "hexapod"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 25.5,
+          "rodeos:maxVelocity": 2.8,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 48.0,
+          "rodeos:interface": "EtherCAT",
+          "rodeos:reach": 1200.0,
+          "rodeos:accuracy": 0.02,
+          "rodeos:minVelocity": 0.05
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "floor-mounted",
+            "rodeos:positionAccuracy": 0.05,
+            "rodeos:repeatability": 0.02,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 2.5,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "Stewart platform"
+          },
+          "child": {
+            "@type": "rodeos:parallelRobot",
+            "properties": {
+              "rodeos:platformSize": 1.0,
+              "rodeos:stiffness": 50.0
+            },
+            "child": {
+              "@type": "rodeos:hexapod",
+              "properties": {
+                "rodeos:aasSubmodel": "https://ifm.com/aas/submodels/hexapod-assembly-aerospace"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

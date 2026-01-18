@@ -1,0 +1,66 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Stäubli Spot Welding Grinding/Polishing/Finishing Tool",
+    "dcterms:type": "skos:concept",
+    "dcterms:publisher": "Stäubli International AG",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "ST-SW-GPF-2024-001",
+    "dcterms:description": "Industrial robotic grinding, polishing, and finishing tool designed for spot welding applications in the food and beverage industry, featuring precision control and hygienic design compliant with industry standards.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "spot welding",
+      "grinding",
+      "polishing",
+      "finishing",
+      "robotic tool",
+      "food and beverage",
+      "industrial automation",
+      "Stäubli"
+    ],
+    "dcat:contactPoint": "https://www.staubli.com/en/contact/",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 6,
+        "minValue": 4,
+        "maxValue": 8,
+        "unitCode": "KW"
+      },
+      "rodeos:framework": "TX2-160"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Staubli",
+        "rodeos:hardwareAssetType": "rodeos:grindingPolishingFinishingTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "DeviceNet",
+          "rodeos:manufacturer": "Staubli",
+          "rodeos:toolWeight": 3.2,
+          "rodeos:toolMaterial": "Stainless Steel AISI 316L"
+        },
+        "child": {
+          "@type": "rodeos:grindingPolishingFinishingTool",
+          "properties": {
+            "rodeos:grindingPolishingFinishingToolType": "Grinders",
+            "rodeos:aasSubmodel": "https://assetadministration-shell.com/staubli/grinding-tools/welding-grinder-2024",
+            "rodeos:rotationSpeed": 12000.0,
+            "rodeos:abrasiveForce": 45.5,
+            "rodeos:toolDiameter": 125.0,
+            "rodeos:wearRate": 0.15
+          }
+        }
+      }
+    }
+  }
+}

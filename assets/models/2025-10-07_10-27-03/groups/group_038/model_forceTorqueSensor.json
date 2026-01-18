@@ -1,0 +1,73 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Rockwell Automation Force/Torque Sensor for Aerospace Palletizing",
+    "dcterms:type": "sensor",
+    "dcterms:publisher": "Rockwell Automation",
+    "dcterms:license": "https://www.rockwellautomation.com/en-us/legal/terms-of-use.html",
+    "dcterms:identifier": "RA-FTS-AERO-PAL-001",
+    "dcterms:description": "High-precision force/torque sensor designed for aerospace palletizing applications, providing accurate measurement of applied forces and torques to ensure safe and efficient handling of aerospace components during automated palletizing operations.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "force sensor",
+      "torque sensor",
+      "aerospace",
+      "palletizing",
+      "industrial automation",
+      "Rockwell Automation",
+      "robotics"
+    ],
+    "dcat:contactPoint": "https://www.rockwellautomation.com/en-us/support/contact.html",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 6,
+        "unitCode": "N",
+        "minValue": 0,
+        "maxValue": 1000
+      },
+      "rodeos:framework": "Rockwell Automation Integrated Motion Control Framework"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Rockwell Automation",
+        "rodeos:hardwareAssetType": "forceTorqueSensor"
+      },
+      "child": {
+        "@type": "rodeos:sensor",
+        "properties": {
+          "rodeos:measurementRange": 1000.0,
+          "rodeos:measurementAccuracy": 0.5,
+          "rodeos:samplingRate": 1000.0,
+          "rodeos:fieldOfView": 360.0
+        },
+        "child": {
+          "@type": "rodeos:forceTorqueSensor",
+          "properties": {
+            "rodeos:aasSubmodel": "https://rockwell-automation.com/aas/submodels/forceTorqueSensor/aerospace-palletizing",
+            "rodeos:forceRange": {
+              "@type": "schema:quantitativeValue",
+              "schema:minValue": -1000,
+              "schema:maxValue": 1000,
+              "schema:unitCode": "N"
+            },
+            "rodeos:torqueRange": {
+              "@type": "schema:quantitativeValue",
+              "schema:minValue": -50,
+              "schema:maxValue": 50,
+              "schema:unitCode": "Nm"
+            },
+            "rodeos:resolutionForce": 0.1,
+            "rodeos:resolutionTorque": 0.01
+          }
+        }
+      }
+    }
+  }
+}

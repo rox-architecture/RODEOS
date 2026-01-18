@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Rockwell Automation Aerospace Bin Picking Gripper Tool",
+    "dcterms:type": "Tool",
+    "dcterms:publisher": "Rockwell Automation",
+    "dcterms:license": "https://www.rockwellautomation.com/en-us/company/terms-of-use.html",
+    "dcterms:identifier": "RA-GT-AERO-BP-001",
+    "dcterms:description": "Industrial gripper tool designed for aerospace bin picking applications, featuring precision handling, adaptive gripping force, and compatibility with Rockwell Automation control systems.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "gripper",
+      "bin picking",
+      "aerospace",
+      "automation",
+      "robotics",
+      "Rockwell",
+      "tooling"
+    ],
+    "dcat:contactPoint": "https://www.rockwellautomation.com/en-us/support/contact-technical-support.html",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "schema:value": 15.5,
+        "schema:unitCode": "kg",
+        "schema:minValue": 0.0,
+        "schema:maxValue": 25.0
+      },
+      "rodeos:framework": "Allen-Bradley Integrated Motion with Kinetix Drive Technology"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Rockwell Automation",
+        "rodeos:hardwareAssetType": "gripperTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "EtherNet/IP",
+          "rodeos:manufacturer": "Rockwell Automation",
+          "rodeos:toolWeight": 1.8,
+          "rodeos:toolMaterial": "6061-T6 Aluminum"
+        },
+        "child": {
+          "@type": "rodeos:gripperTool",
+          "properties": {
+            "rodeos:gripperType": "MechanicalParallel",
+            "rodeos:aasSubmodel": "https://rockwell-automation.com/aas/grippers/mechanical-parallel/aerospace-bin-picking/v1",
+            "rodeos:gripForceMax": 120.5,
+            "rodeos:strokePerFinger": 50.0,
+            "rodeos:objectSizeRange": "50-300 mm in length, 25-150 mm in width, 10-100 mm in height",
+            "rodeos:interfaceMechanical": "ISO 9409-1-50-4-M6 flange mount with 4x M6 threaded holes"
+          }
+        }
+      }
+    }
+  }
+}

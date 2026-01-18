@@ -1,0 +1,66 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "FANUC R-2000iC/210F Industrial Robot Controller IPC",
+    "dcterms:type": "Hardware Component",
+    "dcterms:publisher": "FANUC America Corporation",
+    "dcterms:license": "https://www.fanuc.com/legal/software-license-agreement",
+    "dcterms:identifier": "FANUC-IPC-R2000iC210F-2024",
+    "dcterms:description": "Industrial PC controller for FANUC R-2000iC/210F robotic arm designed for high-speed assembly applications in logistics and warehousing environments. Features real-time motion control, integrated vision system support, and Ethernet/IP connectivity.",
+    "dcat:version": "V10.70",
+    "dcat:keyword": [
+      "industrial robot",
+      "assembly automation",
+      "material handling",
+      "motion control",
+      "warehousing",
+      "logistics",
+      "FANUC",
+      "IPC",
+      "real-time system"
+    ],
+    "dcat:contactPoint": "https://www.fanuc.com/america/en/support/contact-technical",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 1,
+        "unitCode": "EA"
+      },
+      "rodeos:framework": "FANUC iRVision Integrated Vision System"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "FANUC",
+        "rodeos:hardwareAssetType": "rodeos:ipc"
+      },
+      "child": {
+        "@type": "rodeos:controller",
+        "properties": {
+          "rodeos:cpuArchitecture": "ARM Cortex-A9",
+          "rodeos:processorClock": 1.2,
+          "rodeos:realTimeSupport": true,
+          "rodeos:communicationInterfaces": "Ethernet/IP",
+          "rodeos:powerSupply": "24V DC, 5A"
+        },
+        "child": {
+          "@type": "rodeos:ipc",
+          "properties": {
+            "rodeos:aasSubmodel": "https://example.com/aas/submodels/fanuc-ipc-assembly-logistics",
+            "rodeos:formFactor": "rodeos:ipcFormFactorRackMount",
+            "rodeos:ramSize": 32.0,
+            "rodeos:storageCapacity": 1024.0,
+            "rodeos:gpuAccelerators": "NVIDIA Quadro RTX 4000 with 8GB GDDR6 memory",
+            "rodeos:expansionSlots": "2x PCIe x16, 2x PCIe x4, 1x PCIe x1",
+            "rodeos:industrialRatings": "IP54 protection, operating temperature -10°C to 55°C, 5-95% non-condensing humidity"
+          }
+        }
+      }
+    }
+  }
+}

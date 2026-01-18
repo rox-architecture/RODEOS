@@ -1,0 +1,74 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Beckhoff TwinCAT Vision for Medical Device Packing",
+    "dcterms:type": "Software",
+    "dcterms:publisher": "Beckhoff Automation GmbH & Co. KG",
+    "dcterms:license": "https://www.beckhoff.com/en-us/terms-and-conditions/",
+    "dcterms:identifier": "TCV-MEDPACK-4.5",
+    "dcterms:description": "Industrial vision software for automated quality control and packaging verification in medical device manufacturing, featuring high-precision inspection, barcode reading, and compliance tracking.",
+    "dcat:version": "4.5.2",
+    "dcat:keyword": [
+      "machine vision",
+      "medical devices",
+      "packing automation",
+      "quality control",
+      "TwinCAT",
+      "Beckhoff",
+      "inspection",
+      "barcode reading"
+    ],
+    "dcat:contactPoint": "https://www.beckhoff.com/en-us/support/",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 0.95,
+        "minValue": 0.0,
+        "maxValue": 1.0,
+        "unitText": "confidence score"
+      },
+      "rodeos:framework": "TwinCAT Vision"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "@type": "schema:quantitativeValue",
+          "value": 0.95,
+          "minValue": 0.0,
+          "maxValue": 1.0,
+          "unitText": "confidence score"
+        },
+        "rodeos:softwareAssetType": {
+          "@type": "skos:concept",
+          "prefLabel": "Machine Vision Library",
+          "inScheme": "https://example.org/beckhoff-software-types"
+        }
+      },
+      "child": {
+        "@type": "rodeos:perceptionVisionSoftware",
+        "properties": {
+          "rodeos:perceptionVisionSoftwareType": "objectDetection",
+          "rodeos:aasSubmodel": "https://example.com/aas/submodels/beckhoff-vision-software-packaging",
+          "rodeos:inputFormats": [
+            "PNG",
+            "JPEG",
+            "BMP",
+            "TIFF"
+          ],
+          "rodeos:mlFrameworks": [
+            "TensorFlow",
+            "PyTorch",
+            "ONNX Runtime"
+          ],
+          "rodeos:accuracyMetrics": "mAP: 0.95, Precision: 0.97, Recall: 0.93, F1-Score: 0.95"
+        }
+      }
+    }
+  }
+}

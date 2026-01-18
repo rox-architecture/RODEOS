@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Universal Robots PLC Bin Picking Controller",
+    "dcterms:type": "skos:concept",
+    "dcterms:publisher": "Universal Robots A/S",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "UR-PLC-BP-AERO-001",
+    "dcterms:description": "Programmable Logic Controller optimized for aerospace bin picking applications, featuring high-precision motion control and integration with UR robotic arms for automated parts handling.",
+    "dcat:version": "v2.1.4",
+    "dcat:keyword": [
+      "PLC",
+      "Bin Picking",
+      "Aerospace",
+      "Automation",
+      "Robotics",
+      "Universal Robots",
+      "Industrial Control"
+    ],
+    "dcat:contactPoint": "mailto:support@universal-robots.com",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 16,
+        "unitCode": "kg",
+        "minValue": 0,
+        "maxValue": 20
+      },
+      "rodeos:framework": "URCap for bin picking applications"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Universal Robots",
+        "rodeos:hardwareAssetType": "rodeos:plc"
+      },
+      "child": {
+        "@type": "rodeos:controller",
+        "properties": {
+          "rodeos:cpuArchitecture": "ARM Cortex-A9",
+          "rodeos:processorClock": 1.2,
+          "rodeos:realTimeSupport": true,
+          "rodeos:communicationInterfaces": "Ethernet/IP",
+          "rodeos:powerSupply": "24V DC, 5A"
+        },
+        "child": {
+          "@type": "rodeos:plc",
+          "properties": {
+            "rodeos:aasSubmodel": "https://universalrobots.com/aas/plc/aerospace-bin-picking/submodel",
+            "rodeos:scanTimeTypical": "PT0.005S",
+            "rodeos:programMemory": 8.0,
+            "rodeos:ioCapacity": "Digital: 1024 I/O, Analog: 32 channels"
+          }
+        }
+      }
+    }
+  }
+}

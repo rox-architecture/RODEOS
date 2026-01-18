@@ -1,0 +1,91 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Denso Wave Polar Spherical Palletizing Robot System Specification",
+    "dcterms:type": "Technical Specification",
+    "dcterms:publisher": "Denso Wave Incorporated",
+    "dcterms:license": "https://www.denso-wave.com/en/terms/license-agreement.html",
+    "dcterms:identifier": "DW-PSP-2024-001",
+    "dcterms:description": "High-precision polar spherical robotic system optimized for logistics and warehousing palletizing applications. Features advanced motion control, payload handling up to 150kg, and integrated vision systems for automated box identification and placement.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "industrial robotics",
+      "palletizing",
+      "logistics automation",
+      "spherical coordinate robot",
+      "warehousing systems",
+      "Denso Wave"
+    ],
+    "dcat:contactPoint": "https://www.denso-wave.com/en/support/technical-contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 6,
+        "unitCode": "kg",
+        "minValue": 0.5,
+        "maxValue": 25
+      },
+      "rodeos:framework": "Denso Wave Palletizing Framework v2.1"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Denso Wave",
+        "rodeos:hardwareAssetType": "polarSpherical"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 25.0,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 400.0,
+          "rodeos:interface": "EtherCAT",
+          "rodeos:reach": 1.8,
+          "rodeos:accuracy": 0.05,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted",
+            "rodeos:positionAccuracy": 0.05,
+            "rodeos:repeatability": 0.02,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 12.5,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "Polar coordinate system with spherical wrist"
+          },
+          "child": {
+            "@type": "rodeos:serielRobot",
+            "properties": {
+              "rodeos:jointCount": 10,
+              "rodeos:maxJointSpeed": 0.5
+            },
+            "child": {
+              "@type": "rodeos:polarSpherical",
+              "properties": {
+                "rodeos:aasSubmodel": "https://asset-shell.denso-wave.com/palletizing/robotic-arm/polar-spherical/1.0",
+                "rodeos:radialRange": {
+                  "minValue": 0.5,
+                  "maxValue": 2.5,
+                  "unitCode": "MTR"
+                },
+                "rodeos:polarAngleRange": {
+                  "minValue": -180,
+                  "maxValue": 180,
+                  "unitCode": "DD"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

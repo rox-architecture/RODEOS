@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Keyence Gripper Tool for Aerospace Assembly",
+    "dcterms:type": "Tool",
+    "dcterms:publisher": "Keyence Corporation",
+    "dcterms:license": "https://www.keyence.com/license/industrial-tools",
+    "dcterms:identifier": "KEY-GRIP-AERO-ASM-2024",
+    "dcterms:description": "High-precision robotic gripper tool designed for aerospace assembly applications, featuring advanced sensing capabilities and compliant gripping mechanisms for handling delicate aerospace components.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "robotic gripper",
+      "aerospace assembly",
+      "automation tool",
+      "Keyence",
+      "compliant mechanism",
+      "precision handling"
+    ],
+    "dcat:contactPoint": "https://www.keyence.com/support/industrial-automation",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "schema:value": 2.5,
+        "schema:unitCode": "kg",
+        "schema:description": "Maximum payload capacity"
+      },
+      "rodeos:framework": "Keyence Automation Framework"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Keyence",
+        "rodeos:hardwareAssetType": "gripperTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "EtherNet/IP",
+          "rodeos:manufacturer": "Keyence",
+          "rodeos:toolWeight": 1.2,
+          "rodeos:toolMaterial": "Anodized Aluminum"
+        },
+        "child": {
+          "@type": "rodeos:gripperTool",
+          "properties": {
+            "rodeos:gripperType": "MechanicalParallel",
+            "rodeos:aasSubmodel": "https://asset-shell.keyence.com/aas/submodels/gripper-tool/mechanical-parallel/12345",
+            "rodeos:gripForceMax": 250.5,
+            "rodeos:strokePerFinger": 50.0,
+            "rodeos:objectSizeRange": "10-150 mm",
+            "rodeos:interfaceMechanical": "ISO 9409-1-50-4-M6"
+          }
+        }
+      }
+    }
+  }
+}

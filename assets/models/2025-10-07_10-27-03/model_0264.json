@@ -1,0 +1,88 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "KUKA KR QUANTEC arc welding robot for food and beverage applications",
+    "dcterms:type": "robotics:CartesianRobot",
+    "dcterms:publisher": "KUKA AG",
+    "dcterms:license": "https://www.kuka.com/en-de/terms-and-conditions",
+    "dcterms:identifier": "KUKA-KR-QUANTEC-ARC-FB-2024",
+    "dcterms:description": "Industrial-grade Cartesian robot system optimized for arc welding in food and beverage production environments. Features stainless steel construction, IP67 rating for washdown compatibility, and specialized welding packages meeting industry hygiene standards.",
+    "dcat:version": "2.3.1",
+    "dcat:keyword": [
+      "arc welding",
+      "food grade",
+      "stainless steel",
+      "IP67",
+      "Cartesian robot",
+      "KUKA",
+      "industrial automation",
+      "hygienic design"
+    ],
+    "dcat:contactPoint": "https://www.kuka.com/en-de/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 6,
+        "unitCode": "rodeos:axisCount"
+      },
+      "rodeos:framework": "KUKA System Software (KSS)"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "KUKA AG",
+        "rodeos:hardwareAssetType": "cartesian"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 6.0,
+          "rodeos:maxVelocity": 2.0,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 400.0,
+          "rodeos:interface": "KUKA.PLC mxAutomation 2.0",
+          "rodeos:reach": 2036.0,
+          "rodeos:accuracy": 0.03,
+          "rodeos:minVelocity": 0.01
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted",
+            "rodeos:positionAccuracy": 0.05,
+            "rodeos:repeatability": 0.02,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 8.5,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "6-axis articulated arm"
+          },
+          "child": {
+            "@type": "rodeos:serielRobot",
+            "properties": {
+              "rodeos:jointCount": 6,
+              "rodeos:maxJointSpeed": 180.5
+            },
+            "child": {
+              "@type": "rodeos:cartesian",
+              "properties": {
+                "rodeos:aasSubmodel": "https://asset-shell.com/aas/submodels/cartesian-robot-welding-KUKA-12345",
+                "rodeos:linearTravelXYZ": {
+                  "@type": "schema:quantitativeValue",
+                  "schema:value": 2000,
+                  "schema:unitCode": "MMT",
+                  "schema:name": "Linear Travel Range"
+                },
+                "rodeos:linearAxisSpeedMax": 2.5
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

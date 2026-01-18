@@ -1,0 +1,50 @@
+{
+  "company": "Omron",
+  "industry": "Electronics manufacturing",
+  "application": "material transport",
+  "assets": [
+    {
+      "leaf": "rodeos:screwingAssemblyTool",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:tooling",
+        "rodeos:screwingAssemblyTool"
+      ],
+      "file": "model_screwingAssemblyTool.json"
+    },
+    {
+      "leaf": "rodeos:cylindrical",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:roboter",
+        "rodeos:stationaryRobot",
+        "rodeos:serielRobot",
+        "rodeos:cylindrical"
+      ],
+      "file": "model_cylindrical.json"
+    },
+    {
+      "leaf": "rodeos:plc",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:controller",
+        "rodeos:plc"
+      ],
+      "file": "model_plc.json"
+    },
+    {
+      "leaf": "rodeos:Service",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Service"
+      ],
+      "file": "model_Service.json"
+    }
+  ]
+}

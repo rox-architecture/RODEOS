@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "WAGO Automotive Material Transport Measuring and Inspection Tool",
+    "dcterms:type": "skos:concept",
+    "dcterms:publisher": "WAGO GmbH & Co. KG",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "WAGO-MIT-2024-001",
+    "dcterms:description": "High-precision measuring and inspection tool designed for automotive assembly material transport applications. Provides real-time dimensional verification and quality control during component handling and positioning operations.",
+    "dcat:version": "2.1.3",
+    "dcat:keyword": [
+      "automotive assembly",
+      "material transport",
+      "measuring tool",
+      "inspection system",
+      "quality control",
+      "WAGO",
+      "industrial automation"
+    ],
+    "dcat:contactPoint": "mailto:support.industrial@wago.com",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 150,
+        "unitCode": "kg",
+        "minValue": 0,
+        "maxValue": 200
+      },
+      "rodeos:framework": "WAGO Automation Framework"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "WAGO",
+        "rodeos:hardwareAssetType": "rodeos:measuringInspectionTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "PROFINET",
+          "rodeos:manufacturer": "WAGO",
+          "rodeos:toolWeight": 3.2,
+          "rodeos:toolMaterial": "Stainless Steel AISI 304"
+        },
+        "child": {
+          "@type": "rodeos:measuringInspectionTool",
+          "properties": {
+            "rodeos:measuringInspectionToolType": "VisionInspectionCameras",
+            "rodeos:aasSubmodel": "https://wago.com/aas/automotive/materialtransport/visioninspection/12345",
+            "rodeos:measurementAccuracy": 0.02,
+            "rodeos:range": 1500.0,
+            "rodeos:repeatability": 0.005
+          }
+        }
+      }
+    }
+  }
+}

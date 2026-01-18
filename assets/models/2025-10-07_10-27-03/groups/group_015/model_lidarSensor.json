@@ -1,0 +1,73 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Schunk GmbH LIDAR Sensor for Food Quality Inspection",
+    "dcterms:type": "Sensor Device",
+    "dcterms:publisher": "Schunk GmbH",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "SCH-LID-FB-QI-001",
+    "dcterms:description": "High-precision LIDAR sensor designed for food and beverage quality inspection applications. Provides non-contact 3D scanning capabilities for detecting surface defects, dimensional accuracy, and contamination in food products. Features IP67 rating for washdown environments and complies with food safety regulations.",
+    "dcat:version": "2.1.3",
+    "dcat:keyword": [
+      "LIDAR",
+      "quality inspection",
+      "food safety",
+      "3D scanning",
+      "non-contact measurement",
+      "Schunk",
+      "automation",
+      "food processing"
+    ],
+    "dcat:contactPoint": "https://www.schunk.com/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 0.98,
+        "minValue": 0.95,
+        "maxValue": 1.0,
+        "unitCode": "P1"
+      },
+      "rodeos:framework": "Schunk VisionSense Framework v2.4"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Schunk GmbH",
+        "rodeos:hardwareAssetType": "lidarSensor"
+      },
+      "child": {
+        "@type": "rodeos:sensor",
+        "properties": {
+          "rodeos:measurementRange": 10.0,
+          "rodeos:measurementAccuracy": 0.002,
+          "rodeos:samplingRate": 100000.0,
+          "rodeos:fieldOfView": {
+            "schema:minValue": 0.0,
+            "schema:maxValue": 270.0,
+            "schema:unitCode": "DD"
+          }
+        },
+        "child": {
+          "@type": "rodeos:lidarSensor",
+          "properties": {
+            "rodeos:aasSubmodel": "https://industrialdigitaltwin.org/environments/3d-sensing/Submodels/LidarSensor/12345",
+            "rodeos:scanRate": 20.0,
+            "rodeos:angularResolution": 0.1,
+            "rodeos:maxRange": 120.0,
+            "rodeos:fieldOfView": {
+              "schema:minValue": 0.0,
+              "schema:maxValue": 270.0,
+              "schema:unitCode": "DD"
+            },
+            "rodeos:numChannels": 16
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "company": "Denso Wave",
+  "industry": "Electronics manufacturing",
+  "application": "spot welding",
+  "assets": [
+    {
+      "leaf": "rodeos:amr",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:roboter",
+        "rodeos:mobileRobot",
+        "rodeos:amr"
+      ],
+      "file": "model_amr.json"
+    },
+    {
+      "leaf": "rodeos:motionControlSoftware",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:softwareComponent",
+        "rodeos:motionControlSoftware"
+      ],
+      "file": "model_motionControlSoftware.json"
+    },
+    {
+      "leaf": "rodeos:perceptionVisionSoftware",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:softwareComponent",
+        "rodeos:perceptionVisionSoftware"
+      ],
+      "file": "model_perceptionVisionSoftware.json"
+    },
+    {
+      "leaf": "rodeos:Dataset",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Dataset"
+      ],
+      "file": "model_Dataset.json"
+    },
+    {
+      "leaf": "rodeos:specialTool",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:tooling",
+        "rodeos:specialTool"
+      ],
+      "file": "model_specialTool.json"
+    }
+  ]
+}

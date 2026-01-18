@@ -1,0 +1,52 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "WAGO AI Analytics Software for Automotive Material Transport",
+    "dcterms:type": "Software",
+    "dcterms:publisher": "WAGO GmbH & Co. KG",
+    "dcterms:license": "https://www.wago.com/global/license-terms",
+    "dcterms:identifier": "WAGO-AI-ANALYTICS-MT-001",
+    "dcterms:description": "AI-powered analytics software designed for optimizing material transport operations in automotive assembly lines. Provides real-time monitoring, predictive maintenance, and route optimization using machine learning algorithms.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "AI analytics",
+      "material transport",
+      "automotive assembly",
+      "predictive maintenance",
+      "real-time monitoring",
+      "route optimization",
+      "industrial software"
+    ],
+    "dcat:contactPoint": "mailto:support@wago.com",
+    "rodeos:coreType": "Service"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "schema:value": 4.2,
+        "schema:unitCode": "rodeos:aiModelVersion"
+      },
+      "rodeos:framework": "WAGO AI Analytics Framework v2.1"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "schema:value": 4.2,
+          "schema:unitCode": "rodeos:aiModelVersion"
+        },
+        "rodeos:softwareAssetType": "softwareAssetType"
+      },
+      "child": {
+        "@type": "rodeos:aiAnalyticsSoftware",
+        "properties": {
+          "rodeos:aiAnalyticsSoftwareType": "mlModel",
+          "rodeos:aasSubmodel": "https://wago.com/aas/automotive/material-transport/analytics-software/submodel",
+          "rodeos:modelArchitecture": "Convolutional Neural Network (CNN) with ResNet-50 backbone for visual recognition of material types and quantities, integrated with LSTM networks for predictive routing optimization in automotive assembly transport systems"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Rockwell Automation PharmaPack Robot Operation Software",
+    "dcterms:type": "Software",
+    "dcterms:publisher": "Rockwell Automation, Inc.",
+    "dcterms:license": "https://www.rockwellautomation.com/en-us/legal/software-license.html",
+    "dcterms:identifier": "RA-PHARMAPACK-ROS-2024",
+    "dcterms:description": "Specialized robot operation software designed for pharmaceutical packaging applications, featuring GMP compliance, validation support, and integration with Rockwell Automation control systems.",
+    "dcat:version": "v3.2.1",
+    "dcat:keyword": [
+      "robotics",
+      "pharmaceutical",
+      "packaging",
+      "automation",
+      "GMP",
+      "validation",
+      "Rockwell",
+      "software"
+    ],
+    "dcat:contactPoint": "https://www.rockwellautomation.com/en-us/support/contact.html",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 4.2,
+        "schema:unitCode": "rodeos:softwareVersion"
+      },
+      "rodeos:framework": "FactoryTalk PharmaSuite"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "@type": "schema:quantitativeValue",
+          "schema:value": 4.2,
+          "schema:unitCode": "rodeos:softwareVersion"
+        },
+        "rodeos:softwareAssetType": {
+          "@id": "skos:concept",
+          "skos:prefLabel": "Robot Operation Software"
+        }
+      },
+      "child": {
+        "@type": "rodeos:robotOperationSoftware",
+        "properties": {
+          "rodeos:robotOperationSystemType": "vendorSpecificMiddleware",
+          "rodeos:aasSubmodel": "https://rockwellautomation.com/aas/submodels/robotOperationSoftware/pharmaceuticals/packing/v1",
+          "rodeos:supportedApis": [
+            "https://rockwellautomation.com/api/robotOperationSoftware/v2",
+            "https://rockwellautomation.com/api/packing/v1",
+            "https://rockwellautomation.com/api/pharmaceuticals/v3"
+          ],
+          "rodeos:supportedHardwareDrivers": [
+            "Allen-Bradley ControlLogix PLC Driver",
+            "Pharmaceutical Packing Line Conveyor Driver",
+            "Vision System Integration Driver",
+            "Safety Interlock System Driver",
+            "Material Handling Robot Arm Driver"
+          ],
+          "rodeos:osDependencies": [
+            "Rockwell Automation FactoryTalk View SE",
+            "Rockwell Automation Studio 5000",
+            "Windows 10 IoT Enterprise LTSC",
+            ".NET Framework 4.8",
+            "Rockwell Automation Security Patch 2024-Q2"
+          ]
+        }
+      }
+    }
+  }
+}

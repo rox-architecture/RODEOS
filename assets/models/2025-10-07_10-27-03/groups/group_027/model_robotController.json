@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Mitsubishi Electric Robot Controller for Food and Beverage Bin Picking",
+    "dcterms:type": "Hardware",
+    "dcterms:publisher": "Mitsubishi Electric Corporation",
+    "dcterms:license": "https://www.mitsubishielectric.com/fa/terms_of_use/",
+    "dcterms:identifier": "ME-RC-FB-BP-2024",
+    "dcterms:description": "Industrial robot controller optimized for bin picking applications in food and beverage manufacturing environments. Features enhanced vision system integration, food-grade compliance, and high-speed picking algorithms.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "robot controller",
+      "bin picking",
+      "food and beverage",
+      "Mitsubishi Electric",
+      "automation",
+      "industrial robotics",
+      "vision guidance",
+      "material handling"
+    ],
+    "dcat:contactPoint": "https://www.mitsubishielectric.com/fa/support/contact/",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 1,
+        "schema:unitCode": "UN"
+      },
+      "rodeos:framework": "MELSEC iQ-R Series"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Mitsubishi Electric",
+        "rodeos:hardwareAssetType": "robotController"
+      },
+      "child": {
+        "@type": "rodeos:controller",
+        "properties": {
+          "rodeos:cpuArchitecture": "ARM Cortex-A53",
+          "rodeos:processorClock": 1.2,
+          "rodeos:realTimeSupport": true,
+          "rodeos:communicationInterfaces": "EtherCAT, EtherNet/IP, CC-Link IE Field, PROFINET",
+          "rodeos:powerSupply": "24V DC, 3A"
+        },
+        "child": {
+          "@type": "rodeos:robotController",
+          "properties": {
+            "rodeos:aasSubmodel": "https://asset-shell.mitsubishielectric.com/robot-controllers/MELFRC-BP-2024/sm-bin-picking",
+            "rodeos:maxAxesSupported": 8,
+            "rodeos:driveInterfaces": "rodeos:MELSEC-Servo"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "company": "SICK AG",
+  "industry": "Renewable energy",
+  "application": "machine tending",
+  "assets": [
+    {
+      "leaf": "rodeos:integrationOrchestration",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:softwareComponent",
+        "rodeos:integrationOrchestration"
+      ],
+      "file": "model_integrationOrchestration.json"
+    },
+    {
+      "leaf": "rodeos:cylindrical",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:roboter",
+        "rodeos:stationaryRobot",
+        "rodeos:serielRobot",
+        "rodeos:cylindrical"
+      ],
+      "file": "model_cylindrical.json"
+    }
+  ]
+}

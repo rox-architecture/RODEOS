@@ -1,0 +1,87 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Universal Robots Aerospace Bin Picking Cartesian Robot System",
+    "dcterms:type": "robotics:CartesianRobot",
+    "dcterms:publisher": "Universal Robots A/S",
+    "dcterms:license": "https://www.universal-robots.com/license-terms",
+    "dcterms:identifier": "UR-CART-AERO-BP-001",
+    "dcterms:description": "A high-precision Cartesian robot system designed for aerospace bin picking applications, featuring advanced vision systems, collision detection, and compliance with aerospace industry standards.",
+    "dcat:version": "v2.3.1",
+    "dcat:keyword": [
+      "Cartesian robot",
+      "bin picking",
+      "aerospace",
+      "automation",
+      "Universal Robots",
+      "robotic arm",
+      "precision handling"
+    ],
+    "dcat:contactPoint": "https://www.universal-robots.com/contact-support",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 6,
+        "unitCode": "DOF",
+        "minValue": 4,
+        "maxValue": 6
+      },
+      "rodeos:framework": "URSim"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Universal Robots",
+        "rodeos:hardwareAssetType": "cartesian"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 5.0,
+          "rodeos:maxVelocity": 2.0,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 48.0,
+          "rodeos:interface": "Ethernet/IP, Modbus TCP, TCP/IP socket",
+          "rodeos:reach": 850.0,
+          "rodeos:accuracy": 0.03,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted",
+            "rodeos:positionAccuracy": 0.05,
+            "rodeos:repeatability": 0.03,
+            "rodeos:isCobot": true,
+            "rodeos:workspaceVolume": 0.8,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "Cartesian (XYZ)"
+          },
+          "child": {
+            "@type": "rodeos:serielRobot",
+            "properties": {
+              "rodeos:jointCount": 6,
+              "rodeos:maxJointSpeed": 180.0
+            },
+            "child": {
+              "@type": "rodeos:cartesian",
+              "properties": {
+                "rodeos:aasSubmodel": "https://example.com/aas/submodels/cartesian-bin-picking-ur",
+                "rodeos:linearTravelXYZ": {
+                  "schema:unitCode": "MMT",
+                  "schema:value": "800x600x400"
+                },
+                "rodeos:linearAxisSpeedMax": 2.5
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

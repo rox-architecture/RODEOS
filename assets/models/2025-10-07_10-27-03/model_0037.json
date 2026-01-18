@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Techman Robot Controller TM5-900 for Automotive Packing Applications",
+    "dcterms:type": "skos:concept",
+    "dcterms:publisher": "Techman Robot Inc.",
+    "dcterms:license": "https://techmanrobot.com/license/industrial-v1",
+    "dcterms:identifier": "TM5-900-AUTO-PACK-001",
+    "dcterms:description": "Industrial robot controller optimized for high-speed packing operations in automotive assembly lines. Features integrated vision system, collision detection, and Ethernet/IP connectivity.",
+    "dcat:version": "v2.3.1",
+    "dcat:keyword": [
+      "robot controller",
+      "automotive",
+      "packing",
+      "Techman",
+      "TM5",
+      "industrial automation"
+    ],
+    "dcat:contactPoint": "mailto:support@techmanrobot.com",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 1,
+        "unitCode": "UNIT",
+        "minValue": 0,
+        "maxValue": 1
+      },
+      "rodeos:framework": "TMflow"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Techman Robot",
+        "rodeos:hardwareAssetType": "robotController"
+      },
+      "child": {
+        "@type": "rodeos:controller",
+        "properties": {
+          "rodeos:cpuArchitecture": "ARM Cortex-A72",
+          "rodeos:processorClock": 1.8,
+          "rodeos:realTimeSupport": true,
+          "rodeos:communicationInterfaces": "EtherCAT",
+          "rodeos:powerSupply": "24V DC, 10A"
+        },
+        "child": {
+          "@type": "rodeos:robotController",
+          "properties": {
+            "rodeos:aasSubmodel": "https://techmanrobot.com/aas/robot-controller/packing-automotive-assembly/submodel",
+            "rodeos:maxAxesSupported": 8,
+            "rodeos:driveInterfaces": "EtherCAT"
+          }
+        }
+      }
+    }
+  }
+}

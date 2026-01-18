@@ -1,0 +1,65 @@
+{
+  "company": "Mitsubishi Electric",
+  "industry": "Aerospace",
+  "application": "pick-and-place",
+  "assets": [
+    {
+      "leaf": "rodeos:visionSensor",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:sensor",
+        "rodeos:visionSensor"
+      ],
+      "file": "model_visionSensor.json"
+    },
+    {
+      "leaf": "rodeos:dispensingAdditiveTool",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:tooling",
+        "rodeos:dispensingAdditiveTool"
+      ],
+      "file": "model_dispensingAdditiveTool.json"
+    },
+    {
+      "leaf": "rodeos:robotOperationSoftware",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:softwareComponent",
+        "rodeos:robotOperationSoftware"
+      ],
+      "file": "model_robotOperationSoftware.json"
+    },
+    {
+      "leaf": "rodeos:articulated",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:roboter",
+        "rodeos:stationaryRobot",
+        "rodeos:serielRobot",
+        "rodeos:articulated"
+      ],
+      "file": "model_articulated.json"
+    },
+    {
+      "leaf": "rodeos:polarSpherical",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:roboter",
+        "rodeos:stationaryRobot",
+        "rodeos:serielRobot",
+        "rodeos:polarSpherical"
+      ],
+      "file": "model_polarSpherical.json"
+    }
+  ]
+}

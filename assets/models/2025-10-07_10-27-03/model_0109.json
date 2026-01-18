@@ -1,0 +1,68 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Epson Robotics Grinding/Polishing/Finishing Tool for Automotive Packing Applications",
+    "dcterms:type": "http://www.w3.org/2004/02/skos/core#Concept",
+    "dcterms:publisher": "Epson Robotics",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "EPS-GPFT-AUTO-PACK-001",
+    "dcterms:description": "Industrial robotic grinding, polishing, and finishing tool designed for automotive assembly packing applications. Features precision control, adaptive force feedback, and integrated dust extraction for high-quality surface finishing operations.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "robotics",
+      "automation",
+      "grinding",
+      "polishing",
+      "finishing",
+      "automotive",
+      "packing",
+      "Epson",
+      "industrial",
+      "tool"
+    ],
+    "dcat:contactPoint": "https://robots.epson.com/support/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 2.5,
+        "schema:unitCode": "kg",
+        "schema:minValue": 2.0,
+        "schema:maxValue": 3.0
+      },
+      "rodeos:framework": "Epson RC+ 7.0"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Epson Robotics",
+        "rodeos:hardwareAssetType": "rodeos:grindingPolishingFinishingTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "Epson RC+ 7.0",
+          "rodeos:manufacturer": "Epson Robotics",
+          "rodeos:toolWeight": 2.5,
+          "rodeos:toolMaterial": "Stainless Steel AISI 304"
+        },
+        "child": {
+          "@type": "rodeos:grindingPolishingFinishingTool",
+          "properties": {
+            "rodeos:grindingPolishingFinishingToolType": "Grinders",
+            "rodeos:aasSubmodel": "https://epson-robotics.com/aas/submodels/grinding-tool-12345",
+            "rodeos:rotationSpeed": 3500.5,
+            "rodeos:abrasiveForce": 12.75,
+            "rodeos:toolDiameter": 125.0,
+            "rodeos:wearRate": 0.0025
+          }
+        }
+      }
+    }
+  }
+}

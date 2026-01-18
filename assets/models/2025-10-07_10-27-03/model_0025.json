@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Schunk GmbH Screwing Assembly Tool for Aerospace Arc Welding Applications",
+    "dcterms:type": "Industrial Automation Asset",
+    "dcterms:publisher": "Schunk GmbH",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "SCH-AERO-SAT-001",
+    "dcterms:description": "High-precision screwing assembly tool designed for aerospace arc welding applications, featuring torque control, vibration damping, and compatibility with robotic automation systems.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "screwing assembly",
+      "arc welding",
+      "aerospace",
+      "robotic tool",
+      "torque control",
+      "Schunk GmbH",
+      "industrial automation"
+    ],
+    "dcat:contactPoint": "https://www.schunk.com/en/contact/",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 5.2,
+        "schema:unitCode": "NM",
+        "schema:name": "Maximum Torque"
+      },
+      "rodeos:framework": "Schunk PowerGrip Screwing Framework v2.1"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Schunk GmbH",
+        "rodeos:hardwareAssetType": "rodeos:screwingAssemblyTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "EtherCAT",
+          "rodeos:manufacturer": "Schunk GmbH",
+          "rodeos:toolWeight": 3.2,
+          "rodeos:toolMaterial": "Aluminum alloy with hardened steel components"
+        },
+        "child": {
+          "@type": "rodeos:screwingAssemblyTool",
+          "properties": {
+            "rodeos:screwingAssemblyToolType": "Screwdrivers",
+            "rodeos:aasSubmodel": "https://asset-shell.schunk.com/aas/submodels/screwingAssemblyTool/aerospace-arcwelding-sm001",
+            "rodeos:torqueRange": 50.0,
+            "rodeos:rotationSpeed": 3000.0,
+            "rodeos:dispensingRate": 3.3
+          }
+        }
+      }
+    }
+  }
+}

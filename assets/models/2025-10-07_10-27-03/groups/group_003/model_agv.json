@@ -1,0 +1,71 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Rockwell Automation AGV System for Renewable Energy Assembly",
+    "dcterms:type": "skos:concept",
+    "dcterms:publisher": "Rockwell Automation",
+    "dcterms:license": "https://www.rockwellautomation.com/en-us/company/terms-of-use.html",
+    "dcterms:identifier": "RA-AGV-RENEW-ASSEM-001",
+    "dcterms:description": "Automated Guided Vehicle system designed for assembly line operations in renewable energy manufacturing, featuring precision navigation, payload handling, and integration with Rockwell Automation control systems.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "AGV",
+      "Automated Guided Vehicle",
+      "Renewable Energy",
+      "Assembly",
+      "Rockwell Automation",
+      "Industrial Robotics",
+      "Automation"
+    ],
+    "dcat:contactPoint": "mailto:support@rockwellautomation.com",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 1500,
+        "unitCode": "kg",
+        "minValue": 1000,
+        "maxValue": 2000
+      },
+      "rodeos:framework": "Rockwell Automation FactoryTalk® Transport AGV Control Framework"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Rockwell Automation",
+        "rodeos:hardwareAssetType": "agv"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 150.0,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 3,
+          "rodeos:operatingVoltage": 48.0,
+          "rodeos:interface": "EtherNet/IP",
+          "rodeos:reach": 2.1,
+          "rodeos:accuracy": 0.5,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:mobileRobot",
+          "properties": {
+            "rodeos:maxSpeed": 2.5,
+            "rodeos:batteryCapacity": 120.0
+          },
+          "child": {
+            "@type": "rodeos:agv",
+            "properties": {
+              "rodeos:aasSubmodel": "https://rockwell-automation.com/aas/submodels/agv-renewable-assembly-001",
+              "rodeos:operatingTime": "PT16H30M"
+            }
+          }
+        }
+      }
+    }
+  }
+}

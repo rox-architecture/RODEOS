@@ -1,0 +1,92 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Rockwell Automation Polar Spherical Robot for Automotive Machine Tending",
+    "dcterms:type": "Industrial Robot",
+    "dcterms:publisher": "Rockwell Automation, Inc.",
+    "dcterms:license": "https://www.rockwellautomation.com/en-us/company/terms-of-use.html",
+    "dcterms:identifier": "RA-PSR-AT2024-MT001",
+    "dcterms:description": "A polar spherical coordinate industrial robot system designed for machine tending applications in automotive assembly lines. Features high-precision motion control, integrated safety systems, and compatibility with Rockwell's FactoryTalk suite for seamless automation integration.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "industrial robotics",
+      "polar spherical robot",
+      "machine tending",
+      "automotive assembly",
+      "Rockwell Automation",
+      "automation",
+      "robotic arm",
+      "manufacturing"
+    ],
+    "dcat:contactPoint": "https://www.rockwellautomation.com/en-us/support.html",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 6,
+        "unitCode": "rodeos:DOF"
+      },
+      "rodeos:framework": "Studio 5000 Logix Designer"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Rockwell Automation",
+        "rodeos:hardwareAssetType": "polarSpherical"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 25.0,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 480.0,
+          "rodeos:interface": "EtherNet/IP",
+          "rodeos:reach": 1.8,
+          "rodeos:accuracy": 0.05,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted",
+            "rodeos:positionAccuracy": 0.05,
+            "rodeos:repeatability": 0.02,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 12.5,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "Polar coordinate system with spherical wrist"
+          },
+          "child": {
+            "@type": "rodeos:serielRobot",
+            "properties": {
+              "rodeos:maxJointSpeed": 10.0
+            },
+            "child": {
+              "@type": "rodeos:polarSpherical",
+              "properties": {
+                "rodeos:aasSubmodel": "https://rockwell-automation.com/aas/automotive-assembly/machine-tending/polar-spherical/12345",
+                "rodeos:radialRange": {
+                  "@type": "schema:quantitativeValue",
+                  "schema:minValue": 500,
+                  "schema:maxValue": 2500,
+                  "schema:unitCode": "MMT"
+                },
+                "rodeos:polarAngleRange": {
+                  "@type": "schema:quantitativeValue",
+                  "schema:minValue": -180,
+                  "schema:maxValue": 180,
+                  "schema:unitCode": "DD"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

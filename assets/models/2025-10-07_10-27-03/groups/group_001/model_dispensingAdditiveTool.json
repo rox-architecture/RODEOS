@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Mitsubishi Electric Dispensing Additive Tool for Aerospace Pick-and-Place Applications",
+    "dcterms:type": "skos:concept",
+    "dcterms:publisher": "Mitsubishi Electric Corporation",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "ME-DAT-APPA-001",
+    "dcterms:description": "Industrial dispensing additive tool designed for precision pick-and-place operations in aerospace manufacturing, featuring high-accuracy material deposition and compatibility with Mitsubishi Electric automation systems.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "dispensing",
+      "additive tool",
+      "aerospace",
+      "pick-and-place",
+      "automation",
+      "Mitsubishi Electric",
+      "robotics"
+    ],
+    "dcat:contactPoint": "https://www.mitsubishielectric.com/contact/",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 5.2,
+        "schema:unitCode": "kg",
+        "schema:minValue": 4.8,
+        "schema:maxValue": 5.6
+      },
+      "rodeos:framework": "MELFA Smart Plus"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Mitsubishi Electric",
+        "rodeos:hardwareAssetType": "rodeos:dispensingAdditiveTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "MELSEC-Q Series Protocol",
+          "rodeos:manufacturer": "Mitsubishi Electric",
+          "rodeos:toolWeight": 2.8,
+          "rodeos:toolMaterial": "Stainless Steel 316L"
+        },
+        "child": {
+          "@type": "rodeos:dispensingAdditiveTool",
+          "properties": {
+            "rodeos:dispensingAdditiveToolType": "SealantAdhesiveDispensers",
+            "rodeos:aasSubmodel": "https://industrial.mitsubishielectric.com/aas/submodels/dispensing-tool-sm-001",
+            "rodeos:materialFlowRate": 12.5,
+            "rodeos:nozzleSize": 1.2,
+            "rodeos:layerThickness": 0.15,
+            "rodeos:temperature": 85.0
+          }
+        }
+      }
+    }
+  }
+}

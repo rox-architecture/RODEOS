@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Denso Wave Spot Welding Tool Specification",
+    "dcterms:type": "Special Tool",
+    "dcterms:publisher": "Denso Wave Inc.",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "DENSO-SPOTWELD-TOOL-2024-V1",
+    "dcterms:description": "High-precision robotic spot welding tool designed for electronics manufacturing applications, featuring advanced force control and thermal management systems for consistent weld quality in automated production lines.",
+    "dcat:version": "1.2.5",
+    "dcat:keyword": [
+      "spot welding",
+      "robotics",
+      "electronics manufacturing",
+      "automation",
+      "Denso Wave",
+      "welding tool",
+      "industrial automation"
+    ],
+    "dcat:contactPoint": "https://www.denso-wave.com/en/contact/",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 150,
+        "unitCode": "N",
+        "minValue": 100,
+        "maxValue": 200
+      },
+      "rodeos:framework": "Denso Wave ARCSPOT Welding Control Framework"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Denso Wave",
+        "rodeos:hardwareAssetType": "rodeos:specialTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "EtherNet/IP",
+          "rodeos:manufacturer": "Denso Wave",
+          "rodeos:toolWeight": 5.8,
+          "rodeos:toolMaterial": "Hardened Steel"
+        },
+        "child": {
+          "@type": "rodeos:specialTool",
+          "properties": {
+            "rodeos:specialToolType": "MultiTools",
+            "rodeos:aasSubmodel": "https://densowave.com/aas/specialtools/weldmultitool/v1",
+            "rodeos:interfaceStandard": "ISO 9409-1-A50",
+            "rodeos:changeoverTime": 15.5,
+            "rodeos:numberOfPorts": 4
+          }
+        }
+      }
+    }
+  }
+}

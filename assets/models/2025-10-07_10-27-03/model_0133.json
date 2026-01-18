@@ -1,0 +1,48 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "FANUC Spot Welding Service for Automotive Assembly",
+    "dcterms:type": "Service",
+    "dcterms:publisher": "FANUC Corporation",
+    "dcterms:license": "https://www.fanuc.com/terms-of-service",
+    "dcterms:identifier": "FANUC-SWS-AUTO-001",
+    "dcterms:description": "A comprehensive robotic spot welding service designed for automotive assembly lines, featuring high-precision FANUC robots with integrated welding controllers, real-time monitoring, and predictive maintenance capabilities.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "robotics",
+      "spot welding",
+      "automotive",
+      "assembly",
+      "FANUC",
+      "automation",
+      "industrial robots",
+      "welding service"
+    ],
+    "dcat:contactPoint": "https://www.fanuc.com/contact-support",
+    "rodeos:coreType": "Service"
+  },
+  "child": {
+    "@type": "rodeos:Service",
+    "properties": {
+      "rodeos:usedModels": [
+        "https://www.fanuc.com/america/en/robots/robot-series/arcmate-series",
+        "https://www.fanuc.com/america/en/robots/robot-series/r-2000ic-series"
+      ],
+      "rodeos:serviceTypeMain": "spotWeldingService",
+      "rodeos:serviceType": "roboticWelding",
+      "dcat:endpointURL": "https://api.fanuc.com/welding-service/v1/endpoint",
+      "rodeos:input": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 220,
+        "schema:unitCode": "VLT"
+      },
+      "rodeos:output": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 1500,
+        "schema:unitCode": "WTT"
+      },
+      "dcat:endpointDescription": "REST API endpoint for FANUC robotic spot welding services in automotive assembly applications, providing real-time monitoring, control, and diagnostics of welding operations.",
+      "dcat:landingPage": "https://www.fanuc.com/america/en/services/robotic-welding-services"
+    }
+  }
+}

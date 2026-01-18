@@ -1,0 +1,73 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "SICK AG Vision Sensor for Automotive Material Transport",
+    "dcterms:type": "Sensor",
+    "dcterms:publisher": "SICK AG",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "SICK-VS-ATMT-2024-001",
+    "dcterms:description": "High-precision vision sensor designed for automotive assembly lines to monitor and guide material transport systems, ensuring accurate part positioning and quality control.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "vision sensor",
+      "automotive",
+      "material transport",
+      "SICK AG",
+      "industrial automation",
+      "quality control"
+    ],
+    "dcat:contactPoint": "https://www.sick.com/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 2.0,
+        "unitCode": "MP",
+        "minValue": 1.0,
+        "maxValue": 4.0
+      },
+      "rodeos:framework": "SICK AppSpace"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "SICK AG",
+        "rodeos:hardwareAssetType": "rodeos:visionSensor"
+      },
+      "child": {
+        "@type": "rodeos:sensor",
+        "properties": {
+          "rodeos:measurementRange": 10.0,
+          "rodeos:measurementAccuracy": 0.5,
+          "rodeos:samplingRate": 30.0,
+          "rodeos:fieldOfView": {
+            "@type": "schema:quantitativeValue",
+            "schema:value": 90,
+            "schema:unitCode": "DEG"
+          }
+        },
+        "child": {
+          "@type": "rodeos:visionSensor",
+          "properties": {
+            "rodeos:aasSubmodel": "https://asset-shell.com/aas/submodels/visionSensor/automotive-assembly-material-transport-SICK-AG",
+            "rodeos:resolution": "1280 x 1024 pixels",
+            "rodeos:frameRate": 60.0,
+            "rodeos:fieldOfView": {
+              "@type": "schema:quantitativeValue",
+              "schema:value": 90,
+              "schema:unitCode": "DEG"
+            },
+            "rodeos:interfaceType": {
+              "@id": "skos:Concept",
+              "skos:prefLabel": "GigE Vision"
+            }
+          }
+        }
+      }
+    }
+  }
+}

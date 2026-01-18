@@ -1,0 +1,70 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Denso Wave Force/Torque Sensor FTS-100 Series",
+    "dcterms:type": "Sensor",
+    "dcterms:publisher": "Denso Wave Incorporated",
+    "dcterms:license": "https://www.denso-wave.com/en/terms/license.html",
+    "dcterms:identifier": "DWFTS-100-EM-2024",
+    "dcterms:description": "High-precision 6-axis force/torque sensor designed for electronics manufacturing pick-and-place applications. Provides accurate force feedback for delicate component handling with ±0.1% full-scale accuracy and 1000Hz sampling rate.",
+    "dcat:version": "v2.3.1",
+    "dcat:keyword": [
+      "force sensor",
+      "torque sensor",
+      "6-axis",
+      "robotics",
+      "automation",
+      "pick-and-place",
+      "electronics manufacturing",
+      "Denso Wave"
+    ],
+    "dcat:contactPoint": "https://www.denso-wave.com/en/support/technical-contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "schema:minValue": 0,
+        "schema:maxValue": 100,
+        "schema:unitText": "Newton-meters"
+      },
+      "rodeos:framework": "Denso Wave Force/Torque Sensor Framework v2.1"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Denso Wave",
+        "rodeos:hardwareAssetType": "forceTorqueSensor"
+      },
+      "child": {
+        "@type": "rodeos:sensor",
+        "properties": {
+          "rodeos:measurementRange": 100.0,
+          "rodeos:measurementAccuracy": 0.5,
+          "rodeos:samplingRate": 1000.0,
+          "rodeos:fieldOfView": 360.0
+        },
+        "child": {
+          "@type": "rodeos:forceTorqueSensor",
+          "properties": {
+            "rodeos:aasSubmodel": "https://densowave.com/aas/submodels/forceTorqueSensor/FT1234",
+            "rodeos:forceRange": {
+              "minValue": -100.0,
+              "maxValue": 100.0,
+              "unitCode": "N"
+            },
+            "rodeos:torqueRange": {
+              "minValue": -5.0,
+              "maxValue": 5.0,
+              "unitCode": "Nm"
+            },
+            "rodeos:resolutionForce": 0.01,
+            "rodeos:resolutionTorque": 0.001
+          }
+        }
+      }
+    }
+  }
+}

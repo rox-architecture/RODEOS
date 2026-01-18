@@ -1,0 +1,66 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Omron IPC Spot Welding Controller Technical Specifications",
+    "dcterms:type": "http://purl.org/dc/dcmitype/Text",
+    "dcterms:publisher": "Omron Corporation",
+    "dcterms:license": "https://www.omron.com/global/en/terms/",
+    "dcterms:identifier": "OMRON-IPC-SW-2024-001",
+    "dcterms:description": "Industrial PC controller optimized for spot welding applications in plastics processing, featuring real-time process monitoring, weld quality verification, and integration with robotic welding systems.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "IPC",
+      "spot welding",
+      "plastics processing",
+      "industrial automation",
+      "welding controller",
+      "Omron",
+      "real-time control"
+    ],
+    "dcat:contactPoint": "mailto:industrial.support@omron.com",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 1500,
+        "unitCode": "N",
+        "minValue": 1200,
+        "maxValue": 1800
+      },
+      "rodeos:framework": "Omron IPC Series for Industrial Automation"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Omron",
+        "rodeos:hardwareAssetType": "rodeos:ipc"
+      },
+      "child": {
+        "@type": "rodeos:controller",
+        "properties": {
+          "rodeos:cpuArchitecture": "x86-64",
+          "rodeos:processorClock": 2.5,
+          "rodeos:realTimeSupport": true,
+          "rodeos:communicationInterfaces": "EtherCAT",
+          "rodeos:powerSupply": "24V DC"
+        },
+        "child": {
+          "@type": "rodeos:ipc",
+          "properties": {
+            "rodeos:aasSubmodel": "https://example.com/aas/submodels/omron-ipc-spotwelding-plastics/1.0",
+            "rodeos:formFactor": "rodeos:rackmount",
+            "rodeos:ramSize": 16.0,
+            "rodeos:storageCapacity": 512.0,
+            "rodeos:gpuAccelerators": "Integrated Intel UHD Graphics, supports up to 4 independent displays",
+            "rodeos:expansionSlots": "2x PCIe x16, 1x PCIe x4, 2x PCI",
+            "rodeos:industrialRatings": "Operating temperature: 0°C to 60°C, vibration resistance: 5G (10-500Hz), shock resistance: 50G (11ms duration), IP40 protection"
+          }
+        }
+      }
+    }
+  }
+}

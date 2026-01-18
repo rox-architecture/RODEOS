@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Yaskawa Motoman Welding Tool for Assembly Applications",
+    "dcterms:type": "skos:concept",
+    "dcterms:publisher": "Yaskawa Motoman",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "YM-WT-ASSEMBLY-001",
+    "dcterms:description": "Industrial robotic welding tool designed for assembly operations in logistics and warehousing environments. Features precision arc welding capabilities, integrated safety systems, and compatibility with Yaskawa Motoman robotic arms.",
+    "dcat:version": "2.1.3",
+    "dcat:keyword": [
+      "welding",
+      "robotics",
+      "assembly",
+      "Yaskawa Motoman",
+      "logistics",
+      "warehousing",
+      "automation",
+      "industrial tool"
+    ],
+    "dcat:contactPoint": "https://www.motoman.com/en-us/products/robotics/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "minValue": 0.8,
+        "maxValue": 1.2,
+        "unitCode": "KWT",
+        "value": 1.0
+      },
+      "rodeos:framework": "Yaskawa Motoman DX200 Welding Control System"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Yaskawa Motoman",
+        "rodeos:hardwareAssetType": "weldingTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "EtherNet/IP",
+          "rodeos:manufacturer": "Yaskawa Motoman",
+          "rodeos:toolWeight": 3.2,
+          "rodeos:toolMaterial": "Stainless Steel AISI 304"
+        },
+        "child": {
+          "@type": "rodeos:weldingTool",
+          "properties": {
+            "rodeos:weldingType": "MIG",
+            "rodeos:aasSubmodel": "https://assetadministration-shell.com/yaskawa-motoman/welding-tool-MIG-001/submodel",
+            "rodeos:weldingCurrent": 250.5,
+            "rodeos:voltage": 28.0,
+            "rodeos:wireFeedRate": 7.2,
+            "rodeos:electrodeLife": 1500.0
+          }
+        }
+      }
+    }
+  }
+}

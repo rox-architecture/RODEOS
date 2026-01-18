@@ -1,0 +1,74 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Denso Wave AMR-2000 LiDAR Sensor for Palletizing Applications",
+    "dcterms:type": "sensor",
+    "dcterms:publisher": "Denso Wave Incorporated",
+    "dcterms:license": "https://www.denso-wave.com/en/terms/license-agreement.html",
+    "dcterms:identifier": "DENSO-LIDAR-AMR2000-PLT-2024A",
+    "dcterms:description": "High-precision 2D LiDAR sensor designed for automated palletizing systems in logistics and warehousing environments. Features 270-degree scanning range, 0.1-degree angular resolution, and IP67 rating for industrial durability. Provides real-time object detection and positioning data for robotic arm coordination.",
+    "dcat:version": "2.4.1",
+    "dcat:keyword": [
+      "LiDAR",
+      "palletizing",
+      "logistics",
+      "warehousing",
+      "automation",
+      "sensor",
+      "robotics",
+      "Denso Wave",
+      "AMR",
+      "industrial"
+    ],
+    "dcat:contactPoint": "https://www.denso-wave.com/en/support/technical-contact.html",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "schema:minValue": 0.05,
+        "schema:maxValue": 30.0,
+        "schema:unitCode": "m",
+        "schema:value": 30.0
+      },
+      "rodeos:framework": "Denso Wave LiDAR SDK v2.4"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Denso Wave",
+        "rodeos:hardwareAssetType": "lidarSensor"
+      },
+      "child": {
+        "@type": "rodeos:sensor",
+        "properties": {
+          "rodeos:measurementRange": 30.0,
+          "rodeos:measurementAccuracy": 0.02,
+          "rodeos:samplingRate": 100000.0,
+          "rodeos:fieldOfView": {
+            "schema:minValue": 0.0,
+            "schema:maxValue": 270.0,
+            "schema:unitCode": "DD"
+          }
+        },
+        "child": {
+          "@type": "rodeos:lidarSensor",
+          "properties": {
+            "rodeos:aasSubmodel": "https://asset-shell.org/aas/1.0/LidarSensor/123456789",
+            "rodeos:scanRate": 20.0,
+            "rodeos:angularResolution": 0.1,
+            "rodeos:maxRange": 30.0,
+            "rodeos:fieldOfView": {
+              "schema:minValue": 0.0,
+              "schema:maxValue": 270.0,
+              "schema:unitCode": "DD"
+            },
+            "rodeos:numChannels": 16
+          }
+        }
+      }
+    }
+  }
+}

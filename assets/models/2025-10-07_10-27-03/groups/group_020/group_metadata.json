@@ -1,0 +1,62 @@
+{
+  "company": "Omron",
+  "industry": "Plastics processing",
+  "application": "spot welding",
+  "assets": [
+    {
+      "leaf": "rodeos:perceptionVisionSoftware",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:softwareComponent",
+        "rodeos:perceptionVisionSoftware"
+      ],
+      "file": "model_perceptionVisionSoftware.json"
+    },
+    {
+      "leaf": "rodeos:ipc",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:controller",
+        "rodeos:ipc"
+      ],
+      "file": "model_ipc.json"
+    },
+    {
+      "leaf": "rodeos:amr",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:roboter",
+        "rodeos:mobileRobot",
+        "rodeos:amr"
+      ],
+      "file": "model_amr.json"
+    },
+    {
+      "leaf": "rodeos:lidarSensor",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:sensor",
+        "rodeos:lidarSensor"
+      ],
+      "file": "model_lidarSensor.json"
+    },
+    {
+      "leaf": "rodeos:forceTorqueSensor",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:sensor",
+        "rodeos:forceTorqueSensor"
+      ],
+      "file": "model_forceTorqueSensor.json"
+    }
+  ]
+}

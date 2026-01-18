@@ -1,0 +1,69 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Denso Wave AMR-5000 Spot Welding Autonomous Mobile Robot",
+    "dcterms:type": "Autonomous Mobile Robot",
+    "dcterms:publisher": "Denso Wave Inc.",
+    "dcterms:license": "https://www.denso-wave.com/en/terms/license-agreement.html",
+    "dcterms:identifier": "DENSO-AMR-SW-5000-2024",
+    "dcterms:description": "Autonomous mobile robot designed for precision spot welding applications in electronics manufacturing. Features advanced navigation, collision avoidance, and integration with welding equipment for high-volume production lines.",
+    "dcat:version": "v2.1.4",
+    "dcat:keyword": [
+      "AMR",
+      "spot welding",
+      "autonomous robotics",
+      "electronics manufacturing",
+      "Denso Wave",
+      "industrial automation",
+      "mobile robot"
+    ],
+    "dcat:contactPoint": "https://www.denso-wave.com/en/contact/technical-support.html",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 6,
+        "schema:unitText": "axis"
+      },
+      "rodeos:framework": "Denso Wave AMR Control Framework"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Denso Wave",
+        "rodeos:hardwareAssetType": "rodeos:amr"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 10.5,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 48.0,
+          "rodeos:interface": "EtherCAT",
+          "rodeos:reach": 1.8,
+          "rodeos:accuracy": 0.05,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:mobileRobot",
+          "properties": {
+            "rodeos:maxSpeed": 1.8,
+            "rodeos:batteryCapacity": 48.0
+          },
+          "child": {
+            "@type": "rodeos:amr",
+            "properties": {
+              "rodeos:aasSubmodel": "https://densowave.com/aas/amr/spotwelding/v1",
+              "rodeos:environmentType": "indoor"
+            }
+          }
+        }
+      }
+    }
+  }
+}

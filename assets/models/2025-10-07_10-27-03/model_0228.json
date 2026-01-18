@@ -1,0 +1,40 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Yaskawa Motoman Renewable Energy Assembly Dataset",
+    "dcterms:type": "Dataset",
+    "dcterms:publisher": "Yaskawa Motoman",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "YM-RE-ASSEMBLY-DS-2024-001",
+    "dcterms:description": "Comprehensive dataset containing technical specifications, performance metrics, and operational parameters for Yaskawa Motoman industrial robots deployed in renewable energy assembly applications, including solar panel manufacturing and wind turbine component assembly.",
+    "dcat:version": "1.2.0",
+    "dcat:keyword": [
+      "industrial robotics",
+      "renewable energy",
+      "assembly automation",
+      "Yaskawa Motoman",
+      "solar panel assembly",
+      "wind turbine manufacturing",
+      "robotic automation",
+      "industrial datasets"
+    ],
+    "dcat:contactPoint": "mailto:technical.support@motoman.com",
+    "rodeos:coreType": "Dataset"
+  },
+  "child": {
+    "@type": "rodeos:Dataset",
+    "properties": {
+      "dprod:informationSensitivityClassification": "Internal",
+      "dprod:type": "OperationalData",
+      "rodeos:dataFormat": "CSV",
+      "rodeos:isDataproduct": true,
+      "dcat:byteSize": 524288000,
+      "rodeos:dataTypeSchema": "https://schema.yaskawa.com/renewable-energy/assembly-dataset/v1.0",
+      "dcat:checksum": "a1b2c3d4e5f67890",
+      "dcat:endpointDescription": "Yaskawa Motoman renewable energy assembly dataset API endpoint providing access to robotic operation logs and performance metrics",
+      "dcat:endpointURL": "https://api.motoman.yaskawa.com/renewable-energy/assembly/dataset/v1",
+      "dcat:protocol": "HTTPS",
+      "dprod:dataProductOwner": "Renewable Energy Automation Division - Yaskawa Motoman"
+    }
+  }
+}

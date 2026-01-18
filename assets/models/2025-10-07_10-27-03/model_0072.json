@@ -1,0 +1,71 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Beckhoff AL3000 Series LiDAR Sensor",
+    "dcterms:type": "Sensor",
+    "dcterms:publisher": "Beckhoff Automation GmbH & Co. KG",
+    "dcterms:license": "https://www.beckhoff.com/en-en/terms-of-use/",
+    "dcterms:identifier": "BECKHOFF-AL3000-LIDAR-MED-001",
+    "dcterms:description": "High-precision LiDAR sensor designed for medical device bin picking applications. Features sub-millimeter accuracy, IP67 rating, and EtherCAT integration for real-time object detection and positioning in sterile environments.",
+    "dcat:version": "v2.1.4",
+    "dcat:keyword": [
+      "LiDAR",
+      "bin picking",
+      "medical devices",
+      "EtherCAT",
+      "Beckhoff",
+      "automation",
+      "3D vision",
+      "sensor"
+    ],
+    "dcat:contactPoint": "https://www.beckhoff.com/en-en/support/technical-support/",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "schema:minValue": 0.05,
+        "schema:maxValue": 30.0,
+        "schema:unitCode": "M"
+      },
+      "rodeos:framework": "TwinCAT Vision"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Beckhoff",
+        "rodeos:hardwareAssetType": "lidarSensor"
+      },
+      "child": {
+        "@type": "rodeos:sensor",
+        "properties": {
+          "rodeos:measurementRange": 10.0,
+          "rodeos:measurementAccuracy": 0.001,
+          "rodeos:samplingRate": 100000.0,
+          "rodeos:fieldOfView": {
+            "minValue": 0,
+            "maxValue": 270,
+            "unitCode": "DDD"
+          }
+        },
+        "child": {
+          "@type": "rodeos:lidarSensor",
+          "properties": {
+            "rodeos:aasSubmodel": "https://example.com/aas/submodels/lidarSensor/Beckhoff-MedicalBinPicking-001",
+            "rodeos:scanRate": 50.0,
+            "rodeos:angularResolution": 0.1,
+            "rodeos:maxRange": 30.0,
+            "rodeos:fieldOfView": {
+              "minValue": 0,
+              "maxValue": 270,
+              "unitCode": "DDD"
+            },
+            "rodeos:numChannels": 16
+          }
+        }
+      }
+    }
+  }
+}

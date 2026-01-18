@@ -1,0 +1,76 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Techman Robot Simulation Digital Twin Software for Plastics Processing Machine Tending",
+    "dcterms:type": "Software",
+    "dcterms:publisher": "Techman Robot",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "TM-SIM-DT-PMT-001",
+    "dcterms:description": "A digital twin simulation software designed for plastics processing machine tending applications, enabling virtual commissioning, cycle time optimization, and collision detection using Techman Robot's industrial robotic systems.",
+    "dcat:version": "v2.1.4",
+    "dcat:keyword": [
+      "digital twin",
+      "simulation",
+      "machine tending",
+      "plastics processing",
+      "industrial robotics",
+      "Techman Robot",
+      "virtual commissioning"
+    ],
+    "dcat:contactPoint": "https://www.techman-robot.com/en/contact",
+    "rodeos:coreType": "Service"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 0.95,
+        "minValue": 0.0,
+        "maxValue": 1.0,
+        "unitText": "accuracy"
+      },
+      "rodeos:framework": "TMflow Simulation Suite"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "@type": "schema:quantitativeValue",
+          "value": 0.95,
+          "minValue": 0.0,
+          "maxValue": 1.0,
+          "unitText": "accuracy"
+        },
+        "rodeos:softwareAssetType": {
+          "@type": "skos:concept",
+          "prefLabel": "Simulation Software",
+          "definition": "Digital twin software for simulating robotic machine tending operations in plastics processing environments"
+        }
+      },
+      "child": {
+        "@type": "rodeos:simulationDigitalTwinSoftware",
+        "properties": {
+          "rodeos:simulationDigitalTwinSoftwareType": "physicsEngine",
+          "rodeos:aasSubmodel": "https://techmanrobot.com/aas/plastics-processing-machine-tending/v1.0",
+          "rodeos:physicsFidelity": "High-fidelity physics simulation with accurate collision detection, material properties, and dynamic behavior modeling",
+          "rodeos:supportedRobotModels": [
+            "TM5-700",
+            "TM12",
+            "TM14",
+            "TM16"
+          ],
+          "rodeos:fileFormatCompatibility": [
+            "STEP",
+            "IGES",
+            "STL",
+            "OBJ",
+            "VRML",
+            "3MF"
+          ]
+        }
+      }
+    }
+  }
+}

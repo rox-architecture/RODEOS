@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Techman Robot Dispensing Additive Tool for Renewable Energy Spot Welding",
+    "dcterms:type": "Tool",
+    "dcterms:publisher": "Techman Robot",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "TM-DAT-REN-SW-001",
+    "dcterms:description": "A precision dispensing additive tool designed for spot welding applications in renewable energy manufacturing, featuring automated material deposition and integration with robotic systems for enhanced efficiency and consistency.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "dispensing",
+      "additive tool",
+      "spot welding",
+      "renewable energy",
+      "robotics",
+      "automation",
+      "Techman Robot"
+    ],
+    "dcat:contactPoint": "mailto:support@techman-robot.com",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 5.2,
+        "unitCode": "kg"
+      },
+      "rodeos:framework": "Techman Robot TM Series Welding Framework v2.1"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Techman Robot",
+        "rodeos:hardwareAssetType": "rodeos:dispensingAdditiveTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "EtherCAT",
+          "rodeos:manufacturer": "Techman Robot",
+          "rodeos:toolWeight": 3.5,
+          "rodeos:toolMaterial": "Stainless Steel AISI 304"
+        },
+        "child": {
+          "@type": "rodeos:dispensingAdditiveTool",
+          "properties": {
+            "rodeos:dispensingAdditiveToolType": "SealantAdhesiveDispensers",
+            "rodeos:aasSubmodel": "https://techmanrobot.com/aas/submodels/dispensing-additive-tool/spot-welding-v1",
+            "rodeos:materialFlowRate": 12.5,
+            "rodeos:nozzleSize": 1.2,
+            "rodeos:layerThickness": 0.8,
+            "rodeos:temperature": 185.0
+          }
+        }
+      }
+    }
+  }
+}

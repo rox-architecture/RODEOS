@@ -1,0 +1,70 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Omron LD-250 Autonomous Mobile Robot for Logistics and Warehousing",
+    "dcterms:type": "Autonomous Mobile Robot",
+    "dcterms:publisher": "Omron Corporation",
+    "dcterms:license": "https://industrial.omron.eu/en/terms-of-use",
+    "dcterms:identifier": "OMRON-LD250-AMR-LOG-001",
+    "dcterms:description": "Omron LD-250 Autonomous Mobile Robot designed for material transport applications in logistics and warehousing environments. Features advanced navigation, payload capacity of 250kg, and seamless integration with warehouse management systems.",
+    "dcat:version": "v2.5.1",
+    "dcat:keyword": [
+      "AMR",
+      "Autonomous Mobile Robot",
+      "Material Transport",
+      "Logistics",
+      "Warehousing",
+      "Omron",
+      "Industrial Automation"
+    ],
+    "dcat:contactPoint": "https://industrial.omron.eu/en/support/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "value": "LD-250",
+        "minValue": 50,
+        "maxValue": 250,
+        "unitCode": "KGM"
+      },
+      "rodeos:framework": "Omron Fleet Manager Integration Framework"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Omron",
+        "rodeos:hardwareAssetType": "amr"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 150.0,
+          "rodeos:maxVelocity": 2.2,
+          "rodeos:DOF": 3,
+          "rodeos:operatingVoltage": 48.0,
+          "rodeos:interface": "EtherCAT with REST API integration",
+          "rodeos:reach": 0.0,
+          "rodeos:accuracy": 0.005,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:mobileRobot",
+          "properties": {
+            "rodeos:maxSpeed": 1.8,
+            "rodeos:batteryCapacity": 24.5
+          },
+          "child": {
+            "@type": "rodeos:amr",
+            "properties": {
+              "rodeos:aasSubmodel": "https://industrial.omron.com/aas/submodels/amr/logistics-material-transport/v1.0",
+              "rodeos:environmentType": "indoor"
+            }
+          }
+        }
+      }
+    }
+  }
+}

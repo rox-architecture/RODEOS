@@ -1,0 +1,72 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Techman Robot Vision Sensor for Quality Inspection in Plastics Processing",
+    "dcterms:type": "Sensor",
+    "dcterms:publisher": "Techman Robot Inc.",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "TM-VS-QI-PP-001",
+    "dcterms:description": "High-precision vision sensor system designed for automated quality inspection in plastics manufacturing processes. Provides real-time defect detection, dimensional measurement, and surface inspection capabilities with industrial-grade reliability.",
+    "dcat:version": "2.1.3",
+    "dcat:keyword": [
+      "vision sensor",
+      "quality inspection",
+      "plastics processing",
+      "defect detection",
+      "machine vision",
+      "industrial automation",
+      "Techman Robot"
+    ],
+    "dcat:contactPoint": "https://www.techman-robot.com/support/vision-sensors",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 12.0,
+        "unitCode": "MP",
+        "minValue": 8.0,
+        "maxValue": 16.0
+      },
+      "rodeos:framework": "Techman Vision Framework v2.5"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Techman Robot",
+        "rodeos:hardwareAssetType": "rodeos:visionSensor"
+      },
+      "child": {
+        "@type": "rodeos:sensor",
+        "properties": {
+          "rodeos:measurementRange": 2.5,
+          "rodeos:measurementAccuracy": 0.05,
+          "rodeos:samplingRate": 60.0,
+          "rodeos:fieldOfView": {
+            "value": 90,
+            "unitCode": "DDD"
+          }
+        },
+        "child": {
+          "@type": "rodeos:visionSensor",
+          "properties": {
+            "rodeos:aasSubmodel": "https://techmanrobot.com/aas/submodels/visionSensor/qualityInspectionPlastics",
+            "rodeos:resolution": "1920x1080",
+            "rodeos:frameRate": 60.0,
+            "rodeos:fieldOfView": {
+              "value": 90,
+              "unitCode": "DDD"
+            },
+            "rodeos:interfaceType": {
+              "prefLabel": "GigE Vision",
+              "inScheme": "https://techmanrobot.com/skos/interfaces"
+            }
+          }
+        }
+      }
+    }
+  }
+}

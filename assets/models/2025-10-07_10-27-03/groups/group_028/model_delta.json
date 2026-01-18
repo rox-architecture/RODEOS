@@ -1,0 +1,83 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "SICK AG Delta Series Robotic Arc Welding System",
+    "dcterms:type": "Industrial Automation Equipment",
+    "dcterms:publisher": "SICK AG",
+    "dcterms:license": "https://www.sick.com/us/en/legal-information/licensing-terms/c/g91920",
+    "dcterms:identifier": "SICK-DELTA-AW-2024-001",
+    "dcterms:description": "Delta-style robotic system optimized for high-precision arc welding applications in aerospace manufacturing. Features integrated vision guidance, real-time seam tracking, and adaptive welding parameters for complex aerospace components.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "delta robot",
+      "arc welding",
+      "aerospace manufacturing",
+      "robotic automation",
+      "SICK AG",
+      "vision guidance",
+      "seam tracking"
+    ],
+    "dcat:contactPoint": "https://www.sick.com/us/en/contact/technical-support/c/g91922",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 6,
+        "unitCode": "DOF",
+        "minValue": 4,
+        "maxValue": 7
+      },
+      "rodeos:framework": "SICK AppSpace"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "SICK AG",
+        "rodeos:hardwareAssetType": "delta"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 6.0,
+          "rodeos:maxVelocity": 4.5,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 48.0,
+          "rodeos:interface": "EtherNet/IP, PROFINET, EtherCAT",
+          "rodeos:reach": 1.2,
+          "rodeos:accuracy": 0.05,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted pedestal",
+            "rodeos:positionAccuracy": 0.05,
+            "rodeos:repeatability": 0.02,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 0.785,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "Delta parallel kinematics"
+          },
+          "child": {
+            "@type": "rodeos:parallelRobot",
+            "properties": {
+              "rodeos:stiffness": 500.0
+            },
+            "child": {
+              "@type": "rodeos:delta",
+              "properties": {
+                "rodeos:aasSubmodel": "https://asset-shell.sick.com/aas/submodels/delta-arc-welding-aerospace/1.0",
+                "rodeos:pickRateMax": 85.5,
+                "rodeos:workspaceShape": "rodeos:hemispherical"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

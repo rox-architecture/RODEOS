@@ -1,0 +1,82 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Bosch Rexroth Delta Robot System for Spot Welding in Plastics Processing",
+    "dcterms:type": "Robotic Automation System",
+    "dcterms:publisher": "Bosch Rexroth AG",
+    "dcterms:license": "https://www.boschrexroth.com/en/us/licensing-terms",
+    "dcterms:identifier": "BRX-DELTA-SW-PP-001",
+    "dcterms:description": "A high-precision delta robot system optimized for spot welding applications in plastics processing industries. Features include 6-axis movement, integrated welding control, and compatibility with various plastic materials.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "delta robot",
+      "spot welding",
+      "plastics processing",
+      "industrial automation",
+      "Bosch Rexroth",
+      "6-axis robot",
+      "welding system"
+    ],
+    "dcat:contactPoint": "https://www.boschrexroth.com/en/us/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "schema:minValue": 0.5,
+        "schema:maxValue": 6.0,
+        "schema:unitCode": "kN",
+        "schema:value": 4.2
+      },
+      "rodeos:framework": "Bosch Rexroth Delta Robot Control Framework v2.7"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Bosch Rexroth",
+        "rodeos:hardwareAssetType": "delta robot"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 6.0,
+          "rodeos:maxVelocity": 3.0,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 48.0,
+          "rodeos:interface": "EtherCAT",
+          "rodeos:reach": 850.0,
+          "rodeos:accuracy": 0.05,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted",
+            "rodeos:positionAccuracy": 0.05,
+            "rodeos:repeatability": 0.02,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 1.8,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "Delta parallel kinematics"
+          },
+          "child": {
+            "@type": "rodeos:parallelRobot",
+            "properties": {
+              "rodeos:stiffness": 5.0
+            },
+            "child": {
+              "@type": "rodeos:delta",
+              "properties": {
+                "rodeos:aasSubmodel": "https://rexroth-bosch.com/aas/submodels/delta-robot-spot-welding",
+                "rodeos:pickRateMax": 120.5,
+                "rodeos:workspaceShape": "rodeos:hemispherical"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

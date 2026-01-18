@@ -1,0 +1,42 @@
+{
+  "company": "Techman Robot",
+  "industry": "Electronics manufacturing",
+  "application": "pick-and-place",
+  "assets": [
+    {
+      "leaf": "rodeos:amr",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:roboter",
+        "rodeos:mobileRobot",
+        "rodeos:amr"
+      ],
+      "file": "model_amr.json"
+    },
+    {
+      "leaf": "rodeos:motionControlSoftware",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:softwareComponent",
+        "rodeos:motionControlSoftware"
+      ],
+      "file": "model_motionControlSoftware.json"
+    },
+    {
+      "leaf": "rodeos:polarSpherical",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:roboter",
+        "rodeos:stationaryRobot",
+        "rodeos:serielRobot",
+        "rodeos:polarSpherical"
+      ],
+      "file": "model_polarSpherical.json"
+    }
+  ]
+}

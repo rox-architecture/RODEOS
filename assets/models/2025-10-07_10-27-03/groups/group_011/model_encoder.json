@@ -1,0 +1,60 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Beckhoff EL5101 EtherCAT Incremental Encoder Interface",
+    "dcterms:type": "sensor",
+    "dcterms:publisher": "Beckhoff Automation GmbH & Co. KG",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "BECKHOFF-EL5101-ENC-2024",
+    "dcterms:description": "Industrial-grade incremental encoder interface module for renewable energy material transport systems. Provides precise position feedback for conveyor belts and automated material handling equipment with EtherCAT connectivity.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "encoder",
+      "EtherCAT",
+      "incremental",
+      "position feedback",
+      "material transport",
+      "renewable energy",
+      "industrial automation",
+      "Beckhoff"
+    ],
+    "dcat:contactPoint": "https://www.beckhoff.com/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "schema:value": 24,
+        "schema:unitCode": "BIT"
+      },
+      "rodeos:framework": "TwinCAT 3 Automation Framework"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Beckhoff",
+        "rodeos:hardwareAssetType": "encoder"
+      },
+      "child": {
+        "@type": "rodeos:sensor",
+        "properties": {
+          "rodeos:measurementRange": 360.0,
+          "rodeos:measurementAccuracy": 0.05,
+          "rodeos:samplingRate": 1000.0,
+          "rodeos:fieldOfView": 180.0
+        },
+        "child": {
+          "@type": "rodeos:encoder",
+          "properties": {
+            "rodeos:aasSubmodel": "https://example.com/aas/submodels/encoder/beckhoff/renewable-energy/material-transport",
+            "rodeos:encoderType": "Absolute",
+            "rodeos:resolutionCounts": 65536,
+            "rodeos:maxSpeed": 6000.0
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Omron FH-SMD Series Vision System for Spot Welding Applications",
+    "dcterms:type": "Software",
+    "dcterms:publisher": "Omron Corporation",
+    "dcterms:license": "https://www.omron.com/global/en/terms/software-license/",
+    "dcterms:identifier": "OMRON-FH-SMD-SW-2024",
+    "dcterms:description": "High-precision vision software system specifically designed for spot welding applications in plastics processing. Provides real-time weld seam tracking, quality inspection, and positional guidance for robotic welding cells. Features advanced image processing algorithms optimized for plastic material characteristics and welding environments.",
+    "dcat:version": "v4.2.1",
+    "dcat:keyword": [
+      "vision system",
+      "spot welding",
+      "plastics processing",
+      "quality inspection",
+      "weld guidance",
+      "robotic automation",
+      "real-time tracking",
+      "Omron FH-SMD"
+    ],
+    "dcat:contactPoint": "https://www.omron.com/global/en/contact/technical-support/",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "schema:value": 0.95,
+        "schema:unitCode": "P1",
+        "schema:minValue": 0.85,
+        "schema:maxValue": 0.99
+      },
+      "rodeos:framework": "Omron FH Series Vision System with integrated AI-based object recognition and 3D vision capabilities for welding seam tracking"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "schema:value": 0.95,
+          "schema:unitCode": "P1",
+          "schema:minValue": 0.85,
+          "schema:maxValue": 0.99
+        },
+        "rodeos:softwareAssetType": {
+          "skos:prefLabel": "Machine Vision Software",
+          "skos:inScheme": "http://example.com/softwareAssetTypes"
+        }
+      },
+      "child": {
+        "@type": "rodeos:perceptionVisionSoftware",
+        "properties": {
+          "rodeos:perceptionVisionSoftwareType": "2d3dVisionLibraries",
+          "rodeos:aasSubmodel": "https://automation.omron.com/aas/submodels/perception-vision-welding-v1",
+          "rodeos:inputFormats": [
+            "PNG",
+            "JPEG",
+            "BMP",
+            "TIFF",
+            "Point Cloud Data (PCD)",
+            "PLY"
+          ],
+          "rodeos:mlFrameworks": [
+            "TensorFlow",
+            "PyTorch",
+            "OpenCV",
+            "ONNX Runtime"
+          ],
+          "rodeos:accuracyMetrics": "Detection accuracy: 99.8%, Pose estimation error: <0.5mm, Repeatability: ±0.2mm, F1-score: 0.997"
+        }
+      }
+    }
+  }
+}

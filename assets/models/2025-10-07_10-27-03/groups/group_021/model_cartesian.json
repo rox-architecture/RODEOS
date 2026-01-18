@@ -1,0 +1,86 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Rockwell Automation Cartesian Robot for Food and Beverage Pick-and-Place Applications",
+    "dcterms:type": "robotics:CartesianRobot",
+    "dcterms:publisher": "Rockwell Automation",
+    "dcterms:license": "https://www.rockwellautomation.com/en-us/company/terms-of-use.html",
+    "dcterms:identifier": "RA-CART-PNP-FB-001",
+    "dcterms:description": "A high-precision Cartesian robot system designed for pick-and-place operations in food and beverage manufacturing environments. Features stainless steel construction, IP67 rating for washdown compatibility, and integrated vision guidance for product handling.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "Cartesian robot",
+      "pick-and-place",
+      "food grade",
+      "automation",
+      "Rockwell Automation",
+      "material handling",
+      "precision robotics"
+    ],
+    "dcat:contactPoint": "https://www.rockwellautomation.com/en-us/support/contact-technical-support.html",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 6,
+        "unitCode": "axis"
+      },
+      "rodeos:framework": "Rockwell Automation Integrated Motion Control Framework"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Rockwell Automation",
+        "rodeos:hardwareAssetType": "cartesianRobot"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 25.0,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 480.0,
+          "rodeos:interface": "EtherNet/IP",
+          "rodeos:reach": 1500.0,
+          "rodeos:accuracy": 0.05,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted",
+            "rodeos:positionAccuracy": 0.05,
+            "rodeos:repeatability": 0.02,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 2.5,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "Cartesian XYZ"
+          },
+          "child": {
+            "@type": "rodeos:serielRobot",
+            "properties": {
+              "rodeos:jointCount": 6,
+              "rodeos:maxJointSpeed": 180.5
+            },
+            "child": {
+              "@type": "rodeos:cartesian",
+              "properties": {
+                "rodeos:aasSubmodel": "https://example.com/aas/submodels/cartesian-robot-pick-place-food-beverage",
+                "rodeos:linearTravelXYZ": {
+                  "@type": "schema:quantitativeValue",
+                  "schema:value": 1500,
+                  "schema:unitCode": "MMT"
+                },
+                "rodeos:linearAxisSpeedMax": 2.5
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

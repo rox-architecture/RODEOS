@@ -1,0 +1,83 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Bosch Rexroth Cylindrical Component for Medical Device Quality Inspection",
+    "dcterms:type": "Component",
+    "dcterms:publisher": "Bosch Rexroth AG",
+    "dcterms:license": "https://www.boschrexroth.com/en/us/license-terms",
+    "dcterms:identifier": "BRX-CYL-MED-QI-2024-001",
+    "dcterms:description": "A precision cylindrical automation component designed for quality inspection applications in medical device manufacturing. Provides high-accuracy positioning and motion control for optical inspection systems.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "cylindrical",
+      "automation",
+      "medical devices",
+      "quality inspection",
+      "precision",
+      "Bosch Rexroth",
+      "motion control",
+      "industrial robotics"
+    ],
+    "dcat:contactPoint": "https://www.boschrexroth.com/en/us/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 0.05,
+        "schema:unitText": "mm"
+      },
+      "rodeos:framework": "Bosch Rexroth CytroBox"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Bosch Rexroth",
+        "rodeos:hardwareAssetType": "rodeos:cylindrical"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 5.0,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 48.0,
+          "rodeos:interface": "EtherCAT",
+          "rodeos:reach": 1200.0,
+          "rodeos:accuracy": 0.02,
+          "rodeos:minVelocity": 0.01
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted",
+            "rodeos:positionAccuracy": 0.05,
+            "rodeos:repeatability": 0.02,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 0.785,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "Cylindrical coordinate system"
+          },
+          "child": {
+            "@type": "rodeos:serielRobot",
+            "properties": {
+              "rodeos:jointCount": 6,
+              "rodeos:maxJointSpeed": 180.5
+            },
+            "child": {
+              "@type": "rodeos:cylindrical",
+              "properties": {
+                "rodeos:aasSubmodel": "https://example.com/bosch-rexroth/cylindrical-robot/quality-inspection/submodel",
+                "rodeos:radialTravel": 1200.0,
+                "rodeos:verticalTravelZ": 800.0
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

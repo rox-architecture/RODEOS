@@ -1,0 +1,84 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "WAGO Cylindrical Automation Component for Automotive Material Transport",
+    "dcterms:type": "http://example.com/ns/industrialRobotics#CylindricalComponent",
+    "dcterms:publisher": "WAGO GmbH & Co. KG",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "WAGO-CYL-AUTO-TRANS-001",
+    "dcterms:description": "A cylindrical automation component designed by WAGO for material transport applications in automotive assembly lines. Provides precise linear motion control and integration capabilities with industrial control systems.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "cylindrical actuator",
+      "material transport",
+      "automotive assembly",
+      "linear motion",
+      "industrial automation",
+      "WAGO"
+    ],
+    "dcat:contactPoint": "https://www.wago.com/global/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 24.0,
+        "unitCode": "volt"
+      },
+      "rodeos:framework": "WAGO Automation Framework"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "WAGO",
+        "rodeos:hardwareAssetType": {
+          "skos:prefLabel": "Cylindrical Actuator",
+          "skos:inScheme": "http://example.com/automation-asset-types"
+        }
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 150.0,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 4,
+          "rodeos:operatingVoltage": 24.0,
+          "rodeos:interface": "EtherCAT",
+          "rodeos:reach": 1200.0,
+          "rodeos:accuracy": 0.05,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted",
+            "rodeos:positionAccuracy": 0.05,
+            "rodeos:repeatability": 0.02,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 2.5,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "SCARA"
+          },
+          "child": {
+            "@type": "rodeos:serielRobot",
+            "properties": {
+              "rodeos:jointCount": 4,
+              "rodeos:maxJointSpeed": 2.5
+            },
+            "child": {
+              "@type": "rodeos:cylindrical",
+              "properties": {
+                "rodeos:aasSubmodel": "https://asset-shell.wago.com/cylindrical/material-transport/automotive-assembly/12345",
+                "rodeos:radialTravel": 1200.5,
+                "rodeos:verticalTravelZ": 750.0
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

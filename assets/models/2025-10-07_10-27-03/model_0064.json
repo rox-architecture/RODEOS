@@ -1,0 +1,78 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "ABB Robotics AMR Material Transport System for Aerospace Applications",
+    "dcterms:type": "Physical Asset",
+    "dcterms:publisher": "ABB Robotics",
+    "dcterms:license": "https://www.abb.com/robotics/terms-of-use",
+    "dcterms:identifier": "ABB-AMR-MT-AERO-001",
+    "dcterms:description": "Autonomous Mobile Robot system designed for material transport applications in aerospace manufacturing environments. Features advanced navigation, payload handling capabilities, and integration with aerospace production systems.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "AMR",
+      "autonomous mobile robot",
+      "material transport",
+      "aerospace",
+      "ABB Robotics",
+      "industrial automation",
+      "logistics",
+      "manufacturing"
+    ],
+    "dcat:contactPoint": "https://www.abb.com/robotics/support",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 150,
+        "schema:unitCode": "kg",
+        "schema:additionalProperty": {
+          "maxSpeed": 1.8,
+          "unitCode": "m/s",
+          "batteryCapacity": 7.5,
+          "batteryUnit": "kWh",
+          "payloadCapacity": 150,
+          "payloadUnit": "kg"
+        }
+      },
+      "rodeos:framework": "ABB Ability™ Connected Services"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "ABB Robotics",
+        "rodeos:hardwareAssetType": "amr"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 150.0,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 4,
+          "rodeos:operatingVoltage": 48.0,
+          "rodeos:interface": "EtherCAT with ROS 2 integration",
+          "rodeos:reach": 1.8,
+          "rodeos:accuracy": 0.005,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:mobileRobot",
+          "properties": {
+            "rodeos:maxSpeed": 5.0,
+            "rodeos:batteryCapacity": 500.0
+          },
+          "child": {
+            "@type": "rodeos:amr",
+            "properties": {
+              "rodeos:aasSubmodel": "https://example.com/aas/submodels/amr-material-transport-aerospace",
+              "rodeos:environmentType": "indoor"
+            }
+          }
+        }
+      }
+    }
+  }
+}

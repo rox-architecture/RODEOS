@@ -1,0 +1,81 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Mitsubishi Electric Hexapod Bin Picking System",
+    "dcterms:type": "robotics",
+    "dcterms:publisher": "Mitsubishi Electric Corporation",
+    "dcterms:license": "https://www.mitsubishielectric.com/legal/terms-of-use",
+    "dcterms:identifier": "ME-HXP-BP-2024-001",
+    "dcterms:description": "A high-precision hexapod robotic system designed for automated bin picking applications in renewable energy component manufacturing. Features 6 degrees of freedom motion control, advanced vision systems, and integration capabilities with renewable energy production lines.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "hexapod",
+      "bin picking",
+      "renewable energy",
+      "robotics",
+      "automation",
+      "Mitsubishi Electric",
+      "6-DOF",
+      "manufacturing"
+    ],
+    "dcat:contactPoint": "https://www.mitsubishielectric.com/contact/industrial-robotics",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 6,
+        "unitCode": "rodeos:DOF"
+      },
+      "rodeos:framework": "MELFA Hexapod Bin Picking Framework v2.1"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Mitsubishi Electric",
+        "rodeos:hardwareAssetType": "hexapod"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 15.0,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 400.0,
+          "rodeos:interface": "EtherCAT with MELSEC protocol",
+          "rodeos:reach": 1200.0,
+          "rodeos:accuracy": 0.05,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted",
+            "rodeos:positionAccuracy": 0.05,
+            "rodeos:repeatability": 0.02,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 1.8,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "Parallel kinematic hexapod"
+          },
+          "child": {
+            "@type": "rodeos:parallelRobot",
+            "properties": {
+              "rodeos:platformSize": 50.0,
+              "rodeos:stiffness": 1.0
+            },
+            "child": {
+              "@type": "rodeos:hexapod",
+              "properties": {
+                "rodeos:aasSubmodel": "https://example.com/aas/submodels/hexapod-bin-picking-mitsubishi"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

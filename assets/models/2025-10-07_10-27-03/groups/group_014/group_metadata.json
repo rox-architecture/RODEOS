@@ -1,0 +1,39 @@
+{
+  "company": "SICK AG",
+  "industry": "Food and beverage",
+  "application": "machine tending",
+  "assets": [
+    {
+      "leaf": "rodeos:cylindrical",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:roboter",
+        "rodeos:stationaryRobot",
+        "rodeos:serielRobot",
+        "rodeos:cylindrical"
+      ],
+      "file": "model_cylindrical.json"
+    },
+    {
+      "leaf": "rodeos:Service",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Service"
+      ],
+      "file": "model_Service.json"
+    },
+    {
+      "leaf": "rodeos:grindingPolishingFinishingTool",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:tooling",
+        "rodeos:grindingPolishingFinishingTool"
+      ],
+      "file": "model_grindingPolishingFinishingTool.json"
+    }
+  ]
+}

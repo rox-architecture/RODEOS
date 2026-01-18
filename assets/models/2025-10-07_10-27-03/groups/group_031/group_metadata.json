@@ -1,0 +1,47 @@
+{
+  "company": "Rockwell Automation",
+  "industry": "Aerospace",
+  "application": "arc welding",
+  "assets": [
+    {
+      "leaf": "rodeos:inertialSensor",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:sensor",
+        "rodeos:inertialSensor"
+      ],
+      "file": "model_inertialSensor.json"
+    },
+    {
+      "leaf": "rodeos:Service",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Service"
+      ],
+      "file": "model_Service.json"
+    },
+    {
+      "leaf": "rodeos:motionControlSoftware",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:softwareComponent",
+        "rodeos:motionControlSoftware"
+      ],
+      "file": "model_motionControlSoftware.json"
+    },
+    {
+      "leaf": "rodeos:specialTool",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:tooling",
+        "rodeos:specialTool"
+      ],
+      "file": "model_specialTool.json"
+    }
+  ]
+}

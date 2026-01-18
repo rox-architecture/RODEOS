@@ -1,0 +1,67 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Bosch Rexroth Inertial Sensor for Arc Welding Applications",
+    "dcterms:type": "Sensor",
+    "dcterms:publisher": "Bosch Rexroth AG",
+    "dcterms:license": "https://www.boschrexroth.com/en/us/licensing-terms",
+    "dcterms:identifier": "BOSCH-IS-AW-2024-001",
+    "dcterms:description": "High-precision inertial sensor designed for arc welding robotics in plastics processing applications. Provides real-time orientation and acceleration data to ensure weld path accuracy and quality control.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "inertial sensor",
+      "arc welding",
+      "robotics",
+      "plastics processing",
+      "motion tracking",
+      "industrial automation"
+    ],
+    "dcat:contactPoint": "https://www.boschrexroth.com/en/us/contact-technical-support",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 9.81,
+        "unitCode": "MTSK",
+        "name": "Acceleration Sensitivity"
+      },
+      "rodeos:framework": "Bosch Rexroth Inertial Sensing Framework v2.1"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Bosch Rexroth",
+        "rodeos:hardwareAssetType": "rodeos:inertialSensor"
+      },
+      "child": {
+        "@type": "rodeos:sensor",
+        "properties": {
+          "rodeos:measurementRange": 2000.0,
+          "rodeos:measurementAccuracy": 0.05,
+          "rodeos:samplingRate": 1000.0,
+          "rodeos:fieldOfView": 180.0
+        },
+        "child": {
+          "@type": "rodeos:inertialSensor",
+          "properties": {
+            "rodeos:aasSubmodel": "https://industrial.boschrexroth.com/aas/inertialSensor/arcWeldingPlastics/v1",
+            "rodeos:gyroRange": {
+              "@type": "schema:quantitativeValue",
+              "schema:value": 2000,
+              "schema:unitCode": "DPS"
+            },
+            "rodeos:accelRange": {
+              "@type": "schema:quantitativeValue",
+              "schema:value": 16,
+              "schema:unitCode": "G"
+            }
+          }
+        }
+      }
+    }
+  }
+}

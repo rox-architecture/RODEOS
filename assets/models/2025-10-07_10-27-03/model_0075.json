@@ -1,0 +1,72 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Schunk PalletMaster Pro Motion Control Software",
+    "dcterms:type": "Software",
+    "dcterms:publisher": "Schunk GmbH",
+    "dcterms:license": "https://www.schunk.com/commercial-license",
+    "dcterms:identifier": "SCH-MCS-PLT-2024-001",
+    "dcterms:description": "Advanced motion control software optimized for high-speed palletizing applications in logistics and warehousing environments. Features intelligent path planning, collision avoidance, and energy optimization algorithms.",
+    "dcat:version": "v3.2.1",
+    "dcat:keyword": [
+      "motion control",
+      "palletizing",
+      "robotics",
+      "warehouse automation",
+      "logistics software",
+      "industrial automation"
+    ],
+    "dcat:contactPoint": "https://support.schunk.com/motion-control",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 4.2,
+        "minValue": 1.0,
+        "maxValue": 10.0,
+        "unitCode": "rodeos:performanceIndex"
+      },
+      "rodeos:framework": "Schunk Motion Control Framework v3.7"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "@type": "schema:quantitativeValue",
+          "value": 4.2,
+          "minValue": 1.0,
+          "maxValue": 10.0,
+          "unitCode": "rodeos:performanceIndex"
+        },
+        "rodeos:softwareAssetType": {
+          "@id": "rodeos:motionControlSoftware",
+          "prefLabel": "Motion Control Software"
+        }
+      },
+      "child": {
+        "@type": "rodeos:motionControlSoftware",
+        "properties": {
+          "rodeos:motionControlSystemType": "trajectoryPlanning",
+          "rodeos:aasSubmodel": "https://asset-shell.schunk.com/motion-control/palletizing/v2.1",
+          "rodeos:supportedRobotTypes": [
+            "SCARA",
+            "Articulated",
+            "Delta",
+            "Cartesian"
+          ],
+          "rodeos:motionPlanningAlgorithms": [
+            "RRT*",
+            "PRM",
+            "A*",
+            "Potential Fields"
+          ],
+          "rodeos:dofSupport": 6
+        }
+      }
+    }
+  }
+}

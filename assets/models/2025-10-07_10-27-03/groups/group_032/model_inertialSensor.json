@@ -1,0 +1,68 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "IFM Electronic Inertial Sensor for Aerospace Assembly",
+    "dcterms:type": "sensor",
+    "dcterms:publisher": "IFM Electronic GmbH",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "IFM-IS-AERO-ASSEM-001",
+    "dcterms:description": "High-precision inertial sensor designed for aerospace assembly applications, providing accurate motion and orientation data to ensure precise component alignment and quality control.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "inertial sensor",
+      "aerospace",
+      "assembly",
+      "motion detection",
+      "orientation",
+      "IFM Electronic",
+      "industrial automation"
+    ],
+    "dcat:contactPoint": "https://www.ifm.com/us/en/us/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 9.81,
+        "unitCode": "MTS2",
+        "name": "Acceleration Range"
+      },
+      "rodeos:framework": "IFM Electronic Inertial Measurement Framework v2.1"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "IFM Electronic",
+        "rodeos:hardwareAssetType": "inertialSensor"
+      },
+      "child": {
+        "@type": "rodeos:sensor",
+        "properties": {
+          "rodeos:measurementRange": 10.0,
+          "rodeos:measurementAccuracy": 0.001,
+          "rodeos:samplingRate": 1000.0,
+          "rodeos:fieldOfView": 180.0
+        },
+        "child": {
+          "@type": "rodeos:inertialSensor",
+          "properties": {
+            "rodeos:aasSubmodel": "https://ifm.com/aas/inertialSensor/aerospace-assembly/submodel",
+            "rodeos:gyroRange": {
+              "@type": "schema:quantitativeValue",
+              "schema:value": 2000,
+              "schema:unitCode": "DPS"
+            },
+            "rodeos:accelRange": {
+              "@type": "schema:quantitativeValue",
+              "schema:value": 16,
+              "schema:unitCode": "G"
+            }
+          }
+        }
+      }
+    }
+  }
+}

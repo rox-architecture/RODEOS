@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Rockwell Automation Arc Welding Special Tool",
+    "dcterms:type": "http://www.productontology.org/id/Arc_welding",
+    "dcterms:publisher": "Rockwell Automation",
+    "dcterms:license": "https://www.rockwellautomation.com/en-us/legal/terms-of-use.html",
+    "dcterms:identifier": "RA-AW-ST-2024-001",
+    "dcterms:description": "Industrial-grade arc welding special tool designed for aerospace applications, featuring precision control, automated welding paths, and integrated safety systems compliant with aerospace manufacturing standards.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "arc welding",
+      "aerospace",
+      "robotics",
+      "automation",
+      "welding tool",
+      "industrial equipment",
+      "precision welding"
+    ],
+    "dcat:contactPoint": "https://www.rockwellautomation.com/en-us/support/contact.html",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 450,
+        "unitCode": "AMP",
+        "minValue": 150,
+        "maxValue": 600
+      },
+      "rodeos:framework": "Rockwell Automation Arc Welding Framework v3.2"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Rockwell Automation",
+        "rodeos:hardwareAssetType": "rodeos:specialTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "DeviceNet",
+          "rodeos:manufacturer": "Rockwell Automation",
+          "rodeos:toolWeight": 3.2,
+          "rodeos:toolMaterial": "Stainless Steel 316L"
+        },
+        "child": {
+          "@type": "rodeos:specialTool",
+          "properties": {
+            "rodeos:specialToolType": "HybridEndEffectors",
+            "rodeos:aasSubmodel": "https://rockwellautomation.com/aas/submodels/specialtools/arcwelding-hybrideffector-001",
+            "rodeos:interfaceStandard": "ISO 9409-1-50-4-M6",
+            "rodeos:changeoverTime": 12.5,
+            "rodeos:numberOfPorts": 3
+          }
+        }
+      }
+    }
+  }
+}

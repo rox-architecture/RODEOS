@@ -1,0 +1,88 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Yaskawa Motoman Cartesian Robot for Logistics Pick-and-Place Operations",
+    "dcterms:type": "Robotic System",
+    "dcterms:publisher": "Yaskawa Motoman",
+    "dcterms:license": "https://www.motoman.com/en-us/support/terms-of-use",
+    "dcterms:identifier": "YM-CRT-LOG-PP-2024-001",
+    "dcterms:description": "A high-precision Cartesian robot system designed for automated pick-and-place operations in logistics and warehousing environments. Features include programmable motion paths, payload handling up to 25kg, and integration with warehouse management systems.",
+    "dcat:version": "2.3.1",
+    "dcat:keyword": [
+      "Cartesian robot",
+      "pick-and-place",
+      "logistics automation",
+      "warehousing",
+      "Yaskawa Motoman",
+      "material handling"
+    ],
+    "dcat:contactPoint": "https://www.motoman.com/en-us/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "schema:value": 6,
+        "schema:unitCode": "AXIS"
+      },
+      "rodeos:framework": "Yaskawa Motoman DX200"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Yaskawa Motoman",
+        "rodeos:hardwareAssetType": "cartesian"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 20.0,
+          "rodeos:maxVelocity": 8.5,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 480.0,
+          "rodeos:interface": "Yaskawa Motoman DX200",
+          "rodeos:reach": 2033.0,
+          "rodeos:accuracy": 0.08,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted",
+            "rodeos:positionAccuracy": 0.05,
+            "rodeos:repeatability": 0.02,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 2.5,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "6-axis articulated"
+          },
+          "child": {
+            "@type": "rodeos:serielRobot",
+            "properties": {
+              "rodeos:jointCount": 6,
+              "rodeos:maxJointSpeed": 180.0
+            },
+            "child": {
+              "@type": "rodeos:cartesian",
+              "properties": {
+                "rodeos:aasSubmodel": "https://industrial-asset-models.yaskawa.com/motoman/cartesian/logistics-pick-place/v1.2/submodel",
+                "rodeos:linearTravelXYZ": {
+                  "@type": "schema:quantitativeValue",
+                  "schema:value": [
+                    3000,
+                    2000,
+                    1000
+                  ],
+                  "schema:unitCode": "MMT"
+                },
+                "rodeos:linearAxisSpeedMax": 2.5
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

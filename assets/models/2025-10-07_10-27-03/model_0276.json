@@ -1,0 +1,80 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Techman Robot Hexapod Bin Picking System",
+    "dcterms:type": "PhysicalDevice",
+    "dcterms:publisher": "Techman Robot Inc.",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "TM-HXP-BP-2024-001",
+    "dcterms:description": "A six-degree-of-freedom hexapod robotic system designed for precision bin picking applications in medical device manufacturing, featuring high accuracy positioning and sterile environment compatibility.",
+    "dcat:version": "2.1.3",
+    "dcat:keyword": [
+      "hexapod",
+      "bin picking",
+      "medical robotics",
+      "automation",
+      "precision handling",
+      "sterile environment",
+      "Techman Robot"
+    ],
+    "dcat:contactPoint": "https://www.techman-robot.com/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 6,
+        "unitCode": "rodeos:degreesOfFreedom"
+      },
+      "rodeos:framework": "TM5-900 Hexapod Robotic System"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Techman Robot",
+        "rodeos:hardwareAssetType": "hexapod"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 5.0,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 48.0,
+          "rodeos:interface": "EtherCAT",
+          "rodeos:reach": 1200.0,
+          "rodeos:accuracy": 0.02,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "floor-mounted",
+            "rodeos:positionAccuracy": 0.05,
+            "rodeos:repeatability": 0.02,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 0.8,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "parallel kinematic structure with 6 degrees of freedom"
+          },
+          "child": {
+            "@type": "rodeos:parallelRobot",
+            "properties": {
+              "rodeos:platformSize": 10.0,
+              "rodeos:stiffness": 5.0
+            },
+            "child": {
+              "@type": "rodeos:hexapod",
+              "properties": {
+                "rodeos:aasSubmodel": "https://example.com/aas/submodels/hexapod-medical-bin-picking"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

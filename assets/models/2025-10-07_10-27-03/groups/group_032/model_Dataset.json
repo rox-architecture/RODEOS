@@ -1,0 +1,39 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "IFM Electronic Aerospace Assembly Dataset",
+    "dcterms:type": "Dataset",
+    "dcterms:publisher": "IFM Electronic GmbH",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "IFM-AERO-ASSEMBLY-DS-2023-001",
+    "dcterms:description": "Comprehensive dataset containing technical specifications, performance metrics, and operational parameters for robotic assembly systems used in aerospace manufacturing applications.",
+    "dcat:version": "1.2.0",
+    "dcat:keyword": [
+      "robotics",
+      "aerospace",
+      "assembly",
+      "automation",
+      "industrial",
+      "manufacturing",
+      "technical data"
+    ],
+    "dcat:contactPoint": "mailto:technical.support@ifm.com",
+    "rodeos:coreType": "Dataset"
+  },
+  "child": {
+    "@type": "rodeos:Dataset",
+    "properties": {
+      "dprod:informationSensitivityClassification": "dprod:Confidential",
+      "dprod:type": "dprod:OperationalData",
+      "rodeos:dataFormat": "application/json",
+      "rodeos:isDataproduct": true,
+      "dcat:byteSize": 5242880,
+      "rodeos:dataTypeSchema": "https://schema.ifm.com/aerospace/assembly-dataset/v1.0",
+      "dcat:checksum": "e99a18c428cb38d5f260853678922e03",
+      "dcat:endpointDescription": "REST API endpoint providing access to aerospace assembly dataset with OAuth2 authentication",
+      "dcat:endpointURL": "https://api.ifm.com/aerospace/assembly/datasets/v1",
+      "dcat:protocol": "HTTPS",
+      "dprod:dataProductOwner": "Aerospace Assembly Data Management Team"
+    }
+  }
+}

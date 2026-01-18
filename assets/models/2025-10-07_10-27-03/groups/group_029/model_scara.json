@@ -1,0 +1,84 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Mitsubishi Electric SCARA Robot for Spot Welding in Food and Beverage Industry",
+    "dcterms:type": "Robotic Automation Asset",
+    "dcterms:publisher": "Mitsubishi Electric Corporation",
+    "dcterms:license": "https://www.mitsubishielectric.com/legal/terms-of-use",
+    "dcterms:identifier": "ME-SCARA-SW-FB-001",
+    "dcterms:description": "High-precision SCARA robot system designed for spot welding applications in food and beverage manufacturing environments. Features stainless steel construction, IP67 protection rating, and specialized welding programming for food-grade material handling.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "SCARA robot",
+      "spot welding",
+      "food industry",
+      "beverage manufacturing",
+      "Mitsubishi Electric",
+      "automation",
+      "robotic welding",
+      "food-grade robotics"
+    ],
+    "dcat:contactPoint": "https://www.mitsubishielectric.com/automation/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "schema:minValue": 3.0,
+        "schema:maxValue": 15.0,
+        "schema:unitCode": "KG",
+        "schema:value": 8.5
+      },
+      "rodeos:framework": "MELFA Basic IV"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Mitsubishi Electric",
+        "rodeos:hardwareAssetType": "scara"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 5.0,
+          "rodeos:maxVelocity": 4.5,
+          "rodeos:DOF": 4,
+          "rodeos:operatingVoltage": 200.0,
+          "rodeos:interface": "EtherCAT",
+          "rodeos:reach": 600.0,
+          "rodeos:accuracy": 0.02,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted",
+            "rodeos:positionAccuracy": 0.02,
+            "rodeos:repeatability": 0.01,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 0.125,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "Selective Compliance Articulated Robot Arm (SCARA)"
+          },
+          "child": {
+            "@type": "rodeos:serielRobot",
+            "properties": {
+              "rodeos:jointCount": 4,
+              "rodeos:maxJointSpeed": 180.0
+            },
+            "child": {
+              "@type": "rodeos:scara",
+              "properties": {
+                "rodeos:aasSubmodel": "https://industrial-assets.com/mitsubishi-electric/scara/spot-welding-model",
+                "rodeos:planarReachRadius": 850.5,
+                "rodeos:verticalStrokeZ": 300.0
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

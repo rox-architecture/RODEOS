@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Beckhoff TwinCAT Vision Analytics Software",
+    "dcterms:type": "Software",
+    "dcterms:publisher": "Beckhoff Automation GmbH & Co. KG",
+    "dcterms:license": "https://www.beckhoff.com/en-en/terms-and-conditions/",
+    "dcterms:identifier": "BECK-TCVISION-ANALYTICS-V4.0",
+    "dcterms:description": "Industrial AI analytics software for automated quality inspection in food and beverage production lines. Provides real-time defect detection, product classification, and compliance monitoring using machine learning algorithms integrated with TwinCAT automation platform.",
+    "dcat:version": "4.0.1",
+    "dcat:keyword": [
+      "AI analytics",
+      "machine vision",
+      "quality inspection",
+      "food safety",
+      "defect detection",
+      "TwinCAT",
+      "industrial automation",
+      "real-time processing"
+    ],
+    "dcat:contactPoint": "https://www.beckhoff.com/en-en/support/technical-support/",
+    "rodeos:coreType": "Service"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 0.98,
+        "minValue": 0.0,
+        "maxValue": 1.0,
+        "unitText": "accuracy"
+      },
+      "rodeos:framework": "TwinCAT Vision"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "@type": "schema:quantitativeValue",
+          "value": 0.98,
+          "minValue": 0.0,
+          "maxValue": 1.0,
+          "unitText": "accuracy"
+        },
+        "rodeos:softwareAssetType": {
+          "@id": "skos:concept",
+          "prefLabel": "Machine Learning Model"
+        }
+      },
+      "child": {
+        "@type": "rodeos:aiAnalyticsSoftware",
+        "properties": {
+          "rodeos:aiAnalyticsSoftwareType": "mlModel",
+          "rodeos:aasSubmodel": "https://beckhoff.com/aas/food-beverage/quality-inspection/ml-model",
+          "rodeos:modelArchitecture": "Convolutional Neural Network (CNN) with ResNet-50 backbone optimized for visual quality inspection tasks in food processing environments, featuring transfer learning capabilities and real-time inference support"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "SICK AG Renewable Energy Machine Tending Integration Orchestration",
+    "dcterms:type": "IntegrationOrchestration",
+    "dcterms:publisher": "SICK AG",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "SICK-REN-MT-INTORCH-001",
+    "dcterms:description": "Integration orchestration service for automated machine tending systems in renewable energy manufacturing, providing workflow coordination, device interoperability, and process optimization.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "machine tending",
+      "renewable energy",
+      "integration",
+      "orchestration",
+      "automation",
+      "SICK AG",
+      "industrial robotics"
+    ],
+    "dcat:contactPoint": "https://www.sick.com/contact",
+    "rodeos:coreType": "Service"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 3.2,
+        "minValue": 1.0,
+        "maxValue": 5.0,
+        "unitCode": "rodeos:integrationComplexity"
+      },
+      "rodeos:framework": "SICK AppSpace"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "@type": "schema:quantitativeValue",
+          "value": 3.2,
+          "minValue": 1.0,
+          "maxValue": 5.0,
+          "unitCode": "rodeos:integrationComplexity"
+        },
+        "rodeos:softwareAssetType": "softwareAssetType"
+      },
+      "child": {
+        "@type": "rodeos:integrationOrchestration",
+        "properties": {
+          "rodeos:integrationOrchestrationType": "workflowOrchestration",
+          "rodeos:aasSubmodel": "https://assetadministration-shell.sick.com/integration-orchestration/12345",
+          "rodeos:supportedProtocols": [
+            "OPC UA",
+            "MQTT",
+            "HTTP/REST",
+            "Modbus TCP"
+          ],
+          "rodeos:deploymentVariants": [
+            "On-premise server",
+            "Cloud-hosted",
+            "Edge computing device",
+            "Hybrid deployment"
+          ]
+        }
+      }
+    }
+  }
+}

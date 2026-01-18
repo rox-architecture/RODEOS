@@ -1,0 +1,78 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Siemens Aerospace Assembly Simulation Digital Twin Software",
+    "dcterms:type": "Software",
+    "dcterms:publisher": "Siemens AG",
+    "dcterms:license": "https://www.siemens.com/global/en/legal/use-terms.html",
+    "dcterms:identifier": "SIEMENS-AERO-ASSEMBLY-DT-SIM-V1",
+    "dcterms:description": "Digital twin simulation software for aerospace assembly processes, enabling virtual validation, optimization, and real-time monitoring of robotic assembly systems in aerospace manufacturing environments.",
+    "dcat:version": "1.2.5",
+    "dcat:keyword": [
+      "digital twin",
+      "simulation",
+      "aerospace",
+      "assembly",
+      "robotics",
+      "automation",
+      "Siemens",
+      "industrial software"
+    ],
+    "dcat:contactPoint": "https://www.siemens.com/global/en/products/automation/industry-software/digital-enterprise/contact.html",
+    "rodeos:coreType": "Service"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 85,
+        "minValue": 0,
+        "maxValue": 100,
+        "unitCode": "P1"
+      },
+      "rodeos:framework": "Siemens NX Mechatronics Concept Designer"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "@type": "schema:quantitativeValue",
+          "value": 85,
+          "minValue": 0,
+          "maxValue": 100,
+          "unitCode": "P1"
+        },
+        "rodeos:softwareAssetType": {
+          "@type": "skos:concept",
+          "prefLabel": "Simulation and Modeling Software",
+          "inScheme": "https://example.org/softwareTaxonomy"
+        }
+      },
+      "child": {
+        "@type": "rodeos:simulationDigitalTwinSoftware",
+        "properties": {
+          "rodeos:simulationDigitalTwinSoftwareType": "physicsEngine",
+          "rodeos:aasSubmodel": "https://siemens.com/aas/submodels/aerospace-assembly-simulation",
+          "rodeos:physicsFidelity": "High-fidelity multi-body dynamics with collision detection and material property simulation",
+          "rodeos:supportedRobotModels": [
+            "KUKA KR Quantec",
+            "ABB IRB 6700",
+            "FANUC M-2000iA",
+            "Yaskawa Motoman GP250"
+          ],
+          "rodeos:fileFormatCompatibility": [
+            "STEP",
+            "IGES",
+            "JT",
+            "CATIA V5",
+            "SOLIDWORKS",
+            "NX",
+            "Parasolid"
+          ]
+        }
+      }
+    }
+  }
+}

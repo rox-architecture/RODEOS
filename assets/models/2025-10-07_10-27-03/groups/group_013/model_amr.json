@@ -1,0 +1,71 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "KUKA AMR Palletizing System for Medical Devices",
+    "dcterms:type": "Autonomous Mobile Robot",
+    "dcterms:publisher": "KUKA AG",
+    "dcterms:license": "https://www.kuka.com/en-de/terms-of-use",
+    "dcterms:identifier": "KUKA-AMR-MEDPAL-2024-001",
+    "dcterms:description": "Autonomous mobile robot system designed for high-precision palletizing of medical device products in sterile environments, featuring advanced navigation, payload handling, and compliance with medical industry standards",
+    "dcat:version": "2.3.1",
+    "dcat:keyword": [
+      "AMR",
+      "palletizing",
+      "medical devices",
+      "automation",
+      "KUKA",
+      "autonomous robotics",
+      "logistics",
+      "sterile environment"
+    ],
+    "dcat:contactPoint": "https://www.kuka.com/en-de/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "schema:value": 150,
+        "schema:unitCode": "KGM",
+        "schema:minValue": 100,
+        "schema:maxValue": 200
+      },
+      "rodeos:framework": "KUKA AMR Navigation Stack"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "KUKA AG",
+        "rodeos:hardwareAssetType": "amr"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 150.0,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 48.0,
+          "rodeos:interface": "EtherCAT",
+          "rodeos:reach": 1800.0,
+          "rodeos:accuracy": 0.05,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:mobileRobot",
+          "properties": {
+            "rodeos:maxSpeed": 0.1,
+            "rodeos:batteryCapacity": 50.0
+          },
+          "child": {
+            "@type": "rodeos:amr",
+            "properties": {
+              "rodeos:aasSubmodel": "https://example.com/aas/submodels/amr-palletizing-medical-kuka",
+              "rodeos:environmentType": "indoor"
+            }
+          }
+        }
+      }
+    }
+  }
+}

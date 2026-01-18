@@ -1,0 +1,65 @@
+{
+  "company": "WAGO",
+  "industry": "Automotive assembly",
+  "application": "material transport",
+  "assets": [
+    {
+      "leaf": "rodeos:cylindrical",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:roboter",
+        "rodeos:stationaryRobot",
+        "rodeos:serielRobot",
+        "rodeos:cylindrical"
+      ],
+      "file": "model_cylindrical.json"
+    },
+    {
+      "leaf": "rodeos:weldingTool",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:tooling",
+        "rodeos:weldingTool"
+      ],
+      "file": "model_weldingTool.json"
+    },
+    {
+      "leaf": "rodeos:measuringInspectionTool",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:tooling",
+        "rodeos:measuringInspectionTool"
+      ],
+      "file": "model_measuringInspectionTool.json"
+    },
+    {
+      "leaf": "rodeos:aiAnalyticsSoftware",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:softwareComponent",
+        "rodeos:aiAnalyticsSoftware"
+      ],
+      "file": "model_aiAnalyticsSoftware.json"
+    },
+    {
+      "leaf": "rodeos:articulated",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:roboter",
+        "rodeos:stationaryRobot",
+        "rodeos:serielRobot",
+        "rodeos:articulated"
+      ],
+      "file": "model_articulated.json"
+    }
+  ]
+}

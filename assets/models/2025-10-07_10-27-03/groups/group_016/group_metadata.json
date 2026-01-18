@@ -1,0 +1,41 @@
+{
+  "company": "WAGO",
+  "industry": "Medical devices",
+  "application": "palletizing",
+  "assets": [
+    {
+      "leaf": "rodeos:perceptionVisionSoftware",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:softwareComponent",
+        "rodeos:perceptionVisionSoftware"
+      ],
+      "file": "model_perceptionVisionSoftware.json"
+    },
+    {
+      "leaf": "rodeos:dispensingAdditiveTool",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:tooling",
+        "rodeos:dispensingAdditiveTool"
+      ],
+      "file": "model_dispensingAdditiveTool.json"
+    },
+    {
+      "leaf": "rodeos:cylindrical",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:roboter",
+        "rodeos:stationaryRobot",
+        "rodeos:serielRobot",
+        "rodeos:cylindrical"
+      ],
+      "file": "model_cylindrical.json"
+    }
+  ]
+}

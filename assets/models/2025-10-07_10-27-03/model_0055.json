@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "IFM Electronic Measuring and Inspection Tool for Machine Tending",
+    "dcterms:type": "skos:concept",
+    "dcterms:publisher": "IFM Electronic GmbH",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "IFM-MIT-001",
+    "dcterms:description": "High-precision measuring and inspection tool designed for machine tending applications in logistics and warehousing, providing real-time quality control and dimensional verification.",
+    "dcat:version": "1.2.0",
+    "dcat:keyword": [
+      "measuring",
+      "inspection",
+      "machine tending",
+      "logistics",
+      "warehousing",
+      "quality control",
+      "IFM Electronic"
+    ],
+    "dcat:contactPoint": "https://www.ifm.com/us/en/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 1,
+        "unitCode": "EA"
+      },
+      "rodeos:framework": "IFM O2D Series Object Detection Sensor Framework"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "IFM Electronic",
+        "rodeos:hardwareAssetType": "rodeos:measuringInspectionTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "IO-Link",
+          "rodeos:manufacturer": "IFM Electronic",
+          "rodeos:toolWeight": 0.85,
+          "rodeos:toolMaterial": "Stainless Steel"
+        },
+        "child": {
+          "@type": "rodeos:measuringInspectionTool",
+          "properties": {
+            "rodeos:measuringInspectionToolType": "VisionInspectionCameras",
+            "rodeos:aasSubmodel": "https://ifm.com/aas/submodels/vision-inspection-camera-sm12345",
+            "rodeos:measurementAccuracy": 0.05,
+            "rodeos:range": 1500.0,
+            "rodeos:repeatability": 0.02
+          }
+        }
+      }
+    }
+  }
+}

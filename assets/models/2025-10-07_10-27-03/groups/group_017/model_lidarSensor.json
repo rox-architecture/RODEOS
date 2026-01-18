@@ -1,0 +1,71 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "SICK AG TIM5xx Series LiDAR Sensor for Quality Inspection",
+    "dcterms:type": "Sensor",
+    "dcterms:publisher": "SICK AG",
+    "dcterms:license": "https://www.sick.com/ag/en/legal-information/licensing-terms/c/g91923",
+    "dcterms:identifier": "SICK-TIM5xx-QI-2024",
+    "dcterms:description": "High-precision LiDAR sensor designed for quality inspection applications in electronics manufacturing. Provides accurate distance measurements and object detection capabilities with robust performance in industrial environments.",
+    "dcat:version": "v2.1.3",
+    "dcat:keyword": [
+      "LiDAR",
+      "quality inspection",
+      "electronics manufacturing",
+      "SICK AG",
+      "sensor",
+      "industrial automation",
+      "non-contact measurement"
+    ],
+    "dcat:contactPoint": "https://www.sick.com/ag/en/contact/request-form/c/g267897",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 0.1,
+        "schema:unitCode": "mm",
+        "schema:name": "Measurement Accuracy"
+      },
+      "rodeos:framework": "SICK AppSpace"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "SICK AG",
+        "rodeos:hardwareAssetType": "lidarSensor"
+      },
+      "child": {
+        "@type": "rodeos:sensor",
+        "properties": {
+          "rodeos:measurementRange": 30.0,
+          "rodeos:measurementAccuracy": 0.001,
+          "rodeos:samplingRate": 100000.0,
+          "rodeos:fieldOfView": {
+            "@type": "schema:quantitativeValue",
+            "schema:value": 270.0,
+            "schema:unitCode": "DDD"
+          }
+        },
+        "child": {
+          "@type": "rodeos:lidarSensor",
+          "properties": {
+            "rodeos:aasSubmodel": "https://asset-shell.com/aas/submodels/lidarSensor/12345",
+            "rodeos:scanRate": 50.0,
+            "rodeos:angularResolution": 0.1,
+            "rodeos:maxRange": 200.0,
+            "rodeos:fieldOfView": {
+              "@type": "schema:quantitativeValue",
+              "schema:value": 270.0,
+              "schema:unitCode": "DDD"
+            },
+            "rodeos:numChannels": 16
+          }
+        }
+      }
+    }
+  }
+}

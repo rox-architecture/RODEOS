@@ -1,0 +1,82 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Epson Robotics Cylindrical Robot for Material Transport",
+    "dcterms:type": "Industrial Robot",
+    "dcterms:publisher": "Epson Robotics",
+    "dcterms:license": "https://www.epson.com/robotics/license",
+    "dcterms:identifier": "EPS-CYL-MT-2024-001",
+    "dcterms:description": "A high-precision cylindrical coordinate robot designed for material handling and transport applications in metal fabrication environments. Features robust construction, repeatable positioning accuracy, and integration capabilities with automation systems.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "cylindrical robot",
+      "material transport",
+      "metal fabrication",
+      "industrial automation",
+      "Epson Robotics"
+    ],
+    "dcat:contactPoint": "https://www.epson.com/robotics/support",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 150,
+        "unitCode": "kg",
+        "minValue": 0,
+        "maxValue": 200
+      },
+      "rodeos:framework": "Epson RC+ 7.0"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Epson Robotics",
+        "rodeos:hardwareAssetType": "rodeos:cylindrical"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 15.0,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 200.0,
+          "rodeos:interface": "EtherCAT",
+          "rodeos:reach": 850.0,
+          "rodeos:accuracy": 0.02,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted",
+            "rodeos:positionAccuracy": 0.02,
+            "rodeos:repeatability": 0.01,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 0.785,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "SCARA"
+          },
+          "child": {
+            "@type": "rodeos:serielRobot",
+            "properties": {
+              "rodeos:jointCount": 4,
+              "rodeos:maxJointSpeed": 180.5
+            },
+            "child": {
+              "@type": "rodeos:cylindrical",
+              "properties": {
+                "rodeos:aasSubmodel": "https://industrial-assets.com/epson/cylindrical/material-transport/submodel",
+                "rodeos:radialTravel": 1200.5,
+                "rodeos:verticalTravelZ": 750.0
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Bosch Rexroth Hexapod System for Pharmaceutical Quality Inspection",
+    "dcterms:type": "skos:concept",
+    "dcterms:publisher": "Bosch Rexroth AG",
+    "dcterms:license": "https://www.boschrexroth.com/en/us/legal-notices/terms-of-use",
+    "dcterms:identifier": "BR-HXP-PHARMA-QI-2024",
+    "dcterms:description": "A high-precision hexapod robotic system designed for automated quality inspection applications in pharmaceutical manufacturing. Features 6 degrees of freedom motion control with micron-level accuracy for visual inspection, measurement, and testing operations.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "hexapod",
+      "robotics",
+      "quality inspection",
+      "pharmaceutical",
+      "automation",
+      "motion control",
+      "precision positioning",
+      "6-DOF"
+    ],
+    "dcat:contactPoint": "https://www.boschrexroth.com/en/us/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 6,
+        "unitCode": "rodeos:degreesOfFreedom"
+      },
+      "rodeos:framework": "Bosch Rexroth MTpro motion control framework"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Bosch Rexroth",
+        "rodeos:hardwareAssetType": "hexapod"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 5.0,
+          "rodeos:maxVelocity": 1.8,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 48.0,
+          "rodeos:interface": "EtherCAT",
+          "rodeos:reach": 850.0,
+          "rodeos:accuracy": 0.02,
+          "rodeos:minVelocity": 0.05
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted",
+            "rodeos:positionAccuracy": 0.05,
+            "rodeos:repeatability": 0.02,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 1.8,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "Stewart Platform"
+          },
+          "child": {
+            "@type": "rodeos:parallelRobot",
+            "properties": {
+              "rodeos:platformSize": 0.5,
+              "rodeos:stiffness": 3.3
+            },
+            "child": {
+              "@type": "rodeos:hexapod",
+              "properties": {
+                "rodeos:aasSubmodel": "https://example.com/aas/submodels/hexapod-quality-inspection"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

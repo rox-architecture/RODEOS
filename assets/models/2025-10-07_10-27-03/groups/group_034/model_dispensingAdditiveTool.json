@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Yaskawa Motoman MPP3H Dispensing Additive Tool",
+    "dcterms:type": "Industrial Robot End Effector",
+    "dcterms:publisher": "Yaskawa Motoman",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "YM-MPP3H-DAT-001",
+    "dcterms:description": "High-precision dispensing additive tool designed for aerospace material transport applications. Features integrated flow control, temperature regulation, and compatibility with Yaskawa Motoman robotic arms for automated adhesive and sealant application.",
+    "dcat:version": "2.1.3",
+    "dcat:keyword": [
+      "dispensing tool",
+      "additive application",
+      "robotic end effector",
+      "aerospace manufacturing",
+      "material transport",
+      "Yaskawa Motoman",
+      "automation"
+    ],
+    "dcat:contactPoint": "https://www.motoman.com/en-us/support/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "schema:value": 1.5,
+        "schema:unitCode": "kg",
+        "schema:description": "Maximum payload capacity"
+      },
+      "rodeos:framework": "Yaskawa Motoman MRC (Material Robot Controller) Framework"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Yaskawa Motoman",
+        "rodeos:hardwareAssetType": "rodeos:dispensingAdditiveTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "EtherNet/IP",
+          "rodeos:manufacturer": "Yaskawa Motoman",
+          "rodeos:toolWeight": 8.5,
+          "rodeos:toolMaterial": "Stainless Steel 316L"
+        },
+        "child": {
+          "@type": "rodeos:dispensingAdditiveTool",
+          "properties": {
+            "rodeos:dispensingAdditiveToolType": "SealantAdhesiveDispensers",
+            "rodeos:aasSubmodel": "https://assets.yaskawa.com/aas/motoman/dispensing-tool/sealant-dispenser-aerospace-v1",
+            "rodeos:materialFlowRate": 12.5,
+            "rodeos:nozzleSize": 1.2,
+            "rodeos:layerThickness": 0.15,
+            "rodeos:temperature": 85.0
+          }
+        }
+      }
+    }
+  }
+}

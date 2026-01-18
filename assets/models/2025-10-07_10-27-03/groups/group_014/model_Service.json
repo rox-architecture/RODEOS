@@ -1,0 +1,46 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "SICK AG Machine Tending Automation Service",
+    "dcterms:type": "Automation Service",
+    "dcterms:publisher": "SICK AG",
+    "dcterms:license": "https://www.sick.com/us/en/service-terms-and-conditions",
+    "dcterms:identifier": "SICK-MT-SVC-2024-001",
+    "dcterms:description": "Industrial automation service for machine tending applications in food and beverage industry, providing robotic integration, sensor systems, and process optimization solutions.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "machine tending",
+      "industrial robotics",
+      "food automation",
+      "beverage processing",
+      "SICK AG",
+      "automation service"
+    ],
+    "dcat:contactPoint": "https://www.sick.com/us/en/contact",
+    "rodeos:coreType": "Service"
+  },
+  "child": {
+    "@type": "rodeos:Service",
+    "properties": {
+      "rodeos:usedModels": [
+        "https://www.sick.com/de/en/robotics-automation/machine-tending/c/g750001",
+        "https://www.sick.com/de/en/robotics-automation/vision-systems/c/g750002"
+      ],
+      "rodeos:serviceTypeMain": "MachineTendingService",
+      "rodeos:serviceType": "RoboticAutomationService",
+      "dcat:endpointURL": "https://api.sick.com/machine-tending/v1",
+      "rodeos:input": {
+        "value": 120,
+        "unitCode": "PCE",
+        "description": "Parts per hour input capacity"
+      },
+      "rodeos:output": {
+        "value": 110,
+        "unitCode": "PCE",
+        "description": "Parts per hour output capacity"
+      },
+      "dcat:endpointDescription": "REST API endpoint for SICK AG machine tending services providing real-time monitoring, control, and diagnostics for robotic automation systems in food and beverage applications.",
+      "dcat:landingPage": "https://www.sick.com/de/en/industrial-robotics/machine-tending-services"
+    }
+  }
+}

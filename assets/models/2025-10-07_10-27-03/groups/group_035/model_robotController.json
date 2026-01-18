@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "IFM Electronic Robot Controller for Medical Device Palletizing",
+    "dcterms:type": "skos:concept",
+    "dcterms:publisher": "IFM Electronic GmbH",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "IFM-RC-MEDPAL-001",
+    "dcterms:description": "High-precision robot controller optimized for palletizing applications in medical device manufacturing, featuring sterile environment compliance and precision motion control.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "robot controller",
+      "palletizing",
+      "medical devices",
+      "automation",
+      "IFM Electronic",
+      "industrial robotics"
+    ],
+    "dcat:contactPoint": "https://www.ifm.com/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 1,
+        "unitCode": "EA"
+      },
+      "rodeos:framework": "IFM CR703S"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "IFM Electronic",
+        "rodeos:hardwareAssetType": "robotController"
+      },
+      "child": {
+        "@type": "rodeos:controller",
+        "properties": {
+          "rodeos:cpuArchitecture": "ARM Cortex-A53",
+          "rodeos:processorClock": 1.2,
+          "rodeos:realTimeSupport": true,
+          "rodeos:communicationInterfaces": "Ethernet/IP, PROFINET, Modbus TCP",
+          "rodeos:powerSupply": "24V DC, 5A"
+        },
+        "child": {
+          "@type": "rodeos:robotController",
+          "properties": {
+            "rodeos:aasSubmodel": "https://ifm.com/aas/submodels/robotController/palletizing/medical/001",
+            "rodeos:maxAxesSupported": 8,
+            "rodeos:driveInterfaces": "EtherCAT"
+          }
+        }
+      }
+    }
+  }
+}

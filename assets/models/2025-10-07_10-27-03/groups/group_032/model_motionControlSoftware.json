@@ -1,0 +1,74 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "IFM Electronic Aerospace Assembly Motion Control Software",
+    "dcterms:type": "Software",
+    "dcterms:publisher": "IFM Electronic GmbH",
+    "dcterms:license": "https://ifm.com/us/en/legal/software-license-agreement",
+    "dcterms:identifier": "IFM-MCS-AERO-ASSEMBLY-V2.5",
+    "dcterms:description": "Industrial motion control software specifically designed for aerospace assembly applications, providing precision positioning, trajectory planning, and real-time synchronization for robotic assembly systems in compliance with aerospace manufacturing standards.",
+    "dcat:version": "2.5.1",
+    "dcat:keyword": [
+      "motion control",
+      "aerospace",
+      "assembly",
+      "robotics",
+      "industrial automation",
+      "precision positioning",
+      "IFM Electronic"
+    ],
+    "dcat:contactPoint": "https://ifm.com/us/en/support/technical-support",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 4.2,
+        "minValue": 3.0,
+        "maxValue": 5.5,
+        "unitCode": "rodeos:softwareComplexityIndex"
+      },
+      "rodeos:framework": "IFM Motion Control Framework"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "@type": "schema:quantitativeValue",
+          "value": 4.2,
+          "minValue": 3.0,
+          "maxValue": 5.5,
+          "unitCode": "rodeos:softwareComplexityIndex"
+        },
+        "rodeos:softwareAssetType": {
+          "@type": "skos:concept",
+          "prefLabel": "Motion Control Library",
+          "inScheme": "http://example.org/rodeos/softwareTypes"
+        }
+      },
+      "child": {
+        "@type": "rodeos:motionControlSoftware",
+        "properties": {
+          "rodeos:motionControlSystemType": "trajectoryPlanning",
+          "rodeos:aasSubmodel": "https://ifm.com/aas/motionControlSoftware/assembly/aerospace/submodel",
+          "rodeos:supportedRobotTypes": [
+            "Articulated",
+            "SCARA",
+            "Delta",
+            "Cartesian"
+          ],
+          "rodeos:motionPlanningAlgorithms": [
+            "RRT",
+            "PRM",
+            "A*",
+            "Potential Fields"
+          ],
+          "rodeos:dofSupport": 6
+        }
+      }
+    }
+  }
+}

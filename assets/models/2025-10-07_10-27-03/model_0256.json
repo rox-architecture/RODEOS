@@ -1,0 +1,62 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Beckhoff Dispensing Additive Tool for Plastics Processing",
+    "dcterms:type": "Tool",
+    "dcterms:publisher": "Beckhoff Automation GmbH & Co. KG",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "BECKHOFF-DAT-PLASTICS-001",
+    "dcterms:description": "Industrial-grade dispensing additive tool designed for precise material transport applications in plastics processing. Features high-precision metering, temperature-controlled dispensing, and integration with Beckhoff TwinCAT automation systems.",
+    "dcat:version": "2.1.3",
+    "dcat:keyword": [
+      "additive manufacturing",
+      "plastics processing",
+      "material dispensing",
+      "industrial automation",
+      "Beckhoff",
+      "TwinCAT",
+      "precision tooling"
+    ],
+    "dcat:contactPoint": "https://www.beckhoff.com/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "schema:value": 1.0,
+        "schema:unitCode": "UNITLESS"
+      },
+      "rodeos:framework": "TwinCAT 3 Automation Framework"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Beckhoff",
+        "rodeos:hardwareAssetType": "rodeos:dispensingAdditiveTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "EtherCAT",
+          "rodeos:manufacturer": "Beckhoff",
+          "rodeos:toolWeight": 3.5,
+          "rodeos:toolMaterial": "Stainless Steel AISI 316"
+        },
+        "child": {
+          "@type": "rodeos:dispensingAdditiveTool",
+          "properties": {
+            "rodeos:dispensingAdditiveToolType": "SealantAdhesiveDispensers",
+            "rodeos:aasSubmodel": "https://assets.beckhoff.com/aas/dispensing-tool/sealant-dispenser-12345",
+            "rodeos:materialFlowRate": 12.5,
+            "rodeos:nozzleSize": 1.2,
+            "rodeos:layerThickness": 0.8,
+            "rodeos:temperature": 45.0
+          }
+        }
+      }
+    }
+  }
+}

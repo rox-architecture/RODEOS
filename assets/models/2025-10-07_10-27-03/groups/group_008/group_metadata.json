@@ -1,0 +1,41 @@
+{
+  "company": "IFM Electronic",
+  "industry": "Pharmaceuticals",
+  "application": "spot welding",
+  "assets": [
+    {
+      "leaf": "rodeos:robotOperationSoftware",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:softwareComponent",
+        "rodeos:robotOperationSoftware"
+      ],
+      "file": "model_robotOperationSoftware.json"
+    },
+    {
+      "leaf": "rodeos:lidarSensor",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:sensor",
+        "rodeos:lidarSensor"
+      ],
+      "file": "model_lidarSensor.json"
+    },
+    {
+      "leaf": "rodeos:hexapod",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:roboter",
+        "rodeos:stationaryRobot",
+        "rodeos:parallelRobot",
+        "rodeos:hexapod"
+      ],
+      "file": "model_hexapod.json"
+    }
+  ]
+}

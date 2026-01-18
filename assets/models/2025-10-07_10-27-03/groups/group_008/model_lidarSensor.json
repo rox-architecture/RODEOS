@@ -1,0 +1,73 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "IFM Electronic O3D303 LiDAR Sensor for Pharmaceutical Spot Welding",
+    "dcterms:type": "sensor",
+    "dcterms:publisher": "IFM Electronic GmbH",
+    "dcterms:license": "https://www.ifm.com/us/en/terms-of-use",
+    "dcterms:identifier": "IFM-O3D303-PHARMA-WELD-001",
+    "dcterms:description": "High-precision 3D LiDAR sensor specifically configured for pharmaceutical manufacturing spot welding applications. Provides real-time depth mapping and object detection with ±1mm accuracy, IP67 rating for cleanroom environments, and integrated data processing for weld quality verification.",
+    "dcat:version": "v2.3.1",
+    "dcat:keyword": [
+      "LiDAR",
+      "3D sensor",
+      "spot welding",
+      "pharmaceutical manufacturing",
+      "quality control",
+      "IFM Electronic",
+      "O3D303",
+      "industrial automation"
+    ],
+    "dcat:contactPoint": "https://www.ifm.com/us/en/contact/technical-support",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 2000000,
+        "unitCode": "HZ",
+        "minValue": 1000000,
+        "maxValue": 3000000
+      },
+      "rodeos:framework": "IFM O3D series LiDAR framework with pharmaceutical-grade environmental sealing and real-time point cloud processing"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "IFM Electronic",
+        "rodeos:hardwareAssetType": "rodeos:lidarSensor"
+      },
+      "child": {
+        "@type": "rodeos:sensor",
+        "properties": {
+          "rodeos:measurementRange": 30.0,
+          "rodeos:measurementAccuracy": 0.005,
+          "rodeos:samplingRate": 100000.0,
+          "rodeos:fieldOfView": {
+            "schema:minValue": 0.0,
+            "schema:maxValue": 270.0,
+            "schema:unitCode": "DDD"
+          }
+        },
+        "child": {
+          "@type": "rodeos:lidarSensor",
+          "properties": {
+            "rodeos:aasSubmodel": "https://ifm.com/aas/submodels/lidarSensor/pharmaceuticals/spotWelding",
+            "rodeos:scanRate": 50.0,
+            "rodeos:angularResolution": 0.1,
+            "rodeos:maxRange": 30.0,
+            "rodeos:fieldOfView": {
+              "schema:minValue": 0.0,
+              "schema:maxValue": 270.0,
+              "schema:unitCode": "DDD"
+            },
+            "rodeos:numChannels": 16
+          }
+        }
+      }
+    }
+  }
+}

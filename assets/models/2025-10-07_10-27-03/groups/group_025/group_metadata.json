@@ -1,0 +1,42 @@
+{
+  "company": "Yaskawa Motoman",
+  "industry": "Logistics and warehousing",
+  "application": "pick-and-place",
+  "assets": [
+    {
+      "leaf": "rodeos:cuttingSeparationTool",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:tooling",
+        "rodeos:cuttingSeparationTool"
+      ],
+      "file": "model_cuttingSeparationTool.json"
+    },
+    {
+      "leaf": "rodeos:cartesian",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:roboter",
+        "rodeos:stationaryRobot",
+        "rodeos:serielRobot",
+        "rodeos:cartesian"
+      ],
+      "file": "model_cartesian.json"
+    },
+    {
+      "leaf": "rodeos:plc",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:controller",
+        "rodeos:plc"
+      ],
+      "file": "model_plc.json"
+    }
+  ]
+}

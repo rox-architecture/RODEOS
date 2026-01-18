@@ -1,0 +1,49 @@
+{
+  "company": "IFM Electronic",
+  "industry": "Aerospace",
+  "application": "assembly",
+  "assets": [
+    {
+      "leaf": "rodeos:Dataset",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Dataset"
+      ],
+      "file": "model_Dataset.json"
+    },
+    {
+      "leaf": "rodeos:motionControlSoftware",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:softwareComponent",
+        "rodeos:motionControlSoftware"
+      ],
+      "file": "model_motionControlSoftware.json"
+    },
+    {
+      "leaf": "rodeos:inertialSensor",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:sensor",
+        "rodeos:inertialSensor"
+      ],
+      "file": "model_inertialSensor.json"
+    },
+    {
+      "leaf": "rodeos:hexapod",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:roboter",
+        "rodeos:stationaryRobot",
+        "rodeos:parallelRobot",
+        "rodeos:hexapod"
+      ],
+      "file": "model_hexapod.json"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Omron Cylindrical Robot for Electronics Material Transport",
+    "dcterms:type": "Robotics",
+    "dcterms:publisher": "Omron Corporation",
+    "dcterms:license": "https://www.omron.com/global/en/terms-of-use/",
+    "dcterms:identifier": "OMRON-CYL-ELEC-TRANS-001",
+    "dcterms:description": "Industrial cylindrical robot designed for precise material transport applications in electronics manufacturing, featuring high repeatability and cleanroom compatibility.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "cylindrical robot",
+      "material transport",
+      "electronics manufacturing",
+      "industrial automation",
+      "Omron"
+    ],
+    "dcat:contactPoint": "https://www.omron.com/global/en/contact/",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 24.0,
+        "unitCode": "VDC",
+        "minValue": 18.0,
+        "maxValue": 30.0
+      },
+      "rodeos:framework": "Omron Sysmac Automation Platform"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Omron",
+        "rodeos:hardwareAssetType": "rodeos:cylindrical"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 5.0,
+          "rodeos:maxVelocity": 1.5,
+          "rodeos:DOF": 4,
+          "rodeos:operatingVoltage": 24.0,
+          "rodeos:interface": "EtherNet/IP",
+          "rodeos:reach": 0.8,
+          "rodeos:accuracy": 0.05,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted",
+            "rodeos:positionAccuracy": 0.05,
+            "rodeos:repeatability": 0.02,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 0.785,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "Cylindrical coordinate robot"
+          },
+          "child": {
+            "@type": "rodeos:serielRobot",
+            "properties": {
+              "rodeos:jointCount": 6,
+              "rodeos:maxJointSpeed": 180.0
+            },
+            "child": {
+              "@type": "rodeos:cylindrical",
+              "properties": {
+                "rodeos:aasSubmodel": "https://industrial.omron.com/aas/cylindrical/electronics-material-transport/v1.2",
+                "rodeos:radialTravel": 500.0,
+                "rodeos:verticalTravelZ": 300.0
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

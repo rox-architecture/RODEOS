@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Omron Arc Welding Inspection Tool",
+    "dcterms:type": "Measuring Instrument",
+    "dcterms:publisher": "Omron Corporation",
+    "dcterms:license": "https://www.omron.com/terms-of-use",
+    "dcterms:identifier": "OMRON-AWIT-2024-001",
+    "dcterms:description": "High-precision optical inspection tool designed for quality control in arc welding applications within metal fabrication. Provides real-time weld seam measurement, defect detection, and dimensional verification.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "arc welding",
+      "inspection",
+      "quality control",
+      "metal fabrication",
+      "optical measurement",
+      "weld inspection",
+      "non-contact measurement"
+    ],
+    "dcat:contactPoint": "https://www.omron.com/support/industrial-automation",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 2.5,
+        "unitCode": "MMT",
+        "minValue": 1.0,
+        "maxValue": 5.0
+      },
+      "rodeos:framework": "Omron Arc Welding Inspection Framework v2.1"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Omron",
+        "rodeos:hardwareAssetType": "rodeos:measuringInspectionTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "EtherNet/IP",
+          "rodeos:manufacturer": "Omron",
+          "rodeos:toolWeight": 3.2,
+          "rodeos:toolMaterial": "Stainless Steel AISI 304"
+        },
+        "child": {
+          "@type": "rodeos:measuringInspectionTool",
+          "properties": {
+            "rodeos:measuringInspectionToolType": "VisionInspectionCameras",
+            "rodeos:aasSubmodel": "https://assetadministration-shell.com/omron/vision-inspection-welding/metalfab-001",
+            "rodeos:measurementAccuracy": 0.02,
+            "rodeos:range": 150.0,
+            "rodeos:repeatability": 0.005
+          }
+        }
+      }
+    }
+  }
+}

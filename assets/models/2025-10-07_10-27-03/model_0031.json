@@ -1,0 +1,77 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Epson Robotics Medical Transport Simulation Digital Twin",
+    "dcterms:type": "Software",
+    "dcterms:publisher": "Epson Robotics",
+    "dcterms:license": "https://www.epson.com/robotics/license",
+    "dcterms:identifier": "EPS-MED-TRANS-SIM-DT-2024-001",
+    "dcterms:description": "Digital twin simulation software for medical device material transport systems, providing real-time monitoring, predictive analytics, and operational optimization for automated transport solutions in healthcare environments.",
+    "dcat:version": "2.3.1",
+    "dcat:keyword": [
+      "medical robotics",
+      "material transport",
+      "digital twin",
+      "simulation software",
+      "automation",
+      "Epson Robotics",
+      "healthcare logistics"
+    ],
+    "dcat:contactPoint": "https://www.epson.com/robotics/support",
+    "rodeos:coreType": "Service"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 15.5,
+        "unitCode": "SEC",
+        "minValue": 5.0,
+        "maxValue": 30.0
+      },
+      "rodeos:framework": "Epson RC+ 7.0 Simulation Framework"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "@type": "schema:quantitativeValue",
+          "value": 15.5,
+          "unitCode": "SEC",
+          "minValue": 5.0,
+          "maxValue": 30.0
+        },
+        "rodeos:softwareAssetType": {
+          "@id": "rodeos:SimulationSoftware",
+          "prefLabel": "Simulation Software"
+        }
+      },
+      "child": {
+        "@type": "rodeos:simulationDigitalTwinSoftware",
+        "properties": {
+          "rodeos:simulationDigitalTwinSoftwareType": "digitalTwinConnectors",
+          "rodeos:aasSubmodel": "https://assets.epsonrobotics.com/simulation/medical-transport/aas/submodel/v1",
+          "rodeos:physicsFidelity": "High-fidelity physics simulation with collision detection, gravity effects, and material property modeling",
+          "rodeos:supportedRobotModels": [
+            "Epson VT6L",
+            "Epson G10",
+            "Epson LS6",
+            "Epson RS3",
+            "Epson T6"
+          ],
+          "rodeos:fileFormatCompatibility": [
+            "STEP",
+            "IGES",
+            "STL",
+            "OBJ",
+            "VRML",
+            "Collada",
+            "FBX"
+          ]
+        }
+      }
+    }
+  }
+}

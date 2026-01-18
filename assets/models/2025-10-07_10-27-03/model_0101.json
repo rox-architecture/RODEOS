@@ -1,0 +1,83 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Bosch Rexroth Delta Robot Bin Picking System",
+    "dcterms:type": "Industrial Robot",
+    "dcterms:publisher": "Bosch Rexroth AG",
+    "dcterms:license": "https://www.boschrexroth.com/en/us/legal/terms-of-use",
+    "dcterms:identifier": "BR-DELTA-BP-2024-001",
+    "dcterms:description": "A high-speed delta robot system designed for automated bin picking applications in electronics manufacturing, featuring advanced vision systems, precision grippers, and integrated control software for component handling and placement.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "delta robot",
+      "bin picking",
+      "electronics manufacturing",
+      "automation",
+      "robotics",
+      "Bosch Rexroth",
+      "vision system",
+      "component handling"
+    ],
+    "dcat:contactPoint": "https://www.boschrexroth.com/en/us/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 6,
+        "schema:unitCode": "axis"
+      },
+      "rodeos:framework": "Delta Robot Framework"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Bosch Rexroth",
+        "rodeos:hardwareAssetType": "delta"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 5.0,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 48.0,
+          "rodeos:interface": "EtherCAT",
+          "rodeos:reach": 850.0,
+          "rodeos:accuracy": 0.02,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted pedestal",
+            "rodeos:positionAccuracy": 0.05,
+            "rodeos:repeatability": 0.02,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 0.45,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "Parallel kinematic delta robot"
+          },
+          "child": {
+            "@type": "rodeos:parallelRobot",
+            "properties": {
+              "rodeos:platformSize": 3.3,
+              "rodeos:stiffness": 1.0
+            },
+            "child": {
+              "@type": "rodeos:delta",
+              "properties": {
+                "rodeos:aasSubmodel": "https://example.com/aas/submodels/delta-robot-bin-picking",
+                "rodeos:pickRateMax": 120.0,
+                "rodeos:workspaceShape": "rodeos:hemispherical"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Yaskawa Motoman Polar Spherical Robot for Aerospace Material Transport",
+    "dcterms:type": "Robotic Arm",
+    "dcterms:publisher": "Yaskawa Motoman",
+    "dcterms:license": "https://www.yaskawa.com/terms-of-use",
+    "dcterms:identifier": "YM-PSR-AERO-MT-001",
+    "dcterms:description": "A high-precision polar spherical robotic system designed for efficient and reliable material transport applications in aerospace manufacturing environments. Features advanced motion control, payload handling capabilities, and compliance with aerospace industry standards.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "robotics",
+      "automation",
+      "material handling",
+      "aerospace",
+      "Yaskawa",
+      "Motoman",
+      "polar spherical",
+      "industrial robot"
+    ],
+    "dcat:contactPoint": "https://www.yaskawa.com/contact/technical-support",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "schema:value": 6,
+        "schema:unitCode": "kg"
+      },
+      "rodeos:framework": "Yaskawa Motoman MotoMINI Polar Spherical Coordinate System"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Yaskawa Motoman",
+        "rodeos:hardwareAssetType": "polarSpherical"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 150.0,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 480.0,
+          "rodeos:interface": "Yaskawa Motoman DX200",
+          "rodeos:reach": 2650.0,
+          "rodeos:accuracy": 0.08,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted pedestal",
+            "rodeos:positionAccuracy": 0.05,
+            "rodeos:repeatability": 0.02,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 12.5,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "Polar coordinate system with spherical wrist"
+          },
+          "child": {
+            "@type": "rodeos:serielRobot",
+            "properties": {
+              "rodeos:jointCount": 6,
+              "rodeos:maxJointSpeed": 180.0
+            },
+            "child": {
+              "@type": "rodeos:polarSpherical",
+              "properties": {
+                "rodeos:aasSubmodel": "https://assets.yaskawa.com/aas/submodels/polarSpherical/materialTransport/v1.0",
+                "rodeos:radialRange": {
+                  "minValue": 0.5,
+                  "maxValue": 3.2,
+                  "unitCode": "MTR"
+                },
+                "rodeos:polarAngleRange": {
+                  "minValue": -180,
+                  "maxValue": 180,
+                  "unitCode": "DDN"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

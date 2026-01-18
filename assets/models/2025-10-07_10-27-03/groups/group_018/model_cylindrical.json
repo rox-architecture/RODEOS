@@ -1,0 +1,83 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "SICK AG Cylindrical Sensor for Machine Tending in Renewable Energy Applications",
+    "dcterms:type": "https://w3id.org/rodeos/ns#cylindrical",
+    "dcterms:publisher": "SICK AG",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "SICK-CYL-MT-RE-2024-001",
+    "dcterms:description": "High-precision cylindrical photoelectric sensor designed for machine tending applications in renewable energy manufacturing. Features IP67 rating, 2m sensing range, and M12 connector for reliable operation in industrial environments.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "cylindrical sensor",
+      "machine tending",
+      "renewable energy",
+      "photoelectric",
+      "industrial automation",
+      "SICK AG"
+    ],
+    "dcat:contactPoint": "https://www.sick.com/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 150,
+        "unitCode": "MM",
+        "minValue": 100,
+        "maxValue": 200
+      },
+      "rodeos:framework": "SICK AppSpace"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "SICK AG",
+        "rodeos:hardwareAssetType": "rodeos:cylindrical"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 15.5,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 48.0,
+          "rodeos:interface": "EtherNet/IP, PROFINET, IO-Link",
+          "rodeos:reach": 1.8,
+          "rodeos:accuracy": 0.05,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted",
+            "rodeos:positionAccuracy": 0.05,
+            "rodeos:repeatability": 0.02,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 2.5,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "Cylindrical coordinate system"
+          },
+          "child": {
+            "@type": "rodeos:serielRobot",
+            "properties": {
+              "rodeos:jointCount": 6,
+              "rodeos:maxJointSpeed": 180.0
+            },
+            "child": {
+              "@type": "rodeos:cylindrical",
+              "properties": {
+                "rodeos:aasSubmodel": "https://example.com/aas/submodels/cylindrical/12345",
+                "rodeos:radialTravel": 1200.5,
+                "rodeos:verticalTravelZ": 800.0
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

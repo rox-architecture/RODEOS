@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "SICK AG Arc Welding Special Tool",
+    "dcterms:type": "skos:concept",
+    "dcterms:publisher": "SICK AG",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "SICK-AST-2024-AW001",
+    "dcterms:description": "A specialized robotic tool designed for high-precision arc welding applications in the aerospace industry, featuring advanced sensor integration and real-time quality monitoring capabilities.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "arc welding",
+      "aerospace",
+      "robotic tool",
+      "SICK AG",
+      "special tool",
+      "automation",
+      "quality monitoring"
+    ],
+    "dcat:contactPoint": "https://www.sick.com/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 15.5,
+        "unitCode": "MMT",
+        "minValue": 10.0,
+        "maxValue": 20.0
+      },
+      "rodeos:framework": "SICK ArcWelder Pro Framework v2.1"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "SICK AG",
+        "rodeos:hardwareAssetType": "specialTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "EtherNet/IP",
+          "rodeos:manufacturer": "SICK AG",
+          "rodeos:toolWeight": 3.5,
+          "rodeos:toolMaterial": "Stainless Steel AISI 316L"
+        },
+        "child": {
+          "@type": "rodeos:specialTool",
+          "properties": {
+            "rodeos:specialToolType": "HybridEndEffectors",
+            "rodeos:aasSubmodel": "https://asset-shell.sick.com/aas/submodels/specialTool/arcWeldingHybridEffector/v1",
+            "rodeos:interfaceStandard": "ISO 9409-1-50-4-M6",
+            "rodeos:changeoverTime": 2.5,
+            "rodeos:numberOfPorts": 4
+          }
+        }
+      }
+    }
+  }
+}

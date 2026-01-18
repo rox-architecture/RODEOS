@@ -1,0 +1,59 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Omron PLC for Material Transport in Electronics Manufacturing",
+    "dcterms:type": "skos:concept",
+    "dcterms:publisher": "Omron Corporation",
+    "dcterms:license": "https://www.omron.com/global/en/terms/",
+    "dcterms:identifier": "OMRON-PLC-MT-EM-001",
+    "dcterms:description": "Programmable Logic Controller designed for automated material transport systems in electronics manufacturing environments, featuring high-speed processing and industrial communication protocols.",
+    "dcat:version": "v2.5.1",
+    "dcat:keyword": [
+      "PLC",
+      "Material Transport",
+      "Electronics Manufacturing",
+      "Automation",
+      "Omron",
+      "Industrial Control"
+    ],
+    "dcat:contactPoint": "https://www.omron.com/global/en/support/contact/",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "schema:value": 1,
+        "schema:unitCode": "EA"
+      },
+      "rodeos:framework": "Sysmac Studio"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Omron",
+        "rodeos:hardwareAssetType": "plc"
+      },
+      "child": {
+        "@type": "rodeos:controller",
+        "properties": {
+          "rodeos:cpuArchitecture": "ARM Cortex-R5",
+          "rodeos:processorClock": 800.0,
+          "rodeos:realTimeSupport": true,
+          "rodeos:communicationInterfaces": "EtherCAT, EtherNet/IP, Modbus TCP",
+          "rodeos:powerSupply": "24V DC, 5A"
+        },
+        "child": {
+          "@type": "rodeos:plc",
+          "properties": {
+            "rodeos:aasSubmodel": "https://example.com/aas/omron/plc/material-transport/submodel",
+            "rodeos:scanTimeTypical": "PT50MS",
+            "rodeos:programMemory": 128.0,
+            "rodeos:ioCapacity": "2048 digital I/O points, 64 analog channels"
+          }
+        }
+      }
+    }
+  }
+}

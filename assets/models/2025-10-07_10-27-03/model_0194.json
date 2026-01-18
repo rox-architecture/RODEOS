@@ -1,0 +1,72 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "FANUC Food Quality Inspection Simulation Digital Twin Software",
+    "dcterms:type": "Software",
+    "dcterms:publisher": "FANUC Corporation",
+    "dcterms:license": "https://www.fanuc.com/software-license",
+    "dcterms:identifier": "FANUC-FQIS-DTS-2024",
+    "dcterms:description": "Digital twin simulation software for food and beverage quality inspection applications. Provides virtual modeling and testing of robotic inspection systems to optimize detection accuracy and production line integration.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "robotics",
+      "simulation",
+      "digital twin",
+      "quality inspection",
+      "food safety",
+      "FANUC",
+      "automation",
+      "machine vision"
+    ],
+    "dcat:contactPoint": "https://www.fanuc.com/support/software",
+    "rodeos:coreType": "Service"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 4.2,
+        "unitCode": "rodeos:simulationAccuracyScore"
+      },
+      "rodeos:framework": "FANUC ROBOGUIDE Simulation Software"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "@type": "schema:quantitativeValue",
+          "value": 4.2,
+          "unitCode": "rodeos:simulationAccuracyScore"
+        },
+        "rodeos:softwareAssetType": "softwareAssetType"
+      },
+      "child": {
+        "@type": "rodeos:simulationDigitalTwinSoftware",
+        "properties": {
+          "rodeos:simulationDigitalTwinSoftwareType": "digitalTwinConnectors",
+          "rodeos:aasSubmodel": "https://fanuc.com/aas/submodels/simulation-digital-twin-software",
+          "rodeos:physicsFidelity": "High-fidelity physics simulation with real-time collision detection, material properties, and dynamic behavior modeling",
+          "rodeos:supportedRobotModels": [
+            "FANUC LR Mate 200iD",
+            "FANUC M-20iA",
+            "FANUC CR-35iA",
+            "FANUC M-710iC",
+            "FANUC R-2000iC"
+          ],
+          "rodeos:fileFormatCompatibility": [
+            "STEP",
+            "IGES",
+            "STL",
+            "VRML",
+            "OBJ",
+            "JT",
+            "3DXML",
+            "FBX"
+          ]
+        }
+      }
+    }
+  }
+}

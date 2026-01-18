@@ -1,0 +1,70 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "FANUC Tactile Proximity Sensor for Quality Inspection",
+    "dcterms:type": "Sensor",
+    "dcterms:publisher": "FANUC Corporation",
+    "dcterms:license": "https://www.fanuc.com/eula",
+    "dcterms:identifier": "FANUC-TPS-QI-2024-001",
+    "dcterms:description": "High-precision tactile proximity sensor designed for quality inspection applications in logistics and warehousing environments. Features advanced sensitivity calibration, IP67-rated housing, and real-time feedback capabilities for detecting surface defects, dimensional accuracy, and material consistency.",
+    "dcat:version": "2.1.3",
+    "dcat:keyword": [
+      "tactile sensor",
+      "proximity detection",
+      "quality inspection",
+      "FANUC",
+      "logistics",
+      "warehousing",
+      "industrial automation",
+      "robotics"
+    ],
+    "dcat:contactPoint": "https://www.fanuc.com/contact/support",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 0.1,
+        "schema:unitText": "mm",
+        "schema:minValue": 0.05,
+        "schema:maxValue": 5.0,
+        "schema:description": "Detection resolution and range"
+      },
+      "rodeos:framework": "FANUC iRVision Tactile Sensing Framework"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "FANUC",
+        "rodeos:hardwareAssetType": "tactileProximitySensor"
+      },
+      "child": {
+        "@type": "rodeos:sensor",
+        "properties": {
+          "rodeos:measurementRange": 50.0,
+          "rodeos:measurementAccuracy": 0.05,
+          "rodeos:samplingRate": 1000.0,
+          "rodeos:fieldOfView": 60.0
+        },
+        "child": {
+          "@type": "rodeos:tactileProximitySensor",
+          "properties": {
+            "rodeos:aasSubmodel": "https://example.com/aas/FANUC/tactileProximitySensor/1",
+            "rodeos:sensingPrinciple": "capacitive",
+            "rodeos:sensingRange": {
+              "@type": "schema:quantitativeValue",
+              "schema:value": 5.0,
+              "schema:unitCode": "MMT"
+            },
+            "rodeos:responseTime": "PT0.002S",
+            "rodeos:switchingFrequency": 1000.0,
+            "rodeos:hysteresis": 0.5
+          }
+        }
+      }
+    }
+  }
+}

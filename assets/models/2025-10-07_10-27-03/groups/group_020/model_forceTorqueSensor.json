@@ -1,0 +1,72 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Omron FTS-7 Series Force Torque Sensor",
+    "dcterms:type": "sensor",
+    "dcterms:publisher": "Omron Corporation",
+    "dcterms:license": "https://www.omron.com/global/en/terms-of-use/",
+    "dcterms:identifier": "OMRON-FTS-7-2024-A",
+    "dcterms:description": "High-precision 6-axis force torque sensor designed for spot welding applications in plastics processing. Provides real-time feedback for weld quality monitoring and process control with IP67 environmental protection.",
+    "dcat:version": "v2.1.3",
+    "dcat:keyword": [
+      "force torque sensor",
+      "spot welding",
+      "plastics processing",
+      "6-axis",
+      "industrial automation",
+      "quality control",
+      "real-time monitoring"
+    ],
+    "dcat:contactPoint": "https://www.omron.com/industrial-automation/support/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "schema:minValue": 0,
+        "schema:maxValue": 2000,
+        "schema:unitCode": "N",
+        "schema:value": 1500
+      },
+      "rodeos:framework": "Omron NX Series Integration Framework"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Omron",
+        "rodeos:hardwareAssetType": "forceTorqueSensor"
+      },
+      "child": {
+        "@type": "rodeos:sensor",
+        "properties": {
+          "rodeos:measurementRange": 1000.0,
+          "rodeos:measurementAccuracy": 0.5,
+          "rodeos:samplingRate": 2000.0,
+          "rodeos:fieldOfView": 360.0
+        },
+        "child": {
+          "@type": "rodeos:forceTorqueSensor",
+          "properties": {
+            "rodeos:aasSubmodel": "https://example.com/aas/omron/forceTorqueSensor/plasticsWelding/submodel",
+            "rodeos:forceRange": {
+              "@type": "schema:quantitativeValue",
+              "schema:minValue": -1000,
+              "schema:maxValue": 1000,
+              "schema:unitCode": "N"
+            },
+            "rodeos:torqueRange": {
+              "@type": "schema:quantitativeValue",
+              "schema:minValue": -50,
+              "schema:maxValue": 50,
+              "schema:unitCode": "Nm"
+            },
+            "rodeos:resolutionForce": 0.1,
+            "rodeos:resolutionTorque": 0.01
+          }
+        }
+      }
+    }
+  }
+}

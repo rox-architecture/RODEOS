@@ -1,0 +1,90 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Mitsubishi Electric Polar Spherical Robot for Aerospace Pick-and-Place Applications",
+    "dcterms:type": "Industrial Robot",
+    "dcterms:publisher": "Mitsubishi Electric Corporation",
+    "dcterms:license": "https://www.mitsubishielectric.com/terms-of-use",
+    "dcterms:identifier": "ME-PSR-AERO-PNP-001",
+    "dcterms:description": "A high-precision polar spherical robotic system designed for aerospace manufacturing pick-and-place operations, featuring advanced motion control, contamination-resistant construction, and compliance with aerospace industry standards.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "polar spherical robot",
+      "aerospace automation",
+      "pick-and-place",
+      "Mitsubishi Electric",
+      "industrial robotics",
+      "manufacturing automation",
+      "motion control"
+    ],
+    "dcat:contactPoint": "https://www.mitsubishielectric.com/support/industrial-robotics",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "schema:minValue": 1.0,
+        "schema:maxValue": 5.0,
+        "schema:unitCode": "kg"
+      },
+      "rodeos:framework": "MELFA RV Series"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Mitsubishi Electric",
+        "rodeos:hardwareAssetType": "polarSpherical"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 5.0,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 200.0,
+          "rodeos:interface": "MELFA Smart Plus",
+          "rodeos:reach": 910.0,
+          "rodeos:accuracy": 0.02,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted",
+            "rodeos:positionAccuracy": 0.05,
+            "rodeos:repeatability": 0.02,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 2.5,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "Polar spherical coordinate system with 4 degrees of freedom"
+          },
+          "child": {
+            "@type": "rodeos:serielRobot",
+            "properties": {
+              "rodeos:jointCount": 6,
+              "rodeos:maxJointSpeed": 180.0
+            },
+            "child": {
+              "@type": "rodeos:polarSpherical",
+              "properties": {
+                "rodeos:aasSubmodel": "https://industrial.mitsubishielectric.com/aas/polarSpherical/12345",
+                "rodeos:radialRange": {
+                  "minValue": 500,
+                  "maxValue": 2500,
+                  "unitCode": "MMT"
+                },
+                "rodeos:polarAngleRange": {
+                  "minValue": -180,
+                  "maxValue": 180,
+                  "unitCode": "DD"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

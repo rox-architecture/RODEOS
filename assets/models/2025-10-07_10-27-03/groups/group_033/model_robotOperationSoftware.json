@@ -1,0 +1,76 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Denso Wave Palletizing Robot Operation Software",
+    "dcterms:type": "Software",
+    "dcterms:publisher": "Denso Wave Incorporated",
+    "dcterms:license": "https://www.denso-wave.com/en/terms/license.html",
+    "dcterms:identifier": "DENSO-PALLET-SW-2024",
+    "dcterms:description": "Advanced robot operation software specifically designed for palletizing applications in logistics and warehousing environments. Features intelligent path planning, collision avoidance, and integration with warehouse management systems.",
+    "dcat:version": "2.4.1",
+    "dcat:keyword": [
+      "palletizing",
+      "robotics",
+      "warehouse automation",
+      "logistics",
+      "Denso Wave",
+      "robot software",
+      "material handling"
+    ],
+    "dcat:contactPoint": "https://www.denso-wave.com/en/support/contact.html",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 4.2,
+        "unitCode": "rodeos:performanceIndex"
+      },
+      "rodeos:framework": "Denso Wave Palletizing Software Framework"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "@type": "schema:quantitativeValue",
+          "value": 4.2,
+          "unitCode": "rodeos:performanceIndex"
+        },
+        "rodeos:softwareAssetType": {
+          "@id": "skos:concept",
+          "prefLabel": "Palletizing Control Software"
+        }
+      },
+      "child": {
+        "@type": "rodeos:robotOperationSoftware",
+        "properties": {
+          "rodeos:robotOperationSystemType": "vendorSpecificMiddleware",
+          "rodeos:aasSubmodel": "https://densowave.com/robotics/operation-software/palletizing/aas/submodel",
+          "rodeos:supportedApis": [
+            "https://densowave.com/api/palletizing/v1",
+            "https://densowave.com/api/vision/v2",
+            "https://densowave.com/api/conveyor/v1",
+            "https://densowave.com/api/safety/v1"
+          ],
+          "rodeos:supportedHardwareDrivers": [
+            "Denso VS-050 Series Driver",
+            "Denso VP Series Driver",
+            "SICK Visionary-T Mini Driver",
+            "Keyence IV Series Driver",
+            "Omron PLC Ethernet/IP Driver"
+          ],
+          "rodeos:osDependencies": [
+            "Ubuntu 20.04 LTS",
+            "Windows 10 IoT Enterprise",
+            "Denso Wave Robotics Runtime Environment v3.2",
+            "Java Runtime Environment 11",
+            ".NET Framework 4.8"
+          ]
+        }
+      }
+    }
+  }
+}

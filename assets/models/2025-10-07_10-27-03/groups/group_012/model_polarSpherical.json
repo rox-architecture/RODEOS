@@ -1,0 +1,90 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Techman Robot Polar Spherical Pick-and-Place System",
+    "dcterms:type": "skos:concept",
+    "dcterms:publisher": "Techman Robot",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "TM-PSPP-2024-001",
+    "dcterms:description": "A high-precision polar spherical robotic system designed for electronics manufacturing pick-and-place operations, featuring advanced motion control and vision integration.",
+    "dcat:version": "2.3.1",
+    "dcat:keyword": [
+      "robotics",
+      "automation",
+      "pick-and-place",
+      "polar spherical",
+      "electronics manufacturing",
+      "Techman Robot"
+    ],
+    "dcat:contactPoint": "https://www.techmanrobot.com/en/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "schema:value": 6,
+        "schema:unitCode": "DOF"
+      },
+      "rodeos:framework": "TMflow"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Techman Robot",
+        "rodeos:hardwareAssetType": "polarSpherical"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 5.0,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 48.0,
+          "rodeos:interface": "EtherCAT",
+          "rodeos:reach": 1.2,
+          "rodeos:accuracy": 0.02,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted pedestal",
+            "rodeos:positionAccuracy": 0.02,
+            "rodeos:repeatability": 0.01,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 2.5,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "Polar coordinate system with spherical wrist"
+          },
+          "child": {
+            "@type": "rodeos:serielRobot",
+            "properties": {
+              "rodeos:jointCount": 10,
+              "rodeos:maxJointSpeed": 0.1
+            },
+            "child": {
+              "@type": "rodeos:polarSpherical",
+              "properties": {
+                "rodeos:aasSubmodel": "https://techmanrobot.com/aas/submodels/polarSphericalPickAndPlace",
+                "rodeos:radialRange": {
+                  "@type": "schema:quantitativeValue",
+                  "schema:minValue": 0.5,
+                  "schema:maxValue": 1.8,
+                  "schema:unitCode": "MTR"
+                },
+                "rodeos:polarAngleRange": {
+                  "@type": "schema:quantitativeValue",
+                  "schema:minValue": -180,
+                  "schema:maxValue": 180,
+                  "schema:unitCode": "DD"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Bosch Rexroth Welding Tool for Metal Fabrication Packing Applications",
+    "dcterms:type": "http://www.productontology.org/id/Welding_equipment",
+    "dcterms:publisher": "Bosch Rexroth AG",
+    "dcterms:license": "https://www.boschrexroth.com/en/us/legal-notices/terms-of-use",
+    "dcterms:identifier": "BRX-WT-MF-PACK-001",
+    "dcterms:description": "Industrial welding tool designed by Bosch Rexroth for metal fabrication packing applications, featuring precision control, durability, and integration capabilities with automated packing systems.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "welding",
+      "metal fabrication",
+      "packing",
+      "automation",
+      "Bosch Rexroth",
+      "industrial robotics"
+    ],
+    "dcat:contactPoint": "https://www.boschrexroth.com/en/us/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 250,
+        "unitCode": "AMP",
+        "minValue": 150,
+        "maxValue": 350
+      },
+      "rodeos:framework": "Bosch Rexroth Open Core Engineering (OCE)"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Bosch Rexroth",
+        "rodeos:hardwareAssetType": "rodeos:weldingTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "IO-Link",
+          "rodeos:manufacturer": "Bosch Rexroth",
+          "rodeos:toolWeight": 3.2,
+          "rodeos:toolMaterial": "Stainless Steel AISI 304"
+        },
+        "child": {
+          "@type": "rodeos:weldingTool",
+          "properties": {
+            "rodeos:weldingType": "MIG",
+            "rodeos:aasSubmodel": "https://industrial.boschrexroth.com/aas/weldingtools/mig-welder-4567/submodel",
+            "rodeos:weldingCurrent": 250.5,
+            "rodeos:voltage": 28.2,
+            "rodeos:wireFeedRate": 8.5,
+            "rodeos:electrodeLife": 1500.0
+          }
+        }
+      }
+    }
+  }
+}

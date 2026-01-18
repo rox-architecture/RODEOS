@@ -1,0 +1,76 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "IFM Electronic Spot Welding Robot Operation Software",
+    "dcterms:type": "Software",
+    "dcterms:publisher": "IFM Electronic GmbH",
+    "dcterms:license": "https://ifm.com/proprietary-license",
+    "dcterms:identifier": "IFM-SW-ROB-2024-PHARMA",
+    "dcterms:description": "Specialized robot operation software for precision spot welding applications in pharmaceutical manufacturing environments, ensuring compliance with industry standards and providing real-time monitoring capabilities.",
+    "dcat:version": "2.4.1",
+    "dcat:keyword": [
+      "robotics",
+      "automation",
+      "spot welding",
+      "pharmaceuticals",
+      "industrial software",
+      "robot operation",
+      "IFM Electronic"
+    ],
+    "dcat:contactPoint": "https://ifm.com/support/robotics",
+    "rodeos:coreType": "Service"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 4.2,
+        "minValue": 1.0,
+        "maxValue": 10.0,
+        "unitCode": "rodeos:softwareComplexityUnit"
+      },
+      "rodeos:framework": "IFM VISION Assistant"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "@type": "schema:quantitativeValue",
+          "value": 4.2,
+          "minValue": 1.0,
+          "maxValue": 10.0,
+          "unitCode": "rodeos:softwareComplexityUnit"
+        },
+        "rodeos:softwareAssetType": {
+          "@type": "skos:Concept",
+          "prefLabel": "Robot Operation Software",
+          "inScheme": "http://example.com/rodeos/softwareTypes"
+        }
+      },
+      "child": {
+        "@type": "rodeos:robotOperationSoftware",
+        "properties": {
+          "rodeos:robotOperationSystemType": "vendorSpecificMiddleware",
+          "rodeos:aasSubmodel": "https://ifm.com/aas/pharma-welding-software/submodel",
+          "rodeos:supportedApis": [
+            "https://ifm.com/api/welding-control",
+            "https://ifm.com/api/robot-kinematics",
+            "https://ifm.com/api/safety-monitoring"
+          ],
+          "rodeos:supportedHardwareDrivers": [
+            "IFM WeldingTorch Driver v2.1",
+            "KUKA KR C4 Controller Interface",
+            "Siemens S7-1500 PLC Adapter"
+          ],
+          "rodeos:osDependencies": [
+            "VxWorks 7.0 RTOS",
+            "IFM Proprietary Middleware v3.4",
+            "EtherCAT Master Stack 2.0"
+          ]
+        }
+      }
+    }
+  }
+}

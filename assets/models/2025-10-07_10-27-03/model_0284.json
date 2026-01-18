@@ -1,0 +1,84 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "IFM Electronic Delta Robot for Automotive Assembly Pick-and-Place Operations",
+    "dcterms:type": "Robotic System",
+    "dcterms:publisher": "IFM Electronic GmbH",
+    "dcterms:license": "https://www.ifm.com/us/en/terms-of-use",
+    "dcterms:identifier": "IFM-DELTA-AUTO-PNP-001",
+    "dcterms:description": "A high-speed delta robot system designed for precision pick-and-place operations in automotive assembly lines, featuring parallel kinematics, vision-guided positioning, and integrated safety systems compliant with automotive industry standards.",
+    "dcat:version": "2.1.3",
+    "dcat:keyword": [
+      "delta robot",
+      "automotive assembly",
+      "pick-and-place",
+      "parallel kinematics",
+      "IFM Electronic",
+      "robotic automation",
+      "high-speed handling",
+      "vision guidance"
+    ],
+    "dcat:contactPoint": "https://www.ifm.com/us/en/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "schema:value": 6,
+        "schema:unitCode": "DOF",
+        "schema:minValue": 4,
+        "schema:maxValue": 7
+      },
+      "rodeos:framework": "IFM O3D303 3D vision system with integrated object recognition and path planning"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "IFM Electronic",
+        "rodeos:hardwareAssetType": "delta robot"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 5.0,
+          "rodeos:maxVelocity": 3.5,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 48.0,
+          "rodeos:interface": "Ethernet/IP, IO-Link",
+          "rodeos:reach": 850.0,
+          "rodeos:accuracy": 0.02,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted pedestal",
+            "rodeos:positionAccuracy": 0.05,
+            "rodeos:repeatability": 0.02,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 0.785,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "Parallel kinematic structure with 4 degrees of freedom"
+          },
+          "child": {
+            "@type": "rodeos:parallelRobot",
+            "properties": {
+              "rodeos:platformSize": 0.1,
+              "rodeos:stiffness": 500.0
+            },
+            "child": {
+              "@type": "rodeos:delta",
+              "properties": {
+                "rodeos:aasSubmodel": "https://ifm.com/aas/submodels/delta-robot-automotive-assembly",
+                "rodeos:pickRateMax": 120.5,
+                "rodeos:workspaceShape": "rodeos:hemispherical"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

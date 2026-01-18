@@ -1,0 +1,69 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Yaskawa Motoman AMR Palletizing System for Metal Fabrication",
+    "dcterms:type": "Robotic Automation Asset",
+    "dcterms:publisher": "Yaskawa Motoman",
+    "dcterms:license": "https://www.yaskawa.com/legal/terms-of-use",
+    "dcterms:identifier": "YM-AMR-PLT-MF-2024-001",
+    "dcterms:description": "Autonomous Mobile Robot (AMR) system designed for palletizing applications in metal fabrication environments. Features advanced navigation, payload handling up to 1500kg, and integration with existing material handling systems.",
+    "dcat:version": "2.3.1",
+    "dcat:keyword": [
+      "AMR",
+      "palletizing",
+      "metal fabrication",
+      "autonomous robotics",
+      "material handling",
+      "Yaskawa Motoman",
+      "industrial automation"
+    ],
+    "dcat:contactPoint": "https://www.yaskawa.com/support/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "schema:value": 150,
+        "schema:unitCode": "kg",
+        "schema:description": "Maximum payload capacity"
+      },
+      "rodeos:framework": "Yaskawa Motoman MotoPalletize"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Yaskawa Motoman",
+        "rodeos:hardwareAssetType": "amr"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 150.0,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 400.0,
+          "rodeos:interface": "EtherNet/IP, DeviceNet, Profinet",
+          "rodeos:reach": 2650.0,
+          "rodeos:accuracy": 0.1,
+          "rodeos:minVelocity": 0.05
+        },
+        "child": {
+          "@type": "rodeos:mobileRobot",
+          "properties": {
+            "rodeos:maxSpeed": 5.0,
+            "rodeos:batteryCapacity": 500.0
+          },
+          "child": {
+            "@type": "rodeos:amr",
+            "properties": {
+              "rodeos:aasSubmodel": "https://yaskawa-motoman.com/aas/submodels/amr-palletizing-metal-fabrication",
+              "rodeos:environmentType": "indoor"
+            }
+          }
+        }
+      }
+    }
+  }
+}

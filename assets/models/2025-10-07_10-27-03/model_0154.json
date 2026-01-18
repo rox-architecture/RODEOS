@@ -1,0 +1,48 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Keyence RV Series Vision-Guided Pick-and-Place Service",
+    "dcterms:type": "Robotics Service",
+    "dcterms:publisher": "Keyence Corporation",
+    "dcterms:license": "https://www.keyence.com/terms/service-license",
+    "dcterms:identifier": "KEY-RV-PNP-SVC-2024",
+    "dcterms:description": "A high-speed vision-guided pick-and-place automation service utilizing Keyence's RV Series robots with integrated vision systems for logistics and warehousing applications. Provides precise object recognition, trajectory planning, and material handling capabilities for boxes, parcels, and irregular items.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "robotics",
+      "automation",
+      "pick-and-place",
+      "vision-guided",
+      "logistics",
+      "warehousing",
+      "Keyence",
+      "RV Series"
+    ],
+    "dcat:contactPoint": "https://www.keyence.com/support/robotics",
+    "rodeos:coreType": "Service"
+  },
+  "child": {
+    "@type": "rodeos:Service",
+    "properties": {
+      "rodeos:usedModels": [
+        "https://www.keyence.com/products/robot/robot-systems/pick-and-place/model-rv-series",
+        "https://www.keyence.com/products/robot/robot-systems/pick-and-place/model-rh-series"
+      ],
+      "rodeos:serviceTypeMain": "pickAndPlaceService",
+      "rodeos:serviceType": "roboticAutomationService",
+      "dcat:endpointURL": "https://api.keyence.com/logistics/pick-and-place/v1",
+      "rodeos:input": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 120,
+        "schema:unitCode": "HUR"
+      },
+      "rodeos:output": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 2400,
+        "schema:unitCode": "HUR"
+      },
+      "dcat:endpointDescription": "REST API endpoint for Keyence pick-and-place robotic services in logistics applications. Provides real-time control, status monitoring, and performance analytics for automated material handling systems.",
+      "dcat:landingPage": "https://www.keyence.com/solutions/logistics-warehousing/pick-and-place-automation"
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Yaskawa Motoman PLC for Pick-and-Place Automation in Logistics",
+    "dcterms:type": "skos:concept",
+    "dcterms:publisher": "Yaskawa Motoman",
+    "dcterms:license": "https://www.yaskawa.com/license/industrial-automation",
+    "dcterms:identifier": "YM-PLC-PNP-LOG-001",
+    "dcterms:description": "A programmable logic controller (PLC) from Yaskawa Motoman designed for high-speed pick-and-place operations in logistics and warehousing environments. Features robust I/O handling, motion control integration, and compatibility with various robotic arms and conveyor systems.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "PLC",
+      "pick-and-place",
+      "logistics",
+      "warehousing",
+      "automation",
+      "Yaskawa",
+      "Motoman",
+      "industrial robotics"
+    ],
+    "dcat:contactPoint": "https://www.yaskawa.com/support/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "value": 1,
+        "unitCode": "EA"
+      },
+      "rodeos:framework": "Yaskawa Motoman MotoPLC"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Yaskawa Motoman",
+        "rodeos:hardwareAssetType": "rodeos:plc"
+      },
+      "child": {
+        "@type": "rodeos:controller",
+        "properties": {
+          "rodeos:cpuArchitecture": "ARM Cortex-A9",
+          "rodeos:processorClock": 1.0,
+          "rodeos:realTimeSupport": true,
+          "rodeos:communicationInterfaces": "EtherCAT",
+          "rodeos:powerSupply": "24V DC, 5A"
+        },
+        "child": {
+          "@type": "rodeos:plc",
+          "properties": {
+            "rodeos:aasSubmodel": "https://example.com/aas/submodels/YaskawaMotomanPLC/LogisticsPickAndPlace",
+            "rodeos:scanTimeTypical": "PT5MS",
+            "rodeos:programMemory": 128.0,
+            "rodeos:ioCapacity": "2048 I/O points (1024 digital inputs, 1024 digital outputs)"
+          }
+        }
+      }
+    }
+  }
+}

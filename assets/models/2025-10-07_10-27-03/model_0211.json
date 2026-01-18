@@ -1,0 +1,86 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Omron Cartesian Robot for Metal Fabrication Pick-and-Place",
+    "dcterms:type": "skos:concept",
+    "dcterms:publisher": "Omron Corporation",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "OMRON-CARTESIAN-PNP-MF-001",
+    "dcterms:description": "A high-precision Cartesian robot system designed for pick-and-place operations in metal fabrication environments. Features rigid construction, repeatable positioning accuracy, and integration with Omron's automation controllers for seamless operation in industrial settings.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "Cartesian robot",
+      "pick-and-place",
+      "metal fabrication",
+      "industrial automation",
+      "Omron",
+      "linear motion",
+      "precision handling"
+    ],
+    "dcat:contactPoint": "https://www.omron.com/contact/",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 6,
+        "unitCode": "AXL"
+      },
+      "rodeos:framework": "Omron Sysmac Studio"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Omron",
+        "rodeos:hardwareAssetType": "cartesian robot"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 15.0,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 48.0,
+          "rodeos:interface": "EtherCAT",
+          "rodeos:reach": 1200.0,
+          "rodeos:accuracy": 0.02,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted",
+            "rodeos:positionAccuracy": 0.02,
+            "rodeos:repeatability": 0.01,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 0.8,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "Cartesian XYZ"
+          },
+          "child": {
+            "@type": "rodeos:serielRobot",
+            "properties": {
+              "rodeos:jointCount": 6,
+              "rodeos:maxJointSpeed": 180.0
+            },
+            "child": {
+              "@type": "rodeos:cartesian",
+              "properties": {
+                "rodeos:aasSubmodel": "https://example.com/aas/submodels/cartesian-robot-omron-metal-fab-pick-place",
+                "rodeos:linearTravelXYZ": {
+                  "@type": "schema:quantitativeValue",
+                  "schema:value": 1000,
+                  "schema:unitCode": "MMT"
+                },
+                "rodeos:linearAxisSpeedMax": 2.5
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

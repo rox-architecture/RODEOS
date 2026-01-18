@@ -1,0 +1,83 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "IFM Electronic Hexapod Robotic System for Pharmaceutical Spot Welding",
+    "dcterms:type": "Robotic Automation Asset",
+    "dcterms:publisher": "IFM Electronic GmbH",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "IFM-HEX-PSW-2024-001",
+    "dcterms:description": "A high-precision hexapod robotic system designed for pharmaceutical manufacturing applications, specifically optimized for automated spot welding processes with 6 degrees of freedom motion control, integrated vision systems, and GMP-compliant construction.",
+    "dcat:version": "2.3.1",
+    "dcat:keyword": [
+      "hexapod",
+      "robotics",
+      "automation",
+      "pharmaceutical",
+      "spot welding",
+      "6-DOF",
+      "precision",
+      "GMP",
+      "industrial",
+      "IFM"
+    ],
+    "dcat:contactPoint": "https://www.ifm.com/en/us/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 6,
+        "unitCode": "UN"
+      },
+      "rodeos:framework": "IFM Hexapod Motion Control Framework"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "IFM Electronic",
+        "rodeos:hardwareAssetType": "hexapod"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 25.5,
+          "rodeos:maxVelocity": 1.8,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 48.0,
+          "rodeos:interface": "EtherCAT",
+          "rodeos:reach": 1200.0,
+          "rodeos:accuracy": 0.05,
+          "rodeos:minVelocity": 0.01
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted",
+            "rodeos:positionAccuracy": 0.05,
+            "rodeos:repeatability": 0.02,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 2.5,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "Stewart platform"
+          },
+          "child": {
+            "@type": "rodeos:parallelRobot",
+            "properties": {
+              "rodeos:platformSize": 500.0,
+              "rodeos:stiffness": 0.1
+            },
+            "child": {
+              "@type": "rodeos:hexapod",
+              "properties": {
+                "rodeos:aasSubmodel": "https://ifm.com/aas/submodels/hexapod/pharmaceuticals/spot-welding"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

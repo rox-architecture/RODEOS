@@ -1,0 +1,68 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Staubli RX160 Grinding and Polishing Tool for Pharmaceutical Quality Inspection",
+    "dcterms:type": "Industrial Robot Tool",
+    "dcterms:publisher": "Staubli International AG",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "STB-RX160-GP-PHARMA-QI-2024",
+    "dcterms:description": "High-precision grinding and polishing tool designed for pharmaceutical quality inspection applications. Features stainless steel construction, IP67 rating for cleanroom compatibility, and integrated force sensing for consistent surface finishing. Certified for use in GMP environments.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "grinding",
+      "polishing",
+      "pharmaceutical",
+      "quality inspection",
+      "robotic tool",
+      "Staubli",
+      "finishing",
+      "GMP compliant",
+      "cleanroom",
+      "automation"
+    ],
+    "dcat:contactPoint": "https://www.staubli.com/en/robotics/contact/",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 5.2,
+        "unitCode": "MM",
+        "minValue": 4.8,
+        "maxValue": 5.6
+      },
+      "rodeos:framework": "Stäubli TX2-60L"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Staubli",
+        "rodeos:hardwareAssetType": "grindingPolishingFinishingTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "EtherCAT",
+          "rodeos:manufacturer": "Staubli",
+          "rodeos:toolWeight": 3.2,
+          "rodeos:toolMaterial": "Stainless Steel 316L"
+        },
+        "child": {
+          "@type": "rodeos:grindingPolishingFinishingTool",
+          "properties": {
+            "rodeos:grindingPolishingFinishingToolType": "Grinders",
+            "rodeos:aasSubmodel": "https://staubli.com/aas/submodels/grinding-tool-pharma-inspection",
+            "rodeos:rotationSpeed": 4500.0,
+            "rodeos:abrasiveForce": 12.5,
+            "rodeos:toolDiameter": 50.0,
+            "rodeos:wearRate": 0.002
+          }
+        }
+      }
+    }
+  }
+}

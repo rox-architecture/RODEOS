@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "ABB Robotics PLC for Renewable Energy Spot Welding Systems",
+    "dcterms:type": "Hardware Component",
+    "dcterms:publisher": "ABB Robotics",
+    "dcterms:license": "https://www.abb.com/robotics/license",
+    "dcterms:identifier": "ABB-PLC-REN-SW-001",
+    "dcterms:description": "Programmable Logic Controller designed for industrial spot welding applications in renewable energy manufacturing, featuring high-speed processing, robust I/O capabilities, and integration with ABB robotic systems.",
+    "dcat:version": "v2.5.1",
+    "dcat:keyword": [
+      "PLC",
+      "Spot Welding",
+      "Renewable Energy",
+      "Industrial Automation",
+      "ABB Robotics",
+      "Programmable Logic Controller",
+      "Manufacturing"
+    ],
+    "dcat:contactPoint": "mailto:support.robotics@abb.com",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 5.0,
+        "unitCode": "UNITLESS",
+        "minValue": 1.0,
+        "maxValue": 10.0
+      },
+      "rodeos:framework": "Automation Builder"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "ABB Robotics",
+        "rodeos:hardwareAssetType": "rodeos:plc"
+      },
+      "child": {
+        "@type": "rodeos:controller",
+        "properties": {
+          "rodeos:cpuArchitecture": "ARM Cortex-R52",
+          "rodeos:processorClock": 800.0,
+          "rodeos:realTimeSupport": true,
+          "rodeos:communicationInterfaces": "Ethernet/IP, PROFINET, Modbus TCP",
+          "rodeos:powerSupply": "24V DC, 5A"
+        },
+        "child": {
+          "@type": "rodeos:plc",
+          "properties": {
+            "rodeos:aasSubmodel": "https://example.com/aas/submodels/abb-plc-welding-001",
+            "rodeos:scanTimeTypical": "PT10MS",
+            "rodeos:programMemory": 512.0,
+            "rodeos:ioCapacity": "2048 digital I/O, 256 analog I/O"
+          }
+        }
+      }
+    }
+  }
+}

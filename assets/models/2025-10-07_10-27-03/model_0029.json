@@ -1,0 +1,86 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Keyence Cartesian Robot System for Electronics Machine Tending",
+    "dcterms:type": "robotics:CartesianRobot",
+    "dcterms:publisher": "Keyence Corporation",
+    "dcterms:license": "https://www.keyence.com/robotics/license",
+    "dcterms:identifier": "KEY-CART-MT-2024-001",
+    "dcterms:description": "High-precision Cartesian robot system designed for automated machine tending applications in electronics manufacturing. Features XYZ linear motion with sub-micron repeatability, integrated vision guidance, and tool-free end effector change system.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "Cartesian robot",
+      "machine tending",
+      "electronics manufacturing",
+      "automation",
+      "Keyence",
+      "linear motion",
+      "precision robotics"
+    ],
+    "dcat:contactPoint": "https://www.keyence.com/support/robotics",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 6,
+        "schema:unitCode": "axis"
+      },
+      "rodeos:framework": "Keyence Cartesian Robot Framework"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Keyence",
+        "rodeos:hardwareAssetType": "rodeos:cartesian"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 5.0,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 6,
+          "rodeos:operatingVoltage": 24.0,
+          "rodeos:interface": "Ethernet/IP, IO-Link, Digital I/O",
+          "rodeos:reach": 1200.0,
+          "rodeos:accuracy": 0.02,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted",
+            "rodeos:positionAccuracy": 0.02,
+            "rodeos:repeatability": 0.01,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 0.512,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "Cartesian XYZ"
+          },
+          "child": {
+            "@type": "rodeos:serielRobot",
+            "properties": {
+              "rodeos:jointCount": 4,
+              "rodeos:maxJointSpeed": 2.5
+            },
+            "child": {
+              "@type": "rodeos:cartesian",
+              "properties": {
+                "rodeos:aasSubmodel": "https://example.com/aas/submodels/cartesian-robot-keyence-12345",
+                "rodeos:linearTravelXYZ": {
+                  "@type": "schema:quantitativeValue",
+                  "schema:value": 1200,
+                  "schema:unitCode": "MMT"
+                },
+                "rodeos:linearAxisSpeedMax": 2.5
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Denso Wave Vision Software for Spot Welding",
+    "dcterms:type": "Software",
+    "dcterms:publisher": "Denso Wave Inc.",
+    "dcterms:license": "https://www.denso-wave.com/en/license/robotics-software",
+    "dcterms:identifier": "DENSO-VISION-SW-2024-001",
+    "dcterms:description": "Advanced perception vision software designed for precision spot welding applications in electronics manufacturing. Provides real-time visual guidance, weld seam tracking, and quality inspection capabilities for robotic welding systems.",
+    "dcat:version": "v2.5.3",
+    "dcat:keyword": [
+      "vision software",
+      "spot welding",
+      "perception",
+      "robotics",
+      "electronics manufacturing",
+      "quality control",
+      "Denso Wave"
+    ],
+    "dcat:contactPoint": "https://www.denso-wave.com/en/support/robotics",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 2.5,
+        "schema:unitCode": "GHz"
+      },
+      "rodeos:framework": "Denso Wave Vision Framework v4.2"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "@type": "schema:quantitativeValue",
+          "schema:value": 2.5,
+          "schema:unitCode": "GHz"
+        },
+        "rodeos:softwareAssetType": {
+          "@type": "skos:concept",
+          "skos:prefLabel": "Machine Vision Software"
+        }
+      },
+      "child": {
+        "@type": "rodeos:perceptionVisionSoftware",
+        "properties": {
+          "rodeos:perceptionVisionSoftwareType": "2d3dVisionLibraries",
+          "rodeos:aasSubmodel": "https://assetadministration-shell.com/denso-wave/vision-software/weld-vision-1.0",
+          "rodeos:inputFormats": [
+            "JPEG",
+            "PNG",
+            "BMP",
+            "TIFF",
+            "Point Cloud Data (PCD)",
+            "PLY"
+          ],
+          "rodeos:mlFrameworks": [
+            "TensorFlow",
+            "PyTorch",
+            "OpenCV DNN",
+            "ONNX Runtime"
+          ],
+          "rodeos:accuracyMetrics": "Detection accuracy: 99.8%, Pose estimation error: <0.5mm, Repeatability: ±0.1mm"
+        }
+      }
+    }
+  }
+}

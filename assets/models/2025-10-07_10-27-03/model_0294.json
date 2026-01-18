@@ -1,0 +1,56 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Bosch Rexroth AI Analytics Software for Pharmaceutical Packing",
+    "dcterms:type": "Software",
+    "dcterms:publisher": "Bosch Rexroth AG",
+    "dcterms:license": "https://www.boschrexroth.com/en/us/license-terms",
+    "dcterms:identifier": "BRX-AI-PACK-2024-001",
+    "dcterms:description": "AI-powered analytics software designed for optimizing pharmaceutical packing processes, providing real-time quality control, predictive maintenance, and efficiency analytics.",
+    "dcat:version": "2.4.1",
+    "dcat:keyword": [
+      "AI Analytics",
+      "Pharmaceuticals",
+      "Packing",
+      "Quality Control",
+      "Predictive Maintenance",
+      "Industrial Automation"
+    ],
+    "dcat:contactPoint": "https://www.boschrexroth.com/en/us/contact",
+    "rodeos:coreType": "Service"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 0.95,
+        "unitText": "accuracy"
+      },
+      "rodeos:framework": "Bosch Rexroth AI Analytics Framework v2.1"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "@type": "schema:quantitativeValue",
+          "value": 0.95,
+          "unitText": "accuracy"
+        },
+        "rodeos:softwareAssetType": {
+          "@type": "skos:Concept",
+          "prefLabel": "Predictive Maintenance Module"
+        }
+      },
+      "child": {
+        "@type": "rodeos:aiAnalyticsSoftware",
+        "properties": {
+          "rodeos:aiAnalyticsSoftwareType": "mlModel",
+          "rodeos:aasSubmodel": "https://industrial.boschrexroth.com/aas/pharmaceuticals/packing/ml-model/1.0",
+          "rodeos:modelArchitecture": "Convolutional Neural Network (CNN) with ResNet-50 backbone for visual quality inspection and packaging defect detection, integrated with LSTM layers for temporal sequence analysis in packing line operations"
+        }
+      }
+    }
+  }
+}

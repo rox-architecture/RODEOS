@@ -1,0 +1,73 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Bosch Rexroth LIDAR Sensor for Pharmaceutical Quality Inspection",
+    "dcterms:type": "sensor",
+    "dcterms:publisher": "Bosch Rexroth AG",
+    "dcterms:license": "https://www.boschrexroth.com/en/us/legal-notice/",
+    "dcterms:identifier": "BOS-LIDAR-PHARMA-QI-2024",
+    "dcterms:description": "High-precision LIDAR sensor system designed for pharmaceutical quality inspection applications, providing non-contact 3D scanning and measurement capabilities for verifying product dimensions, surface quality, and packaging integrity in compliance with industry regulations.",
+    "dcat:version": "2.1.3",
+    "dcat:keyword": [
+      "LIDAR",
+      "quality inspection",
+      "pharmaceutical",
+      "3D scanning",
+      "non-contact measurement",
+      "automation",
+      "sensor technology"
+    ],
+    "dcat:contactPoint": "https://www.boschrexroth.com/en/us/contact/",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 0.05,
+        "unitCode": "MMT",
+        "minValue": 0.01,
+        "maxValue": 30.0,
+        "description": "Measurement accuracy in millimeters"
+      },
+      "rodeos:framework": "Bosch Rexroth Lidar Quality Inspection Framework v2.1"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Bosch Rexroth",
+        "rodeos:hardwareAssetType": "lidarSensor"
+      },
+      "child": {
+        "@type": "rodeos:sensor",
+        "properties": {
+          "rodeos:measurementRange": 30.0,
+          "rodeos:measurementAccuracy": 0.001,
+          "rodeos:samplingRate": 100000.0,
+          "rodeos:fieldOfView": {
+            "schema:minValue": 0.0,
+            "schema:maxValue": 270.0,
+            "schema:unitCode": "DDD"
+          }
+        },
+        "child": {
+          "@type": "rodeos:lidarSensor",
+          "properties": {
+            "rodeos:aasSubmodel": "https://industrial.boschrexroth.com/aas/pharma/lidar/quality-inspection/12345",
+            "rodeos:scanRate": 100.0,
+            "rodeos:angularResolution": 0.1,
+            "rodeos:maxRange": 200.0,
+            "rodeos:fieldOfView": {
+              "schema:minValue": 0.0,
+              "schema:maxValue": 270.0,
+              "schema:unitCode": "DDD"
+            },
+            "rodeos:numChannels": 16
+          }
+        }
+      }
+    }
+  }
+}

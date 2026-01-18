@@ -1,0 +1,72 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Omron LD-250 Pharmaceutical Quality Inspection AMR",
+    "dcterms:type": "Autonomous Mobile Robot",
+    "dcterms:publisher": "Omron Corporation",
+    "dcterms:license": "https://industrial.omron.eu/en/support/licensing",
+    "dcterms:identifier": "OMRON-AMR-PHI-QI-2024-001",
+    "dcterms:description": "Autonomous Mobile Robot designed for pharmaceutical quality inspection applications. Features high-precision vision systems, sterile environment compliance, and automated material handling for vial and packaging inspection lines.",
+    "dcat:version": "2.1.3",
+    "dcat:keyword": [
+      "AMR",
+      "Pharmaceuticals",
+      "Quality Inspection",
+      "Automation",
+      "Vision System",
+      "Omron",
+      "Mobile Robot",
+      "GMP Compliance"
+    ],
+    "dcat:contactPoint": "https://automation.omron.com/en/us/support/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 1.5,
+        "unitCode": "KMH",
+        "minValue": 0.5,
+        "maxValue": 2.0
+      },
+      "rodeos:framework": "Omron LD Mobile Robot Platform"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Omron",
+        "rodeos:hardwareAssetType": "amr"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 5.0,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 4,
+          "rodeos:operatingVoltage": 48.0,
+          "rodeos:interface": "EtherCAT",
+          "rodeos:reach": 1.2,
+          "rodeos:accuracy": 0.05,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:mobileRobot",
+          "properties": {
+            "rodeos:maxSpeed": 1.8,
+            "rodeos:batteryCapacity": 48.0
+          },
+          "child": {
+            "@type": "rodeos:amr",
+            "properties": {
+              "rodeos:aasSubmodel": "https://industrialdigitaltwin.org/omron/pharma-amr-quality-inspection/submodel",
+              "rodeos:environmentType": "indoor"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Siemens Aerospace Assembly Gripper Tool",
+    "dcterms:type": "Tool",
+    "dcterms:publisher": "Siemens AG",
+    "dcterms:license": "https://www.siemens.com/global/en/company/legal/terms-of-use.html",
+    "dcterms:identifier": "SIEMENS-GRIP-AERO-ASM-001",
+    "dcterms:description": "Industrial robotic gripper tool designed for precision assembly operations in aerospace manufacturing, featuring adaptive force control and compatibility with Siemens automation systems.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "gripper",
+      "robotics",
+      "aerospace",
+      "assembly",
+      "automation",
+      "Siemens",
+      "tooling"
+    ],
+    "dcat:contactPoint": "https://support.industry.siemens.com/cs/ww/en/",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "schema:minValue": 0.5,
+        "schema:maxValue": 150.0,
+        "schema:unitCode": "N",
+        "schema:value": 75.0
+      },
+      "rodeos:framework": "SIMATIC Robot Library"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Siemens",
+        "rodeos:hardwareAssetType": "gripperTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "PROFINET",
+          "rodeos:manufacturer": "Siemens",
+          "rodeos:toolWeight": 2.5,
+          "rodeos:toolMaterial": "Aluminum Alloy 6061-T6"
+        },
+        "child": {
+          "@type": "rodeos:gripperTool",
+          "properties": {
+            "rodeos:gripperType": "MechanicalParallel",
+            "rodeos:aasSubmodel": "https://siemens.com/aas/gripper/MPG-450-AeroAssembly",
+            "rodeos:gripForceMax": 450.0,
+            "rodeos:strokePerFinger": 25.0,
+            "rodeos:objectSizeRange": "20-150 mm diameter",
+            "rodeos:interfaceMechanical": "ISO 9409-1-50-4-M6"
+          }
+        }
+      }
+    }
+  }
+}

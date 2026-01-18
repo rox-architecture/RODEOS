@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Epson Robotics IPC Packing System for Metal Fabrication",
+    "dcterms:type": "http://www.productontology.org/id/Industrial_robot",
+    "dcterms:publisher": "Epson Robotics",
+    "dcterms:license": "https://www.epson.com/robotics/license",
+    "dcterms:identifier": "EPSON-IPC-PACK-MF-2024",
+    "dcterms:description": "Industrial PC-based robotic automation system designed for high-speed packing applications in metal fabrication environments. Features precision motion control, integrated vision systems, and robust safety protocols for handling metal components and finished products.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "robotics",
+      "industrial PC",
+      "packing automation",
+      "metal fabrication",
+      "Epson",
+      "IPC",
+      "industrial automation",
+      "material handling"
+    ],
+    "dcat:contactPoint": "https://www.epson.com/robotics/support",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 5.0,
+        "unitCode": "SEC"
+      },
+      "rodeos:framework": "Epson RC+ 7.0"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Epson Robotics",
+        "rodeos:hardwareAssetType": "rodeos:ipc"
+      },
+      "child": {
+        "@type": "rodeos:controller",
+        "properties": {
+          "rodeos:cpuArchitecture": "cpuArchitecture",
+          "rodeos:realTimeSupport": false,
+          "rodeos:communicationInterfaces": "communicationInterfaces",
+          "rodeos:powerSupply": "powerSupply"
+        },
+        "child": {
+          "@type": "rodeos:ipc",
+          "properties": {
+            "rodeos:aasSubmodel": "https://example.com/aas/submodels/epson-ipc-metal-packing",
+            "rodeos:formFactor": "rodeos:rackMount",
+            "rodeos:ramSize": 16.0,
+            "rodeos:storageCapacity": 512.0,
+            "rodeos:gpuAccelerators": "Integrated Intel UHD Graphics 630",
+            "rodeos:expansionSlots": "2x PCIe x16, 1x PCIe x4, 2x PCI",
+            "rodeos:industrialRatings": "IP40, Operating Temperature: 0°C to 50°C, Vibration Resistance: 5-17Hz/0.1mm, 17-200Hz/1G"
+          }
+        }
+      }
+    }
+  }
+}

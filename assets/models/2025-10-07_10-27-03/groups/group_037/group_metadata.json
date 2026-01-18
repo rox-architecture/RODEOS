@@ -1,0 +1,19 @@
+{
+  "company": "ABB Robotics",
+  "industry": "Automotive assembly",
+  "application": "assembly",
+  "assets": [
+    {
+      "leaf": "rodeos:amr",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:roboter",
+        "rodeos:mobileRobot",
+        "rodeos:amr"
+      ],
+      "file": "model_amr.json"
+    }
+  ]
+}

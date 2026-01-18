@@ -1,0 +1,76 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Mitsubishi Electric Aerospace Pick-and-Place Robot Operation Software",
+    "dcterms:type": "Software",
+    "dcterms:publisher": "Mitsubishi Electric Corporation",
+    "dcterms:license": "https://www.mitsubishielectric.com/fa/en/license",
+    "dcterms:identifier": "ME-AERO-PNP-SW-2024-001",
+    "dcterms:description": "Specialized robot operation software for aerospace industry pick-and-place applications, featuring high-precision motion control, collision avoidance, and integration with aerospace manufacturing systems.",
+    "dcat:version": "v2.5.1",
+    "dcat:keyword": [
+      "robotics",
+      "automation",
+      "aerospace",
+      "pick-and-place",
+      "Mitsubishi Electric",
+      "industrial software",
+      "motion control"
+    ],
+    "dcat:contactPoint": "https://www.mitsubishielectric.com/fa/en/support",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 4.2,
+        "unitCode": "rodeos:softwareRevision"
+      },
+      "rodeos:framework": "MELFA Works"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "@type": "schema:quantitativeValue",
+          "value": 4.2,
+          "unitCode": "rodeos:softwareRevision"
+        },
+        "rodeos:softwareAssetType": {
+          "@type": "skos:Concept",
+          "prefLabel": "Robot Control Software",
+          "inScheme": "https://example.org/software-types"
+        }
+      },
+      "child": {
+        "@type": "rodeos:robotOperationSoftware",
+        "properties": {
+          "rodeos:robotOperationSystemType": "vendorSpecificMiddleware",
+          "rodeos:aasSubmodel": "https://industrial.mitsubishielectric.com/aas/robotics/software/aerospace-pickplace/v1",
+          "rodeos:supportedApis": [
+            "https://api.mitsubishielectric.com/robotics/melfa/v4",
+            "https://api.mitsubishielectric.com/vision/inspection/v2",
+            "https://api.mitsubishielectric.com/motion/planning/v3"
+          ],
+          "rodeos:supportedHardwareDrivers": [
+            "MELFA RV-7FLM",
+            "MELFA RH-FH series",
+            "Mitsubishi Vision System IV",
+            "MELSEC-Q series PLC interface",
+            "EtherCAT motion controllers"
+          ],
+          "rodeos:osDependencies": [
+            "VxWorks 7.0",
+            "MELSEC-QnUDEHCPU real-time kernel",
+            "Mitsubishi Electric Runtime Environment v3.2",
+            "C++17 standard library",
+            "POSIX-compliant system libraries"
+          ]
+        }
+      }
+    }
+  }
+}

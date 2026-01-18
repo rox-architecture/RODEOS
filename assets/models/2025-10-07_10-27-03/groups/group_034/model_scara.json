@@ -1,0 +1,82 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Yaskawa Motoman SCARA Robot for Aerospace Material Transport",
+    "dcterms:type": "Robotic Arm",
+    "dcterms:publisher": "Yaskawa Motoman",
+    "dcterms:license": "https://www.yaskawa.com/terms-of-use",
+    "dcterms:identifier": "YM-SCARA-AERO-MT-001",
+    "dcterms:description": "A high-precision SCARA robotic system designed for material transport applications in aerospace manufacturing, featuring Yaskawa Motoman's advanced motion control and reliability standards.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "SCARA",
+      "Material Transport",
+      "Aerospace",
+      "Yaskawa Motoman",
+      "Robotics",
+      "Automation"
+    ],
+    "dcat:contactPoint": "https://www.yaskawa.com/support",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "schema:minValue": 2.0,
+        "schema:maxValue": 50.0,
+        "schema:unitCode": "kg",
+        "schema:value": 25.0
+      },
+      "rodeos:framework": "Yaskawa Motoman MRC Controller Framework"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Yaskawa Motoman",
+        "rodeos:hardwareAssetType": "scara"
+      },
+      "child": {
+        "@type": "rodeos:roboter",
+        "properties": {
+          "rodeos:payload": 15.0,
+          "rodeos:maxVelocity": 2.5,
+          "rodeos:DOF": 4,
+          "rodeos:operatingVoltage": 200.0,
+          "rodeos:interface": "Yaskawa Motoman DX200",
+          "rodeos:reach": 850.0,
+          "rodeos:accuracy": 0.02,
+          "rodeos:minVelocity": 0.1
+        },
+        "child": {
+          "@type": "rodeos:stationaryRobot",
+          "properties": {
+            "rodeos:mounting": "Floor-mounted",
+            "rodeos:positionAccuracy": 0.02,
+            "rodeos:repeatability": 0.01,
+            "rodeos:isCobot": false,
+            "rodeos:workspaceVolume": 0.5,
+            "rodeos:pedestal": true,
+            "rodeos:kinematicModel": "SCARA (Selective Compliance Assembly Robot Arm)"
+          },
+          "child": {
+            "@type": "rodeos:serielRobot",
+            "properties": {
+              "rodeos:jointCount": 4,
+              "rodeos:maxJointSpeed": 8.5
+            },
+            "child": {
+              "@type": "rodeos:scara",
+              "properties": {
+                "rodeos:aasSubmodel": "https://yaskawa-motoman.com/aas/submodels/scara-material-transport-aerospace",
+                "rodeos:planarReachRadius": 850.5,
+                "rodeos:verticalStrokeZ": 300.0
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

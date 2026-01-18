@@ -1,0 +1,63 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Epson Robotics Gripper Tool for Automotive Material Transport",
+    "dcterms:type": "Tool",
+    "dcterms:publisher": "Epson Robotics",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "EPS-GT-AUTO-2024-001",
+    "dcterms:description": "Industrial gripper tool designed by Epson Robotics for automotive assembly applications, specifically optimized for material transport operations with high precision and reliability.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "gripper",
+      "robotics",
+      "automotive",
+      "material handling",
+      "Epson",
+      "assembly",
+      "automation"
+    ],
+    "dcat:contactPoint": "https://www.epson.com/robotics/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "schema:minValue": 0.5,
+        "schema:maxValue": 5.0,
+        "schema:unitCode": "kg"
+      },
+      "rodeos:framework": "Epson RC+ 7.0"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Epson Robotics",
+        "rodeos:hardwareAssetType": "gripperTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "EtherCAT",
+          "rodeos:manufacturer": "Epson Robotics",
+          "rodeos:toolWeight": 1.8,
+          "rodeos:toolMaterial": "Anodized Aluminum"
+        },
+        "child": {
+          "@type": "rodeos:gripperTool",
+          "properties": {
+            "rodeos:gripperType": "MechanicalParallel",
+            "rodeos:aasSubmodel": "https://assets.epson-robotics.com/grippers/automotive/MPG-450-AAS",
+            "rodeos:gripForceMax": 450.0,
+            "rodeos:strokePerFinger": 50.0,
+            "rodeos:objectSizeRange": "50-200 mm width, cylindrical and prismatic shapes",
+            "rodeos:interfaceMechanical": "ISO 9409-1-50-4-M6 flange mount with 4x M6 threaded holes"
+          }
+        }
+      }
+    }
+  }
+}

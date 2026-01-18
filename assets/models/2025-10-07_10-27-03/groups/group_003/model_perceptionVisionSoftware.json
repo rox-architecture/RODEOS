@@ -1,0 +1,73 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Rockwell Automation VisionPro Software for Renewable Energy Assembly",
+    "dcterms:type": "Software",
+    "dcterms:publisher": "Rockwell Automation",
+    "dcterms:license": "https://www.rockwellautomation.com/en-us/support/licensing.html",
+    "dcterms:identifier": "RA-VPS-REN-ASM-2024",
+    "dcterms:description": "Advanced machine vision software designed specifically for automated assembly processes in renewable energy manufacturing. Provides real-time quality inspection, part identification, and guidance for robotic assembly systems handling solar panels, wind turbine components, and energy storage systems.",
+    "dcat:version": "v4.2.1",
+    "dcat:keyword": [
+      "machine vision",
+      "renewable energy",
+      "assembly automation",
+      "quality inspection",
+      "robotic guidance",
+      "solar manufacturing",
+      "wind turbine assembly",
+      "Rockwell Automation"
+    ],
+    "dcat:contactPoint": "https://www.rockwellautomation.com/en-us/support/contact.html",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "schema:value": "2.5",
+        "schema:unitCode": "MP",
+        "schema:minValue": "1.0",
+        "schema:maxValue": "5.0"
+      },
+      "rodeos:framework": "Rockwell Automation FactoryTalk Vision"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "schema:value": "2.5",
+          "schema:unitCode": "MP",
+          "schema:minValue": "1.0",
+          "schema:maxValue": "5.0"
+        },
+        "rodeos:softwareAssetType": {
+          "skos:prefLabel": "Machine Vision Software",
+          "skos:definition": "Software component for visual perception and analysis in automated assembly systems."
+        }
+      },
+      "child": {
+        "@type": "rodeos:perceptionVisionSoftware",
+        "properties": {
+          "rodeos:perceptionVisionSoftwareType": "objectDetection",
+          "rodeos:aasSubmodel": "https://rockwell-automation.com/aas/renewable-energy/vision-software/assembly-object-detection/v1.0",
+          "rodeos:inputFormats": [
+            "JPEG",
+            "PNG",
+            "BMP",
+            "TIFF",
+            "H.264",
+            "H.265"
+          ],
+          "rodeos:mlFrameworks": [
+            "TensorFlow",
+            "PyTorch",
+            "ONNX Runtime"
+          ],
+          "rodeos:accuracyMetrics": "mAP: 0.92, Precision: 0.95, Recall: 0.89, F1-Score: 0.92"
+        }
+      }
+    }
+  }
+}

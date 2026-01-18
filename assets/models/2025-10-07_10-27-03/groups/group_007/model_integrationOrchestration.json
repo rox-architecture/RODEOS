@@ -1,0 +1,73 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "IFM Electronic Automotive Bin Picking Integration Orchestration",
+    "dcterms:type": "skos:Concept",
+    "dcterms:publisher": "IFM Electronic GmbH",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "IFM-AUTO-BP-INT-ORCH-001",
+    "dcterms:description": "Integration orchestration service for automated bin picking systems in automotive assembly lines, providing coordination between vision systems, robotics, and material handling equipment.",
+    "dcat:version": "2.1.0",
+    "dcat:keyword": [
+      "bin picking",
+      "automation",
+      "robotics",
+      "automotive assembly",
+      "integration",
+      "orchestration",
+      "IFM Electronic",
+      "machine vision"
+    ],
+    "dcat:contactPoint": "https://www.ifm.com/contact",
+    "rodeos:coreType": "Service"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 95.0,
+        "minValue": 0.0,
+        "maxValue": 100.0,
+        "unitCode": "PERCENT"
+      },
+      "rodeos:framework": "IFM VISION Assistant"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "@type": "schema:quantitativeValue",
+          "value": 95.0,
+          "minValue": 0.0,
+          "maxValue": 100.0,
+          "unitCode": "PERCENT"
+        },
+        "rodeos:softwareAssetType": {
+          "@type": "skos:concept",
+          "prefLabel": "Integration Middleware"
+        }
+      },
+      "child": {
+        "@type": "rodeos:integrationOrchestration",
+        "properties": {
+          "rodeos:integrationOrchestrationType": "workflowOrchestration",
+          "rodeos:aasSubmodel": "https://ifm.com/aas/submodels/bin-picking-orchestration-v1",
+          "rodeos:supportedProtocols": [
+            "OPC UA",
+            "MQTT",
+            "HTTP/REST",
+            "EtherNet/IP"
+          ],
+          "rodeos:deploymentVariants": [
+            "On-premise server",
+            "Cloud-hosted",
+            "Edge computing device",
+            "Hybrid deployment"
+          ]
+        }
+      }
+    }
+  }
+}

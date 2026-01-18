@@ -1,0 +1,69 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "WAGO Motion Control Software for Material Transport",
+    "dcterms:type": "Software",
+    "dcterms:publisher": "WAGO GmbH & Co. KG",
+    "dcterms:license": "https://www.wago.com/global/license-agreement",
+    "dcterms:identifier": "WAGO-MCS-MT-2024",
+    "dcterms:description": "Industrial motion control software optimized for metal fabrication material transport systems, providing precise motor control, path planning, and collision avoidance capabilities.",
+    "dcat:version": "2.4.1",
+    "dcat:keyword": [
+      "motion control",
+      "material transport",
+      "industrial automation",
+      "metal fabrication",
+      "PLC software",
+      "conveyor systems",
+      "robotics integration"
+    ],
+    "dcat:contactPoint": "https://www.wago.com/global/support/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 15.5,
+        "unitCode": "rodeos:performanceIndex"
+      },
+      "rodeos:framework": "CODESYS V3.5 SP18"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "@type": "schema:quantitativeValue",
+          "value": 15.5,
+          "unitCode": "rodeos:performanceIndex"
+        },
+        "rodeos:softwareAssetType": {
+          "@type": "skos:Concept",
+          "prefLabel": "PLC Runtime Software"
+        }
+      },
+      "child": {
+        "@type": "rodeos:motionControlSoftware",
+        "properties": {
+          "rodeos:motionControlSystemType": "trajectoryPlanning",
+          "rodeos:aasSubmodel": "https://asset-shell.wago.com/motion-control/transport-software/v1.2",
+          "rodeos:supportedRobotTypes": [
+            "SCARA",
+            "Articulated",
+            "Cartesian",
+            "Delta"
+          ],
+          "rodeos:motionPlanningAlgorithms": [
+            "RRT*",
+            "PRM",
+            "A*",
+            "Potential Fields"
+          ],
+          "rodeos:dofSupport": 6
+        }
+      }
+    }
+  }
+}

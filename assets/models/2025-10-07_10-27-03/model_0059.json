@@ -1,0 +1,40 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Keyence Palletizing Automation Dataset for Plastics Processing",
+    "dcterms:type": "Dataset",
+    "dcterms:publisher": "Keyence Corporation",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "KEY-PLT-PLASTICS-2024-001",
+    "dcterms:description": "Comprehensive dataset containing technical specifications, performance metrics, and configuration parameters for Keyence palletizing automation systems optimized for plastics processing applications. Includes robotic arm trajectories, end-effector specifications, sensor integration data, and material handling profiles.",
+    "dcat:version": "2.3.1",
+    "dcat:keyword": [
+      "palletizing",
+      "robotics",
+      "automation",
+      "plastics processing",
+      "Keyence",
+      "industrial robotics",
+      "material handling",
+      "end-of-line automation"
+    ],
+    "dcat:contactPoint": "https://www.keyence.com/support/contact/automation.jsp",
+    "rodeos:coreType": "Dataset"
+  },
+  "child": {
+    "@type": "rodeos:Dataset",
+    "properties": {
+      "dprod:informationSensitivityClassification": "Public",
+      "dprod:type": "OperationalData",
+      "rodeos:dataFormat": "CSV",
+      "rodeos:isDataproduct": true,
+      "dcat:byteSize": 5242880,
+      "rodeos:dataTypeSchema": "https://schema.org/Dataset",
+      "dcat:checksum": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dcat:endpointDescription": "REST API endpoint providing access to palletizing operational datasets for Keyence plastics processing systems",
+      "dcat:endpointURL": "https://api.keyence.com/plastics/palletizing/datasets",
+      "dcat:protocol": "HTTPS",
+      "dprod:dataProductOwner": "Keyence Automation Division - Plastics Processing Group"
+    }
+  }
+}

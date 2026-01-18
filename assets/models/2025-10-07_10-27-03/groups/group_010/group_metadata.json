@@ -1,0 +1,50 @@
+{
+  "company": "FANUC",
+  "industry": "Pharmaceuticals",
+  "application": "palletizing",
+  "assets": [
+    {
+      "leaf": "rodeos:inertialSensor",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:sensor",
+        "rodeos:inertialSensor"
+      ],
+      "file": "model_inertialSensor.json"
+    },
+    {
+      "leaf": "rodeos:integrationOrchestration",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:softwareComponent",
+        "rodeos:integrationOrchestration"
+      ],
+      "file": "model_integrationOrchestration.json"
+    },
+    {
+      "leaf": "rodeos:weldingTool",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:tooling",
+        "rodeos:weldingTool"
+      ],
+      "file": "model_weldingTool.json"
+    },
+    {
+      "leaf": "rodeos:dispensingAdditiveTool",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:tooling",
+        "rodeos:dispensingAdditiveTool"
+      ],
+      "file": "model_dispensingAdditiveTool.json"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Omron LD-250 LiDAR Sensor for Spot Welding Applications",
+    "dcterms:type": "Sensor",
+    "dcterms:publisher": "Omron Corporation",
+    "dcterms:license": "https://industrial.omron.com/en/support/license",
+    "dcterms:identifier": "OMRON-LD-250-PS-WELD",
+    "dcterms:description": "High-precision LiDAR sensor designed for industrial spot welding applications in plastics processing environments. Provides real-time 3D positioning data with ±1mm accuracy for welding head alignment and quality control.",
+    "dcat:version": "2.1.3",
+    "dcat:keyword": [
+      "LiDAR",
+      "spot welding",
+      "plastics processing",
+      "3D sensing",
+      "industrial automation",
+      "quality control",
+      "Omron"
+    ],
+    "dcat:contactPoint": "https://automation.omron.com/en/us/support/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 2.5,
+        "schema:unitCode": "MHz"
+      },
+      "rodeos:framework": "Omron LD Series LiDAR Sensor Framework"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Omron",
+        "rodeos:hardwareAssetType": "lidarSensor"
+      },
+      "child": {
+        "@type": "rodeos:sensor",
+        "properties": {
+          "rodeos:measurementRange": 0.5,
+          "rodeos:fieldOfView": {
+            "minValue": 0,
+            "maxValue": 270,
+            "unitCode": "DD"
+          }
+        },
+        "child": {
+          "@type": "rodeos:lidarSensor",
+          "properties": {
+            "rodeos:aasSubmodel": "https://example.com/aas/submodels/lidarSensor/omron/plastics-welding-001",
+            "rodeos:scanRate": 50.0,
+            "rodeos:angularResolution": 0.1,
+            "rodeos:maxRange": 30.0,
+            "rodeos:fieldOfView": {
+              "minValue": 0,
+              "maxValue": 270,
+              "unitCode": "DD"
+            },
+            "rodeos:numChannels": 16
+          }
+        }
+      }
+    }
+  }
+}

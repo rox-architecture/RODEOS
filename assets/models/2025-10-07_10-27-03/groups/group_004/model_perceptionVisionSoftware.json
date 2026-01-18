@@ -1,0 +1,74 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "ABB VisionWare Spot Welding Vision System",
+    "dcterms:type": "Software",
+    "dcterms:publisher": "ABB Robotics",
+    "dcterms:license": "https://www.abb.com/robotics/software-license",
+    "dcterms:identifier": "ABB-VWSW-2024-001",
+    "dcterms:description": "Advanced vision software system for automated spot welding applications in metal fabrication. Provides real-time weld seam detection, quality inspection, and robot guidance with sub-millimeter accuracy.",
+    "dcat:version": "2.5.3",
+    "dcat:keyword": [
+      "vision system",
+      "spot welding",
+      "metal fabrication",
+      "robot guidance",
+      "quality inspection",
+      "ABB Robotics",
+      "industrial automation"
+    ],
+    "dcat:contactPoint": "https://www.abb.com/robotics/support",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 0.95,
+        "minValue": 0.0,
+        "maxValue": 1.0,
+        "unitText": "accuracy score"
+      },
+      "rodeos:framework": "ABB RobotWare Vision"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "@type": "schema:quantitativeValue",
+          "value": 0.95,
+          "minValue": 0.0,
+          "maxValue": 1.0,
+          "unitText": "accuracy score"
+        },
+        "rodeos:softwareAssetType": {
+          "@id": "skos:concept",
+          "prefLabel": "Machine Vision Software"
+        }
+      },
+      "child": {
+        "@type": "rodeos:perceptionVisionSoftware",
+        "properties": {
+          "rodeos:perceptionVisionSoftwareType": "objectDetection",
+          "rodeos:aasSubmodel": "https://assetadministration-shell.com/abb/robotics/vision-software/spot-welding-metal-fabrication",
+          "rodeos:inputFormats": [
+            "JPEG",
+            "PNG",
+            "BMP",
+            "TIFF",
+            "HDR",
+            "RAW"
+          ],
+          "rodeos:mlFrameworks": [
+            "TensorFlow",
+            "PyTorch",
+            "ONNX Runtime"
+          ],
+          "rodeos:accuracyMetrics": "mAP: 0.92, Precision: 0.94, Recall: 0.91, F1 Score: 0.925"
+        }
+      }
+    }
+  }
+}

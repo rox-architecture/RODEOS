@@ -1,0 +1,71 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "SICK Visionary Pick-and-Place Perception Software",
+    "dcterms:type": "Software",
+    "dcterms:publisher": "SICK AG",
+    "dcterms:license": "https://www.sick.com/ag/en/licensing-terms",
+    "dcterms:identifier": "SICK-VPP-LOG-2024",
+    "dcterms:description": "Advanced vision software for robotic pick-and-place applications in logistics and warehousing, providing real-time object detection, pose estimation, and grasping point calculation.",
+    "dcat:version": "v2.4.1",
+    "dcat:keyword": [
+      "vision software",
+      "perception",
+      "pick-and-place",
+      "logistics",
+      "warehousing",
+      "robotics",
+      "automation",
+      "SICK"
+    ],
+    "dcat:contactPoint": "https://www.sick.com/ag/en/contact-technical-support",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "schema:value": 0.95,
+        "schema:unitText": "accuracy"
+      },
+      "rodeos:framework": "SICK AppSpace"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "@type": "schema:quantitativeValue",
+          "schema:value": 0.95,
+          "schema:unitText": "accuracy"
+        },
+        "rodeos:softwareAssetType": {
+          "@id": "skos:concept",
+          "skos:prefLabel": "Machine Vision Software"
+        }
+      },
+      "child": {
+        "@type": "rodeos:perceptionVisionSoftware",
+        "properties": {
+          "rodeos:perceptionVisionSoftwareType": "objectDetection",
+          "rodeos:aasSubmodel": "https://assetadministration-shell.com/sick/vision-software/object-detection-pick-place/v1",
+          "rodeos:inputFormats": [
+            "JPEG",
+            "PNG",
+            "BMP",
+            "TIFF",
+            "PointCloud (PCD)",
+            "DepthMap"
+          ],
+          "rodeos:mlFrameworks": [
+            "TensorFlow",
+            "PyTorch",
+            "ONNX Runtime"
+          ],
+          "rodeos:accuracyMetrics": "mAP: 0.95, Precision: 97%, Recall: 96%, F1-Score: 0.965"
+        }
+      }
+    }
+  }
+}

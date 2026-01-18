@@ -1,0 +1,67 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Schunk GmbH Grinding/Polishing/Finishing Tool for Pharmaceutical Palletizing",
+    "dcterms:type": "Industrial Automation Asset",
+    "dcterms:publisher": "Schunk GmbH",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "SCH-GPFT-PHARMA-PALL-001",
+    "dcterms:description": "High-precision grinding, polishing, and finishing tool designed for pharmaceutical palletizing applications. Features stainless steel construction, IP67 rating, and compliance with pharmaceutical industry cleanliness standards.",
+    "dcat:version": "2.1.3",
+    "dcat:keyword": [
+      "grinding",
+      "polishing",
+      "finishing",
+      "pharmaceutical",
+      "palletizing",
+      "automation",
+      "robotics",
+      "Schunk",
+      "end-effector"
+    ],
+    "dcat:contactPoint": "https://schunk.com/contact/industrial-automation",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 2.5,
+        "unitCode": "KW",
+        "minValue": 1.5,
+        "maxValue": 3.5
+      },
+      "rodeos:framework": "Schunk Palletizing Automation Framework v2.1"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "Schunk GmbH",
+        "rodeos:hardwareAssetType": "rodeos:grindingPolishingFinishingTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "EtherNet/IP",
+          "rodeos:manufacturer": "Schunk GmbH",
+          "rodeos:toolWeight": 3.2,
+          "rodeos:toolMaterial": "Stainless Steel 316L"
+        },
+        "child": {
+          "@type": "rodeos:grindingPolishingFinishingTool",
+          "properties": {
+            "rodeos:grindingPolishingFinishingToolType": "Grinders",
+            "rodeos:aasSubmodel": "https://industrial.schunk.com/aas/grinding-tool/pharma-palletizing/v1.2",
+            "rodeos:rotationSpeed": 2850.5,
+            "rodeos:abrasiveForce": 45.2,
+            "rodeos:toolDiameter": 125.0,
+            "rodeos:wearRate": 0.15
+          }
+        }
+      }
+    }
+  }
+}

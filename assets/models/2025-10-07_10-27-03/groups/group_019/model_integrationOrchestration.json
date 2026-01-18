@@ -1,0 +1,65 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "Schunk GmbH Arc Welding Integration Orchestration System",
+    "dcterms:type": "Integration Orchestration Platform",
+    "dcterms:publisher": "Schunk GmbH",
+    "dcterms:license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "dcterms:identifier": "SCH-ARCWELD-INTORCH-001",
+    "dcterms:description": "Industrial automation integration orchestration system designed for arc welding applications in plastics processing. Provides centralized control, monitoring, and coordination of robotic welding cells, material handling systems, and quality assurance processes.",
+    "dcat:version": "2.3.1",
+    "dcat:keyword": [
+      "arc welding",
+      "robotics integration",
+      "plastics processing",
+      "industrial automation",
+      "orchestration platform",
+      "Schunk GmbH",
+      "welding control",
+      "process coordination"
+    ],
+    "dcat:contactPoint": "https://www.schunk.com/en/contact/technical-support",
+    "rodeos:coreType": "Service"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "schema:value": "1.2",
+        "schema:unitCode": "VERSION"
+      },
+      "rodeos:framework": "Schunk Welding Orchestration Suite v2.1"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "schema:value": "1.2",
+          "schema:unitCode": "VERSION"
+        },
+        "rodeos:softwareAssetType": "softwareAssetType"
+      },
+      "child": {
+        "@type": "rodeos:integrationOrchestration",
+        "properties": {
+          "rodeos:integrationOrchestrationType": "workflowOrchestration",
+          "rodeos:aasSubmodel": "https://assetadministration.schunk.com/models/integration-orchestration/arc-welding/v1",
+          "rodeos:supportedProtocols": [
+            "OPC UA",
+            "MQTT",
+            "HTTP/REST",
+            "Modbus TCP",
+            "EtherNet/IP"
+          ],
+          "rodeos:deploymentVariants": [
+            "On-premises server",
+            "Cloud-based SaaS",
+            "Hybrid edge-cloud",
+            "Containerized (Docker/Kubernetes)"
+          ]
+        }
+      }
+    }
+  }
+}

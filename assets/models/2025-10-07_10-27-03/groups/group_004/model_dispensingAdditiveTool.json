@@ -1,0 +1,64 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "ABB Robotics Spot Welding Dispensing Additive Tool",
+    "dcterms:type": "http://purl.org/dc/dcmitype/PhysicalObject",
+    "dcterms:publisher": "ABB Robotics",
+    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dcterms:identifier": "ABB-SW-DAT-2024-001",
+    "dcterms:description": "Industrial robotic dispensing additive tool designed for precision spot welding applications in metal fabrication. Features integrated material deposition system with real-time monitoring and adaptive control for consistent weld quality.",
+    "dcat:version": "2.1.4",
+    "dcat:keyword": [
+      "spot welding",
+      "additive dispensing",
+      "robotic tool",
+      "metal fabrication",
+      "ABB Robotics",
+      "industrial automation"
+    ],
+    "dcat:contactPoint": "https://new.abb.com/products/robotics/contact",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "hardwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 2.5,
+        "unitCode": "KW",
+        "minValue": 1.8,
+        "maxValue": 3.2
+      },
+      "rodeos:framework": "ABB RobotWare Spot Welding Package"
+    },
+    "child": {
+      "@type": "rodeos:hardwareComponent",
+      "properties": {
+        "rodeos:manufacturer": "ABB Robotics",
+        "rodeos:hardwareAssetType": "rodeos:dispensingAdditiveTool"
+      },
+      "child": {
+        "@type": "rodeos:tooling",
+        "properties": {
+          "rodeos:supplyVoltage": 24.0,
+          "rodeos:interfaceProtocol": "DeviceNet",
+          "rodeos:manufacturer": "ABB Robotics",
+          "rodeos:toolWeight": 5.8,
+          "rodeos:toolMaterial": "Stainless Steel AISI 316"
+        },
+        "child": {
+          "@type": "rodeos:dispensingAdditiveTool",
+          "properties": {
+            "rodeos:dispensingAdditiveToolType": "SealantAdhesiveDispensers",
+            "rodeos:aasSubmodel": "https://assetadministration-shell.com/ABB/robotics/dispensingAdditiveTool/spotwelding/model",
+            "rodeos:materialFlowRate": 12.5,
+            "rodeos:nozzleSize": 1.2,
+            "rodeos:layerThickness": 0.8,
+            "rodeos:temperature": 185.0
+          }
+        }
+      }
+    }
+  }
+}

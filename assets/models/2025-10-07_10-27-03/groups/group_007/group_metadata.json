@@ -1,0 +1,28 @@
+{
+  "company": "IFM Electronic",
+  "industry": "Automotive assembly",
+  "application": "bin picking",
+  "assets": [
+    {
+      "leaf": "rodeos:integrationOrchestration",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:softwareComponent",
+        "rodeos:integrationOrchestration"
+      ],
+      "file": "model_integrationOrchestration.json"
+    },
+    {
+      "leaf": "rodeos:ipc",
+      "path": [
+        "dcat:Resource",
+        "rodeos:Component",
+        "rodeos:hardwareComponent",
+        "rodeos:controller",
+        "rodeos:ipc"
+      ],
+      "file": "model_ipc.json"
+    }
+  ]
+}

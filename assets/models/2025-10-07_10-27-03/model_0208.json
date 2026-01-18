@@ -1,0 +1,72 @@
+{
+  "@type": "dcat:Resource",
+  "properties": {
+    "dcterms:title": "UR10e Material Transport Operation Software",
+    "dcterms:type": "Software",
+    "dcterms:publisher": "Universal Robots A/S",
+    "dcterms:license": "https://www.universal-robots.com/eula",
+    "dcterms:identifier": "UR-MT-OS-2024-v3.7",
+    "dcterms:description": "Specialized robotic operation software for automated material transport applications in automotive assembly lines. Optimizes payload handling, path planning, and collision avoidance for UR10e collaborative robots.",
+    "dcat:version": "3.7.2",
+    "dcat:keyword": [
+      "robotic software",
+      "material transport",
+      "automotive assembly",
+      "collaborative robot",
+      "UR10e",
+      "path optimization",
+      "payload handling"
+    ],
+    "dcat:contactPoint": "https://support.universal-robots.com",
+    "rodeos:coreType": "Component"
+  },
+  "child": {
+    "@type": "rodeos:Component",
+    "properties": {
+      "rodeos:componentType": "softwareComponent",
+      "rodeos:modelParameters": {
+        "@type": "schema:quantitativeValue",
+        "value": 5.4,
+        "unitCode": "rodeos:version"
+      },
+      "rodeos:framework": "URCap SDK"
+    },
+    "child": {
+      "@type": "rodeos:softwareComponent",
+      "properties": {
+        "rodeos:modelParameters": {
+          "@type": "schema:quantitativeValue",
+          "value": 5.4,
+          "unitCode": "rodeos:version"
+        },
+        "rodeos:softwareAssetType": "softwareAssetType"
+      },
+      "child": {
+        "@type": "rodeos:robotOperationSoftware",
+        "properties": {
+          "rodeos:robotOperationSystemType": "vendorSpecificMiddleware",
+          "rodeos:aasSubmodel": "https://universalrobots.com/aas/robotOperationSoftware/materialTransport/v1",
+          "rodeos:supportedApis": [
+            "https://universalrobots.com/api/urscript/v2",
+            "https://universalrobots.com/api/dashboard/v1",
+            "https://universalrobots.com/api/rtde/v1"
+          ],
+          "rodeos:supportedHardwareDrivers": [
+            "URCap for Conveyor Belts",
+            "URCap for AGV Integration",
+            "URCap for Vision Systems",
+            "URCap for Gripper Control",
+            "URCap for Safety Systems"
+          ],
+          "rodeos:osDependencies": [
+            "Universal Robots Polyscope 5.12+",
+            "Linux Kernel 4.15+",
+            "Python 3.8+",
+            "Java Runtime Environment 11+",
+            "Node.js 16+"
+          ]
+        }
+      }
+    }
+  }
+}
