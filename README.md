@@ -355,4 +355,12 @@ The contextually enriched documents produced by this pipeline are designed to fe
 This bridges the gap between unstructured technical documentation and structured semantic knowledge, enabling the vision of automated robot integration across diverse industrial environments.
 
 
+## Funding
+
+This open-source project was developed within the *[ROX](https://www.project-rox.ai/en/)* project. 
+This project has received public funding from the **European Union** NextGenerationEU within the Important Project of Common European Interest – Cloud Infrastructures and Services (IPCEI-CIS).
+
+<p align="center">
+  <img alt="Bundesministerium für Wirtschaft und Energie (BMWE)-EU and secunet funding logo" src="assets/bmwe_logo.png" width="400"/>
+</p>
 
